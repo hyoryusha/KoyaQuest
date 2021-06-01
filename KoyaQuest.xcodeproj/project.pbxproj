@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A5A982A2664629600074902 /* ChallengeDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A98292664629600074902 /* ChallengeDisplayManager.swift */; };
+		0A5A982D2664631200074902 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A982C2664631200074902 /* MainMenuView.swift */; };
+		0A5A98302664639200074902 /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A982F2664639200074902 /* MainMenuViewModel.swift */; };
+		0A5A9833266465F300074902 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A9832266465F300074902 /* WelcomeView.swift */; };
+		0A5A98362664666700074902 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A98352664666700074902 /* TitleView.swift */; };
+		0A5A9839266466E600074902 /* WelcomeIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A9838266466E600074902 /* WelcomeIntroView.swift */; };
+		0A5A983C2664673C00074902 /* InfoTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A983B2664673C00074902 /* InfoTopView.swift */; };
+		0A5A984326646B1400074902 /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A984226646B1400074902 /* TextViews.swift */; };
+		0A5A984726646E4100074902 /* Information.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A984626646E4100074902 /* Information.json */; };
+		0A5E83A726638278000076A9 /* KoyaQuestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83A626638278000076A9 /* KoyaQuestApp.swift */; };
+		0A5E83A926638278000076A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83A826638278000076A9 /* ContentView.swift */; };
+		0A5E83AB2663827A000076A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5E83AA2663827A000076A9 /* Assets.xcassets */; };
+		0A5E83AE2663827A000076A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5E83AD2663827A000076A9 /* Preview Assets.xcassets */; };
+		0A5E83B82663831B000076A9 /* KoyaQuest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83B62663831B000076A9 /* KoyaQuest.xcdatamodeld */; };
+		0A5E83BC26638C1C000076A9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83BB26638C1C000076A9 /* DataController.swift */; };
+		0A5E83BF2663900F000076A9 /* Landmarks.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5E83BE2663900F000076A9 /* Landmarks.json */; };
+		0A5E83C22663902D000076A9 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83C12663902D000076A9 /* Landmark.swift */; };
+		0A5E83C5266390CC000076A9 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83C4266390CC000076A9 /* Bundle-Decodable.swift */; };
+		0A5E83CC2663964D000076A9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5E83CB2663964D000076A9 /* CloudKit.framework */; };
+		0A5E83CF266397C3000076A9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5E83CE266397C3000076A9 /* Colors.xcassets */; };
+		0A5E83D226639FD1000076A9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83D126639FD1000076A9 /* HomeView.swift */; };
+		0A5E83D52663A228000076A9 /* LandmarkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83D42663A228000076A9 /* LandmarkRowView.swift */; };
+		0A5E83D92663A260000076A9 /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83D82663A260000076A9 /* RatingsView.swift */; };
+		0A5E83DC2663A2C7000076A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83DB2663A2C7000076A9 /* Constants.swift */; };
+		0A5E83E12663A7A7000076A9 /* ChallengeDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83E02663A7A7000076A9 /* ChallengeDescriptions.swift */; };
+		0A5E83E52663A7CE000076A9 /* SpriteKitConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83E32663A7CE000076A9 /* SpriteKitConstants.swift */; };
+		0A5E83E62663A7CE000076A9 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83E42663A7CE000076A9 /* Floor.swift */; };
+		0A5E83ED2663A897000076A9 /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83E92663A897000076A9 /* Challenges.swift */; };
+		0A5E83EE2663A897000076A9 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83EA2663A897000076A9 /* AppData.swift */; };
+		0A5E83EF2663A897000076A9 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83EB2663A897000076A9 /* Area.swift */; };
+		0A5E83F02663A897000076A9 /* PlaceAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83EC2663A897000076A9 /* PlaceAnnotations.swift */; };
+		0A5E83F52663A971000076A9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83F32663A970000076A9 /* NetworkManager.swift */; };
+		0A5E83F62663A971000076A9 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83F42663A971000076A9 /* LocationManager.swift */; };
+		0A5E83FA2663A9CC000076A9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83F92663A9CC000076A9 /* Alert.swift */; };
+		0A5E83FD2663AA43000076A9 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83FC2663AA43000076A9 /* Information.swift */; };
+		0A5E84002663AA99000076A9 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E83FF2663AA99000076A9 /* PhysicsCategory.swift */; };
+		0A5E84032663AB5C000076A9 /* LandmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E84022663AB5C000076A9 /* LandmarkListView.swift */; };
+		0A5E84062663ABA9000076A9 /* LandmarkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E84052663ABA9000076A9 /* LandmarkDetailView.swift */; };
+		0A5E84092663AC4C000076A9 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E84082663AC4C000076A9 /* BackgroundView.swift */; };
+		0A5E840D2663ACAE000076A9 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E840C2663ACAE000076A9 /* Color+Extension.swift */; };
+		0A5E841226643A00000076A9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E841126643A00000076A9 /* MapView.swift */; };
+		0A5E841626643A4E000076A9 /* MapViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E841526643A4E000076A9 /* MapViewUI.swift */; };
+		0A5E841926643B5A000076A9 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E841826643B5A000076A9 /* Buttons.swift */; };
+		0A5E841D26643C49000076A9 /* LocalRatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E841C26643C49000076A9 /* LocalRatingsView.swift */; };
+		0A5E842026643CBF000076A9 /* RatinsgInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E841F26643CBF000076A9 /* RatinsgInputView.swift */; };
+		0A5E842326643E74000076A9 /* Rating+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E842226643E74000076A9 /* Rating+Extension.swift */; };
+		0A5E842626643F0F000076A9 /* Text+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E842526643F0F000076A9 /* Text+Extensions.swift */; };
+		0A5E842C26643FF3000076A9 /* RatingsOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E842B26643FF3000076A9 /* RatingsOverlayView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A5A98292664629600074902 /* ChallengeDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDisplayManager.swift; sourceTree = "<group>"; };
+		0A5A982C2664631200074902 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		0A5A982F2664639200074902 /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
+		0A5A9832266465F300074902 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		0A5A98352664666700074902 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		0A5A9838266466E600074902 /* WelcomeIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeIntroView.swift; sourceTree = "<group>"; };
+		0A5A983B2664673C00074902 /* InfoTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTopView.swift; sourceTree = "<group>"; };
+		0A5A984226646B1400074902 /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
+		0A5A984626646E4100074902 /* Information.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Information.json; sourceTree = "<group>"; };
+		0A5E83A326638278000076A9 /* KoyaQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoyaQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A5E83A626638278000076A9 /* KoyaQuestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoyaQuestApp.swift; sourceTree = "<group>"; };
+		0A5E83A826638278000076A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0A5E83AA2663827A000076A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A5E83AD2663827A000076A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0A5E83AF2663827A000076A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A5E83B72663831B000076A9 /* KoyaQuest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KoyaQuest.xcdatamodel; sourceTree = "<group>"; };
+		0A5E83BB26638C1C000076A9 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		0A5E83BE2663900F000076A9 /* Landmarks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Landmarks.json; sourceTree = "<group>"; };
+		0A5E83C12663902D000076A9 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
+		0A5E83C4266390CC000076A9 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		0A5E83C826639622000076A9 /* KoyaQuest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KoyaQuest.entitlements; sourceTree = "<group>"; };
+		0A5E83CB2663964D000076A9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		0A5E83CE266397C3000076A9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		0A5E83D126639FD1000076A9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0A5E83D42663A228000076A9 /* LandmarkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRowView.swift; sourceTree = "<group>"; };
+		0A5E83D82663A260000076A9 /* RatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
+		0A5E83DB2663A2C7000076A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0A5E83E02663A7A7000076A9 /* ChallengeDescriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDescriptions.swift; sourceTree = "<group>"; };
+		0A5E83E32663A7CE000076A9 /* SpriteKitConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteKitConstants.swift; sourceTree = "<group>"; };
+		0A5E83E42663A7CE000076A9 /* Floor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
+		0A5E83E92663A897000076A9 /* Challenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenges.swift; sourceTree = "<group>"; };
+		0A5E83EA2663A897000076A9 /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		0A5E83EB2663A897000076A9 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
+		0A5E83EC2663A897000076A9 /* PlaceAnnotations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAnnotations.swift; sourceTree = "<group>"; };
+		0A5E83F32663A970000076A9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0A5E83F42663A971000076A9 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		0A5E83F92663A9CC000076A9 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		0A5E83FC2663AA43000076A9 /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
+		0A5E83FF2663AA99000076A9 /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		0A5E84022663AB5C000076A9 /* LandmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkListView.swift; sourceTree = "<group>"; };
+		0A5E84052663ABA9000076A9 /* LandmarkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetailView.swift; sourceTree = "<group>"; };
+		0A5E84082663AC4C000076A9 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		0A5E840C2663ACAE000076A9 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		0A5E841126643A00000076A9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		0A5E841526643A4E000076A9 /* MapViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewUI.swift; sourceTree = "<group>"; };
+		0A5E841826643B5A000076A9 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		0A5E841C26643C49000076A9 /* LocalRatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRatingsView.swift; sourceTree = "<group>"; };
+		0A5E841F26643CBF000076A9 /* RatinsgInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatinsgInputView.swift; sourceTree = "<group>"; };
+		0A5E842226643E74000076A9 /* Rating+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rating+Extension.swift"; sourceTree = "<group>"; };
+		0A5E842526643F0F000076A9 /* Text+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extensions.swift"; sourceTree = "<group>"; };
+		0A5E842B26643FF3000076A9 /* RatingsOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsOverlayView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A5E83A026638278000076A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A5E83CC2663964D000076A9 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A5A984A26646ECC00074902 /* Ratings */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E842B26643FF3000076A9 /* RatingsOverlayView.swift */,
+				0A5E841F26643CBF000076A9 /* RatinsgInputView.swift */,
+				0A5E83D82663A260000076A9 /* RatingsView.swift */,
+				0A5E841C26643C49000076A9 /* LocalRatingsView.swift */,
+			);
+			path = Ratings;
+			sourceTree = "<group>";
+		};
+		0A5E839A26638278000076A9 = {
+			isa = PBXGroup;
+			children = (
+				0A5E83A526638278000076A9 /* KoyaQuest */,
+				0A5E83A426638278000076A9 /* Products */,
+				0A5E83CA2663964D000076A9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0A5E83A426638278000076A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E83A326638278000076A9 /* KoyaQuest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A5E83A526638278000076A9 /* KoyaQuest */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E83A626638278000076A9 /* KoyaQuestApp.swift */,
+				0A5E83C826639622000076A9 /* KoyaQuest.entitlements */,
+				0A5E8410266439EB000076A9 /* Views */,
+				0A5E840B2663AC95000076A9 /* Extensions */,
+				0A5E83F82663A9AF000076A9 /* Components */,
+				0A5E83F22663A941000076A9 /* Managers */,
+				0A5E83E82663A861000076A9 /* Models */,
+				0A5E83DE2663A76D000076A9 /* Constants */,
+				0A5E83B62663831B000076A9 /* KoyaQuest.xcdatamodeld */,
+				0A5E83BB26638C1C000076A9 /* DataController.swift */,
+				0A5E83C4266390CC000076A9 /* Bundle-Decodable.swift */,
+				0A5A984626646E4100074902 /* Information.json */,
+				0A5E83BE2663900F000076A9 /* Landmarks.json */,
+				0A5E83AA2663827A000076A9 /* Assets.xcassets */,
+				0A5E83CE266397C3000076A9 /* Colors.xcassets */,
+				0A5E83AF2663827A000076A9 /* Info.plist */,
+				0A5E83AC2663827A000076A9 /* Preview Content */,
+			);
+			path = KoyaQuest;
+			sourceTree = "<group>";
+		};
+		0A5E83AC2663827A000076A9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E83AD2663827A000076A9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0A5E83CA2663964D000076A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E83CB2663964D000076A9 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0A5E83DE2663A76D000076A9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E83FC2663AA43000076A9 /* Information.swift */,
+				0A5E83E42663A7CE000076A9 /* Floor.swift */,
+				0A5E83E32663A7CE000076A9 /* SpriteKitConstants.swift */,
+				0A5E83E02663A7A7000076A9 /* ChallengeDescriptions.swift */,
+				0A5E83DB2663A2C7000076A9 /* Constants.swift */,
+				0A5E83FF2663AA99000076A9 /* PhysicsCategory.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0A5E83E82663A861000076A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E83C12663902D000076A9 /* Landmark.swift */,
+				0A5E83EA2663A897000076A9 /* AppData.swift */,
+				0A5E83EB2663A897000076A9 /* Area.swift */,
+				0A5E83E92663A897000076A9 /* Challenges.swift */,
+				0A5E83EC2663A897000076A9 /* PlaceAnnotations.swift */,
+				0A5A98292664629600074902 /* ChallengeDisplayManager.swift */,
+				0A5A982F2664639200074902 /* MainMenuViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A5E83F22663A941000076A9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E83F42663A971000076A9 /* LocationManager.swift */,
+				0A5E83F32663A970000076A9 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		0A5E83F82663A9AF000076A9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0A5A984A26646ECC00074902 /* Ratings */,
+				0A5A98352664666700074902 /* TitleView.swift */,
+				0A5A983B2664673C00074902 /* InfoTopView.swift */,
+				0A5E83F92663A9CC000076A9 /* Alert.swift */,
+				0A5E84082663AC4C000076A9 /* BackgroundView.swift */,
+				0A5E841826643B5A000076A9 /* Buttons.swift */,
+				0A5A984226646B1400074902 /* TextViews.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0A5E840B2663AC95000076A9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E840C2663ACAE000076A9 /* Color+Extension.swift */,
+				0A5E842226643E74000076A9 /* Rating+Extension.swift */,
+				0A5E842526643F0F000076A9 /* Text+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A5E8410266439EB000076A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E83A826638278000076A9 /* ContentView.swift */,
+				0A5A982C2664631200074902 /* MainMenuView.swift */,
+				0A5A9832266465F300074902 /* WelcomeView.swift */,
+				0A5A9838266466E600074902 /* WelcomeIntroView.swift */,
+				0A5E83D126639FD1000076A9 /* HomeView.swift */,
+				0A5E841126643A00000076A9 /* MapView.swift */,
+				0A5E841526643A4E000076A9 /* MapViewUI.swift */,
+				0A5E84052663ABA9000076A9 /* LandmarkDetailView.swift */,
+				0A5E83D42663A228000076A9 /* LandmarkRowView.swift */,
+				0A5E84022663AB5C000076A9 /* LandmarkListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A5E83A226638278000076A9 /* KoyaQuest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A5E83B22663827A000076A9 /* Build configuration list for PBXNativeTarget "KoyaQuest" */;
+			buildPhases = (
+				0A5E839F26638278000076A9 /* Sources */,
+				0A5E83A026638278000076A9 /* Frameworks */,
+				0A5E83A126638278000076A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KoyaQuest;
+			productName = KoyaQuest;
+			productReference = 0A5E83A326638278000076A9 /* KoyaQuest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A5E839B26638278000076A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					0A5E83A226638278000076A9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 0A5E839E26638278000076A9 /* Build configuration list for PBXProject "KoyaQuest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0A5E839A26638278000076A9;
+			productRefGroup = 0A5E83A426638278000076A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A5E83A226638278000076A9 /* KoyaQuest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A5E83A126638278000076A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A5E83AE2663827A000076A9 /* Preview Assets.xcassets in Resources */,
+				0A5A984726646E4100074902 /* Information.json in Resources */,
+				0A5E83CF266397C3000076A9 /* Colors.xcassets in Resources */,
+				0A5E83AB2663827A000076A9 /* Assets.xcassets in Resources */,
+				0A5E83BF2663900F000076A9 /* Landmarks.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A5E839F26638278000076A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A5E83F52663A971000076A9 /* NetworkManager.swift in Sources */,
+				0A5A982D2664631200074902 /* MainMenuView.swift in Sources */,
+				0A5A98302664639200074902 /* MainMenuViewModel.swift in Sources */,
+				0A5E83A926638278000076A9 /* ContentView.swift in Sources */,
+				0A5E83D226639FD1000076A9 /* HomeView.swift in Sources */,
+				0A5A984326646B1400074902 /* TextViews.swift in Sources */,
+				0A5E83BC26638C1C000076A9 /* DataController.swift in Sources */,
+				0A5E83F02663A897000076A9 /* PlaceAnnotations.swift in Sources */,
+				0A5A9833266465F300074902 /* WelcomeView.swift in Sources */,
+				0A5E841626643A4E000076A9 /* MapViewUI.swift in Sources */,
+				0A5A9839266466E600074902 /* WelcomeIntroView.swift in Sources */,
+				0A5E84002663AA99000076A9 /* PhysicsCategory.swift in Sources */,
+				0A5A982A2664629600074902 /* ChallengeDisplayManager.swift in Sources */,
+				0A5E84032663AB5C000076A9 /* LandmarkListView.swift in Sources */,
+				0A5E841226643A00000076A9 /* MapView.swift in Sources */,
+				0A5E83A726638278000076A9 /* KoyaQuestApp.swift in Sources */,
+				0A5E83D92663A260000076A9 /* RatingsView.swift in Sources */,
+				0A5E83ED2663A897000076A9 /* Challenges.swift in Sources */,
+				0A5E83DC2663A2C7000076A9 /* Constants.swift in Sources */,
+				0A5E84062663ABA9000076A9 /* LandmarkDetailView.swift in Sources */,
+				0A5A983C2664673C00074902 /* InfoTopView.swift in Sources */,
+				0A5E842026643CBF000076A9 /* RatinsgInputView.swift in Sources */,
+				0A5E842626643F0F000076A9 /* Text+Extensions.swift in Sources */,
+				0A5E83B82663831B000076A9 /* KoyaQuest.xcdatamodeld in Sources */,
+				0A5E83E12663A7A7000076A9 /* ChallengeDescriptions.swift in Sources */,
+				0A5E83D52663A228000076A9 /* LandmarkRowView.swift in Sources */,
+				0A5E84092663AC4C000076A9 /* BackgroundView.swift in Sources */,
+				0A5E83E62663A7CE000076A9 /* Floor.swift in Sources */,
+				0A5E83C22663902D000076A9 /* Landmark.swift in Sources */,
+				0A5E83C5266390CC000076A9 /* Bundle-Decodable.swift in Sources */,
+				0A5E83FD2663AA43000076A9 /* Information.swift in Sources */,
+				0A5E83E52663A7CE000076A9 /* SpriteKitConstants.swift in Sources */,
+				0A5E83EF2663A897000076A9 /* Area.swift in Sources */,
+				0A5E83F62663A971000076A9 /* LocationManager.swift in Sources */,
+				0A5E841D26643C49000076A9 /* LocalRatingsView.swift in Sources */,
+				0A5E841926643B5A000076A9 /* Buttons.swift in Sources */,
+				0A5E83FA2663A9CC000076A9 /* Alert.swift in Sources */,
+				0A5E83EE2663A897000076A9 /* AppData.swift in Sources */,
+				0A5E842C26643FF3000076A9 /* RatingsOverlayView.swift in Sources */,
+				0A5E842326643E74000076A9 /* Rating+Extension.swift in Sources */,
+				0A5E840D2663ACAE000076A9 /* Color+Extension.swift in Sources */,
+				0A5A98362664666700074902 /* TitleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0A5E83B02663827A000076A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0A5E83B12663827A000076A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0A5E83B32663827A000076A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KoyaQuest/KoyaQuest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"KoyaQuest/Preview Content\"";
+				DEVELOPMENT_TEAM = VXX3S4X7D2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KoyaQuest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.wadaienglish.KoyaQuest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A5E83B42663827A000076A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = KoyaQuest/KoyaQuest.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"KoyaQuest/Preview Content\"";
+				DEVELOPMENT_TEAM = VXX3S4X7D2;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = KoyaQuest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.wadaienglish.KoyaQuest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A5E839E26638278000076A9 /* Build configuration list for PBXProject "KoyaQuest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A5E83B02663827A000076A9 /* Debug */,
+				0A5E83B12663827A000076A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A5E83B22663827A000076A9 /* Build configuration list for PBXNativeTarget "KoyaQuest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A5E83B32663827A000076A9 /* Debug */,
+				0A5E83B42663827A000076A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0A5E83B62663831B000076A9 /* KoyaQuest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0A5E83B72663831B000076A9 /* KoyaQuest.xcdatamodel */,
+			);
+			currentVersion = 0A5E83B72663831B000076A9 /* KoyaQuest.xcdatamodel */;
+			path = KoyaQuest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 0A5E839B26638278000076A9 /* Project object */;
+}

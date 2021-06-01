@@ -1,0 +1,671 @@
+[
+
+    {
+        "id"    :   1000,
+    "name"      :   "The Great Gate",
+    "jname"     :   "大門",
+    "romaji"    :   "Daimon",
+    "imageName" :   "daimon",
+    "section"   :   "Western Entrance",
+    "area"      :   "Daimon Area",
+    "isSection" :   true,
+    "location"  :
+        {
+            "latitude"  :   34.21316180316554,
+            "longitude"  :   135.57287620970556
+        },
+    "details"    :
+        {
+            "headerOne" :   "Main Entrance to the Sacred Mountain",
+            "bodyOne"   :   "The Daimon, or \"Great Gate,\" marks the entrance to Mt. Kōya. At a height of 25.1 meters, it is one of the largest temple gates in Japan. The current structure, which dates from the year 1705, is designated as an Important Cultural Property by the Japanese government. Like all temple gates, it represents the boundary between the everyday world and a sacred place beyond. \nTwo wooden plaques on either side of the central bay are inscribed with the words, \"Day by day [beyond this gate] without fail the miraculous presence of gods and Buddhas is revealed.\"",
+            "headerTwo" :   "Fierce Guardians",
+            "bodyTwo"   :   "Two wooden statues of Kongōrikishi stand on the left and right sides of the gate. Carved during the mid Edo period (1603 - 1868), they are second in size only to those at Nara’s Tōdaiji Temple. These warrior-like figures, also known as Niō, are believed to have followed and protected the Historical Buddha when he traveled throughout India. They have since been adopted by the Japanese into the Japanese Buddhist pantheon and now stand at the entrance to many temples to ward off the enemies of the faith.\nThe mouth of the guardian on the right is open to represent the sound \"ah\" and he is accordingly called Agyō. Ungyō, his companion on the left, has his mouth closed as he pronounces the sound \"hum.\"  Together these two syllables create the sound \"aum,\" which is the Sanskrit word for absolute truth or ultimate reality."
+        }
+
+    },
+
+    
+    {
+        "id"    :   1001,
+    "name"      :   "Middle Gate",
+    "jname"     :   "中門",
+    "romaji"    :   "Chūmon",
+    "imageName" :   "chumon",
+    "section"   :   "Danjō Garan",
+    "area"      :   "West Garan Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.21252235941126,
+            "longitude"  :   135.57958034413258
+        },
+    "details"    :
+        {
+            "headerOne" :   "Main Entrance to Garan",
+            "bodyOne"   :   "Body text goes  here",
+            "headerTwo" :   "Second Header",
+            "bodyTwo"   :   "More body text."
+        }
+
+    },
+    
+    
+    {
+        "id"    :   1002,
+    "name"      :   "Myōjin Shrine",
+    "jname"     :   "明神社",
+    "romaji"    :   "Myōjin-sha",
+    "imageName" :   "miyashiro",
+    "section"   :   "Danjō Garan",
+    "area"      :   "West Garan Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.21316968889982,
+            "longitude"  :   135.5783699789045
+        },
+    "details"    :
+        {
+            "headerOne" :   "Shrine of the Mountain Gods",
+            "bodyOne"   :   "When Kūkai prepared to establish his monastic community at Mt. Kōya, he was careful to enlist the support of the local deities to whom the mountain belonged. The Shinto shrine standing at the western end of the Danjō Garan is where these gods are now enshrined and worshipped (having been relocated from their original home farther down the mountain).\nCalled Myōjin-sha or sometimes, more simply, Miyashiro, this shrine comprises three separate sanctuaries (honden). The two on the left in the popular Kasuga-zukuri style house the female goddess Niu-myōjin and her son, the hunter god Kariba-myōjin, respectively. The third, which was added later, is a compound shrine for two sister deities and their many attendants. The current buildings are reconstructions from the year 1594 and are designated as important cultural properties.",
+            "headerTwo" :   "Shinto-Buddhist Syncretism",
+            "bodyTwo"   :   "While it may seem strange for a Buddhist temple complex to include a Shinto shrine, the practice is quite widespread in Japan. For Kūkai, in particular, the idea that indigenous deities were incarnations of Buddhas and Bodhisattvas was an important part of his effort to convey the universal nature of esoteric teachings.\nThe identification of Shinto gods with Buddhas and Bodhisattvas can be seen here at the Myōjin-sha Shrine in the statues of Kariba’s hunting dogs.  Like the Kongō rikishi who guard the temple gates, they are depicted with open and closed mouths as they voice the sacred syllables that represent Dainichi Nyorai in the Diamond and Womb Realms of esoteric Buddhism."
+        }
+
+    },
+    {
+        "id"    :   1003,
+    "name"      :   "Sannō-in Temple",
+    "jname"     :   "山王院",
+    "romaji"    :   "Sannō-in",
+    "imageName" :   "sanno-in",
+    "section"   :   "Danjō Garan",
+    "area"      :   "West Garan Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.213156632174524,
+            "longitude"  :   135.57867347831183
+        },
+    "details"    :
+        {
+            "headerOne" :   "Temple of the Mountain Kings",
+            "bodyOne"   :   "Sannō-in, or Temple of the Mountain Kings, is the Buddhist worship hall standing before the Myōjin-sha shrine to the mountain deities. Like the shrine itself, the present-day Sannō-in dates from the year 1594. (The thatched roof is replaced every twenty years.) ",
+            "headerTwo" :   "Rites to Pacify the Gods",
+            "bodyTwo"   :   "In addition to monthly memorial services, the Sannō-in is the setting for two important and solemn annual rites known as the Rissei and the Misaishōkō.\nIn the first, priests gather for an all-night session of questions and responses on esoteric teachings. According to legend, the mountain gods became angry when the monks of Mt. Kōya had grown lax in their studies. The Rissei was established to placate their anger and reaffirm Mt. Kōya’s commitment to studies of the Buddhist scriptures. The Misaishōkō is a similar service held over a two-night period for the peace and safekeeping of the nation."
+        }
+
+    },
+    {
+        "id"    :   1004,
+    "name"      :   "Six-Sided Sutra Repository",
+    "jname"     :   "六角経蔵",
+    "romaji"    :   "Rokkaku Kyōzō",
+    "imageName" :   "rokkaku_kyozo",
+    "section"   :   "Danjō Garan",
+    "area"      :   "West Garan Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.21283057740981,
+            "longitude"  :   135.57895573979584
+        },
+    "details"    :
+        {
+            "headerOne" :   "Rotating Sutra Repository",
+            "bodyOne"   :   "The Rokkaku Kyōzō ('Six-Sided Sutra Repository') is a pagoda-like tower built to house all 3,575 scolls of the \"Tripitika,\" the \"Three Baskets\" containing the complete body of Buddhist scriptures. \nThe original building was established in the twelfth century by an imperial consort named Bifukumon-in in memory of her husband, Emperor Toba. The current structure is a reconstruction dating from the year 1934.",
+            "headerTwo" :   "A Short-cut to Salvation?",
+            "bodyTwo"   :   "At the base of the tower are several wooden handles which can be used to rotate the interior shelves of the repository.\nIt is believed that those who are able to complete three clockwise rotations will receive the spiritual merit equivalent to a complete reading of all the scriptures contained on the shelves.\nFeel free to take a turn!"
+        }
+
+    },
+    
+    {
+        "id"    :   1005,
+    "name"      :   "Western Pagoda",
+    "jname"     :   "西塔",
+    "romaji"    :   "Saitō",
+    "imageName" :   "saito",
+    "section"   :   "Danjō Garan",
+    "area"      :   "West Garan Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.21369418004938,
+            "longitude"  :   135.57861938359565
+        },
+    "details"   :
+        {
+            "headerOne" :   "Western Pagoda",
+            "bodyOne"   :   "Envisioned by Kūkai in his grand design for the Danjō Garan, the original Western Stupa was completed in the year 886 by his successor (and nephew), Shinzen (?- 891) through the patronage of Emperor Kōkō (830-887). The current 27-meter-tall tower is a reconstruction from 1834.",
+            "headerTwo" :   "Two Towers, Two Worlds",
+            "bodyTwo"   :   "The Western Stupa was conceived as a counterpart to the Great Pagoda at the center of the ritual space. As opposed to the latter, which enshrines Dainich Nyorai as he appears in the Diamond Realm Mandala, the Western Pagoda houses the same cosmic Buddha as depicted in the Womb Realm Mandala. Together, they represent the dual worlds of Shingon Buddhism.\nAlthough one might associate the Western Stupa with the Eastern Pagoda at the other end of the Garan, the so-called Tōtō was an addition from the 12th century and not part of Kūkai's original conception."
+        }
+
+    },
+    
+    {
+        "id"    :   1006,
+    "name"      :   "Hall of the Blessed Image",
+    "jname"     :   "御影堂",
+    "romaji"    :   "Miedō",
+    "imageName" :   "miedo",
+    "section"   :   "Danjō Garan",
+    "area"      :   "West Garan Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.213533099674166,
+            "longitude"  :   135.5793144269853
+        },
+    "details"   :
+        {
+            "headerOne" :   "Hall of the Blessed Image",
+            "bodyOne"   :   "Across from the Kondō and just to the west of the Great Stupa we find the Miedō, or Hall of the Blessed Image.  While closed to the public (for all but one day a year) and dedicated to housing a shrouded image, its elegant proportions, gracefully curved roof and lantern-lined eaves, make the exterior of the Miedō a favorite of photographers throughout the four seasons. \nThe current structure was built in 1848 at a location where Kūkai’s private Buddhist shrine originally stood.  A careful inspection of the railing at south-east corner of the Miedō shows the scars of the 1926 fire that destroyed the nearby Kondō. To prevent the Miedō from a similar fate, a covered trough encircles the building. Within, are nozzles ready to spray the structure with water in case of fire.",
+            "headerTwo" :   "Portrait of the Patriarch",
+            "bodyTwo"   :   "The Blessed Image from which the Miedō takes its name is a portrait of Kūkai. It is believed to be the work of Prince Shinnyo (799–865?), the son of an emperor and devoted Kūkai follower, who painted it six days before the holy man left this world. \nThe image is so sacred that it can only be viewed by priests of the highest rank and then only once in a lifetime. While the original portrait is concealed behind a ceremonial cloth, two- and three-dimensional copies of it, showing Kūkai sitting cross-legged in a chair with his ritual sceptre (vajra) in hand, can be seen throughout Mt. Kōya."
+        }
+
+    },
+    
+    {
+            "id"    :   1007,
+        "name"      :   "Aizendō",
+        "jname"     :   "愛染堂",
+        "romaji"    :   "Aizendō",
+        "imageName" :   "aizendo",
+        "section"   :   "Danjō Garan",
+        "area"      :   "West Garan Area",
+        "isSection" :   false,
+        "location"  :
+            {
+                "latitude"  :   34.21341626387452,
+                "longitude"  :   135.5804594737917
+            },
+        "details"   :
+            {
+                "headerOne" :   "Hall of the Love-Stained Wisdom King",
+                "bodyOne"   :   "The Aizendō, or Hall of Aizen, was constructed under an imperial order from Emperor Godaigo (1288 – 1339) in 1334. The current structure is a reconstruction from 1848. The main object of worship is an image of Aizen Myō'ō that was reportedly carved to the same proportions as Godaigo himself. Aizen Myō'ō is the Japanese name for Rāgarāja, a Hindu deity adopted into the Buddhist pantheon as one of many so-called Wisdom Kings. His name means Love-Stained Wisdom King, and he is thought to help people transform their lustful impulses into spiritual awakening.",
+                "headerTwo" :   "A Wish for Peace in Troubled Times",
+                "bodyTwo"   :   "It was Godaigo's wish to establish the Aizendō for the tranquility of the nation and the safety of the imperial family. Godaigo is best remembered for overthrowing the civilian military government of the Kamakura shoguns. The brief, three-year period from 1333 to 1336 in which real political power was restored to the emperors is known as the Kenmu Restoration. When Godaigo was himself overthrown by the Ashikaga's, he fled to the Yamato region and established a rival Southern Court. For the next fifty years, Japan had two emperors. Godaigo's wish for tranquility and safety must be seen in light of this turbulent historical context."
+            }
+
+        },
+    
+    
+    
+    
+    {
+        "id"    :   1010,
+    "name"      :   "Court of the Central Halls",
+    "jname"     :   "壇上伽藍",
+    "romaji"    :   "Danjō Garan",
+    "imageName" :   "danjo_garan",
+    "section"   :   "Danjō Garan",
+    "area"      :   "East Garan Area",
+    "isSection" :   true,
+    "location"  :
+        {
+            "latitude"  :   34.21239403363178,
+            "longitude"  :   135.57952079593773
+        },
+    "details"   :
+        {
+            "headerOne" :   "Court of the Central Halls",
+            "bodyOne"   :   "The Danjō Garan is where the earliest places of worship were built on Mt Kōya after its founding in the year 819 by the priest Kūkai. Dominated by the imposing central stupa known as the Konpon Daitō, the complex extends roughly 350 meters from east to west and is made up of around twenty structures including a massive hall, several sanctuaries, pagodas and shrines.  While none of the original buildings survives, many of their reconstructions date back centuries.",
+            "headerTwo" :   "An Active Ceremonial Center",
+            "bodyTwo"   :   "As it did for more than a millennium, the Danjō Garan serves as the primary center for the most important ceremonies and rites of Shingon, or Esoteric, Buddhism. Visitors will find themselves in the company of devoted members of the faith as they worship at these sacred sites. It is not uncommon to see large groups of priests making their rounds to pray before the various holy places."
+        }
+
+    },
+    {
+        "id"    :   1011,
+    "name"      :   "The Great Pagoda",
+    "jname"     :   "根本大塔",
+    "romaji"    :   "Konpon Daitō",
+    "imageName" :   "konpondaito",
+    "section"   :   "Danjō Garan",
+    "area"      :   "East Garan Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.213408628264226,
+            "longitude"  :   135.5799607730674
+        },
+    "details"   :
+        {
+            "headerOne" :   "Symbol of Mt. Kōya",
+            "bodyOne"   :   "The Danjō Garan and, indeed, all of Mt. Kōya are dominated by the 48-meter-tall, vermillion-colored  tower that gives physical presence to the central idea that dominates Shingon Buddhist belief. Known as the Konpon Daitō, or “Great Tower of the Fundamental [Principle],” the original building was conceived by Kūkai as the central locus of ritual concentration and meditation. It was completed in 887 by his successor and nephew, Shinzen (d. 891).\nRecords indicate that the tower has been rebuilt no fewer than five times since the original was destroyed by a lightning strike in 994. The present structure, which is made of reinforced concrete, was rededicated in 1937.\nThe tower enshrines a large golden image of Dainichi Nyorai (Mahāvairocana), the Great Sun Buddha and principal object of worship within Esoteric Buddhism.  Dainichi appears as he does in the Womb Realm Mandala with his hands in the samādhi (or dhyāni) mudrā of meditation. But he is surrounded by statues of four Buddhas and sixteen columns of Bodhisattvas as they are arranged in the Diamond Realm Mandala. Konpon Daitō is, thus, not only a three-dimensional mandala; it is a synthesis of these two worlds and a manifest statement of their ultimate non-duality.",
+            "headerTwo" :   "Pagoda of Myriad Treasures",
+            "bodyTwo"   :   "In Buddhist architecture, two types of tower can be identified. One is the stupa which evolved in India from memorial monuments housing relics of the historical Buddha and other holy men. The other is the pagoda, an East Asian variant, which, like stūpa is meant to communicate the presence of the Buddha. Typically, the center of the pagoda symbolizes the absolute truth at the center of the universe. Here, at Mt. Kōya that space is occupied by the Great Sun Buddha, the embodiment of that truth.\nThe Konpon Daitō is an example of a tahōtō, or \"pagoda of myriad treasures,\" which is distinctive of Shingon, or Esoteric, Buddhist architecture. The tower built here at Mt. Kōya under Kūkai’s instructions is the first such tower in Japan. The two-tier structure and its incorporation of circular and spherical forms is reminiscent of Indian stupa design (and perhaps why it is sometimes called the \"Great Stupa\"). The five vertical sections of the tower, from base to spire, conform to Esoteric cosmology with each section representing one of the Five Sacred Elements: Earth, Water, Fire, Wind and Emptiness."
+        }
+
+    },
+    
+    
+    
+    {
+        "id"    :   1012,
+    "name"      :   "Golden Hall",
+    "jname"     :   "金堂",
+    "romaji"    :   "Kondō",
+    "imageName" :   "kondo",
+    "section"   :   "Danjō Garan",
+    "area"      : "East Garan Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.21306793379991,
+            "longitude"  :   135.5795483517747
+        },
+    "details"   :
+        {
+            "headerOne" :   "Golden Hall",
+            "bodyOne"   :   "The Kondō, or “Golden Hall,” was one of the earliest buildings established at Mt. Kōya by its founder, Kūkai, in the year 819. Originally, known as the Kōdō, or “Lecture Hall,” it remains the setting for most of the important religious services held throughout the year at Mt. Kōya. The term “Golden Hall,” which it shares with the main halls of other early Buddhist temples (Nara’s Hōryūji and Tōshōdaiji temples, for example), is thought to stem from either the gilt used as part of the interior ornamentation or perhaps the golden color of the Buddhist image venerated within.\nThe central object of worship inside the Golden Hall of Mt. Kōya is Ashuku Nyorai (Skt: Akshobhya) whose image is located behind the closed doors of a black cabinet behind the central dais. In Esoteric Buddhism, this Buddha is identified with Yakushi Nyorai (Skt: Bhaisajyaguru), the Buddha of Medicine and Healing. While his image is hidden (revealed only once, during the celebrations of 1,200th-anniversary of the founding of Mt. Kōya), we can see six companion deities in the bays to the left and right. They are Kokūzō Bosatsu, Gōzanze Myō’ō, and Kongō-ō; and Kongōsatta, Fudō Myō’ō, and Fugen Bosatsu, respectively.\nFacing each other from the left and right sides of the large central area (known as the naijin) are the two mandala central to Shingon Buddhist faith and practice. On the left (or western) side is the Diamond Realm Mandala; on the right (or eastern) side is the Womb Realm Mandala. The latter is sometimes called the “Blood Mandala” in reference to a legend in which Taira no Kiyomori (1118 – 1181) is said to have used blood from his own forehead to color part of the diadem of the Great Sun Buddha.\nThe actual mandala are housed at the nearby Reihō-kan Museum as smoke from incense used at the Kondō was judged to be harmful to these important treasures.",
+            "headerTwo" :   "Rising from the Ashes",
+            "bodyTwo"   :   "Like almost all of the major buildings of Mt. Kōya’s Danjō Garan, the Golden Hall is one in a succession of reconstructions after its predecessor had been destroyed by fire. The current structure dates from 1932; it is the sixth Kondō to have stood on the present and original site. The previous Golden Hall burned to the ground in a fire in the early hours of December 26, 1926, between memorial services for the Taishō Emperor Yoshihito, who had died the day before.\nDespite frantic efforts to save them, most of the precious objects inside the Kondō were reduced to ashes. The sculptures used to replace the lost images of Ashuku and his six companions were carved by the artist Takamura Kōun (1865 – 1934) who was 75 years old when he began the five-year project to complete the new statues. Each day he worked, Takamura underwent ritual purification and maintained a strict fast. While the centerpiece of his work is hidden from view, we can certainly admire the religious piety and devotion of the artist."
+        }
+
+    },
+    
+    {
+        "id"    :   1013,
+    "name"      :   "Fudō Hall",
+    "jname"     :   "不動堂",
+    "romaji"    :   "Fudōdō",
+    "imageName" :   "fudodo",
+    "section"   :   "Danjō Garan",
+    "area"      :   "East Garan Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.21309703632851,
+            "longitude"  :   135.5804564136187
+        },
+    "details"   :
+        {
+            "headerOne" :   "Hall of the Immovable Wisdom King",
+            "bodyOne"   :   "The original Fudōdō, or Hall of the Immovable One, was built by the holy man Gyōshō (1130 – 1217) at the behest of Princess Hachijo, a daughter of Emperor Toba. The current building, which is the oldest at Mt. Kōya, is from the second half of the 14th century.\nAmong its unique features are the different styles with which its four corners were designed, a consequence of having been constructed by four different builders. Also, unlike most temples, Fudōdō has more of a residential appearance.\nWhile believed to have originally housed the Buddha Amida Nyorai (Amitābha), it was later dedicated to and named for Acala, the Immovable Wisdom King. Fudō Myō'ō, as he is known in Japanese, is a fierce, warrior-like deity highly revered in Shingon as a manifestation of Dainichi Nyorai. Despite his rather frightening appearance, he is popular among the faithful for his determination to protect Buddhism from its enemies.\nStatues of Fudō Myō'ō as well as his eight attendants, which were once housed in this hall, are national treasures and are prominently displayed in a special room at the nearby Reihōkan Museum. The figures of the eight attendants are the work of the master sculptor Unkei (d. 1223).",
+                "headerTwo" :   "An Exception to the Rule",
+                "bodyTwo"   :   "With one exception, all the buildings of the Danjō Garan face south, in accordance with the traditional Buddhist arrangement for such buildings. The only one that does not is the Fudōdō. This is because the original temple was situated in a small valley beyond the hill behind the garan. It was moved to its present location in 1908."
+            }
+
+    },
+    
+    {
+        "id"    :   1014,
+    "name"      :   "Lotus Pond",
+    "jname"     :   "蓮池",
+    "romaji"    :   "Hasuike",
+    "imageName" :   "hasuike",
+    "section"   :   "Danjō Garan",
+    "area"      :   "East Garan Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.21253199900662,
+            "longitude"  :   135.5804697455542
+        },
+    "details"    :
+        {
+            "headerOne" :   "Lotus Pond",
+            "bodyOne"   :   "In Buddhism, the lotus symbolizes the true nature of being which, like the flower emerging out of muddy waters, remains unsullied by the corruption of the world. For this reason, they are utilized as the seat upon which a Buddha is enthroned. Additionally, the imagery of the lotus is mirrored at Mt. Kōya by the eight surrounding peaks which call to mind the eight petals of the lotus blossom. Here at the Danjō Garan, the lotuses bloom at the feet of the celestial Buddha Dainichi Nyorai, whose name in Japanese means \"Great Sun.\"",
+            "headerTwo" :   "Benevolent Dragon Queen",
+            "bodyTwo"   :   "Temple ponds are also often associated with the wondrous powers of dragons. The Chinese-style bridge that crosses the lotus pond at the Danjō Garan leads to a small shrine dedicated to \"Zennyo-ryū-ō,\" the Benevolent Dragon Queen who, according to legend, aided Kūkai in his prayers to end a severe drought in the year 824."
+        }
+
+    },
+    
+    
+    {
+        "id"    :   1020,
+    "name"      :   "Kongōbuji Temple",
+    "jname"     :   "金剛峰寺",
+    "romaji"    :   "Kongōbuji",
+    "imageName" :   "kongobuji",
+    "section"   :   "Kongōbuji Area",
+    "area"      :   "Kongōbuji Area",
+    "isSection" :   true,
+    "location"  :
+        {
+            "latitude"  :   34.21364124977347,
+            "longitude"  :   135.58398914383565
+        },
+    "details"    :
+        {
+            "headerOne" :   "The Main Headquarters of the Shingon Sect",
+            "bodyOne"   :   "Kongōbuji, or \"Temple of the Diamond Peak,\" is name that the founder of Mt. Kōya gave to his entire monastic center. Today, however, it refers more specifically to the sprawling complex of buildings that serve as the administrative headquarters for more than 3,600 Shingon temples throughout Japan. \nThe temple that we see today dates back to the late 16th century when the famous feudal lord Toyotomi Hideyoshi established a temple called Seigan-ji in memory of his mother. In the year 1869, this temple merged with Kōzan-ji Temple to become the present-day Kongōbuji.\nThe temple spreads out over 160,000 square meters and comprises a series of interconnected wings and galleries. These include the living quarters of the Abbot and other priests, formal reception rooms, a scripture library, meditation halls, lecture halls and a large working kitchen for monastery residents. Many rooms feature decorative sliding doors painted by Kanō Tan’yū, one of the most famous Edo-era painters. Among the interior gradens and courtyards, is Japan's largest rock garden.",
+            "headerTwo" :   "Reflection and Meditation",
+            "bodyTwo"   :   "In addition to exploring the decorative rooms and historic points of interest, visitors to Kongōbuji are invited to enjoy tea and refreshements while listening to a sermon in the the large Shin-Betsuden (New Annex). Visitors can also participate in the Shingon practice of ajikan meditation."
+        }
+    },
+    
+    {
+        "id"    :   1021,
+    "name"      :   "Six O'Clock Bell",
+    "jname"     :   "六寺の鐘",
+    "romaji"    :   "Rokuji no Kane",
+    "imageName" :   "six_oclock_bell",
+    "section"   :   "Kongōbuji Area",
+    "area"      :   "Kongōbuji Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.213247757304956,
+            "longitude"  :   135.58327148345467
+        },
+    "details"    :
+        {
+            "headerOne" :   "Sixteenth-Century Bell Tower",
+            "bodyOne"   :   "There are two prominent bell towers at Mt. Kōya. One is the bell placed at Kūkai’s directions in the Danjō Garan before the Great Stupa. The other is the “Six O’Clock Bell,” which is mounted on a large stone base located to the west of the entrance to Kongō-buji Temple. The original bell and tower were erected in the year 1618 by the feudal lord Fukushima Masanori (1561 – 1624) in memory of his mother. The bell was later recast by Masanori’s son Masatoshi (1601 – 1637). \nTemple bells typically bear inscriptions written entirely with Chinese characters; this one is unusual for using a mix of kanji and Japanese kana.\nThe bell tolls nine times a day beginning at 6:00 am and at every even numbered hour until 10:00 pm. The present-day bell tower is a reconstruction from the year 1835.",
+            "headerTwo" :   "Connection to a Tragic Episode",
+            "bodyTwo"   :   "Interestingly, Fukushima Masanori, the patron responsible for the Six O’Clock Bell, was one of Toyotomi Hideyoshi’s loyal generals who was dispatched to Mt Kōya with orders that Hideyoshi’s nephew, Hidetsugu (b. 1568) be put to death for an alleged plot to overthrow his uncle. Hidetsugu along with three young companions committed ritual suicide in July of 1595 in the Yanagi-no-ma or Willow Room inside Kongō-buji Temple"
+        }
+    },
+    
+    {
+        "id"    :   1022,
+    "name"      :   "Garden of the Guardian Dragons",
+    "jname"     :   "蟠龍庭",
+    "romaji"    :   "Banryū-tei",
+    "imageName" :   "banryutei",
+    "section"   :   "Kongōbuji Area",
+    "area"      :   "Kongōbuji Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.213724102897814,
+            "longitude"  :   135.58308403960334
+        },
+    "details"    :
+        {
+            "headerOne" :   "Garden of the Guardian Dragons",
+            "bodyOne"   :   "The \"Garden of the Guardian Dragons\" is the largest garden of its kind in Japan featuring 140 large rocks emerging from a bed of raked white pebbles. The rocks represent a male and a female dragon rising from a sea of clouds to protect the \"Inner Hall\" (Okuden). This building, which offers the best view of the garden, is across the way from the balustraded walkway used by visitors. Unfortunately, it is closed to the general public except on special occasions.",
+            "headerTwo" :   "Commemorating the Passage of the Master",
+            "bodyTwo"   :   "The garden, along with the nearby \"Shin-Betsuden,\" was completed in 1984 as part of the 1150th anniversary of Kūkai’s entrance into perpetual meditation. The large rocks representing the protector dragons were brought to Mt. Kōya from the island of Shikoku, where Kūkai was born."
+        }
+
+    },
+    
+    {
+        "id"    :   1030,
+    "name"      :   "Women's Hall",
+    "jname"     :   "女人堂",
+    "romaji"    :   "Nyonindō",
+    "imageName" :   "nyonindo",
+    "section"   :   "Northern Area",
+    "area"      :   "Nyonindō Area",
+    "isSection" :   true,
+    "location"  :
+        {
+            "latitude"    :    34.22001079610505,
+            "longitude"    :    135.580898931172
+        },
+    "details"    :
+        {
+            "headerOne" :    "The Women's Hall",
+            "bodyOne"   :    "Nyonindō is a reminder of the times in the past when women were prohibited from entering the sacred precints of Mt. Kōya, where their presence was thought to have distracted the priests from their prayers and meditations. \nKūkai, the founder of the monastic complex here, famously forbade even his own mother from visiting. Other women who tried to enter or communicate with male relatives living on the mountain were rebuffed with the harsh reminder that their loved ones were \"dead to them.\"\nIn 1873, the Japanese government officially prohibited temples from banning women. However, here at Mt. Kōya, the practice continued until 1916.",
+            "headerTwo" :    "Undaunted Faith",
+            "bodyTwo"   :    "The prohibition (known as \"nyonin-kinzei\") did not stop women of faith from trying to get as close as possible to the resting place of Kōbō-daishi and the temple complex he had established. Despite the difficulties of the journey, many women made their way to the one of the seven entrances to Mt. Kōya in the hope of getting a glimpse of the rooftops of the holy shrines within. \nOvernight lodging for these women was provided by seven \"nyonindō,\" or \"women's halls,\" located at each of the gates to the monastery. The small temple that stands here today dates from the year 1871 and is the only remaining women's hall."
+        }
+
+    },
+
+    {
+        "id"    :   1031,
+    "name"      :   "Mausoleum of the Tokugawa",
+    "jname"     :   "徳川家霊台",
+    "romaji"    :   "Tokugawa-ke Reidai",
+    "imageName" :   "tokugawake",
+    "section"   :   "Northern Area",
+    "area"      :   "Tokugawa Family Mausoleum Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.21736783588516,
+            "longitude"  :   135.58295080409675
+        },
+    "details"    :
+        {
+            "headerOne" :   "Tokugawa Family Mausoleum",
+            "bodyOne"   :   "While most of Mt. Kōya’s monuments to famous historic figures are found within the huge cemetery of Oku-no-in, a notable exception is the family mausoleum of the Tokugawas, who ruled Japan from 1603 to 1867.\nThe two ornate shrines standing side-by-side within the fenced enclosure were built in 1643 by the third Tokugawa Shōgun, Iemitsu (1604-1651), for his father Hidetada (1579-1632) and his grandfather Ieyasu (1543-1616). A third building to house the mortuary tablets of other members of the so-called Three Houses of the Tokugawa once stood at the eastern edge of the precincts. It was lost to fire in 1888.",
+            "headerTwo" :   "A Separate Memorial",
+            "bodyTwo"   :   "One Tokugawa presumably not included among those memorialized here was was Iemitsu’s younger brother, Tadanaga (1605-1633). At the age of 28, Tadanaga was accused of misconduct and ordered by his brother to commit ritual suicide. Today, the largest gorintō monument at Oku-no-in is one that Tadanaga built in memory of his mother. It is named the Monument of the Major Councilor of Suruga, which was Tadanaga’s title before his death."
+        }
+
+    },
+    
+    
+    {
+        "id"    :   1032,
+    "name"      :   "Pagoda of Sammai-in Temple",
+    "jname"     :   "金剛三昧院多宝塔",
+    "romaji"    :   "Sammai-in",
+    "imageName" :   "sanmai-in",
+    "section"   :   "Southern Area",
+    "area"      :   "Sammai-in Area",
+    "isSection" :   true,
+    "location"  :
+        {
+            "latitude"  :   34.20970989236701,
+            "longitude"  :   135.5872414883954
+        },
+    "details"    :
+        {
+            "headerOne" :   "Header",
+            "bodyOne"   :   "Text",
+            "headerTwo" :   "Second Header",
+            "bodyTwo"   :   "more Text"
+        }
+
+    },
+    {
+        "id"    :   1040,
+    "name"      :   "Pathway to the Inner Sanctuary",
+    "jname"     :   "奥の院参道",
+    "romaji"    :   "Oku-no-in Sandō",
+    "imageName" :   "okunoin_sando",
+    "section"   :   "Oku-no-in Area",
+    "area"      :   "Ichi-no-Hashi Area",
+    "isSection" :   true,
+    "location"  :
+        {
+            "latitude"  :   34.21395070933357,
+            "longitude"  :   135.5956920685972
+        },
+    "details"    :
+        {
+            "headerOne" :   "The Approach to the Inner Sanctuary",
+            "bodyOne"   :   "A clever promotional appeal for Mt Kōya once invited visitors to \"spend a day where thousands have chosen to spend eternity.\" The slogan was an obvious reference to the vast necropolis to the east of the mountain's main temple complex.\nKnown as Oku-no-in, it is the largest cemetery in Japan and -- along with the Danjō Garan -- one of the two most sacred areas of Mt. Kōya. Here, beneath a canopy of massive cryptomeria trees, more than 200,000 stone monuments stand alongside a two-kilometer stone path leading to the mausoleum of Kūkai, the eighth patriarch of Shingon Buddhism and the founder of Mt. Kōya.  Many of these monuments are centuries old, and many are dedicated to the memory of some of the most famous and powerful people in Japanese history.",
+            "headerTwo" :   "Awaiting the Future Buddha",
+            "bodyTwo"   :   "Oku-no-in means Inner Sanctuary and refers to the resting place, or gobyō, of Kūkai.  While typically glossed as mausoleum or tomb, this translation is, for the faithful, somewhat imprecise.\nKūkai left this world in 835 at the age of 62. However, his followers believe that he did not die in the ordinary sense. Instead, he is thought to have entered a state of deep meditation (nyūjō) in which both breathing and the beating of the heart are suspended. His seated body, with hands positioned in the mudra for Dainichi Nyorai, is enshrined within the Inner Sanctuary. \nOver the centuries, thousands of individuals have chosen to have their own memorials erected nearby to wait in attendance with Kūkai until the time when the future Buddha appears on earth to lead humanity to salvation."
+        }
+
+    },
+    {
+        "id"    :   1041,
+    "name"      :   "Sanhei Mizuko Jizō",
+    "jname"     :   "三平水子地蔵",
+    "romaji"    :   "Sanhei Mizuko Jizō",
+    "imageName" :   "sanhei_mizuko_jizo",
+    "section"   :   "Oku-no-in Area",
+    "area"      :   "Ichi-no-Hashi Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.214300,
+            "longitude"  :   135.596300
+        },
+    "details"    :
+        {
+            "headerOne" :   "Header",
+            "bodyOne"   :   "Text",
+            "headerTwo" :   "Second Header",
+            "bodyTwo"   :   "Text"
+        }
+
+    },
+    {
+        "id"    :   1042,
+    "name"      :   "Memorial to the \"Luminous Religion\"",
+    "jname"     :   "景教碑",
+    "romaji"    :   "Keikyō-hi",
+    "imageName" :   "nestorian",
+    "section"   :   "Oku-no-in Area",
+    "area"      :   "Ichi-no-Hashi Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.21459585897085,
+            "longitude"  :   135.597358
+        },
+    "details"    :
+        {
+            "headerOne" :   "An Unexpected Addition",
+            "bodyOne"   :   "Along a lesser used side path just beyond the Ichi-no-Hashi Bridge, is one of the more unexpected features at Oku-no-in. It is a replica of a 2.7-meter-tall monument originally erected in China in the year 781. The nine Chinese characters at the top give the name of the monument as \"The Memorial to the Propagation in China of the Luminous Religion of Daqin.\" The inscription below (in Chinese and Syriac) records the arrival of a man name Alopen 阿羅本 in the capital of Chang’an in the year 635.\nSo who was Alopen? Where is Daqin? What faith is meant by the “Luminous Religion”? And, finally, why is there a full-sized copy of this monument here at Mt. Kōya?\nA clue to the answers appears just above its name, where we can clearly see a Christian cross within the triangular space between the two dragons. Alopen, as is known from this monument and this monument alone, seems to have been the first Christian missionary to China. He is believed to have been of Syrian origin and a member of the Church of the East, a branch of Christianity which is sometimes identified with the Nestorians. The place name Daqin, mentioned in the name of the stele, was used by the Chinese to refer variously to either the Roman or Byzantine empires.\nThe original monument, which was re-discovered in 1625 after having been buried for more than seven centuries, is a testament to the recognition of Christianity by the second emperor of the Tang Dynasty.",
+            "headerTwo" :   "So why is it here?",
+            "bodyTwo"   :   "The establishment of a replica of this monument here at Mt. Kōya is the work of an English woman named Elizabeth Anna Gordon (1851 – 1925) . A devout Christian, Gordon spent most of the last 18 years of her life in Japan studying Buddhism and collecting various works of art. It was one of her beliefs that Buddhism and Christianity were fundamentally related. The “Stele of the Luminous Religion” was proof that Christianity was known in Chang’an at the time that Kūkai lived there.  Since it is likely that he would have been aware of Christianity, the development of Kūkai’s religious thought and the doctrine of “True Speech” (i.e. \"Shingon\") may have been influenced by its teachings.\nUnder Gordon’s patronage, this replica was created and placed at Oku-no-in in 1911. This was still a few years before women were allowed on the mountain, so Mrs. Gordon was not there to see its dedication. Her ashes, however, are buried nearby."
+        }
+
+    },
+
+    {
+        "id"    :   1050,
+    "name"      :   "The Counting Jizō",
+    "jname"     :   "授籌地蔵",
+    "romaji"    :   "Kazutori Jizō",
+    "imageName" :   "kazutori_jizo",
+    "section"   :   "Oku-no-in Area",
+    "area"      : "Uesugi Kenshin Mausoleum Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.216111,
+            "longitude"  :   135.59805
+        },
+    "details"    :
+        {
+            "headerOne" :   "Keeping Track of Visitors",
+            "bodyOne"   :   "Kazutori Jizō stands alongside Oku-no-in Sandō and -- as his name suggests -- counts the number of times each individual passes by on his or her way to to the mausoleum of Kūkai. It is said that he will appear on our judgment day and appeal to Enma, the god of the underworld, asking that the number of our sins be reduced by the number of times we have visited this place.",
+            "headerTwo" :   "Miraculous Re-discovery",
+            "bodyTwo"   :   "The faded story on the wooden panel tells us that the stone statue of this jizō was once broken into several pieces and buried in the ground. In the 17th century, a lacquerware master from Osaka had a vision in a dream telling him where to find the lost statue. The man, who's name was Tazaemon, unearthed the statue, restored it and had it placed where we see it today."
+        }
+
+    },
+    {
+        "id"    :   1051,
+    "name"      :   "Akechi Mitsuhide's Memorial",
+    "jname"     :   "明智光秀の墓",
+    "romaji"    :   "Akechi Mitsuhide no Haka",
+    "imageName" :   "mitsuhide",
+    "section"   :   "Oku-no-in Area",
+    "area"      : "Uesugi Kenshin Mausoleum Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.2174119,
+            "longitude"  :   135.600229
+        },
+    "details"    :
+        {
+            "headerOne" :   "Header",
+            "bodyOne"   :   "text",
+            "headerTwo" :   "A Cursed Monument?",
+            "bodyTwo"   :   "more text"
+        }
+
+    },
+    {
+        "id"    :   1052,
+    "name"      :   "Uesugi Kenshin's Mausoleum",
+    "jname"     :   "上杉謙信霊屋",
+    "romaji"    :   "Uesugi Kenshin Tamaya",
+    "imageName" :   "kenshin",
+    "section"   :   "Oku-no-in Area",
+    "area"      : "Uesugi Kenshin Mausoleum Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.2167752,
+            "longitude"  :   135.59822
+        },
+    "details"    :
+        {
+            "headerOne" :   "Famous Daimyō",
+            "bodyOne"   :   "Uesugi Kenshin (1530-1578) was one of the most famous and revered daimyō of Japan's Sengoku, or \"Warring States,\" Era (1467-1615).\nUesugi visited Mt. Kōya in 1574, three years before his death.　It was at that time that he received the name Kenshin.",
+            "headerTwo" :   "Unique Features",
+            "bodyTwo"   :   "Unlike most of the monuments to the dead at Oku-no-in, Kenshin’s spirit is enshrined in an above-ground wooden building, which – based on its features – is believed to date from the beginning of the Edo Era. Inside, there is an altar with two stone memorial tablets, one for Kenshin and the other for his adopted son, Kagekatsu (1556-1623). Records suggest that a separate mausoleum for Kagekatsu may have stood beside that of Kenshin’s until they were eventually merged in the mid 19th century."
+        }
+
+    },
+    {
+        "id"    :   1060,
+    "name"      :   "Sweating Jizō",
+    "jname"     :   "汗かき地蔵",
+    "romaji"    :   "Asekaki Jizō",
+    "imageName" :   "asekaki",
+    "section"   :   "Oku-no-in Area",
+    "area"      : "Naka-no-hashi Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.2174457,
+            "longitude"  :   135.6020233
+        },
+    "details"    :
+        {
+            "headerOne" :   "Suffering for our Sins",
+            "bodyOne"   :   "Just beyond the Naka-no-Hashi Bridge, we find one of the many mysteries of Mt. Kōya -- a sweating statue of the bodhisattva Jizō. Condensation on the metal statue has been interpreted by the faithful as sweat caused as Jizō, in his compassion, assumes the suffering of all people. ",
+            "headerTwo" :   "",
+            "bodyTwo"   :   ""
+        }
+
+    },
+    {
+        "id"    :   1070,
+    "name"      :   "Tamagawa River",
+    "jname"     :   "多摩川",
+    "romaji"    :   "Tamagawa",
+    "imageName" :   "mizumuke_jizo",
+    "section"   :   "Oku-no-in Area",
+    "area"      : "Tamagawa Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.22187487452243,
+            "longitude"  :   135.60590572701014
+        },
+    "details"    :
+        {
+            "headerOne" :   "Sacred Steam",
+            "bodyOne"   :   "This river, now spanned by the Gobyō Bridge, marks the entrance to the most sacred area of Mt. Kōya. It is customary for visitors to pause here and bow reverently before crossing toward the mausolem of Kōbō-daishi.",
+            "headerTwo" :   "Water-Splashing Jizō",
+            "bodyTwo"   :   "Fourteen Buddhist statues line the river. They take their collective name from the custom of splashing them with water.\nDespite the name, not all are jizō. From left to right, we find two standing jizō, three seated jizō, a seated Dainichi Nyorai, a standing Fudō Myō-ō, five more jizō (four standing and one sitting), and finally two standing statues of Kannon."
+        }
+
+    },
+    {
+        "id"    :   1071,
+    "name"      :   "Hall of Lanterns",
+    "jname"     :   "燈籠堂",
+    "romaji"    :   "Tōrōdō",
+    "imageName" :   "torodo",
+    "section"   :   "Oku-no-in Area",
+    "area"      : "Tōrōdō Area",
+    "isSection" :   false,
+    "location"  :
+        {
+            "latitude"  :   34.22302591896137,
+            "longitude"  :   135.60577429877583
+        },
+    "details"    :
+        {
+            "headerOne" :   "Lantern Hall",
+            "bodyOne"   :   "Standing before Kōbō-daishi’s mausoleum, at a spot where his earliest disciples held services after his passing, is a large building called the Tōrōdō, or \"Lantern Hall.\" While it replaces earlier structures dating from the 11th century, the present building is from 1964. Inside, thousands of golden votive lanterns hang from the ceiling.  Additional lanterns of various sizes are arrayed in the building's basement as well as a nearby annex.\nWhile the sections to the left and right of the Tōrōdō have altars before two of the five Wisdom Kings  (Aizen Myōō and Fudō Myōō, respectively), the altars of the central section are placed before a window that faces the masoleum. \nVisitors who wish to get closer, must exit the Lantern Hall on the left and walk around to the back of the building.",
+            "headerTwo" :   "Remaining Lit for a Thousand Years",
+            "bodyTwo"   :   "While most of the hall's 25,000 lanterns are illuminated by electricity, several of the more prominent ones are oil burning lamps. \nThe flames of three famous lanterns are beleived to have remained lit for nearly a thousand years. They are  displayed along the back wall at the center of the Tōrōdō. \nThe Kishin-tō was purportedly first lit in the year 1016 by the holy man Jōyō (958-1047) for the salvation of his mother. Also known as Kishin Shōnin, Jōyō is credited with having helped rebuild Mt. Kōya after a series of catastophic fires. A second lamp was donated by retired emperor Shirakawa (1053-1129) in the year 1103. \nAccording to a popular legend, the third lamp was the gift of a poor maiden who sold her hair to a wig maker in order to make the donation on behalf of her adoptive parents. The filial young woman's name was Oteru (which means \"to shine\") and her lamp is called the Hinnyo-no-ittō, or \"The Poor Woman's Solitary Lamp.\" \nThe legend tells us that when her modest donation received the mockery and contempt of a rich man who had made a more extravagant donation, a strong gust of wind immediately arose from the direction of the Inner Sanctuary. It blew out all of the wealthy man's lamps leaving Oteru's untouched."
+        }
+
+    }
+]
+
