@@ -1,0 +1,21 @@
+[
+    {
+    "id"    :   1000,
+    "title" :   "What is Mt. Kōya?",
+    "body"  :
+        {
+            "headerOne" :   "A Monastic Center for Shingon Buddhism",
+            "bodyOne"   :   "Situated on a small plateau 800 meters above the Kinokawa River, Mt. Kōya (Kōyasan, in Japanese) is home to an active monastic center founded more than 12 centuries ago for the study and practice of Esoteric Buddhism. As the headquarters of the Kōyasan sect of Shingon Buddhism and the resting place of its founder, known posthumously as Kōbō-daishi, it is one of the most sacred sites in Japan."
+        }
+    } ,
+
+    {
+    "id"    :   1001,
+    "title" :   "Who was Kūkai?",
+    "body"  :
+        {
+            "headerOne" :   "Buddhist Priest, Ninth Century Renaissance Man",
+            "bodyOne"   :   "Born in the year 774 on the island of Shikoku, Kūkai abandoned his studies in the capital of Kyoto in order to become a Buddhist priest at the age of 20. In 804, he traveled to China where he was initiated into the secret teachings of Esoteric Buddhism. Two years later he returned to Japan to establish the Shingon School, the center of which is the monastic complex of Mt. Kōya.\nIn addition to his religious teachings, Kūkai was also an educator who founded the earliest schools for the education of the general public. He was an accomplished calligrapher, engineer and linguist. He is credited by some as the inventor of the Japanese phonetic alphabet (kana).\nIn 845, at the age of 62, Kūkai was enshrined in the mausoleum of Oku-no-in. The faithful beleive that he did not die but that he entered into a state of perpetual meditation."
+        }
+    }
+]

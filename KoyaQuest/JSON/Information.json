@@ -1,0 +1,70 @@
+[
+    {
+    "id"    :   1001,
+    "title" :   "What is \"KoyaQuest\"?",
+    "body"  :
+        {
+            "headerOne" :   "An Interactive Game",
+            "bodyOne"   :   "KoyaQuest is an interactive game that visitors to Japan's Mt. Kōya can play while exploring the many fascinating sites of this ancient monastic complex.\nThe game comprises multiple \"Challenges\" that can be undertaken at various locations. The Challenges are meant to be both fun and informative.",
+            "headerTwo" :   "A Comprehensive Guide",
+            "bodyTwo"   :   "In addition to optional gameplay, KoyaQuest provides the user with explanations and colorful insights into many of the features that make Mt. Kōya one of Japan's most popular destination for tourists as well as pious religious pilgrims.\nThe guide feature can be used together with the game or independently.\nAudio recordings based on (but not identical to) the written landmark descriptions are available. (It is recommended that they be enjoyed with headphones to avoid disturbing other visitors.)"
+        }
+    } ,
+    {
+    "id"    :   1002,
+    "title" :   "Objectives",
+    "body"  :
+        {
+            "headerOne" :   "Score Points",
+            "bodyOne"   :   "With your permission, this app will monitor your location as you move around Mt. Kōya. When you enter a specified \"Target Zone,\" you will be given the opportunity to accept the associated challenge.\nPoints available for each challenge vary. In some cases, they are awarded on an all-or-nothing basis or according to your performance.\nThe goal is to accumulate as many total points as possible.",
+            "headerTwo" :   "Winning?",
+            "bodyTwo"   :   "The pupose of the game is to have fun while learning about Mt. Kōya. It is not a competition, per se, though you may enjoy comparing your score with others. For that pupose you can choose to post your results to the shared Community Leaderboard. Or not."
+        }
+    },
+    
+    {
+    "id"    :   1003,
+    "title" :   "How to Play",
+    "body"  :
+        {
+            "headerOne" :   "Activate \"Gameplay\"",
+            "bodyOne"   :   "Challenges will only be displayed when in Gameplay mode, which is active by default.\nGameplay can be disabled for as long as you like by tapping the toggle button in the upper-right corner of the Main Menu Screen. ",
+            "headerTwo" :   "Gameplay Mode",
+            "bodyTwo"   :   "You will know you are in Gameplay Mode when a \"Scorecard\" appears in the center of the Main Menu screen.\nWhen Gameplay is disabled, the scorecard is not displayed; instead your current total score will appear in the upper-left corner of the Main Menu Screen."
+        }
+    },
+    
+    {
+    "id"    :   1004,
+    "title" :   "What are the Challenges?",
+    "body"  :
+        {
+            "headerOne" :   "Tests of Skill, Memory and Chance",
+            "bodyOne"   :   "Each challenge is unique and tailored to a particular location at Mt. Kōya. Some challenges test your powers of observation; some involve educated guesswork; some reward your general knowledge of Mt. Kōya or your recollection of information provided within the game itself. Others simply put your video game skills to the test.",
+            "headerTwo" :   "Something for Everyone",
+            "bodyTwo"   :   "While prior knowledge of Mt. Kōya might give a player some advantage, it is not necessary for a high score. As the game is designed to enhance the visitor's engagement with the sights and stories of Mt. Kōya, anyone who is perceptive, patient and intuitive can expect to do well. And everyone (we hope) can expect to have fun!"
+        }
+    },
+    {
+    "id"    :   1005,
+    "title" :   "Requirements",
+    "body"  :
+        {
+            "headerOne" :   "Permissions & Settings",
+            "bodyOne"   :   "Both the Challenges and Navigation features of this app make use of your location and require your permission. Certain challenges also ask that you allow the use of your device's camera.\nAlso, while this app supports large fonts for accessibility, it is recommended that normal font sizes be used to prevent truncating of some text. (You can modify this in your device's settings.\nWhile efforts have been taken to minimize the use of your device's power, this app does use GPS, which can drain resources while in use. Use of a battery that is sufficiently charged is recommended.",
+            "headerTwo" :   "Physcial Presence",
+            "bodyTwo"   :   "While the written descriptions of the various points of interest at Mt. Kōya can be accessed no matter where the user is, (until a simulation version is completed) most of the other features of this app are only available to users who are physcially present on the mountain.\nIn other words, the app is really only designed for visitors to Mt. Kōya.\nThe game features of the app have been created in a way that respects the religious practices of Mt. Kōya. At no time will you need to use your iPhone for gameplay in an area where the use of electronic devices is not permitted."
+        }
+    } ,
+    {
+    "id"    :   1006,
+    "title" :   "Acknowledgements",
+    "body"  :
+        {
+            "headerOne" :   "Photo Credits",
+            "bodyOne"   :   "Special thanks go to Edmundo Gonzalez, Jr., veteran Japan photographer, for persmission to use several of his photographs of Mt. Kōya. \nAppreciation is also given to the Kongōbuji Sōchō Kōshitsu for permission to use a photo of the inside of the Tōrōdō Latern Hall.",
+            "headerTwo" :   "Others",
+            "bodyTwo"   :   "Finally, a shout out to Professor Kaizu Ichirō of Wakayama University for the use of his replica of a samurai warrior's armor and helmet for the filming of the ghost of Uesugi Kenshin."
+        }
+    }
+]

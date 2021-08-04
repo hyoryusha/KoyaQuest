@@ -7,31 +7,41 @@
 
 import Foundation
 
-
-class Challenge : Identifiable , Hashable {
-    var id = UUID() //added 12-28-2020
+class Challenge: Identifiable, Hashable {
+    var id: Int
     var name: String
     var maxPoints: Int
-    var instructions: ChallengeDescription
+    var details: ChallengeDetail
     var completed: Bool
-    required init(name: String, maxPoints: Int,   instructions: ChallengeDescription, completed: Bool) {
+    var bonus: Bool
+    var bonusQuestion: Bonus?
+    required init(id: Int, name: String, maxPoints: Int,
+                  details: ChallengeDetail,
+                  completed: Bool, bonus: Bool, bonusQuestion: Bonus? = nil) {
+        self.id = id
         self.name = name
         self.maxPoints = maxPoints
-        self.instructions = instructions
+        self.details = details
         self.completed = completed
+        self.bonus = bonus
+        self.bonusQuestion = bonusQuestion
     }
-    
-//   func markCompleted(challenge: Challenge, points: Int) {
-//        let completed = Completed(challenge: challenge, points: points)
-//        completedChallenges.append(completed)
-//    }
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
-    //for testing, etc:
-    static let mockChallenge = Challenge(name: "Mock Challenge", maxPoints: 50, instructions: ChallengeDescription(header: "Fake Header", teaser: "Placeholder", synopsis: "synopsis", instructions: "Lorem Ipsum", extra: "More text", image: "daimon") , completed: false)
-}
 
+    static let mockChallenge = Challenge(id: 0, name: "Mock Challenge",
+              maxPoints: 50,
+              details: ChallengeDetail(id: 0, header: "Fake Header",
+                                       teaser: "Placeholder",
+                                       synopsis: "synopsis",
+                                       instructions: "Lorem Ipsum",
+                                       extra: "More text",
+                                       imageName: "daimon"),
+              completed: false,
+              bonus: false)
+}
 
 extension Challenge: Equatable {
     static func == (lhs: Challenge, rhs: Challenge) -> Bool {
@@ -41,21 +51,94 @@ extension Challenge: Equatable {
     }
 }
 
-let shogunsChallenge = Challenge(name: ChallengeNames.shoguns, maxPoints: 20, instructions: shogunsChallengeDescription, completed: false)
-let numbersChallenge = Challenge(name: ChallengeNames.numbers, maxPoints: 20, instructions: numbersChallengeDescription, completed: false)
-let koyakunChallenge = Challenge(name: ChallengeNames.koyakun, maxPoints: 72, instructions: koyakunChallengeDescription, completed: false)
-let daimonChallenge = Challenge(name: ChallengeNames.daimon, maxPoints: 20,  instructions: daimonChallengeDescription , completed: false)
-let choishiChallenge = Challenge(name: ChallengeNames.choishi, maxPoints: 20,  instructions: choishiChallengeDescription , completed: false)
-let vajraChallenge = Challenge(name: ChallengeNames.vajra, maxPoints: 30,  instructions: vajraChallengeDescription , completed: false)
-let saigyoChallenge = Challenge(name: ChallengeNames.saigyo, maxPoints: 20 ,  instructions: saigyoChallengeDescription , completed: false)
-let kukaiChallenge = Challenge(name: ChallengeNames.kukai, maxPoints: 10,  instructions: kukaiChallengeDescription , completed: false)
-let gorintoChallenge = Challenge(name: ChallengeNames.gorinto, maxPoints: 30,  instructions: gorintoChallengeDescription , completed: false)
-let mizumukeChallenge = Challenge(name: ChallengeNames.mizumuke, maxPoints: 20,  instructions: mizumukeChallengeDescription , completed: false)
-let kenshinChallenge = Challenge(name: ChallengeNames.kenshin, maxPoints: 35,  instructions: kenshinChallengeDescription , completed: false)
-let nyonindoChallenge = Challenge(name: ChallengeNames.nyonindo, maxPoints: 40,  instructions: nyonindoChallengeDescription , completed: false)
-let sugatamiChallenge = Challenge(name: ChallengeNames.sugatami, maxPoints: 20,  instructions: sugatamiChallengeDescription , completed: false)
+let koyakunChallenge = Challenge(id: 1, name: ChallengeNames.koyakun,
+                                 maxPoints: 100,
+                                 details: ChallengeDetail.koyakunChallengeDetails ?? ChallengeDetail.example,
+                                 completed: false,
+                                 bonus: false)
 
-let allChallenges:[Challenge] = [koyakunChallenge, daimonChallenge , choishiChallenge , kukaiChallenge ,vajraChallenge , saigyoChallenge , gorintoChallenge , mizumukeChallenge, kenshinChallenge , nyonindoChallenge , numbersChallenge , shogunsChallenge]
+let shogunsChallenge = Challenge(id: 12, name: ChallengeNames.shoguns,
+                                 maxPoints: 20,
+                                 details: ChallengeDetail.shogunChallengeDetails ?? ChallengeDetail.example,
+                                 completed: false,
+                                 bonus: true,
+                                 bonusQuestion: Bonus.shogunBonus)
 
-//see ChallengeInstructions for instructions for each challenge
+let numbersChallenge = Challenge(id: 11, name: ChallengeNames.numbers,
+                                 maxPoints: 20,
+                                 details: ChallengeDetail.numbersChallengeDetails ?? ChallengeDetail.example,
+                                 completed: false,
+                                 bonus: true,
+                                 bonusQuestion: Bonus.numbersBonus)
 
+let daimonChallenge = Challenge(id: 2, name: ChallengeNames.daimon,
+                                maxPoints: 20,
+                                details: ChallengeDetail.daimonChallengeDetails ?? ChallengeDetail.example,
+                                completed: false,
+                                bonus: true,
+                                bonusQuestion: Bonus.daimonBonus)
+
+let choishiChallenge = Challenge(id: 3, name: ChallengeNames.choishi,
+                                 maxPoints: 20,
+                                 details: ChallengeDetail.choishiChallengeDetails ?? ChallengeDetail.example,
+                                 completed: false,
+                                 bonus: true,
+                                 bonusQuestion: Bonus.choishiBonus)
+
+let vajraChallenge = Challenge(id: 4, name: ChallengeNames.vajra,
+                               maxPoints: 30,
+                               details: ChallengeDetail.vajraChallengeDetails ?? ChallengeDetail.example,
+                               completed: false,
+                               bonus: false)
+
+let saigyoChallenge = Challenge(id: 5, name: ChallengeNames.saigyo,
+                                maxPoints: 30,
+                                details: ChallengeDetail.saigyoChallengeDetails ?? ChallengeDetail.example,
+                                completed: false,
+                                bonus: false)
+
+let kukaiChallenge = Challenge(id: 9, name: ChallengeNames.kukai,
+                               maxPoints: 20,
+                               details: ChallengeDetail.kukaiChallengeDetails ?? ChallengeDetail.example,
+                               completed: false,
+                               bonus: true,
+                               bonusQuestion: Bonus.kukaiBonus)
+
+let gorintoChallenge = Challenge(id: 6, name: ChallengeNames.gorinto,
+                                 maxPoints: 30,
+                                 details: ChallengeDetail.gorintoChallengeDetails ?? ChallengeDetail.example,
+                                 completed: false,
+                                 bonus: false)
+
+let mizumukeChallenge = Challenge(id: 8, name: ChallengeNames.mizumuke,
+                                  maxPoints: 25,
+                                  details: ChallengeDetail.mizumukeChallengeDetails ?? ChallengeDetail.example,
+                                  completed: false,
+                                  bonus: true,
+                                  bonusQuestion: Bonus.mizumukeBonus)
+
+let kenshinChallenge = Challenge(id: 7, name: ChallengeNames.kenshin,
+                                 maxPoints: 35,
+                                 details: ChallengeDetail.kenshinChallengeDetails ?? ChallengeDetail.example,
+                                 completed: false,
+                                 bonus: false)
+
+let nyonindoChallenge = Challenge(id: 10, name: ChallengeNames.nyonindo,
+                                  maxPoints: 100,
+                                  details: ChallengeDetail.nyonindoChallengeDetails ?? ChallengeDetail.example,
+                                  completed: false,
+                                  bonus: false)
+
+let allChallenges: [Challenge] = [koyakunChallenge,
+                daimonChallenge,
+                kukaiChallenge,
+                vajraChallenge,
+                saigyoChallenge,
+                choishiChallenge,
+                gorintoChallenge,
+                mizumukeChallenge,
+                kenshinChallenge,
+                nyonindoChallenge,
+                numbersChallenge,
+                shogunsChallenge
+]

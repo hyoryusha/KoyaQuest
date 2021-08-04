@@ -10,13 +10,13 @@ import SwiftUI
 struct RatingsOverlayView: View {
     var landmark: Landmark
     var body: some View {
-        
+
         ZStack(alignment: .topTrailing) {
             HStack {
                 Spacer()
                 RatingsView(filter: landmark.name)
             }
-            .padding(.top , 26)
+            .padding(.top, 26)
         }
         Spacer()
     }

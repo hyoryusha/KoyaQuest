@@ -9,22 +9,22 @@ import SwiftUI
 import CoreData
 
 struct RatingsInputView: View {
-    @Environment(\.managedObjectContext) var viewContext : NSManagedObjectContext
+    @Environment(\.managedObjectContext) var viewContext: NSManagedObjectContext
     @EnvironmentObject var appData: AppData
-    @Binding var rating : Int
+    @Binding var rating: Int
     var locationManager: LocationManager
     var landmark: Landmark
     var label = "Add your rating:"
     var onImage = Image(systemName: RatingsConstants.onImage)
     var offImage = Image(systemName: RatingsConstants.offImage)
-    
+
     var body: some View {
         VStack {
             Divider()
                 .background(Color.koyaOrange)
                 .padding()
             if landmark.area == locationManager.activeArea?.identifier {
-                HStack{
+                HStack {
                     if label.isEmpty == false {
                         Text(label.uppercased())
                             .font(.body)
@@ -36,11 +36,14 @@ struct RatingsInputView: View {
                             .foregroundColor(Color.koyaOrange)
                             .onTapGesture {
                                 rating = number
-                                
-        //MARK: - Enter into Core Data:
-        //for testing I'm using mock userID 0
-                                Rating.createWith(landmark: landmark.name, rating: Int16(number), userID: Int16(0), date: Date(), using: self.viewContext)
-                                self.appData.recordLocalRating(landmark: landmark.name, stars: rating)
+                                Rating.createWith(landmark: landmark.name,
+                                                  rating: Int16(number),
+                                                  date: Date(),
+                                                  using: self.viewContext)
+                                self.appData.recordLocalRating(
+                                    landmark: landmark.name,
+                                    stars: rating
+                                )
                             }
                     }
                 }
@@ -49,7 +52,7 @@ struct RatingsInputView: View {
             }
         }
     }
-    
+
     func image(for number: Int) -> Image {
         if number > rating {
             return offImage
@@ -61,6 +64,9 @@ struct RatingsInputView: View {
 
 struct RatingsInputView_Previews: PreviewProvider {
     static var previews: some View {
-        RatingsInputView(  rating: .constant(2), locationManager: LocationManager(), landmark: Landmark.allLandmarks[0] )
+        RatingsInputView( rating: .constant(2),
+                          locationManager: LocationManager(),
+                          landmark: Landmark.allLandmarks[0]
+        )
     }
 }

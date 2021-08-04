@@ -6,18 +6,17 @@
 //
 
 import SwiftUI
-import SwiftUI
 
 struct LocalRatingsView: View {
     @EnvironmentObject var appData: AppData
     var landmark: Landmark
     var label = "Your rating:"
-    
+
     var body: some View {
-        VStack{
+        VStack {
             Divider()
                 .background(Color.koyaOrange)
-            HStack{
+            HStack {
                 if label.isEmpty == false {
                     Text(label.uppercased())
                         .font(.body)
@@ -35,11 +34,12 @@ struct LocalRatingsView: View {
             .font(.caption)
         }
     }
-        
+
     func getLocalRating() -> Int {
-        let index = appData.localRatings.firstIndex(where: {$0.landmark == landmark.name })! //safe to force unwrap as this view only appears if there is a rating
+        let index = appData.localRatings.firstIndex(where: { $0.landmark == landmark.name })!
+        // safe to unwrap as this view only appears if there's a rating
         let rating = appData.localRatings[index].stars
-       return rating
+        return rating
    }
 }
 

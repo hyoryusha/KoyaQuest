@@ -6,10 +6,9 @@
 //
 
 import Foundation
+import SpriteKit
 
-
-
-enum Proximity: String {//messages used to help user navigate to target
+enum Proximity: String { // messages used to help user navigate to target
     case cooler     = "You're getting cooler..."
     case warmer     = "You're getting warmer!"
     case unknown    = "Cannot determine distance."
@@ -22,7 +21,7 @@ enum Radii {
     static let LMRadius   = 10.0
 }
 
-enum LMPix {//image for the main menu
+enum LMPix {// image for the main menu
     static let daimon           = "daimon"
     static let konponDaito      = "konpondaito_at_angle"
     static let kondo            = "kondo"
@@ -48,25 +47,24 @@ enum LMPix {//image for the main menu
     static let miyashiro        = "miyashiro"
     static let sannoin          = "sanno-in"
     static let tokugawake       = "tokugawake"
-    //static let choishimichi = "choishimichi"
+    // static let choishimichi = "choishimichi"
 }
 
+enum ChallengePix {// image for individual challenges
+    static let koyakun    = "koyakun_preview"
+    static let daimon     = "daimon"
+    static let choishi    = "choishimichi"
+    static let vajra      = "sanko_preview"
+    static let saigyo     = "saigyo_portrait"
+    static let gorinto    = "gorinto_preview"
+    static let kenshin    = "Uesugi Kenshin"
+    static let mizumuke   = "mizumuke_jizo"
+    static let kukai      = "kukai_2"
+    static let nyonindo   = "nyonindo_preview"
+    static let sugatami   = "asekakijizo.jpg"
+    static let numbers    = "purple_curtain"
+    static let shoguns    = "kamon"
 
-enum ChallengePix {//image for individual challenges
-   static let koyakun    = "koyakun_preview"
-   static let daimon     = "daimon"
-   static let choishi    = "choishimichi"
-   static let vajra      = "sanko_preview"
-   static let saigyo     = "saigyo_portrait"
-   static let gorinto    = "gorinto_preview"
-   static let kenshin    = "Uesugi Kenshin"
-   static let mizumuke   = "mizumuke_jizo"
-   static let kukai      = "kukai_2"
-   static let nyonindo   = "nyonindo_preview"
-   static let sugatami   = "asekakijizo.jpg"
-   static let numbers    = "purple_curtain"
-    static let shoguns  = "kamon"
-    
 }
 
 enum ChallengeNames {
@@ -81,13 +79,19 @@ enum ChallengeNames {
     static let mizumuke   = "Mizumuke Jizō Challenge"
     static let nyonindo   = "Nyonindō Challenge"
     static let sugatami   = "Sugatami Well Challenge"
-    static let numbers     = "Mt. Kōya by the Numbers"
-    static let shoguns     = "Three Shogun Challenge"
+    static let numbers    = "Mt. Kōya by the Numbers"
+    static let shoguns    = "Three Shogun Challenge"
 }
 
 enum RatingsConstants {
     public static let maxRating = Int(5)
-    public static let onImage =  "star.fill"
+    public static let onImage = "star.fill"
     public static let offImage = "star"
 }
 
+enum ActiveSheet: Identifiable {
+    case first, second, third , none
+    var id: Int {
+        hashValue
+    }
+}

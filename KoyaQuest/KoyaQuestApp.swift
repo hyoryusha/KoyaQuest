@@ -11,16 +11,16 @@ import SwiftUI
 struct KoyaQuestApp: App {
     @StateObject var dataController: DataController
     @StateObject var appData = AppData()
-    
     init() {
         let dataController = DataController()
         _dataController = StateObject(wrappedValue: dataController)
     }
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(AppData())
+               // .environmentObject(SignInWithApple())
                 .environmentObject(LocationManager())
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)

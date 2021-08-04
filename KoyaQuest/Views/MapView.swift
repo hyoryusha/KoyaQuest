@@ -8,20 +8,19 @@
 import SwiftUI
 import MapKit
 
-
 struct MapView: View {
-    @State private var region : MKCoordinateRegion
+    @State private var region: MKCoordinateRegion
     @State private var mapType: MKMapType = . standard
-    
-    var target : Landmark
-    var places : [PlaceAnnotation] = allPlaces
+
+    var target: Landmark
+    var places: [PlaceAnnotation] = allPlaces
     init(target: Landmark) {
         _region = State(initialValue: target.LMregion)
         self.target = target
     }
         var body: some View {
         ZStack {
-            MapViewUI(location: target, mapViewType: mapType, places:  places )
+            MapViewUI(location: target, mapViewType: mapType, places: places )
               VStack {
                 HStack {
                   Spacer()
@@ -38,7 +37,7 @@ struct MapView: View {
                 }
                 .background(Color.koyaSky)
                 .offset(y: -26)
-                SmallDismissButton(buttonText: "Back")
+                BackButton(buttonText: "Back")
                     .padding(.bottom, 28)
               }
 
@@ -48,10 +47,8 @@ struct MapView: View {
       }
     }
 
-
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView(target: Landmark.allLandmarks[0])
     }
 }
-

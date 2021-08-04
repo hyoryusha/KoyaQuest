@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1030" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="FinalScore" representedClassName="FinalScore" syncable="YES" codeGenerationType="class">
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="submitDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="userIdentifier" optional="YES" attributeType="String"/>
+        <attribute name="userName" optional="YES" attributeType="String"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserData" inverseName="score" inverseEntity="UserData"/>
+    </entity>
     <entity name="Rating" representedClassName="Rating" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="landmark" optional="YES" attributeType="String"/>
         <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="userID" optional="YES" attributeType="Integer 16" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="UserData" representedClassName="UserData" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="userIdentifier" optional="YES" attributeType="String"/>
+        <relationship name="score" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FinalScore" inverseName="user" inverseEntity="FinalScore"/>
     </entity>
     <elements>
-        <element name="Rating" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="FinalScore" positionX="65.90234375" positionY="252.8828125" width="128" height="104"/>
+        <element name="Rating" positionX="-414.94140625" positionY="-136.23046875" width="128" height="74"/>
+        <element name="UserData" positionX="-237.95703125" positionY="-134.265625" width="128" height="104"/>
     </elements>
 </model>

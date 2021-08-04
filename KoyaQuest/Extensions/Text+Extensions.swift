@@ -8,22 +8,22 @@
 import SwiftUI
 
 extension Text {
-    func bodyStyle() -> some View {
+    func bodyStyle(color: Color) -> some View {
         self
             .font(.body)
-            .frame(idealWidth: 320, maxWidth: 380 , alignment: .leading)
-            .foregroundColor(Color(.white))
+            .frame(idealWidth: 320, maxWidth: 380, alignment: .leading)
+            .foregroundColor(color)
             .multilineTextAlignment(.leading)
             .lineSpacing(1.75)
     }
-    
-    func italicHeader() -> some View {
+
+    func italicHeader(color: Color) -> some View {
         self
         .font(.system(.title, design: .serif))
         .italic()
         .bold()
-        .padding([.top, .bottom] , 8)
-            .foregroundColor(Color.koyaOrange)
+        .padding([.top, .bottom], 8)
+            .foregroundColor(color)
         .multilineTextAlignment(.center)
     }
 }
