@@ -52,7 +52,7 @@
         <time>2020-08-30T14:01:10Z</time>
     </wpt>
 
-    
+
     <wpt lat="34.2131064785963" lon="135.58316990745774">
         <name>6 O'Clock Bell</name>
         <time>2020-08-30T14:02:00Z</time>
@@ -86,7 +86,7 @@
 
     <wpt lat="34.22014568888712" lon="135.5806889392046">
         <name>Nyonindo 2</name>
-        <time>2020-08-30T14:06:35Z</time>
+        <time>2020-08-30T14:05:40Z</time>
     </wpt>
     
     <wpt lat="34.21283838342336" lon="135.58958918800167">
@@ -181,5 +181,15 @@
     <wpt lat="34.217000" lon="135.605000">
         <name>Nakanohashi Parking</name>
         <time>2020-08-30T14:15:00Z</time>
+    </wpt>
+
+    <wpt lat="34.20970989236701" lon="135.5872414883954">
+        <name>Sammaiin</name>
+        <time>2020-08-30T14:16:30Z</time>
+    </wpt>
+
+    <wpt lat="34.21270529655399" lon="135.58978231645597">
+        <name>Choishi 10 2</name>
+        <time>2020-08-30T14:17:45Z</time>
     </wpt>
 </gpx>

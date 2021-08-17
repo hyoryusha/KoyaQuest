@@ -44,6 +44,7 @@ struct MapView: View {
         } // end zstack
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)
+        .statusBar(hidden: true)
       }
     }
 

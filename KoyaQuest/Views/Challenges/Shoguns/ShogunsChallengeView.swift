@@ -62,6 +62,7 @@ struct ShogunsChallengeView: View {
         }
         .navigationBarTitle(Text(""))
         .navigationBarHidden(true)
+        .statusBar(hidden: true)
 
     }
     func chooseScene(for solved: Bool) -> SKScene {

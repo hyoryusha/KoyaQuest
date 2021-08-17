@@ -16,7 +16,10 @@ struct VajraChallengeView: View {
 
     var body: some View {
         ZStack {
+            BackgroundView()
+                .ignoresSafeArea(.all)
             VStack {
+                
                 XDismissButtonRight()
                     .padding(.top, 4)
                     .padding(.trailing, 8)
@@ -53,7 +56,7 @@ struct VajraChallengeView: View {
 
                     Text("Move around the area where you think the sceptre might be.")
                         .font(.footnote)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.white)
                         .padding(.bottom, 6)
                     Text(viewModel.statusText)
                         .font(.title3)
@@ -66,7 +69,7 @@ struct VajraChallengeView: View {
                 }
                     Text(viewModel.distance == 0 ? "" : viewModel.proximity)
                         .font(.footnote)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.white)
                         .frame(
                             minWidth: 320,
                             idealWidth: 420,
@@ -91,12 +94,13 @@ struct VajraChallengeView: View {
                     success: viewModel.zapped ? true : false)
                 }
         } // end ZStack
+        .statusBar(hidden: true)
     }
 }
 
 struct VajraChallengeView_Previews: PreviewProvider {
     static var previews: some View {
         VajraChallengeView()
-            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+            .preferredColorScheme(.light)
     }
 }

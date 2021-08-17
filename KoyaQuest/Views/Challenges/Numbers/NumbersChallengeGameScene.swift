@@ -242,7 +242,6 @@ class NumbersChallengeGameScene: SKScene {
     }
 
     func gameOver() {
-        print("Game over")
         roundOver = true
         stopCounter()
         self.viewModel?.points = self.points

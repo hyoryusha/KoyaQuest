@@ -250,16 +250,16 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     func displayScore(points: Int) {
         let gameOverLabel = SKLabelNode(text: "Game Over")
         gameOverLabel.fontName = SKFont.bold
-        gameOverLabel.fontSize = 36.0
+        gameOverLabel.fontSize = 34.0
         gameOverLabel.fontColor = UIColor(red: 0, green: 204 / 255, blue: 131 / 255, alpha: 1.0)
-        gameOverLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 80)
+        gameOverLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 76)
         addChild(gameOverLabel)
 
         let scoreLabel = SKLabelNode(text: "You earned " + "\(points) points")
         scoreLabel.fontName = SKFont.bold
-        scoreLabel.fontSize = 24.0
+        scoreLabel.fontSize = 22.0
         scoreLabel.fontColor = UIColor.koyaOrange ?? UIColor.orange
-        scoreLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 108)
+        scoreLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 104)
         addChild(scoreLabel)
         let message = SKLabelNode(text: "Incorrect answers are shaded in red.")
         message.fontName = SKFont.medium

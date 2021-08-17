@@ -43,7 +43,7 @@ class GorintoSummaryScene: SKScene {
 
         bottomExplanation.color = UIColor.white
         bottomExplanation.fontName = SKFont.regular
-        bottomExplanation.fontSize = 20.0
+        bottomExplanation.fontSize = 16.0
         bottomExplanation.fontColor = UIColor.white
         bottomExplanation.position = CGPoint(x: frame.midX, y: frame.minY + 10) // 120
         addChild(bottomExplanation)

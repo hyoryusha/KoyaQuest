@@ -79,6 +79,7 @@ struct GameOverView: View {
         .background(Image("mtns")
         .scaledToFill()
         .edgesIgnoringSafeArea([.all]))
+        .statusBar(hidden: true)
     }
 }
 

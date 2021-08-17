@@ -45,6 +45,7 @@ struct FAQView: View {
                     Spacer()
                 }
         }
+            .statusBar(hidden: true)
     }
 }
 

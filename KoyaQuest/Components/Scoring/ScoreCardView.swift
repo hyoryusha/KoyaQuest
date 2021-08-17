@@ -27,7 +27,17 @@ struct ScoreCardView: View {
                     .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                 .foregroundColor(.gray)
             HStack {
-                Spacer()
+                if appData.kukaiChallengeState == .paused {
+                    HStack {
+                        Image(systemName: "paperclip")
+                        Text("Kukai Challenge Paused")
+
+                    }
+                    .font(.caption2)
+                    .foregroundColor(.koyaOrange)
+                }
+                    Spacer()
+
                 Button(action: {
                     scoreSummaryIsVisible = true
                 },
@@ -37,7 +47,7 @@ struct ScoreCardView: View {
                                 .font(.footnote)
                                 .foregroundColor(.koyaGreen)
                             Image(systemName: "list.bullet")
-                                .font(.body)
+                                .font(.footnote)
                                 .foregroundColor(Color.koyaGreen)
                         }
                 })

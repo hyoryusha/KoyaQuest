@@ -14,19 +14,19 @@ struct DisabledMessageView: View {
             Rectangle()
                 .frame(
                     maxWidth: .infinity,
-                    maxHeight: wideElement(sizeCategory: sizeCategory) ? 66 : 32,
+                    maxHeight: wideElement(sizeCategory: sizeCategory) ? 68 : 36,
                     alignment: .center
                 )
                 .foregroundColor(.black)
             HStack {
                 VStack {
                     Text("Gameplay has been disabled.\n(Use toggle switch in top-right corner to resume.)")
-                        .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .footnote)
+                        .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .caption)
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                 }
                 Image(systemName: "gamecontroller")
-                    .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .footnote)
+                    .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .caption)
                     .foregroundColor(.white)
                     .padding(.leading, 10)
             }

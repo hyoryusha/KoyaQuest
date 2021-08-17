@@ -21,7 +21,7 @@ struct KoyakunChallengeView: View {
             VStack {
                 XDismissButtonRight()
                     .offset(x: 0, y: 0 )
-                    .padding(.top, 20)
+                    .padding(.top, 24)
                     .padding(.trailing, 30)
                 Spacer()
             }

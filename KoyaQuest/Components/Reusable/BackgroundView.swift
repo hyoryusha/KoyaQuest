@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct BackgroundView: View {
+    let startPoint = UnitPoint(x: 0.5, y: -0.75)
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [.koyaPurple, .black]), startPoint: .top, endPoint: .bottom)
+        LinearGradient(gradient: Gradient(colors: [.koyaPurple, .black]), startPoint: startPoint, endPoint: .bottom)
             .edgesIgnoringSafeArea(.all)
     }
 }

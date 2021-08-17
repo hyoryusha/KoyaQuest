@@ -16,7 +16,7 @@ struct ChallengePortalView: View {
     NavigationView {
         ZStack {
             BackgroundView()
-
+                .ignoresSafeArea(.all)
             VStack(spacing: 20) {
                 HStack {
                     Spacer()
@@ -41,7 +41,7 @@ struct ChallengePortalView: View {
                 }
                 ScrollView {
                     Text(challenge.name)
-                        .foregroundColor(.white)
+                        .foregroundColor(.koyaOrange)
                         .font(.title)
                         .bold()
                         .multilineTextAlignment(.center)
@@ -83,6 +83,7 @@ struct ChallengePortalView: View {
         }
         .navigationBarTitle(Text(""))
         .navigationBarHidden(true)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
         .statusBar(hidden: true)
     }
@@ -129,7 +130,7 @@ struct ChallengePortalView_Previews: PreviewProvider {
                 isShowingChallengePortal: .constant(true),
                 challenge: numbersChallenge
             )
-                .preferredColorScheme(.dark)
+                .preferredColorScheme(.light)
         }
     }
 }

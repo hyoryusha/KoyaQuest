@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 enum ChallengeState {
-    case idle, active
+    case idle, active, paused
 }
 
 enum GameState {
@@ -36,6 +36,8 @@ final class AppData: ObservableObject {
     @Published var completedBonuses: [Bonus] = []
     @Published var allLocalRatings: [LocalRating] = []
     @Published var localRatings: [LocalRating] = loadLocalRatings()
+    @Published var kukaiChallengeState: ChallengeState = .idle
+    @Published var isShowingResumeKukaiChallenge: Bool = false
     @Published var userName: String {
         didSet {
             UserDefaults.standard.set(userName, forKey: "userName")

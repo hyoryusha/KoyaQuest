@@ -23,13 +23,13 @@ struct KenshinChallengeView: View {
                 .ignoresSafeArea(.all)
             VStack {
                 XDismissButtonRight()
-
+                    .padding(.trailing, 16)
                 HStack {
                     Image(systemName: "camera.viewfinder")
                     Text(viewModel.didFindGhost ? "You Found the Ghost" : "Look for the Ghost")
                 }
                 .font(.title)
-                .foregroundColor(.orange)
+                .foregroundColor(.koyaOrange)
                 .padding(.bottom, 6)
 
                 Text(viewModel.didFindGhost ? "" : "The spirit of Uesugi Kenshin has a message for you!")
@@ -75,11 +75,11 @@ struct KenshinChallengeView: View {
                                 HStack {
                                     Image(systemName: "signpost.right")
                                         .font(.body)
-                                        .foregroundColor(.orange)
+                                        .foregroundColor(.koyaOrange)
 
                                     Text("Review Your Mission")
                                         .font(.body)
-                                        .foregroundColor(.orange)
+                                        .foregroundColor(.koyaOrange)
                                         .bold()
                                 }
                             }
@@ -127,19 +127,6 @@ struct KenshinChallengeView: View {
                                             .padding()
                                     }
 
-                                    Button {
-                                        activeSheet = .third
-                                    } label: {
-                                        HStack {
-                                            Image(systemName: "book")
-                                                .foregroundColor(Color.koyaOrange)
-                                        }
-                                        Text("Learn More")
-                                            .font(.headline)
-                                            .foregroundColor(.orange)
-                                            .bold()
-                                            .padding()
-                                    }
                                 } else {
                                     EmptyView()
                                         .frame(
@@ -150,7 +137,8 @@ struct KenshinChallengeView: View {
                                         )
                                 }
                 Spacer()
-            }
+            } // end vstack
+            .padding(.top, 10)
         }
         .fullScreenCover(item: $activeSheet) { item in
             switch item {
@@ -167,6 +155,7 @@ struct KenshinChallengeView: View {
         }
         .navigationBarTitle(Text(""))
         .navigationBarHidden(true)
+        .statusBar(hidden: true)
     }
 }
 

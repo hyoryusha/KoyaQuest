@@ -22,7 +22,8 @@ struct ChallengeDisplayView: View {
                 .cornerRadius(0)
             Spacer()
             ChallengeDescriptionView(
-                enteredZone: enteredZone
+                //enteredZone: enteredZone
+                challenge: enteredZone.challenge!
             )
                 .padding()
         }
@@ -31,6 +32,7 @@ struct ChallengeDisplayView: View {
         }
             .frame(width: 300, height: 472)
             .background(Color.koyaSky)
+            .statusBar(hidden: true)
             .cornerRadius(12)
             .overlay(Button {
                 isPlayingGame = false

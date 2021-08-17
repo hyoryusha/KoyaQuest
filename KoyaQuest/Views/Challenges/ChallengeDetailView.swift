@@ -48,6 +48,7 @@ struct ChallengeDetailView: View {
                     }
                 .padding([.leading, .trailing, .bottom], 8)
             }
+            .statusBar(hidden: true)
         }
     }
 

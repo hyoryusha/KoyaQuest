@@ -24,6 +24,7 @@ struct KoyaQuestApp: App {
                 .environmentObject(LocationManager())
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)
+                .statusBar(hidden: true)
         }
     }
 }

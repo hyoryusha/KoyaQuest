@@ -17,72 +17,76 @@ struct ChoishiChallengeView: View {
     @State private var isShowingAlert = false
 
     var body: some View {
-        VStack {
+        ZStack {
+            BackgroundView()
+                .ignoresSafeArea(.all)
+            VStack {
+                if viewModel.gameOver {
+                    Image("choishi_solution")
+                        .resizable()
+                        .scaledToFit()
+                        .cornerRadius(3.0)
+                    Button {
+                        appData.showChallenge()
+                        appData.recordCompletedChallenge(challenge: choishiChallenge, points: viewModel.points)
+                        locationManager.resumeRegionMonitoring()
+                        appData.challengeState = .idle
+                        choishiChallenge.completed = true
+                    } label: {
+                        Text("Exit \(viewModel.feedbackString) \(viewModel.points) Points")
+                            .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .title3)
+                            .bold()
+                            .frame(
+                                minWidth: 210,
+                                idealWidth: 220,
+                                maxWidth: 230,
+                                minHeight: 50,
+                                idealHeight: 60,
+                                maxHeight: 70,
+                                alignment: .center
+                            )
+                            .padding([.top, .bottom], 2 )
+                            .padding([.leading, .trailing], 12 )
+                            .background(viewModel.points > 0 ? Color.koyaGreen : Color.koyaRed)
+                            .foregroundColor(.white)
+                            .cornerRadius(6)
+                    }
+                    .buttonStyle(ScaleButtonStyle())
 
-            if viewModel.gameOver {
-                Image("choishi_solution")
-                    .resizable()
-                    .scaledToFit()
-                    .cornerRadius(3.0)
-                Button {
-                    appData.showChallenge()
-                    appData.recordCompletedChallenge(challenge: choishiChallenge, points: viewModel.points)
-                    locationManager.resumeRegionMonitoring()
-                    appData.challengeState = .idle
-                    choishiChallenge.completed = true
-                } label: {
-                    Text("Exit \(viewModel.feedbackString) \(viewModel.points) Points")
-                        .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .title3)
+                } else {
+                    Text("Chōishi Challenge")
+                        .font(wideElement(sizeCategory: sizeCategory) ? .caption : .title)
+                        .foregroundColor(.koyaOrange)
                         .bold()
-                        .frame(
-                            minWidth: 210,
-                            idealWidth: 220,
-                            maxWidth: 230,
-                            minHeight: 50,
-                            idealHeight: 60,
-                            maxHeight: 70,
-                            alignment: .center
-                        )
-                        .padding([.top, .bottom], 2 )
-                        .padding([.leading, .trailing], 12 )
-                        .background(viewModel.points > 0 ? Color.koyaGreen : Color.koyaRed)
-                        .foregroundColor(.white)
-                        .cornerRadius(6)
+                    ChoishiStarterView(isShowingAlert: $isShowingAlert, selection: $selection, viewModel: viewModel)
                 }
-                .buttonStyle(ScaleButtonStyle())
 
-            } else {
-                Text("Chōishi Challenge")
-                    .font(wideElement(sizeCategory: sizeCategory) ? .caption : .title)
-                    .foregroundColor(.koyaDarkText)
-                    .bold()
-                ChoishiStarterView(isShowingAlert: $isShowingAlert, selection: $selection, viewModel: viewModel)
+            } // end vstack
+            .sheet(isPresented: $isShowingHint, onDismiss: {}, content: {
+                ChoishiHintView(isShowingHint: $isShowingHint)
+            })
+            .alert(isPresented: $isShowingAlert) {
+                Alert(
+                    title: Text("Warning"),
+                    // swiftlint:disable:next line_length
+                    message: Text("If you choose to use a hint, you will not be able to earn full points for this challenge."),
+                    primaryButton: .destructive(Text("Show Hint")) {
+                        isShowingHint = true
+                        viewModel.hintUsed = true
+                    },
+                    secondaryButton: .cancel(Text("No, thank you."))
+                )
             }
-
-            Spacer()
-        }
-        .sheet(isPresented: $isShowingHint, onDismiss: {}, content: {
-            ChoishiHintView(isShowingHint: $isShowingHint)
-        })
-        .alert(isPresented: $isShowingAlert) {
-            Alert(
-                title: Text("Warning"),
-                // swiftlint:disable:next line_length
-                message: Text("If you choose to use a hint, you will not be able to earn full points for this challenge."),
-                primaryButton: .destructive(Text("Show Hint")) {
-                    isShowingHint = true
-                    viewModel.hintUsed = true
-                },
-                secondaryButton: .cancel(Text("No, thank you."))
-            )
-        }
+            .padding(.top, 32)
+        } // end zStack
+        .statusBar(hidden: true)
     }
 }
 
 struct ChoishiChallengeView_Previews: PreviewProvider {
     static var previews: some View {
         ChoishiChallengeView()
-            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+            .preferredColorScheme(.light)
     }
 }
 
@@ -94,7 +98,7 @@ struct ChoishiStarterView: View {
     var body: some View {
         Text("Decipher the number of the stone column.")
             .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .subheadline)
-            .foregroundColor(.secondary)
+            .foregroundColor(.white)
         Image("choishi_?")
             .resizable()
             .scaledToFit()

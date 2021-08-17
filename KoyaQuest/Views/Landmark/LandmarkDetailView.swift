@@ -22,6 +22,7 @@ struct LandmarkDetailView: View {
                 HStack {
                     AudioPlayerView(audioFile: String(landmark.id))
                         .padding(.leading, 22)
+                        .padding(.top, 8)
                     Spacer()
                 }
                 .frame(height: 18)
@@ -72,6 +73,8 @@ struct LandmarkDetailView: View {
                 BackButton(buttonText: "Back")
             }
             .padding(.bottom, 14)
+            .padding(.top, 6)
+            .statusBar(hidden: true)
         }
      }
 

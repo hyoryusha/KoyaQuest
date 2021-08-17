@@ -103,6 +103,7 @@ struct PostScoreView: View {
         .background(Image("mtns")
         .scaledToFill()
         .edgesIgnoringSafeArea([.all]))
+        .statusBar(hidden: true)
         .alert(isPresented: $viewModel.showingActionAlert) {
             Alert(title: Text("User Name Unavailable"),
                   message: Text("The username you selected is already in use. Try entering a different name."),

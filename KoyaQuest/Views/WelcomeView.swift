@@ -60,9 +60,11 @@ struct WelcomeView: View {
         .background(Image("mtns")
         .scaledToFill()
         .edgesIgnoringSafeArea([.all])
+        .statusBar(hidden: true)
         )
         .animation(.easeInOut(duration: 0.8))
         }
+
 }
 
 struct WelcomeView_Previews: PreviewProvider {

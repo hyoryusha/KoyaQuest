@@ -49,14 +49,14 @@ struct SaigyoChallengeView: View {
             .blur(radius: isShowingModal ? 6 : 0)
             VStack {
                 XDismissButtonRight()
-                    .offset(x: 0, y: -14 )
+                    .offset(x: 0, y: -14)
                     .padding(.top, 0)
                     .padding(.trailing, 10)
                 Spacer()
                 if viewModel.solved
                     && !isShowingModal {
-                    Text("Success!")
-                        .font(.largeTitle)
+                    Text("Success!".uppercased())
+                        .font(.title)
                         .foregroundColor(.koyaGreen)
                     Button {
                         isShowingModal = true
@@ -76,6 +76,7 @@ struct SaigyoChallengeView: View {
             }
             .navigationBarTitle(Text(""))
             .navigationBarHidden(true)
+            .statusBar(hidden: true)
         }
     }
     func chooseScene(for solved: Bool) -> SKScene {

@@ -231,6 +231,8 @@
 		0AD224D42668C37000D5D935 /* ChallengeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD224D32668C37000D5D935 /* ChallengeDetail.swift */; };
 		0AE1AA6726A8AF0900C9FA7D /* DynamicLeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1AA6626A8AF0900C9FA7D /* DynamicLeaderboardView.swift */; };
 		0AE1AAAA26A952B600C9FA7D /* CurrentPlayerRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1AAA926A952B600C9FA7D /* CurrentPlayerRankView.swift */; };
+		0AE90D1A26C0DC72008EEE0A /* KukaiResumeDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE90D1926C0DC72008EEE0A /* KukaiResumeDisplayView.swift */; };
+		0AE90D1C26C0DE14008EEE0A /* ResumeKukaiChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE90D1B26C0DE14008EEE0A /* ResumeKukaiChallenge.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -475,6 +477,8 @@
 		0AD224D32668C37000D5D935 /* ChallengeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetail.swift; sourceTree = "<group>"; };
 		0AE1AA6626A8AF0900C9FA7D /* DynamicLeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLeaderboardView.swift; sourceTree = "<group>"; };
 		0AE1AAA926A952B600C9FA7D /* CurrentPlayerRankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlayerRankView.swift; sourceTree = "<group>"; };
+		0AE90D1926C0DC72008EEE0A /* KukaiResumeDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KukaiResumeDisplayView.swift; sourceTree = "<group>"; };
+		0AE90D1B26C0DE14008EEE0A /* ResumeKukaiChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeKukaiChallenge.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -583,6 +587,7 @@
 				0A4E10B52669CBDC005F5FA8 /* Alert.swift */,
 				0A4E10BB2669CBDD005F5FA8 /* BackgroundView.swift */,
 				0A4E10BC2669CBDE005F5FA8 /* Buttons.swift */,
+				0AE90D1B26C0DE14008EEE0A /* ResumeKukaiChallenge.swift */,
 				0A4E10B82669CBDD005F5FA8 /* CaptionView.swift */,
 				0A4E10B92669CBDD005F5FA8 /* LoadingView.swift */,
 				0A4E10B42669CBDB005F5FA8 /* TextOverlayView.swift */,
@@ -939,6 +944,7 @@
 				0A5E841526643A4E000076A9 /* MapViewUI.swift */,
 				0A4E108326698965005F5FA8 /* ScoreSummaryView.swift */,
 				0A4E10E12669CE55005F5FA8 /* ChallengeDisplayView.swift */,
+				0AE90D1926C0DC72008EEE0A /* KukaiResumeDisplayView.swift */,
 				0A3D2445267AD85A00D9CA2F /* BonusDisplayView.swift */,
 				0AB6AD54268938AF006F9690 /* GameOverView.swift */,
 				0A676653269E523D00B3D429 /* GameOverSummary.swift */,
@@ -1265,7 +1271,9 @@
 				0A3D24402674ABAE00D9CA2F /* KenshinFinderVC.swift in Sources */,
 				0A61A726268C7F3200A5F5F5 /* AudioPlayerView.swift in Sources */,
 				033000652671DF1900228CFC /* NyonindoChallengeViewModel.swift in Sources */,
+				0AE90D1C26C0DE14008EEE0A /* ResumeKukaiChallenge.swift in Sources */,
 				0AD224D42668C37000D5D935 /* ChallengeDetail.swift in Sources */,
+				0AE90D1A26C0DC72008EEE0A /* KukaiResumeDisplayView.swift in Sources */,
 				0A4E117B266CC2CC005F5FA8 /* VajraFinderView.swift in Sources */,
 				0A4E1194266F15FD005F5FA8 /* Card.swift in Sources */,
 				0AB3F418267EFE45006C4E70 /* MizumukeChallengeViewModel.swift in Sources */,
@@ -1445,6 +1453,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KoyaQuest/KoyaQuest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"KoyaQuest/Preview Content\"";
 				DEVELOPMENT_TEAM = VXX3S4X7D2;
 				ENABLE_PREVIEWS = YES;
@@ -1469,6 +1478,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KoyaQuest/KoyaQuest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"KoyaQuest/Preview Content\"";
 				DEVELOPMENT_TEAM = VXX3S4X7D2;
 				ENABLE_PREVIEWS = YES;

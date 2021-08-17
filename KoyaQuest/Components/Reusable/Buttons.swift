@@ -55,6 +55,9 @@ struct ChallengeButton: View {
         }
     }
 
+
+
+
 struct ActionButton: View {
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
     var color: Color
@@ -170,7 +173,7 @@ struct XDismissButtonRight: View {
                 Image(systemName: "xmark")
                     .font(.caption2)
                     .foregroundColor(Color.white)
-                    .frame(width: 24, height: 24, alignment: .center)
+                    .frame(width: 20, height: 20, alignment: .center)
                     .foregroundColor(Color.white)
                     .background(
                         Circle()

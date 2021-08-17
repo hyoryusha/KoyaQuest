@@ -34,21 +34,23 @@ struct BonusDisplayView: View {
             .background(Color.koyaSky)
             .cornerRadius(12)
             .shadow(radius: 40)
-            .overlay(Button {
-                isPlayingGame = false
-            } label: {
-                HStack {
-                    XDismissButton()
-                    Text("Disable Gameplay")
-                        .baselineOffset(6.0)
-                        .font(.footnote)
-                        .foregroundColor(.white)
-                }
-
-            }, alignment: .topLeading)
+            Spacer()
+//            .overlay(Button {
+//                isPlayingGame = false
+//            } label: {
+//                HStack {
+//                    XDismissButton()
+//                    Text("Disable Gameplay")
+//                        .baselineOffset(6.0)
+//                        .font(.footnote)
+//                        .foregroundColor(.white)
+//                }
+//
+//            }, alignment: .topLeading)
         }
-        .navigationBarHidden(true)
-        .navigationViewStyle(StackNavigationViewStyle())
+       // .navigationBarHidden(true)
+       // .navigationBarTitle("")
+        //.navigationViewStyle(StackNavigationViewStyle())
    }
 }
 

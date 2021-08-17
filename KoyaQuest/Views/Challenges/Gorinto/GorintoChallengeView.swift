@@ -70,6 +70,7 @@ var body: some View {
             )
         }
     }
+    .statusBar(hidden: true)
 }
     func chooseScene(for solved: Bool) -> SKScene {
         solved ? summaryScene: gameScene

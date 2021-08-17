@@ -100,6 +100,16 @@ let kongobujiArea = Area(
     isTargetZone: true,
     radius: 140
 )
+//34.211489107492206, 135.58114351464857 //34.211302, 135.58114351464857
+let reihokanArea = Area(
+    latitude: 34.211302,
+    longitude: 135.58114351464857,
+    identifier: "Reihōkan Museum Area",
+    challenge: kukaiChallenge,
+    isTargetZone: true,
+    radius: 100
+)
+
 
 let tokugawaArea = Area(
     latitude: 34.21738288146782,
@@ -118,10 +128,10 @@ let nyonindoArea = Area(
     isTargetZone: true,
     radius: 110
 )
-
+//34.21283838342336,135.58958918800167 // 34.212838383,135.58969
 let choishiTenArea = Area(
-    latitude: 34.21283838342336,
-    longitude: 135.58958918800167,
+    latitude: 34.212838383,
+    longitude: 135.58969,
     identifier: "Choishi Number 10",
     challenge: choishiChallenge,
     isTargetZone: true,
@@ -181,10 +191,10 @@ let bashoArea = Area(
     isTargetZone: true,
     radius: 100
 )
-// 34.22133507975566, 135.60677547761603 // 34.22211073890209, 135.60602196144063
+// 34.22133507975566, 135.60677547761603 // 34.22211073890209, 135.60602196144063 //, 34.2193499, 135.60509
 let tamagawaArea = Area(
-    latitude: 34.22211073890209,
-    longitude: 135.60602196144063,
+    latitude: 34.2193499,
+    longitude: 135.60509,
     identifier: "Tamagawa Area",
     challenge: mizumukeChallenge,
     isTargetZone: true,
@@ -213,6 +223,7 @@ var areas: [Area] = [
     daimonArea,
     eastGaranArea,
     westGaranArea,
+    reihokanArea,
     kongobujiArea,
     tokugawaArea,
     nyonindoArea,

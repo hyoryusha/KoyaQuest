@@ -86,6 +86,7 @@ struct DaimonChallengeView: View {
             }
             // .navigationBarTitle(Text(""))
             .navigationBarHidden(true)
+            .statusBar(hidden: true)
         }
     }
 }

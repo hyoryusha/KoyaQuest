@@ -16,25 +16,31 @@ struct MizumukeChallengeView: View {
     @State private var columns: [Int] = []
        var body: some View {
         ZStack {
+                BackgroundView()
+                    .ignoresSafeArea(.all)
+            
             VStack {
                 XDismissButtonRight()
                     .padding(.top, 12)
                     .padding(.trailing, 18)
-                Spacer()
-                    .frame(height: 20)
-                Text("Place the Images in Order")
+
+                Text("Mizumuke Jizō Challenge")
                     .font(.title)
                     .bold()
-                    .foregroundColor(.orange)
+                    .foregroundColor(.koyaOrange)
+                Text("Place the Images in Order")
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(.white)
 
                 Text("Test your powers of observation.")
                     .font(.headline)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(.koyaOrange)
                     .italic()
                     .multilineTextAlignment(.center)
                 Text("Find the matching statues alongside the river.")
                     .font(.body)
-                    .foregroundColor(.koyaDarkText)
+                    .foregroundColor(.white)
                     .italic()
                     .multilineTextAlignment(.center)
                     .padding()
@@ -64,6 +70,7 @@ struct MizumukeChallengeView: View {
             .blur(radius: viewModel.solved ? 6 : 0)
             .navigationBarTitle(Text(""))
             .navigationBarHidden(true)
+            // .statusBar(hidden: true)
 
             if viewModel.solved {
                 ChallengeFeedbackView(
@@ -83,6 +90,6 @@ struct MizumukeChallengeView_Previews: PreviewProvider {
         MizumukeChallengeView()
             .environmentObject(AppData())
             .environmentObject(LocationManager())
-            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+            .preferredColorScheme(.light)
     }
 }

@@ -62,6 +62,7 @@ var body: some View {
         // .blur(radius: viewModel.completed ? 6 : 0)
         .navigationBarTitle(Text(""))
         .navigationBarHidden(true)
+        .statusBar(hidden: true)
 
         if viewModel.completed {
             let earnedPoints = UserDefaults.standard.integer(forKey: "NyonindoHighScore")

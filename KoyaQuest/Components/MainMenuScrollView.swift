@@ -32,7 +32,10 @@ struct MainMenuScrollView: View {
                             .id(landmark.id)
                         }
                         .onChange(of: locationManager.scrollIndex) { _ in
-                            scrollView.scrollTo(locationManager.scrollIndex)
+                            scrollView.scrollTo(locationManager.scrollIndex, anchor: .leading)
+                            // update the main image with the scrollIndex:
+                            let index = Landmark.allLandmarks.firstIndex(where: { $0.id == locationManager.scrollIndex } )
+                            selection = Landmark.allLandmarks[index ?? 0]
                         }
                     }
                     .frame(height: 80)

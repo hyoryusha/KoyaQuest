@@ -28,6 +28,7 @@ struct LandmarkListView: View {
                 .listStyle(GroupedListStyle())
             }
             .padding(.bottom, 10)
+            .statusBar(hidden: true)
        // }
         .navigationBarTitle(Text("Points of Interest"))
     }

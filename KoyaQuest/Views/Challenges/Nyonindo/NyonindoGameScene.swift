@@ -29,7 +29,7 @@ class NyonindoGameScene: SKScene  {
     let pilgrimLabel = SKLabelNode(text: "(because you hit a pilgrim)")
     let timerLabel = SKLabelNode(text: "-- secs remaining")
     let roundOver = SKLabelNode(text: "Round Over!")
-    let pointsEarnedLabel = SKLabelNode(text: "Points earned:")
+    let pointsEarnedLabel = SKLabelNode(text: "Points this round:")
     let motionManager = CMMotionManager()
     let fadeOut = SKAction.fadeOut(withDuration: 3)
     var startButtonLabelText: String = ""
@@ -62,7 +62,7 @@ class NyonindoGameScene: SKScene  {
         choishi.size = CGSize(width: frame.size.width * 0.17,
                               height: frame.size.height * 0.25)
         choishi.position = CGPoint(x: frame.size.width * 0.1, y: frame.size.height / 2 )
-        choishi.zPosition = 2
+        choishi.zPosition = 3
         addChild(choishi)
         
 // MARK: - Labels
@@ -110,7 +110,7 @@ class NyonindoGameScene: SKScene  {
         rikishi.physicsBody = SKPhysicsBody(circleOfRadius: rikishi.size.width * 0.44)
         //rikishi.position = CGPoint(x: 10, y: size.height / 2 + (rikishi.size.height / 3 ))
         rikishi.position = CGPoint(x: size.width * 0.5, y: size.height / 2 + (rikishi.size.height / 3 ))
-        rikishi.zPosition = 1
+        rikishi.zPosition = 2
         rikishi.name = "rikishi"
         //rikishi.setScale(1.5)
         rikishi.physicsBody?.isDynamic = true
@@ -121,6 +121,7 @@ class NyonindoGameScene: SKScene  {
         
 
         //view.showsPhysics = true
+
 
     } // end did move to view
     
@@ -238,7 +239,7 @@ class NyonindoGameScene: SKScene  {
             pilgrim = SKSpriteNode(texture: firstFrameTexture)
             pilgrim.setScale(0.3)
             pilgrim.name = "pilgrim"
-            pilgrim.zPosition = 20
+            pilgrim.zPosition = rikishi.zPosition + 1 // i.e. 3
             addChild(pilgrim)
 
             pilgrim.physicsBody = SKPhysicsBody(circleOfRadius: pilgrim.size.width * 0.25)
@@ -395,7 +396,7 @@ class NyonindoGameScene: SKScene  {
             roundOver.fontColor = UIColor.black
             roundOver.position = CGPoint(x: frame.midX, y: frame.midY + 142)
             roundOver.zPosition = 100
-            pointsEarnedLabel.fontSize = 28
+            pointsEarnedLabel.fontSize = 26
             pointsEarnedLabel.fontName = SKFont.medium
             pointsEarnedLabel.fontColor = UIColor.black
             pointsEarnedLabel.position = CGPoint(x: frame.midX, y: frame.midY - 60)
@@ -411,8 +412,6 @@ class NyonindoGameScene: SKScene  {
             //createReplayButton()
             physicsWorld.speed = 0
             //isUserInteractionEnabled = false
-            
-            
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) { [unowned self] in
             UserDefaults.standard.set(points, forKey: "NyonindoRecentScore")
@@ -471,6 +470,10 @@ extension NyonindoGameScene: SKPhysicsContactDelegate {
 
     override func update(_ currentTime: TimeInterval) {
         processUserMotion(forUpdate: currentTime)
+        // if pilgrim.zPosition > rikishi.position.y - 10 { // move the pilgrim "behind" the rikishi after passing the rikishi
+        if pilgrim.position.y > rikishi.position.y + 10 {
+            pilgrim.zPosition = rikishi.zPosition - 1 // i.e. 1 (gate is default 0)
+        }
     }
     
     func didBegin(_ contact: SKPhysicsContact) {

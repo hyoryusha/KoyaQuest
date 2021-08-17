@@ -82,6 +82,7 @@ struct TakedaChallengeView: View {
         }
         .navigationBarTitle(Text(""))
         .navigationBarHidden(true)
+        .statusBar(hidden: true)
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: Text(alertItem.title),
                   message: Text(alertItem.message),

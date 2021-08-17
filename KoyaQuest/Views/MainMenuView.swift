@@ -15,16 +15,15 @@ struct MainMenuView: View {
     @StateObject var viewModel = MainMenuViewModel()
     @State var landmark: Landmark
     @State var selection: Int?
-    // @State private var isShowingScorecard = true
     @State private var isShowingInfo = false
     @State private var scoreSummaryIsVisible = false
     @State private var isShowingBonusList = false
 
     var body: some View {
-            ZStack { // ZStack added when ContentView used @ViewBuilder
+            ZStack {
                 NavigationView {
                     VStack {
-                        if appData.gameState != .exited{
+                        if appData.gameState != .exited {
                             gamePlayControls
                         }
                         TitleView(fullCaption: false)
@@ -40,6 +39,7 @@ struct MainMenuView: View {
                                     TitleImageView(landmark: landmark)
                                 }
                         CaptionView(text: landmark.details.headerOne)
+
                         // MARK: - Second NavLink
                         NavigationLink(
                             destination: MapView(target: landmark),
@@ -56,6 +56,9 @@ struct MainMenuView: View {
                                     DisabledMessageView()
                                 }
                             }
+                        if appData.kukaiChallengeState == .paused && appData.isPlayingGame {
+                            ResumeKukaiChallenge(isShowingResumeKukaiChallenge: $appData.isShowingResumeKukaiChallenge) // button
+                        }
                         MainMenuScrollView(selection: $landmark)
                         // MARK: - LINK TO LIST
                         HStack {
@@ -85,16 +88,18 @@ struct MainMenuView: View {
                         }
                     } // end vstack
                     .padding(.bottom, 14)
+                    .padding(.top, 4)
                     .navigationBarTitle(Text(""))
                     .navigationBarHidden(true)
                     .background(Image("mtns"))
+                    .statusBar(hidden: true)
                 .sheet(isPresented: $scoreSummaryIsVisible, onDismiss: {}, content: {
                     ScoreSummaryView(scoreSummaryIsVisible: $scoreSummaryIsVisible)
                 })
                 }
 
                 .navigationViewStyle(StackNavigationViewStyle())
-                .statusBar(hidden: true)
+
                 .animation(.easeInOut(duration: 0.8))
                 .blur(radius: showChallenge() ? 16 : 0)
                 .onAppear() {
@@ -107,12 +112,19 @@ struct MainMenuView: View {
                                          enteredZone: locationManager.activeTargetZone!)
                             .animation(.easeInOut(duration: 0.8))
                     }
+                if appData.isShowingResumeKukaiChallenge {
+                    KukaiResumeDisplayView(isPlayingGame: $appData.isPlayingGame)
+                            .animation(.easeInOut(duration: 0.8))
+                    }
                 if showBonus() {
                     BonusDisplayView(isPlayingGame: $appData.isPlayingGame, isShowingBonusList: $isShowingBonusList)
                             .animation(.easeOut(duration: 0.8))
                     }
+
         } // end zstack
+
     } // end body view
+
 
 // MARK: - LOGIC
     func showChallenge() -> Bool {
@@ -120,7 +132,7 @@ struct MainMenuView: View {
             let challenge = locationManager.activeArea?.challenge
                 if !appData.completedChallengeSummary.contains(where: { item in
                     item.challenge == challenge!.name
-                }) {
+                }) { // challenge has not been completed yet 
                     return true
                 } else {
                     return false
@@ -182,5 +194,6 @@ struct MainMenuView_Previews: PreviewProvider {
         MainMenuView(landmark: Landmark.allLandmarks[0])
             .environmentObject(AppData())
             .environmentObject(LocationManager())
+           // .preferredColorScheme(.dark)
     }
 }

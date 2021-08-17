@@ -1,6 +1,4 @@
 //
-//  CorrectModalView.swift
-//  MultipleChoice
 //
 //  Created by Kevin K Collins on 2021/05/29.
 //
@@ -31,6 +29,9 @@ struct ChallengeFeedbackView: View {
                 locationManager.resumeRegionMonitoring()
                 appData.challengeState = .idle
                 challenge.completed = true
+                if challenge == kukaiChallenge {
+                    appData.isShowingResumeKukaiChallenge = false
+                }
             } label: {
                 Text("Exit with \(points) Points")
                     .font(wideElement(sizeCategory: sizeCategory) ? .caption : .title3)

@@ -38,6 +38,7 @@ struct FAQDetailView: View {
             }
             .padding()
         }
+        .statusBar(hidden: true)
     }
 }
 
