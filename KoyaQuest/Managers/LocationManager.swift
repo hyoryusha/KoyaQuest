@@ -35,6 +35,12 @@ final class LocationManager: NSObject, ObservableObject {
         }
     }
 
+    @Published var isNearGobyo = false {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+
     var onEntry: Bool = true
     var location: CLLocation?
     lazy var geocoder = CLGeocoder()
@@ -110,7 +116,15 @@ extension LocationManager: CLLocationManagerDelegate {
     // MARK: - handleActiveArea
     fileprivate func handleActiveArea(_ region: CLRegion) {
         activeArea = convertRegionToArea(region: region.identifier)
+
+        if activeArea == torodoArea {
+            isNearGobyo = true
+        } else {
+            isNearGobyo = false
+        }
+
         if activeArea?.isTargetZone == true {
+
             isInTargetZone = true
             activeTargetZone = activeArea
             if let index = Landmark.allLandmarks.firstIndex(where: { $0.area == activeArea?.identifier }) {

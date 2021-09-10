@@ -20,10 +20,12 @@ struct LandmarkDetailView: View {
             BackgroundView()
             VStack {
                 HStack {
-                    AudioPlayerView(audioFile: String(landmark.id))
-                        .padding(.leading, 22)
-                        .padding(.top, 8)
-                    Spacer()
+                    if !locationManager.isNearGobyo {
+                        AudioPlayerView(audioFile: String(landmark.id))
+                            .padding(.leading, 22)
+                            .padding(.top, 8)
+                        Spacer()
+                    }
                 }
                 .frame(height: 18)
                 .padding(.bottom, 4)

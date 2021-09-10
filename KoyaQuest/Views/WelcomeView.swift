@@ -33,6 +33,7 @@ struct WelcomeView: View {
                 .border(Color.white)
                 .foregroundColor(Color.white)
             }
+            .accessibility(label: Text("Get started"))
             Spacer()
             Button {
                 isShowingInfo = true
@@ -50,6 +51,7 @@ struct WelcomeView: View {
                 .background(Color.koyaSky)
                 .border(Color(.white))
                 .foregroundColor(Color(.black))
+                .accessibility(label: Text("More information"))
 
                 .sheet(isPresented: $isShowingInfo, onDismiss: {}, content: {
                     WelcomeIntroView(isShowingInfo: $isShowingInfo )

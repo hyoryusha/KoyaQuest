@@ -91,7 +91,7 @@ final class AppData: ObservableObject {
     }
 
     var progressString: String {
-        "Completed \(self.completedChallengeSummary.count) out of \(allChallenges.count) Challenges"
+        "Completed \(self.completedChallengeSummary.count) out of \(allChallenges.count) Challenges."
     }
 
     var bonusProgressString: String {
@@ -239,14 +239,14 @@ final class AppData: ObservableObject {
         }
 
     static func loadCompletedSummary() -> [CompletedChallenge] {
-        let savedCompleted = UserDefaults.standard.object(forKey: AppData.completedKey )
-        if let savedCompleted = savedCompleted as? Data {
-        let decoder = JSONDecoder()
-        return (try? decoder.decode([CompletedChallenge].self, from: savedCompleted))
-            ?? AppData.mockData
-        }
-        return AppData.mockData
-        }
+            let savedCompleted = UserDefaults.standard.object(forKey: AppData.completedKey )
+            if let savedCompleted = savedCompleted as? Data {
+            let decoder = JSONDecoder()
+            return (try? decoder.decode([CompletedChallenge].self, from: savedCompleted))
+                ?? AppData.mockData
+            }
+            return AppData.mockData
+            }
 
     static func loadCompletedBonusSummary() -> [CompletedBonus] {
         let savedCompleted = UserDefaults.standard.object(forKey: AppData.completedBonusKey )

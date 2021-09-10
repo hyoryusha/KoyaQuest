@@ -20,6 +20,7 @@ struct AudioPlayerView: View {
                         .font(.subheadline)
                         .foregroundColor(playingAudio ? .koyaRed : Color.koyaGreen)
                 })
+                .accessibility(label: Text("Play Audio Button"))
                 .toggleStyle(AudioToggleStyle())
                         .onChange(of: playingAudio) { play in
                             if play {

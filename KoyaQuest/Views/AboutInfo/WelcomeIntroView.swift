@@ -12,7 +12,7 @@ struct WelcomeIntroView: View {
     var contents = Information.allInfo[0]
     var body: some View {
         ZStack {
-            Color.koyaPurple
+            BackgroundView()
                 .ignoresSafeArea()
             VStack {
                 InfoTopView(isShowingInfo: $isShowingInfo)
@@ -24,9 +24,9 @@ struct WelcomeIntroView: View {
                 VStack {
                     ScrollView {
                         HeaderText(text: contents.body.headerOne, color: Color.koyaOrange)
-                        BodyText(text: contents.body.bodyOne, color: Color.koyaLightText)
+                        BodyText(text: contents.body.bodyOne, color: .white)
                         HeaderText(text: contents.body.headerTwo, color: Color.koyaOrange)
-                        BodyText(text: contents.body.bodyTwo, color: Color.koyaLightText)
+                        BodyText(text: contents.body.bodyTwo, color: .white)
                     }
                 }
                 .padding()

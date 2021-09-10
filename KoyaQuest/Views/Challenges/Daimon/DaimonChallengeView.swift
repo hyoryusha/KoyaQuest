@@ -22,11 +22,11 @@ struct DaimonChallengeView: View {
                     VStack {
                             Text("What's wrong with this picture?")
                                 .font(.title2)
-                                .foregroundColor(Color.koyaDarkText)
+                                .foregroundColor(.primary)
                                 .padding(.top, 20)
                         Text("Instructions:")
                                 .font(.title3)
-                                .foregroundColor(.orange)
+                                .foregroundColor(.koyaOrange)
                                 .bold()
                                 .padding(.bottom, 4)
                         Group {
@@ -51,6 +51,7 @@ struct DaimonChallengeView: View {
                                 .scaledToFit()
                             Spacer()
                         }
+
                     }
                 }
                 .blur(radius: viewModel.isShowingModal ? 6 : 0)
@@ -96,6 +97,6 @@ struct DaimonChallengeView_Previews: PreviewProvider {
         DaimonChallengeView(viewModel: DaimonGameViewModel())
             .environmentObject(AppData())
             .environmentObject(LocationManager())
-            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+            .preferredColorScheme(.light)
     }
 }

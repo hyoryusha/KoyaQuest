@@ -202,7 +202,7 @@ let tamagawaArea = Area(
 )
 
 let torodoArea = Area(
-    latitude: 34.22354443963421,
+    latitude: 34.22312,
     longitude: 135.60576973055655,
     identifier: "Tōrōdō Area",
     challenge: nil,

@@ -26,8 +26,10 @@ struct BonusFeedbackView: View {
                 .overlay(FeedbackBannerOverlay(text: text))
             Spacer()
             Button {
-                presentationMode.wrappedValue.dismiss()
-                appData.recordCompletedBonus(bonus: bonus, points: points)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    appData.recordCompletedBonus(bonus: bonus, points: points)
+                    presentationMode.wrappedValue.dismiss()
+                }
             } label: {
                 Text("Exit with \(points) Points")
                     .font(wideElement(sizeCategory: sizeCategory) ? .caption : .title3)

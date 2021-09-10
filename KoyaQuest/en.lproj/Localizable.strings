@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  KoyaQuest
+
+  Created by Kevin K Collins on 2021/09/03.
+  
+*/
+/*"%lld items" =  "%lld items"; */
+
+/*Welcome Screen and Main Menu*/
+"Kōya Quest" = "Kōya Quest";
+"Get Started" = "Get Started";
+"Get started" = "Get started";
+"More information" = "More info";
+"See List" = "See List";
+"About" = "About";
+"Important message" = "Important message";
+"You are near the Gobyō, the most sacred area of Mt. Kōya. Use of devices is not permitted beyond the bridge." = "You are near the Gobyō, the most sacred area of Mt. Kōya. Use of devices is not permitted beyond the bridge.";
+"Got it!" = "Got it!";
+"Current Score: %lld" = "Current Score: %lld";
+"View on Map" = "View on Map";
+"Total" = "Total";
+"Points of Interest" = "Points of Interest";
+"Play Game:" = "Play Game:";
+
+
+
+

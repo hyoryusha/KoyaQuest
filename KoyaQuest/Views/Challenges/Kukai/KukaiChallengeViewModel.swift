@@ -10,7 +10,7 @@ import SwiftUI
 final class KukaiChallengeViewModel: ObservableObject {
     @Published var foundImage = ""
     @Published var success = false
-    @Published var secondsLeft = 10 // 6 min limit before alert
+    @Published var secondsLeft = 360 // 6 min limit before alert
     @Published var showingAlert = false
 
     var statusText: String {

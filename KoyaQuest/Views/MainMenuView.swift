@@ -18,6 +18,8 @@ struct MainMenuView: View {
     @State private var isShowingInfo = false
     @State private var scoreSummaryIsVisible = false
     @State private var isShowingBonusList = false
+    var tempNumber1 = 2
+    var tempNumber2 = 12
 
     var body: some View {
             ZStack {
@@ -39,7 +41,6 @@ struct MainMenuView: View {
                                     TitleImageView(landmark: landmark)
                                 }
                         CaptionView(text: landmark.details.headerOne)
-
                         // MARK: - Second NavLink
                         NavigationLink(
                             destination: MapView(target: landmark),
@@ -55,6 +56,10 @@ struct MainMenuView: View {
                                 if !appData.isPlayingGame {
                                     DisabledMessageView()
                                 }
+                            if locationManager.isNearGobyo == true {
+                                NearGobyoWarningView()
+                                Spacer()
+                                }
                             }
                         if appData.kukaiChallengeState == .paused && appData.isPlayingGame {
                             ResumeKukaiChallenge(isShowingResumeKukaiChallenge: $appData.isShowingResumeKukaiChallenge) // button
@@ -66,10 +71,12 @@ struct MainMenuView: View {
                                 Image(systemName: "list.dash")
                                     .font(wideElement(sizeCategory: sizeCategory) ? .caption : .headline)
                                     .foregroundColor(Color.koyaSky)
-                                Text("See List".uppercased())
+                                Text("See List")
+                                    .textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
                                     .font(wideElement(sizeCategory: sizeCategory) ? .caption : .headline)
                                     .foregroundColor(Color.koyaSky)
                                  }
+                            .accessibility(label: Text("See List"))
                             .navigationTitle("")
                             .navigationBarHidden(true)
                             Spacer()
@@ -78,7 +85,8 @@ struct MainMenuView: View {
                                 Image(systemName: "info.circle.fill")
                                 .font(.headline)
                                     .foregroundColor(Color.koyaSky)
-                                Text("About".uppercased())
+                                Text("About")
+                                    .textCase(/*@START_MENU_TOKEN@*/.uppercase/*@END_MENU_TOKEN@*/)
                                     .font(wideElement(sizeCategory: sizeCategory) ? .caption : .headline)
                                     .foregroundColor(Color.koyaSky)
                                  }
@@ -96,6 +104,9 @@ struct MainMenuView: View {
                 .sheet(isPresented: $scoreSummaryIsVisible, onDismiss: {}, content: {
                     ScoreSummaryView(scoreSummaryIsVisible: $scoreSummaryIsVisible)
                 })
+                    .alert(isPresented: $locationManager.isNearGobyo) {
+                               Alert(title: Text("Important message"), message: Text("You are near the Gobyō, the most sacred area of Mt. Kōya. Use of devices is not permitted beyond the bridge."), dismissButton: .default(Text("Got it!")))
+                           }
                 }
 
                 .navigationViewStyle(StackNavigationViewStyle())
@@ -107,6 +118,8 @@ struct MainMenuView: View {
                         appData.checkForGameOver()
                     }
                 }
+
+
                 if showChallenge() {
                     ChallengeDisplayView(isPlayingGame: $appData.isPlayingGame,
                                          enteredZone: locationManager.activeTargetZone!)
@@ -120,6 +133,7 @@ struct MainMenuView: View {
                     BonusDisplayView(isPlayingGame: $appData.isPlayingGame, isShowingBonusList: $isShowingBonusList)
                             .animation(.easeOut(duration: 0.8))
                     }
+
 
         } // end zstack
 
@@ -147,6 +161,10 @@ struct MainMenuView: View {
             appData.isShowingBonus &&
 //            isShowingBonusList &&
             appData.isPlayingGame
+    }
+
+    func nearGobyo() -> Bool {
+        return true
     }
     // MARK: - VIEW PROPERTIES
     var gamePlayControls: some View {

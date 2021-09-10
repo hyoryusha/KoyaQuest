@@ -173,9 +173,15 @@
         <time>2020-08-30T14:12:45Z</time>
     </wpt>
 
+    <wpt lat="34.22312" lon="135.60576973055655">
+        <name>Torodo</name>
+        <time>2020-08-30T14:13:00Z</time>
+    </wpt>
+
+
     <wpt lat="34.21605616024564" lon="135.60445876968933">
         <name>Nakanohashi Parking</name>
-        <time>2020-08-30T14:13:20Z</time>
+        <time>2020-08-30T14:14:30Z</time>
     </wpt>
 
     <wpt lat="34.217000" lon="135.605000">

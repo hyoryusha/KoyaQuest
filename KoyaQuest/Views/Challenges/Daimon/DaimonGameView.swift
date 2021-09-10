@@ -28,6 +28,8 @@ struct DaimonGameView: View {
 
     var body: some View {
         ZStack {
+            BackgroundView()
+                .ignoresSafeArea()
             VStack {
                 XDismissButtonRight()
                     .padding(.top, 4)
@@ -35,7 +37,7 @@ struct DaimonGameView: View {
                 Spacer()
                     .frame(height: 40)
                 Text("Provide your Answer")
-                    .foregroundColor(.primary)
+                    .foregroundColor(.koyaOrange)
                     .font(.title)
                     .bold()
                 SpriteView(scene: scene)
@@ -54,14 +56,14 @@ struct DaimonGameView: View {
                     .padding(.bottom, 6)
                     Text("Tap on the area within the picture that you believe differs from the actual Daimon.")
                         .font(.body)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.white)
                         .italic()
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 4)
                         // swiftlint:disable:next line_length
                     Text("Remember: it will be part of the actual gate.\n(And it will be obvious; when you find it, you'll knowit!)")
                         .font(.footnote)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.gray)
                         .italic()
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 10)
@@ -128,7 +130,7 @@ struct DaimonGameView_Previews: PreviewProvider {
                 gameOver: .constant(true),
                 points: .constant(0)
             )
-            .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+            .preferredColorScheme(.light)
     }
 
 }

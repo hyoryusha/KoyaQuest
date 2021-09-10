@@ -21,6 +21,7 @@ struct LandmarkListView: View {
                                 ) {
                                     LandmarkRowView(landmark: landmark)
                                 }
+                                .accessibility(label: Text("\(landmark.name)"))
                             }
                         }
                     }

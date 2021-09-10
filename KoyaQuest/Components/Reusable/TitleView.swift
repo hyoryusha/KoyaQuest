@@ -21,7 +21,7 @@ struct TitleView: View {
 
             if fullCaption {
                 Text("An interactive game & guide \nfor visitors to Japan's Mt. Kōya")
-                    .foregroundColor(Color.koyaDarkText)
+                    .foregroundColor(Color.black)
                     .font(.system(.callout, design: .serif))
                     .kerning(0.2)
                     .italic()
