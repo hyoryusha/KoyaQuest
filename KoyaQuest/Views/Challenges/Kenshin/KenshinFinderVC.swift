@@ -7,6 +7,7 @@
 
 import UIKit
 import ARKit
+import AVKit
 import AVFoundation
 
 protocol KenshinFinderVCDelegate: AnyObject {
@@ -22,7 +23,9 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         super.init(nibName: nil, bundle: nil)
         self.kenshinFinderDelegate = kenshinFinderDelegate
     }
-
+    var avPlayer: AVPlayer?
+    let avPlayerController = AVPlayerViewController()
+    var foundAnchor: ARImageAnchor?
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
     let targetImageNames = [
@@ -52,23 +55,23 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 // MARK: - Functions for standard AR view handling
 
     override func viewDidAppear(_ animated: Bool) {
-          super.viewDidAppear(animated)
-        print("Video play count at viewDidAppear is \(videoPlayCount)")
+        super.viewDidAppear(animated)
        }
 
     override func viewDidLayoutSubviews() {
-          super.viewDidLayoutSubviews()
+        super.viewDidLayoutSubviews()
        }
 
     override func viewWillAppear(_ animated: Bool) {
-          super.viewWillAppear(animated)
-          sceneView.session.run(configuration)
-          sceneView.delegate = self
+        super.viewWillAppear(animated)
+        sceneView.session.run(configuration)
+        sceneView.delegate = self
        }
 
     override func viewWillDisappear(_ animated: Bool) {
-          super.viewWillDisappear(animated)
-          sceneView.session.pause()
+        super.viewWillDisappear(animated)
+        sceneView.session.pause()
+        self.avPlayer?.pause()
        }
     // MARK: - ARSCNViewDelegate
 
@@ -130,9 +133,10 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         }
 
         func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-          guard let imageAnchor = anchor as? ARImageAnchor else { return }
+          guard let imageAnchor = anchor as? ARImageAnchor else {
+            return }
 //          let referenceImage = imageAnchor.referenceImage
-
+            foundAnchor = imageAnchor
           DispatchQueue.main.async {
             self.handleSuccess()
             self.handleFoundImage(imageAnchor, node)
@@ -143,13 +147,19 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             kenshinFinderDelegate?.didFindGhost()
         }
 
+//    func stopVideo() {
+//        print("will try to stop video")
+//        self.avPlayer?.pause()
+//
+//    }
     private func handleFoundImage(_ imageAnchor: ARImageAnchor, _ node: SCNNode) {
-
-    let size = imageAnchor.referenceImage.physicalSize
-    if let videoNode = makeGhostVideo(size: size) {
-      node.addChildNode(videoNode)
-      node.opacity = 1
-    }
+        foundAnchor = imageAnchor
+        print("found anchor set")
+        let size = imageAnchor.referenceImage.physicalSize
+        if let videoNode = makeGhostVideo(size: size) {
+          node.addChildNode(videoNode)
+          node.opacity = 1
+        }
   }
     private func makeGhostVideo(size: CGSize) -> SCNNode? {
     guard let videoURL = Bundle.main.url(forResource: "uesugi_ghost",
@@ -158,16 +168,20 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     }
 
     let avPlayerItem = AVPlayerItem(url: videoURL)
-    let avPlayer = AVPlayer(playerItem: avPlayerItem)
-        if videoPlayCount == 0 {
-            avPlayer.play()
+    //let avPlayer = AVPlayer(playerItem: avPlayerItem)
+        avPlayer = AVPlayer(playerItem: avPlayerItem)
+        if videoPlayCount < 1 { // this should not work
+            self.avPlayer?.play()
+        } else {
+            return nil
         }
     NotificationCenter.default.addObserver(
         forName: .AVPlayerItemDidPlayToEndTime,
         object: nil,
         queue: nil
     ) { _ in
-        avPlayer.seek(to: .zero)
+        self.avPlayer?.seek(to: .zero)
+        //self.avPlayerController.dismiss(animated: true)
         self.kenshinFinderDelegate?.videoCompleted()
         print("Delegate video completed called.")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in

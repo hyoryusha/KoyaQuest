@@ -161,7 +161,6 @@
 		0A61A724268C7EF900A5F5F5 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61A723268C7EF900A5F5F5 /* AudioModel.swift */; };
 		0A61A726268C7F3200A5F5F5 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61A725268C7F3200A5F5F5 /* AudioPlayerView.swift */; };
 		0A61A728268C7F5D00A5F5F5 /* landmark_1000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A61A727268C7F5D00A5F5F5 /* landmark_1000.mp3 */; };
-		0A61A74526959A7A00A5F5F5 /* ghost.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0A61A74426959A7A00A5F5F5 /* ghost.mp4 */; };
 		0A676652269E3E8200B3D429 /* PostScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A676651269E3E8200B3D429 /* PostScoreView.swift */; };
 		0A676654269E523D00B3D429 /* GameOverSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A676653269E523D00B3D429 /* GameOverSummary.swift */; };
 		0A676656269EE93F00B3D429 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A676655269EE93F00B3D429 /* LeaderboardView.swift */; };
@@ -423,7 +422,6 @@
 		0A61A723268C7EF900A5F5F5 /* AudioModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
 		0A61A725268C7F3200A5F5F5 /* AudioPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		0A61A727268C7F5D00A5F5F5 /* landmark_1000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = landmark_1000.mp3; sourceTree = "<group>"; };
-		0A61A74426959A7A00A5F5F5 /* ghost.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = ghost.mp4; sourceTree = "<group>"; };
 		0A676651269E3E8200B3D429 /* PostScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScoreView.swift; sourceTree = "<group>"; };
 		0A676653269E523D00B3D429 /* GameOverSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverSummary.swift; sourceTree = "<group>"; };
 		0A676655269EE93F00B3D429 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
@@ -582,7 +580,6 @@
 				0A92056F26AE2BF0007E7BAF /* 1072.mp3 */,
 				0A92057326AE2BF3007E7BAF /* 1073.mp3 */,
 				0A92058126AE2BFE007E7BAF /* 1074.mp3 */,
-				0A61A74426959A7A00A5F5F5 /* ghost.mp4 */,
 				0A61A727268C7F5D00A5F5F5 /* landmark_1000.mp3 */,
 				0A3D242E2674AA1400D9CA2F /* pop.wav */,
 				0A3D242B2674A99400D9CA2F /* zapped.wav */,
@@ -1154,7 +1151,6 @@
 				0A92058E26AE2C00007E7BAF /* 1017.mp3 in Resources */,
 				0A92059026AE2C00007E7BAF /* 1001.mp3 in Resources */,
 				0A5E83AE2663827A000076A9 /* Preview Assets.xcassets in Resources */,
-				0A61A74526959A7A00A5F5F5 /* ghost.mp4 in Resources */,
 				0A5A984726646E4100074902 /* Information.json in Resources */,
 				0A92058D26AE2C00007E7BAF /* 1030.mp3 in Resources */,
 				0A3D242C2674A99400D9CA2F /* zapped.wav in Resources */,
@@ -1577,7 +1573,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KoyaQuest/KoyaQuest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"KoyaQuest/Preview Content\"";
 				DEVELOPMENT_TEAM = VXX3S4X7D2;
 				ENABLE_PREVIEWS = YES;
@@ -1602,7 +1598,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KoyaQuest/KoyaQuest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"KoyaQuest/Preview Content\"";
 				DEVELOPMENT_TEAM = VXX3S4X7D2;
 				ENABLE_PREVIEWS = YES;

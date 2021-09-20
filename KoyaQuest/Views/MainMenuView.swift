@@ -18,8 +18,6 @@ struct MainMenuView: View {
     @State private var isShowingInfo = false
     @State private var scoreSummaryIsVisible = false
     @State private var isShowingBonusList = false
-    var tempNumber1 = 2
-    var tempNumber2 = 12
 
     var body: some View {
             ZStack {

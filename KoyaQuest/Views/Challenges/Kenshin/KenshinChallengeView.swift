@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct KenshinChallengeView: View {
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
     @Environment(\.presentationMode) var presentationMode
@@ -22,7 +21,7 @@ struct KenshinChallengeView: View {
             BackgroundView()
                 .ignoresSafeArea(.all)
             VStack {
-                XDismissButtonRight()
+                XExitButtonRight(didExitChallenge: $viewModel.didExitChallenge)
                     .padding(.trailing, 16)
                 HStack {
                     Image(systemName: "camera.viewfinder")
@@ -61,7 +60,8 @@ struct KenshinChallengeView: View {
                         .transition(.move(edge: .leading))
                         .padding(.bottom, 6)
 
-                    Text(viewModel.didFindGhost ? "Listen for your instructions." : viewModel.instructions)
+                    Text(viewModel.didFindGhost ? "Listen for your instructions.\nMove closer for better viewing." : viewModel.instructions)
+                        .multilineTextAlignment(.center)
                         .font(.caption)
                         .foregroundColor(.white)
                         .padding()

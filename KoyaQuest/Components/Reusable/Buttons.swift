@@ -185,6 +185,34 @@ struct XDismissButtonRight: View {
     }
 }
 
+struct XExitButtonRight: View {
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
+    @Binding var didExitChallenge: Bool
+    var body: some View {
+
+        HStack {
+            Spacer()
+            Button {
+                self.presentationMode.wrappedValue.dismiss()
+                didExitChallenge = true
+
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.caption2)
+                    .foregroundColor(Color.white)
+                    .frame(width: 20, height: 20, alignment: .center)
+                    .foregroundColor(Color.white)
+                    .background(
+                        Circle()
+                            .fill(Color.red)
+                    )
+                    // .padding([.top,.trailing], 20)
+            }
+        }
+    }
+}
+
 struct ScaleButtonStyle: ButtonStyle {
         func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label

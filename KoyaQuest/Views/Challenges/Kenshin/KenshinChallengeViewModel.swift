@@ -10,6 +10,7 @@ import SwiftUI
 final class KenshinChallengeViewModel: ObservableObject {
     @Published var didFindGhost = false
     @Published var didConcludeVideo = false
+    @Published var didExitChallenge = false
     @Published var success = false
     @Published var instructions: String = ""
     @Published var scannedCode = ""

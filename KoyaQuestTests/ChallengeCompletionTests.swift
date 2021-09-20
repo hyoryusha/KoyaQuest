@@ -75,8 +75,8 @@ class ChallengeCompletionTests: BaseTestCase {
         XCTAssertNotEqual(appData.gameState, .complete)
     }
     func testChangeGameState() {
-        appData.changeGameState(newState: .login)
-        XCTAssertEqual(appData.gameState, .login)
+        appData.changeGameState(newState: .exited)
+        XCTAssertEqual(appData.gameState, .exited)
     }
 
 }
