@@ -30,7 +30,7 @@ struct KenshinChallengeView: View {
                 }
                 .font(.title)
                 .foregroundColor(.koyaOrange)
-                .padding(.bottom, 6)
+                .padding([.bottom, .top], 6)
 
                 Text(viewModel.didFindGhost ? "" : "The spirit of Uesugi Kenshin has a message for you!")
                     .font(.callout)
@@ -57,7 +57,7 @@ struct KenshinChallengeView: View {
                         didCompleteVideo: $viewModel.didConcludeVideo
                     )
                         // Rectangle()
-                        .frame(height: 380)
+                        .frame(height: 380) // previous 380
                         .transition(.move(edge: .leading))
                         .padding(.bottom, 6)
 

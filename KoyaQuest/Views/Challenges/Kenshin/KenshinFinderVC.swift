@@ -17,7 +17,7 @@ protocol KenshinFinderVCDelegate: AnyObject {
 
 class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     weak var kenshinFinderDelegate: KenshinFinderVCDelegate?
-
+    var videoPlayCount = 0
     init(kenshinFinderDelegate: KenshinFinderVCDelegate) {
         super.init(nibName: nil, bundle: nil)
         self.kenshinFinderDelegate = kenshinFinderDelegate
@@ -53,6 +53,7 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
           super.viewDidAppear(animated)
+        print("Video play count at viewDidAppear is \(videoPlayCount)")
        }
 
     override func viewDidLayoutSubviews() {
@@ -112,6 +113,7 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
           // Set up the AR configuration.
           configuration.worldAlignment = .gravityAndHeading
           configuration.detectionImages = referenceImages
+
           // RUN the AR session:
           sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
         }
@@ -120,6 +122,7 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
           guard isRestartAvailable else { return }
           isRestartAvailable = false
           startARSession()
+            print("Experience restarted")
           // Disable for a few seconds to give the AR session time to restart.
           DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.isRestartAvailable = true
@@ -149,15 +152,16 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     }
   }
     private func makeGhostVideo(size: CGSize) -> SCNNode? {
-    guard let videoURL = Bundle.main.url(forResource: "ghost",
+    guard let videoURL = Bundle.main.url(forResource: "uesugi_ghost",
                                          withExtension: "mp4") else {
                                           return nil
     }
 
     let avPlayerItem = AVPlayerItem(url: videoURL)
     let avPlayer = AVPlayer(playerItem: avPlayerItem)
-    avPlayer.play()
-
+        if videoPlayCount == 0 {
+            avPlayer.play()
+        }
     NotificationCenter.default.addObserver(
         forName: .AVPlayerItemDidPlayToEndTime,
         object: nil,
@@ -165,8 +169,12 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     ) { _ in
         avPlayer.seek(to: .zero)
         self.kenshinFinderDelegate?.videoCompleted()
+        print("Delegate video completed called.")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in
-            self.kenshinFinderDelegate?.videoCompleted()
+            self.kenshinFinderDelegate?.videoCompleted() // why is this called twice?
+            print("Delegate video completed called after async delay.")
+            videoPlayCount += 1
+            print("Video play count is \(videoPlayCount)")
         }
     }
 

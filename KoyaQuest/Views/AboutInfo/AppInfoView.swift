@@ -2,54 +2,52 @@
 //  AppInfoView.swift
 //  KoyaQuest
 //
-//  Created by Kevin K Collins on 2021/06/04.
+//  Created by Kevin K Collins on 2021/09/18.
 //
 
 import SwiftUI
 
 struct AppInfoView: View {
     @Binding var isShowingInfo: Bool
-
     var body: some View {
-        ZStack {
-            BackgroundView()
-            VStack {
-                InfoTopView(isShowingInfo: $isShowingInfo)
-                TabView {
-                    AboutGameView()
-                        .tabItem {
+        VStack {
+            List {
+                NavigationLink(
+                    destination: AboutGameView().navigationBarTitle("About KoyaQuest"),
+                    label: {
+                        HStack {
                             Image(systemName: "questionmark.diamond")
                             Text("What is KoyaQuest?")
                         }
-                    LeaderboardView(viewModel: LeaderboardViewModel(), fetchFilter: FinalScoreFilter.allTime)
-                        .tabItem {
+                        .foregroundColor(.koyaDarkText)
+                    })
+                NavigationLink(
+                    destination: LeaderboardView(viewModel: LeaderboardViewModel(), fetchFilter: FinalScoreFilter.allTime).navigationBarTitle("Leaderboard"),
+                    label: {
+                        HStack {
                             Image(systemName: "sparkles")
                             Text("LeaderBoard")
-                        }
-                    FAQView()
-                        .tabItem {
+                        }.foregroundColor(.koyaDarkText)
+
+                    })
+                NavigationLink(
+                    destination: FAQFilteredScrollView().navigationBarTitle("FAQ"),
+                    label: {
+                        HStack {
                             Image(systemName: "folder.badge.questionmark")
                             Text("FAQ")
                         }
-                }
-                .accentColor(Color.koyaOrange)
-                .onAppear {
-                    UITabBar.appearance().barTintColor = UIColor(
-                        red: 230 / 255,
-                        green: 240 / 255,
-                        blue: 248 / 255,
-                        alpha: 1.0)
-                }
+                        .foregroundColor(.koyaDarkText)
+
+                    })
             }
-            .background(Color.koyaPurple)
-            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         }
+            .navigationBarItems(leading: Text("Back to Main Menu"))
     }
 }
 
 struct AppInfoView_Previews: PreviewProvider {
     static var previews: some View {
         AppInfoView(isShowingInfo: .constant(true))
-            .environmentObject(AppData())
     }
 }

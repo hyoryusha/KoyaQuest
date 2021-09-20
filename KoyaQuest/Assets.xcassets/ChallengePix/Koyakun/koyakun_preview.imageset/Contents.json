@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "koyakun_preview.jpg",
+      "filename" : "koyakun_preview@1x.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "koyakun_preview@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "koyakun_preview@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -13,7 +13,7 @@ enum ChallengeState {
 }
 
 enum GameState {
-    case initial, login, idle, active, complete, exited
+    case initial, idle, active, complete, exited
 }
 enum Level: String, CaseIterable, Identifiable {
     var id : String { UUID().uuidString }

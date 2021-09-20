@@ -1,21 +1,239 @@
 [
     {
     "id"    :   1000,
+    "filter": "Mount Kōya Mt. Kōya Mt. Koya Mount Koya Koyasan Kōyasan Mt" ,
+    "category": "Places",
     "title" :   "What is Mt. Kōya?",
     "body"  :
         {
             "headerOne" :   "A Monastic Center for Shingon Buddhism",
-            "bodyOne"   :   "Situated on a small plateau 800 meters above the Kinokawa River, Mt. Kōya (Kōyasan, in Japanese) is home to an active monastic center founded more than 12 centuries ago for the study and practice of Esoteric Buddhism. As the headquarters of the Kōyasan sect of Shingon Buddhism and the resting place of its founder, known posthumously as Kōbō-daishi, it is one of the most sacred sites in Japan."
+            "bodyOne"   :   "Situated on a small plateau 800 meters above the Kinokawa River, Mt. Kōya (高野山 Kōyasan, in Japanese) is home to an active monastic center founded more than 12 centuries ago for the study and practice of Esoteric Buddhism. As the headquarters of the Kōyasan sect of Shingon Buddhism and the resting place of its founder, known posthumously as Kōbō-daishi, it is one of the most sacred sites in Japan."
+        }
+    } ,
+    {
+    "id"    :   1007,
+    "filter": "Oku-no-in Seven wonders Okunoin cemetery",
+    "category": "Places",
+    "title" :   "What are the \"Seven Wonders of Oku-no-in\"?",
+    "body"  :
+        {
+            "headerOne" :   "Seven Road-side Curiosities",
+            "bodyOne"   :   "Several curiosities that can be found along the path to the Mausoleum of Kōbō-daishi have been designated as the \"Seven Wonders of Oku-no-in.\"\nAlthough some of these are featured in the guide to points of interest within this app, all seven are briefly introduced below in the order in which they are passed as one walks from Ichi-no-hashi to the Gobyō Bridge.\n\t\u2022 The Counting Jizō (Kazu-tori jizō): This is a stone image of the Boddhisattva Kṣitigarbha who counts the number of times a visitor to the Mausoleum Kōbō-daishi passes by. He will report this number to the god of the underworld on our judgment day for the partial remission of our sins.\n\t\u2022 The Sweating Jizō (Asekaki-jizō): This is another image of Kṣitigarbha for whom the condensation on its bronze surface is taken to be sweat as the compassionate Jizō takes on our sufferings.\n\t\u2022 The Reflecting Well (Sugatami-ido): According to legend, anyone who gazes into the well located next to the shrine of the Sweating Jizō and fails to see a reflection is fated to die within three years. On a more positive note, the water from the well is said to have miraculous healing properties.\n\t\u2022 The Kakuban Slope (Kakuban-zaka): In a similar superstition to that of the Reflecting Well, there is a belief that death within three years also awaits anyone who stumbles and falls before the 43rd and final step of the hill just beyond the Naka-no-hashi Bridge. The belief may be traced to the Japanese pronunciation of the numbers 4 and 2 (as in 42 steps); “shi ni” is also how 死に (to death) is pronounced.\n\t\u2022 The Monument to Zen’ni-shōchi (Zen’ni-shōchi-hi): Halfway up the Kakuban Slope there is a small stone grave marker on the right embankment. It belongs to a nun who died in the 14th century.  Legend has it that we can hear the sound of her calls from the underworld (screams from hell?) if we place an ear to the crack in the side of the stone.\n\t\u2022 The Spotted Fish of the Tamagawa River (Tamagawa no uo): The small fish that live in the river beneath the Gobyō Bridge are unusual for their small spots. The spots are believed to be the remnants of the skewers used by a fisherman who caught some and tried to cook them over a fire. The fish were saved by Kūkai who admonished the fisherman for violating the Buddhist proscription against taking a life.\n\t\u2022 The Maitrya Stone (Miroku no ishi): Just beyond the Gobyō Bridge, a small shrine houses a smooth, heavy stone. Just touching it is thought to bring merit through the establishment of a connection to Maitreya, the Buddha of the future, who is expected to make his appearance on earth at this site four billion years from now. The ability to singlehandedly lift the stone from the lower to the upper tier of the shirne is said to indicate one’s purity of heart."
         }
     } ,
 
     {
-    "id"    :   1001,
+    "id"    :   1200,
+    "filter": "Who founded Kūkai Kukai Kobo Kōbō" ,
+    "category": "People",
     "title" :   "Who was Kūkai?",
     "body"  :
         {
             "headerOne" :   "Buddhist Priest, Ninth Century Renaissance Man",
-            "bodyOne"   :   "Born in the year 774 on the island of Shikoku, Kūkai abandoned his studies in the capital of Kyoto in order to become a Buddhist priest at the age of 20. In 804, he traveled to China where he was initiated into the secret teachings of Esoteric Buddhism. Two years later he returned to Japan to establish the Shingon School, the center of which is the monastic complex of Mt. Kōya.\nIn addition to his religious teachings, Kūkai was also an educator who founded the earliest schools for the education of the general public. He was an accomplished calligrapher, engineer and linguist. He is credited by some as the inventor of the Japanese phonetic alphabet (kana).\nIn 845, at the age of 62, Kūkai was enshrined in the mausoleum of Oku-no-in. The faithful beleive that he did not die but that he entered into a state of perpetual meditation."
+            "bodyOne"   :   "Born in the year 774 on the island of Shikoku, Kūkai 空海 abandoned his studies in the capital of Kyoto in order to become a Buddhist priest at the age of 20. In 804, he traveled to China where he was initiated into the secret teachings of Esoteric Buddhism. Two years later he returned to Japan to establish the Shingon School, the center of which is the monastic complex of Mt. Kōya.\nIn addition to his religious teachings, Kūkai was also an educator who founded the earliest schools for the education of the general public. He was an accomplished calligrapher, engineer and linguist. He is credited by some as the inventor of the Japanese phonetic alphabet (kana).\nIn 845, at the age of 62, Kūkai was enshrined in the mausoleum of Oku-no-in. The faithful beleive that he did not die but that he entered into a state of perpetual meditation."
+        }
+    } ,
+
+    {
+    "id"    :   1202,
+    "filter": "Who Shinzen Kukai's successor" ,
+    "category": "People",
+    "title" :   "Who was Shinzen?",
+    "body"  :
+        {
+            "headerOne" :   "Kūkai's Nephew and Successor",
+            "bodyOne"   :   "Shinzen Daitoku 真然大徳 (b. 804? – 891) was Kūkai's nephew and designated successor. He is responsible for the restoration and completion of the monastery after the passing of Kūkai. In addition, he instituted an important program for the transmission of Shingon teachings known as the Dempō-e 伝法会. Shinzen also popularized the notion of Mt. Kōya as a Buddhist pure land.\nHis mausoleum can be found at the end of a short corridor off one of the galleries at the rear of Kongōbuji Temple."
+        }
+    } ,
+    {
+    "id"    :   1203,
+    "filter": "Who was Huiguo Kukai's teacher Huiguo Hui-kuo Huikuo Hui-guo Chang'an Seventh patriarch"  ,
+    "category": "People",
+    "title" :   "Who was Huiguo?",
+    "body"  :
+        {
+            "headerOne" :   "The Seventh Patriarch of Esoteric Buddhism",
+            "bodyOne"   :   "Huiguo 恵果 (746-805; J: Keika) was a Chinese priest and seventh patriarch of Esoteric Buddhism. His knowledge and reputation attracted many followers from around China and Korea to the Qinglong-si Temple 青龍寺 (J: Seiryū-ji) in the Tang capital of Chang'an. \nArguably, however, his most famous protégé was Kūkai whom Huiguo initiated into the most profound teachings of the Vajrayana tradition and whom he designated as his successor (i.e. the eighth patriarch)."
+        }
+    } ,
+
+    {
+    "id"    :   1300,
+    "filter": "Who was Oda Nobunaga" ,
+    "category": "People",
+    "title" :   "Who was Oda Nobunaga?",
+    "body"  :
+        {
+            "headerOne" :   "A Brutal Victor of the Warring States Era",
+            "bodyOne"   :   "The Edo Period in Japanese history was immediately preceded by the Azuchi-Momoyama, the name of which derives from the location of two castles belonging, respectively, to Oda Nobunaga 織田信長 (1534-1582) and Toyotomi Hideyoshi, the two successive unifiers of Japan during that time.\nAs head of the powerful Oda clan, Nobunaga began the expansion of his influence beyond his homeland of Owari province with the defeat of rival feudal lords (daimyō) in the 1550’s. He established his reputation for heartless brutality with the assassination of his brother in 1557 and for bold military tactics at the Battle of Okehazama in 1560.\nUnder the pretext of restoring power to the last Ashikaga Shogun (Yoshiaki), Nobunaga attacked Kyoto in 1568. Five years later, he drove Yoshiaki from the capital and took control of the government. By 1580, Nobunaga had brought all of central Japan under his authority.\nHis personal seal bore the phrase 天下布武 (Tenka fubu), \"all the realm under military rule.\"\nNobunaga’s military success can be attributed to his innovations (he was one of the first warlords to adopt Western firearms) and the service of competent retainers, including his successor Toyotomi Hideyoshi as well as Tokugawa Ieyasu, the man who would eventually establish the Tokugawa Shogunate at the beginning of the 17th century. It must also be attributed to his ruthlessness.\nNobunaga’s determination to wipe out his enemies did not spare their allies among Buddhist institutions. He most famously destroyed the monastic complex of Enryakuji in the mountains above Kyoto in 1571 slaughtering thousands of priests, women and children.\nIn 1581, he dispatched soldiers to Mt. Kōya which he accused of harboring one of his enemies and feared was forming an alliance with Ashikaga Yoshiaki. The details are murky due to the existence of records compiled by biased witnesses to the events, but it is clear that the priests of Mt Kōya enraged Nobunaga by killing his representatives. This resulted in a full-scale attack led by Nobunaga’s son Nobutaka. Met by resistance from combined forces of armored monks from Mt. Kōya together with local villagers, the attack failed and gave way to a siege that lasted through the winter. In 1582, however, Nobunaga’s attention was drawn away from Mt. Kōya to a separate crisis in western Japan. By June of that year, Nobunaga was dead, killed at Kyoto’s Honnōji Temple by one of his retainers.\nDespite having once laid siege to the monastery here, Nobunaga has a tomb at Mt. Kōya not too far from those of many of the other feudal lords whom he fought with (Toyotomi Hideyoshi and Tokugawa Ieyasu) and those he fought against, including Takeda Shingen, Uesugi Shingen and even his assassin, Akechi Mitsuhide."
+        }
+    } ,
+
+    {
+    "id"    :   1301,
+    "filter": "Who was Toyotomi Hideyoshi"  ,
+    "category": "People",
+    "title" :   "Who was Toyotomi Hideyoshi?",
+    "body"  :
+        {
+            "headerOne" :   "15th-Century Unifier of Japan",
+            "bodyOne"   :   "Along with his predecessor Oda Nobunaga and Tokugawa Ieyasu, who came after him, Toyotomi Hideyoshi 豊臣秀吉 (1537-1598) was one of the three most powerful warlords during the turbulent 16th century. He rose from a modest background to become one of Oda’s leading retainers, eventually succeeding his lord after Oda's death to become the most powerful man in Japan.\nPart of Hideyoshi’s effort to subjugate and unify Japan was his 1585 defeat of the Buddhist temple complex of Negoro-ji 根来寺. Located in the valley beneath Mt. Kōya, this temple was affiliated with a sub-branch of the Shingon sect. Though its monks were famed for their skill as warriors and, in particular, their use and manufacture of firearms, they were ultimately no match for Hideyoshi's forces, which burned the temple to the ground and slew thousands of the so-called sō-hei 僧兵, or \"warrior priests.\"\nWith Negoro-ji out of the picture, Hideyoshi turned his attention to the threat posed by Mt. Kōya. At the time, the monastery founded by Kūkai seven centuries earlier was in possession of numerous and vast estates and capable of raising a considerable military force of its own.\nHideyoshi understood that a campaign against Mt. Kōya, due to its location, would be more difficult than his attack on Negoro-ji. Reminding the monks of Mt. Kōya of the devastation that had befallen both Negoro-ji and Enryaku-ji (a major Tendai monastery on Mt. Hiei, destroyed by Nobunaga in 1571) and appealing to their commitment to Buddhist teachings, Hideyoshi succeeded without bloodshed in convincing the monks there to give up their weapons, surrender most of the property held beyond Mt. Kōya’s traditional territory, and renounce its right to provide sanctuary.\nOnce he had received these concessions, Hideyoshi turned from menace to generous benefactor: While he had decimated the ability of Mt. Kōya to finance its own operations, Hideyoshi replaced much of its lost income with his own donations.  In recompense for stripping Mt. Kōya of its right to offer sanctuary, Hideyoshi adopted the practice of forcing his defeated enemies to become monks and take up residence on the sacred mountain.\nHideyoshi's legacy on Mt. Kōya is greater than that of any of his contemporaries. And it is for this reason that Kongōbuji Temple has adopted the Toyotomi family crest as one of its insignia.\nHideyoshi's tomb is located at the top of a set of stone stairs along the Oku-no-in sandō, not too far from the Gobyō Bridge. While many Japanese visitors regard it as a \"must-see,\" others might not find the extra walk up the steep steps worth the effort."
+        }
+    } ,
+
+    {
+    "id"    :   1302,
+    "filter": "Who was Toyotomi Hidetsugu died in willow yanagi"  ,
+    "category": "People",
+    "title" :   "Who was Toyotomi Hidetsugu?",
+    "body"  :
+        {
+            "headerOne" :   "Victim of False Accusations",
+            "bodyOne"   :   "Toyotomi Hidetsugu 豊臣秀次 (1568-1595) was a nephew and retainer of the powerful Toyotomi Hideyoshi. As Hideyoshi’s closest male relative and a capable general, Hidetsugu was named Hideyoshi’s successor in 1591. However, when Hideyoshi's concubine bore him his own son two years later, Hidetsugu quickly fell out of Hideyoshi's favor.\nA campaign to slander Hidetsugu began, and he was ultimately accused of plotting to overthrow his uncle. In 1595, Hidetsugu was compelled to commit ritual suicide at Mt. Kōya along with three of his adolescent male companions. The setting for his grisly disembowelment and decapitation was the Yanagi-no-ma 柳の間 of Kongōbuji Temple."
+        }
+    } ,
+
+    {
+    "id"    :   1303,
+    "filter": "Who Takeda Shingen Shingen Tiger of Kai"  ,
+    "category": "People",
+    "title" :   "Who was Takeda Shingen?",
+    "body"  :
+        {
+            "headerOne" :   "The Tiger of Kai",
+            "bodyOne"   :   "Known as the Tiger of Kai, which was the name of his native province (current-day Yamanashi Prefecture), Takeda Shingen 武田信玄 (1521-1573) was a powerful feudal lord during Japan's Warring States Period (1467-1615). He became leader of his clan after revolting against his own father, Nobutora, when it became clear that Nobutora wanted to pass over Shingen to make his younger brother the heir to the clan.\nAllying himself with the Imagawa clan, Shingen set out to conquer the neighboring province of Shinano (present-day Nagano Prefecture). In the mid 1550s Shingen began his most famous campaign against the forces of Uesugi Kenshin from the province of Echigo (roughly the same area as present-day Niigata Prefecture). The two warlords and their armies fought each other to a stalemate five times at Kawanakajima between the years 1553-1564 and again at Tonegawa in 1571. According to legend, at one point during the fourth battle of Kawanakajima the two men themselves clashed face to face on the battlefield.\nA tentative alliance with Oda Nobunaga deteriorated after Shingen's forces attacked one of Oda's garrisons at Iwamura in 1572. A year later, he directly confronted and defeated the forces of Oda, led by Tokugawa Ieyasu, at the battle of Mitakagahara. Shingen's victory might have been the first in a decisive defeat of Oda Nobunaga. But a year later, Shingen was dead, perhaps from illness or, according to some, an assassin.\nShingen was succeeded by his son Katsuyori who tried unsuccessfully to continue his father’s struggle against the Oda-Tokugawa alliance. Katsuyori was defeated in successive battles against Ieyasu and committed ritual suicide in 1582.\nThe combined tombs of Shingen and his son Katsuyori at Oku-no-in is a must-see for many fans of Japanese history."
+        }
+    } ,
+
+    {
+    "id"    :   1400,
+    "filter": "What is Buddhism what are the teachings of Buddhism" ,
+    "category": "Buddhism",
+    "title" :   "What is Buddhism?",
+    "body"  :
+        {
+            "headerOne" :   "One of the Three Major Religions of the World",
+            "bodyOne"   :   "Founded in India around the sixth century B.C.E., Buddhism is one of the three major religions of the world with an estimated 350 million believers, most of whom live in Southeast Asia, Sri Lanka and Japan. Buddhism began with the teachings of a man named Siddhartha Gautama.\nAccording to tradition, Siddhartha was born into a rich and powerful family where he lived sheltered and protected from the misery and hardships that afflict most of mankind. At the age of 29, however, he discovered the suffering that existed beyond the walls of his father’s wealthy estate. Stirred by what he saw as the unhappy reality of existence, he decided to abandon his way of life and seek answers in religion.\nAfter several years spent wandering throughout the countryside experimenting with various religious practices of the day, Siddhartha came to the conclusion that training the mind through meditation offered the best hope to spiritual awakening. He therefore decided to sit down beneath a tree determined to meditate until he reached awakening. His attainment of enlightenment beneath what came to be called the Bodhi Tree marks the birth of Buddhism.\nSiddhartha began to preach to others on the meaning of life and the way that people could escape the cycle of death and rebirth into a world of suffering and sadness. He attracted many followers who began to call him Buddha, which means the Enlightened or Awakened One.\nBuddha accepted the Hindu belief that all living things were caught in a cycle of death and rebirth known as samsara. According to this belief, one's collective actions in life, known as karma, determine the state into which he or she will be reborn in the next. For Buddha, the goal was to escape this cycle thereby liberating oneself from pain and unhappiness. The innovative solution proposed by Buddha was that the cycle of samsara could be broken by ridding oneself of attachment to all worldly things including one’s own selfhood. The result would be a transcendent state of peace and enlightenment called nirvana.\nCentral to Buddha's teachings are the concepts of the Middle Way and the Noble Eightfold Path. The Middle Way emphasizes the need for individuals both to overcome their desires and to avoid extreme forms of self-denial. The Noble Eightfold Path comprises fundamental principles by which all people should live. These include the search for knowledge and truth, the rejection of evil impulses, and compassion for others. "
+        }
+    } ,
+    {
+    "id"    :   1401,
+    "filter": "Shingon Buddhist Esoteric Esoteric Buddhism shingon sect esoteric what form of" ,
+    "category": "Buddhism",
+    "title" :   "What is the form of Buddhism practiced at Mt. Kōya?",
+    "body"  :
+        {
+            "headerOne" :   "Shingon, or Esoteric Buddhism",
+            "bodyOne"   :   "The form of Buddhism practiced at Mt. Kōya is called Shingon 真言. It is a form of mikkyō 密教, or Esoteric Buddhism, which arose in India and was transmitted to China in the eighth century. It was systematized and brought to Japan by the founder of Mt. Koya, Kūkai. As the name implies, Esoteric Buddhism stresses the importance of secret teachings which can only be passed directly from master to disciple. It views other, exoteric forms of Buddhism as simplified and provisional versions intended for the uninitiated general public.\nIn particular, Shingon places emphasis on three secrets: those of body, mind and speech.\nThese secrets, which are inherent in us all, are ineffable and cannot be directly communicated in words. They can, however, be revealed through the use of mudras, mantras and mandalas. Mudras are ritual gestures and poses. Mantras are mystical words or sounds repeated as part of a ritual recitation, and mandalas are visual representations of cosmic realms. Through the practice of Shingon rituals, it is believed that a practitioner can establish a spiritual connection to Dainichi Nyorai (Mahāvairocana), the Cosmic Buddha and central object of Shingon worship.\nA distinct belief of Shingon is that the establishment of a spiritual connection to Dainichi Nyorai can enable a person to attain Buddhahood in his or her present existence. This doctrine is known as sokushin jōbutsu 即身成仏, which may be translated as \"becoming a Buddha in one’s own body.\""
+        }
+    } ,
+
+    {
+    "id"    :   1402,
+    "filter": "sutra sutras what is a sutra what are sutras what is a sutra what are sutras",
+    "category": "Buddhism",
+    "title" :   "What are sutras?",
+    "body"  :
+        {
+            "headerOne" :   "Sacred Text based on the teachings of Buddha",
+            "bodyOne"   :   "The term sutra is used in Hinduism, Janism and Buddhism, each with different meanings.\nIn Buddhism, sutras are canonical scriptures based on the teachings (or Dharma) of the Historical Buddha (Gautama). They were originally transmitted orally but were later written down and collected in the second of the Three Baskets (Tripitaka) containing the complete body of Buddhist scared texts.\nWhile Theravadan Buddhism limits the designation of the term \"sutra\" only to texts that are thought to contain the actual words of Gautama, the other main branches (Vajrayana and Mahayana) both recognize texts produced by his disciples.\nSutras can vary in length from dozens to thousands of lines. The Lotus Sutra comprises 28 chapters and runs to several hundred pages in English translation. The Heart Sutra, on the other hand, can be recited in its entirety in only a few minutes.\nReading, reciting and copying sutras has been an important part of Buddhist practice since earliest times. Many sutras themselves extol the ability of a sutra reading to assist in the attainment of the enlightened mind.  For this reason, the recitation of a sutra is often accompanied by other rituals such as purification and the presentation of offerings.\nDifferences in the interpretation and emphasis on the sutras contributed to the formation of different sects or schools within Buddhism.\nFun fact: the word sutra comes from the Sanskrit word \"sutram,\" which literally signifies thread, deriving from the Indo-European root \"sū-\", meaning to bind or sew. It is not surprising that the the Chinese character used to represent this word is 経, (kyō, in Japanese) which can also refer to the threads belonging to the warp of a loom.   What may be surprising, however, is that, the word sutra is a cognate of the English word \"sew,\" as both English and Sanskrit belong to the same Indo-European family of languages."
+        }
+    } ,
+
+    {
+    "id"    :   1403,
+    "filter": "Mandala what is a mandala What are mandalas",
+    "category": "Buddhism",
+    "title" :   "What is a mandala?",
+    "body"  :
+        {
+            "headerOne" :   "Visual Representations of the Buddhist Cosmos",
+            "bodyOne"   :   "Esoteric practices intended to lead to salvation are centered on three mysteries (known as sanmitsu, in Japanese). These are mysteries of the body, speech and mind, each of which is sacred and shared by humans as well as Buddhas and Bodhisattvas. Shingon teaches that, through ritual practices devoted to each of these mysteries, practitioners can transcend the false appearances of actions, speech and thought and attain unity with the ultimate truth, or dharma.\nExpressions of the spiritual essence of speech is achieved through the recitation of incantations known as mantras. That of the body is attained via gestures called mudras.  And, finally, the essence of the mind can be approached through the contemplation of visual representations of the Buddhist cosmos. These images are known as mandalas.\nWhile there can be three-dimensional versions, most mandala are two-dimensional paintings made up of circles and squares arranged in a grid. Within each section, we find further subdivisions representing the various forces that constitute the cosmic order. These symbolic representations of Buddhas and Bodhisattvas and other supernatural beings can take anthropomorphic or graphic form (for example, a letter from the Sanskrit alphabet).\nIntended as an aid to meditation, mandala synthesize and simplify the complex and myriad manifestations of phenomenal existence into a unified vision of the Buddhist cosmos. Simply put, when facing a mandala a viewer is confronted with many worlds; within the center of each a different power presides. But as one changes perspective, it is becomes clear that these worlds are interconnected and ultimately originate from a single center where the generative power of the universe dwells. In Shingon, this center is occupied by Dainichi Nyorai (Mahāvairocana).\nThe two mandala that figure prominently in the ritual practices of Shingon are the Kongōkai 金剛界(or \"Diamond World\") and Taizōkai 胎蔵界(\"Womb World\") Mandala. Together, they are known as the Ryōbu 両部 (or \"Dual\") mandala and they are thought to have been systematized in China by Kūkai’s master, the Chinese priest Huiguo (746-805). Kūkai introduced these mandala to Japan in the early ninth century.\nThe Diamond World Mandala is thought to represent unconditioned reality as it exists in the realm of the Buddhas while the Womb World Mandala depicts reality as it is revealed in the physical world. In other words, one shows reality as perceived by the mind; the other shows reality as perceived by the senses.\nIn addition to their use in meditation, mandala are also central to Shingon initiation rites. In a ceremony known as the Kechien Kanjō (結縁灌頂), aspirants are blindfolded and given a flower which they then tosses onto a large mandala spread out before them. The Buddha upon whom the individual flower falls becomes the deity to whom the aspirant is said to have a special bond -- a sort of patron saint, if you will. (The name Kechien Kanjō means \"Bond Establishing Anointment.\")"
+        }
+    } ,
+
+    {
+    "id"    :   1404,
+    "filter": "mantra what is a mantra what is a mantra what are mantra what are mantras",
+    "category": "Buddhism",
+    "title" :   "What are mantra?",
+    "body"  :
+        {
+            "headerOne" :   "Secret Words of the Buddha",
+            "bodyOne"   :   "In its broadest and most familiar sense, a mantra is a sacred phrase recited as an aid to concentration and meditation. Within various Hindu and Buddhist traditions, there are numerous and complex uses and meanings of mantra which make a single, comprehensive definition impossible.\nKūkai, the founder of the temple complex of Mt. Kōya, understood mantra as manifestations of the truth of the universe which is inexpressible in ordinary human speech. In this sense, mantra are the secret words of Dainichi Nyorai which, through proper repetition, can relieve suffering and lead to liberation.\nBecause the truth of the universe is unchanging, Kūkai stressed the importance that mantra preserve their original from. For this reason, they are pronounced according to the Sanskrit (Siddhaṃ) transcriptions and their literal meaning is incidental to their more profound significance. As they are capable of concentrating infinite meanings, some mantra can be as short as a single syllable.\nMantra, along with mudras and mandala, form the three fundamental mysteries (of speech, body and mind) of Shingon ritual practice. The importance of mantra is evident in the fact that the word Shingon is written with the Chinese characters for \"true speech,\" which is the literal meaning of the Sanskrit word \"mantra.\""
+        }
+    } ,
+
+    {
+    "id"    :   1405,
+    "filter": "diamond kongo vajra kongōbuji kongobuji kongōbuji",
+    "category": "Buddhism",
+    "title" :   "What is the significance of the diamond at Mt. Kōya?",
+    "body"  :
+        {
+            "headerOne" :   "A Symbol of the Buddha Wisdom",
+            "bodyOne"   :   "The term kongō 金剛 is ubiquitous at Mt. Kōya, most eminently in the name Kongōbuji, or \"Temple of the Diamond Peak,\" which was Kūkai's original name for the whole of the monastic settlement founded here in 817.\nThe word is the Japanese translation of the Sanskrit vajra, which in Hinduism refers to Indra’s thunderbolt but in Buddhism refers to the hardest metal, or diamond. It is used symbolically for the buddha wisdom latent in all beings. This wisdom, like the diamond, is indestructible, inviolable and precious. It also possesses a sharpness which, according to a passage in the Diamond Sutra enables it to cut through ignorance and unnecessary conceptualizations.\nIn addition to the name of the headquarters of the Shingon sect of Mt. Kōya, the term kongō also appears in the Kongōkai, or Diamond Realm, Mandala, and the Kongō Rikishi (the fierce deities who guard the temple gates)."
+        }
+    } ,
+
+    {
+    "id"    :   1406,
+    "filter": "Heart Sutra Heart Wisdom Sutra Shakyo sutra",
+    "category": "Buddhism",
+    "title" :   "What is the \"Heart Sutra?\"",
+    "body"  :
+        {
+            "headerOne" :   "The Essence of Mahayana Teaching",
+            "bodyOne"   :   "What we refer to by the Heart Sutra (般若心経 Han’nya shinkyō, in Japanese) is a 266-character distillation of the teachings found in a collection of 38 separate sutras collectively known as the Wisdom Sutras (Prajnaparamita).  Accordingly, the word translated as \"heart\" is perhaps closer in meaning to \"essence.\"\nPresented as a dialog between a bodhisattva and a Buddhist disciple, it can perhaps be thought of as a succinct Buddhist catechism, the central theme of which is the ultimate emptiness (śūnyatā) of all phenomena. One of its most famous passages reads, \"form is none other than emptiness; emptiness is none other than form 色不異空空不異色.\"\nOwing to its clarity and brevity, it is one of the most popular sutras in Mahayana Buddhism and is used by virtually every sect, including Zen (which otherwise does not place great emphasis on scriptures).\nThe Heart Sutra is the text used in the shakyō, or sutra-copying, practice available to visitors to Mt. Kōya."
+        }
+    } ,
+
+    {
+    "id"    :   1602,
+    "filter": "Sanskrit Siddham Why" ,
+    "category": "Customs & Practices",
+    "title" :   "Why is Sanskrit used at Mt. Kōya?",
+    "body"  :
+        {
+            "headerOne" :   "A Sacred Syllabary",
+            "bodyOne"   :   "Throughout Mt. Kōya one can see Sanskrit letters(梵字 bonji), often used in isolation, on amulets, stone monuments, stupas, or the narrow wooden slats 護摩札 (goma-fuda) used in the goma fire consecration ritual.\nStrictly speaking, the characters belong to the Siddhaṃ script which was used to transcribe Sanskrit in Northern India from about the 7th century C.E. In China and subsequently in Japan, it was used not for communication, per se, but as a sacred script for the purpose of conveying mystical meanings.  The script is technically an aplhasyllabary (or abugida) in which individual graphs represent syllables rather than a single sound. This makes each individual letter more conducive to ritual application and (incidentally) for conflation with the logographic nature of Chinese characters.\nWhile single graphs could be invested with discrete meaning (for example, a particular deity), Kūkai insisted that they not be transliterated into Japanese; instead, he promoted the study and use of their original pronunciations.\nThe school of Buddhism that Kūkai introduced to Japan is called Shingon, which literally means \"true speech,\" but which is also the word for \"mantra,\" the magic-laden phrases believed to manifest the true nature of reality. Kūkai maintained that the efficacy of these mantra depended on their recitation in their original pronunciations.\nMany, if not most, of the Sanskrit letters one is likely to see at Mt. Kōya fall into the category known as \"seed-letters\" (種字, shuji). These are individual Siddhaṃ syllables that represent or (in fact) embody a particular Buddha."
+        }
+    } ,
+
+
+    {
+    "id"    :   1603,
+    "filter": "Bib Why do some statues wear bibs jizō Ojizō statues",
+    "category": "Customs & Practices",
+    "title" :   "What is the deal with the bibs?",
+    "body"  :
+        {
+            "headerOne" :   "An Expression of Parental Grief",
+            "bodyOne"   :   "This is one of the most frequently asked questions by visitors to Mt. Kōya (or to almost any Buddhist temple in Japan). Indeed, it is hard not to notice that many small stone statues are wearing red bibs and sometimes red beanies as well.\nIf the stone statue is of O-jizō-sama, a popular bodhisattva who typically appears in the form of a monk, the reason for the cute little bib is rather bittersweet. O-jizō is regarded as a protector of children. (For this reason, his statue often appears at railway crossings where children are likely to pass on their way to school.)\nThe custom of placing bibs on the statues of O-jizō seems to have begun with the grief and desperation of parents mourning the loss of a child.  As with many religious traditions, confusion may cloud the meaning of the gesture.  On the one hand, the bib can be seen as a prayer offering to O-jizō for his protection of the dead child. On the other hand, the diminutive size of the stone statues gives them the appearance of children, making the bib more of a direct gift to the child in the afterlife.\nIn either case, the motive is as heartwarming as it is heart-wrenching."
+        }
+    } ,
+
+    {
+    "id"    :   1604,
+    "filter": "Shukubo Shukubō lodging Temple stay Temple lodging Where can I stay" ,
+    "category": "Customs & Practices",
+    "title" :   "What is shukubō 宿坊?",
+    "body"  :
+        {
+            "headerOne" :   "Overnight Temple Lodging",
+            "bodyOne"   :   "One hundred and seventeen temples is a lot for a small town like Mt. Kōya, but this is still only a fraction of the approximately 1000 temples that used to be here.\nIn olden days when travel was more difficult and overnight stays a necessity, visitors to Mt. Kōya would be assigned lodging at a temple that was affiliated with their local temple.  Today’s visitors can choose freely from among the 52 temples that currently provide overnight lodging (宿坊shukubō) for guests.\nAs one would expect, accommodations are in Japanese-style rooms, usually with a shared bath and sometimes with a lovely garden view. One of the highlights is the food, which is prepared in accordance with the Buddhist devotional diet known as shōjin ryōri 精進料理. Another distinct feature is the chance to participate in early morning Buddhist religious services, or asa-gongyō 朝勤行(more familiarly referred to as o-tsutome お勤め).  The form and conduct of these rituals vary from temple to temple, but they typically include choral chanting by a group of monks before the temple’s main object of worship. The ritual burning of goma-fuda during the fire ceremony of Ekoin Temple 恵光院 is particularly impressive. Services last around 30 minutes and are optional.\nThe shukubō experience also offers guests the chance to participate in other activities such as Aji-kan 阿字観 Meditation and Shakyō 写経 sutra copying."
+        }
+    } ,
+
+    {
+    "id"    :   1606,
+    "filter": "Shakyō sutra copying heart",
+    "category": "Customs & Practices",
+    "title" :   "What is shakyō 写経 sutra copying?",
+    "body"  :
+        {
+            "headerOne" :   "A Meditative Engagement with a Spiritual Text",
+            "bodyOne"   :   "One of the interesting activities that visitors to Mt. Kōya can enjoy is the experience of copying a sutra (写経 shakyō). For a fee, participants are provided with a traceable copy of the Heart Sutra -- all in kanji, of course -- and a writing brush. After the proper ritual preparations, which include purification with powdered incense rubbed onto the palms, they sit on their knees at a low table in a tatami-matted room.\nIt takes about an hour to carefully copy the 260-odd characters of the sutra. The quiet concentration required to complete the task is meant to be meditative and reflection upon its content good for the soul. Even those with no knowledge of Japanese can take part.\nAs a devotional exercise, many participants choose to offer their completed sutra at Oku-no-in, but it can also be taken home (as a souvenir, though it is a bit gauche to call it that).\nThe experience is offered at the Daishi Kyōkai Honbu 大師教会本部 (near Kongōbuji Temple) for ¥1000. (A ¥100 surcharge is added for those who want to keep their copy). The chance to copy the sutra is also available at certain temples that provide overnight lodging (宿坊 shukubō)"
         }
     }
 ]

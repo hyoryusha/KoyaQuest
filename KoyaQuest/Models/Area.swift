@@ -164,14 +164,15 @@ let ichinohashiArea = Area(
     isTargetZone: true,
     radius: 100
  )
+//34.21795458937127, 135.59820076202416 / 34.21651619489697, 135.59862060484994
 
 let kenshinArea = Area(
-    latitude: 34.21795458937127,
-    longitude: 135.59820076202416,
+    latitude: 34.21638,
+    longitude: 135.59833,
     identifier: "Uesugi Kenshin Mausoleum Area",
     challenge: kenshinChallenge,
     isTargetZone: true,
-    radius: 170
+    radius: 100
 )
 // 34.218245425673395, 135.6020572196682
 let nakanohashiArea = Area(
@@ -191,23 +192,23 @@ let bashoArea = Area(
     isTargetZone: true,
     radius: 100
 )
-// 34.22133507975566, 135.60677547761603 // 34.22211073890209, 135.60602196144063 //, 34.2193499, 135.60509
+// 34.22133507975566, 135.60677547761603 // 34.22211073890209, 135.60602196144063 //, 34.2193499, 135.60509 //34.22191, 135.60592
 let tamagawaArea = Area(
-    latitude: 34.2193499,
-    longitude: 135.60509,
+    latitude: 34.22191,
+    longitude: 135.60592,
     identifier: "Tamagawa Area",
     challenge: mizumukeChallenge,
     isTargetZone: true,
-    radius: 100
+    radius: 90
 )
-
+//34.22312, 135.60576973055655
 let torodoArea = Area(
     latitude: 34.22312,
     longitude: 135.60576973055655,
     identifier: "Tōrōdō Area",
     challenge: nil,
     isTargetZone: false,
-    radius: 100
+    radius: 120
 )
 
 let nakanohashiParkingArea = Area(

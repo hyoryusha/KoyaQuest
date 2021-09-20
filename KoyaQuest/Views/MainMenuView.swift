@@ -110,7 +110,6 @@ struct MainMenuView: View {
                 }
 
                 .navigationViewStyle(StackNavigationViewStyle())
-
                 .animation(.easeInOut(duration: 0.8))
                 .blur(radius: showChallenge() ? 16 : 0)
                 .onAppear() {

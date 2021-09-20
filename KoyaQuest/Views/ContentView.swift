@@ -23,11 +23,6 @@ struct ContentView: View {
                           message: alertItem.message,
                           dismissButton: alertItem.dismissButton)
                 }
-//                Button("Add Sample Leaderboard Data") {
-//                    try? dataContoller.createSampleLeaderBoard()
-//                }
-            case .login:
-                LoginView()
             case .active, .idle, .exited:
                 MainMenuView(landmark: Landmark.allLandmarks[0])
             case .complete:

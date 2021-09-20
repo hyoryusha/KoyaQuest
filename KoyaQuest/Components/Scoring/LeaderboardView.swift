@@ -27,14 +27,14 @@ struct LeaderboardView: View {
         // NavigationView {
             ZStack {
                 VStack {
-                    HStack {
-                        Image(systemName: "sparkles")
-                        Text("Points Leaderboard")
-                            .bold()
-                    }
-                    .font(.title)
-                    .foregroundColor(.koyaOrange)
-                    .padding(.bottom)
+//                    HStack {
+//                        Image(systemName: "sparkles")
+//                        Text("Points Leaderboard")
+//                            .bold()
+//                    }
+//                    .font(.title)
+//                    .foregroundColor(.koyaOrange)
+//                    .padding(.bottom)
                     Group {
                         Text("Total Scores Submitted: \(allFinalScores.count)")
                             .font(wideElement(sizeCategory: sizeCategory) ? .footnote : .footnote)

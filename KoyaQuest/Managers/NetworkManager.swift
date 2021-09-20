@@ -21,7 +21,7 @@ final class NetworkManager {
     static let baseURL = "https://www.collins-sweet.com/kq/backend/json/"
     private let infoURL = baseURL + "Information.json"
     private let landmarksURL = baseURL + "Landmarks.json"
-    private let FAQURL = baseURL + "FAQ.json"
+    private let FAQURL = baseURL + "FAQ2.json"
     private init() {
     }
 // TODO: - Create a func that takes params for the specific json file I want OR create separate funcs for each.
@@ -88,9 +88,8 @@ final class NetworkManager {
 
             do {
                 let decoder = JSONDecoder()
-//                let decodedResponse = try decoder.decode(InformationResponse.self, from: data)
-//                completed(.success(decodedResponse.request))
-
+                //let decodedResponse = try decoder.decode(FAQResponse.self, from: data)
+               // completed(.success(decodedResponse.request))
                 let decodedResponse = try decoder.decode([FAQ].self, from: data)
                 completed(.success(decodedResponse))
 

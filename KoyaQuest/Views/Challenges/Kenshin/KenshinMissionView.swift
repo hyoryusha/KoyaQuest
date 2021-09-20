@@ -21,7 +21,7 @@ struct KenshinMissionView: View {
             if playable {
                 VideoPlayer(player: AVPlayer(
                                 url: Bundle.main.url(
-                                    forResource: "ghost",
+                                    forResource: "uesugi_ghost",
                                     withExtension: "mp4")!
                     )
                 )
