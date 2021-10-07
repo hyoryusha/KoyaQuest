@@ -14,6 +14,7 @@ struct TextOverlayView: View {
             Spacer()
             ZStack(alignment: .bottomLeading) {
                 VStack(alignment: .leading) {
+                    Spacer()
                     HStack {
                         Text(landmark.name)
                             .font(wideElement(sizeCategory: sizeCategory) ? .caption2: .title2)

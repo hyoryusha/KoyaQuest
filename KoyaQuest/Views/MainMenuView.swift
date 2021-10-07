@@ -10,7 +10,7 @@ import SwiftUI
 struct MainMenuView: View {
     @EnvironmentObject var appData: AppData
     @EnvironmentObject var locationManager: LocationManager
-    @EnvironmentObject var dataController: DataController
+    //@EnvironmentObject var dataController: DataController // is this needed here? 
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
     @StateObject var viewModel = MainMenuViewModel()
     @State var landmark: Landmark
@@ -99,9 +99,12 @@ struct MainMenuView: View {
                     .navigationBarHidden(true)
                     .background(Image("mtns"))
                     .statusBar(hidden: true)
-                .sheet(isPresented: $scoreSummaryIsVisible, onDismiss: {}, content: {
-                    ScoreSummaryView(scoreSummaryIsVisible: $scoreSummaryIsVisible)
-                })
+//                .sheet(isPresented: $scoreSummaryIsVisible, onDismiss: {}, content: {
+//                    ScoreSummary(scoreSummaryIsVisible: $scoreSummaryIsVisible)
+//                })
+                    .fullScreenCover(isPresented: $scoreSummaryIsVisible, onDismiss: {}, content: {
+                                            ScoreSummary(scoreSummaryIsVisible: $scoreSummaryIsVisible)
+                                        })
                     .alert(isPresented: $locationManager.isNearGobyo) {
                                Alert(title: Text("Important message"), message: Text("You are near the Gobyō, the most sacred area of Mt. Kōya. Use of devices is not permitted beyond the bridge."), dismissButton: .default(Text("Got it!")))
                            }

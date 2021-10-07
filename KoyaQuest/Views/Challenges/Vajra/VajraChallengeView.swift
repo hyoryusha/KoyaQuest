@@ -24,7 +24,7 @@ struct VajraChallengeView: View {
                     .padding(.top, 4)
                     .padding(.trailing, 8)
                     HStack {
-                        Image(systemName: "camera.viewfinder")
+                        Image(systemName: "eyes") //camera.viewfinder
                         Text("Search for the Vajra!")
                     }
                     .frame(
@@ -67,19 +67,25 @@ struct VajraChallengeView: View {
                         .foregroundColor(.koyaOrange)
                         .italic()
                 }
+                Text("Distance to target:")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding(.top)
+                ZStack {
+                    //Color.red.frame(width: 210, height: 66)
                     Text(viewModel.distance == 0 ? "" : viewModel.proximity)
-                        .font(.footnote)
+                        .font(.largeTitle)
                         .foregroundColor(.white)
-                        .frame(
-                            minWidth: 320,
-                            idealWidth: 420,
-                            maxWidth: 420,
-                            minHeight: 88,
-                            idealHeight: 90,
-                            maxHeight: 92,
-                            alignment: .center
-                        )
-                    .padding(.bottom, 10)
+                            .frame(
+                                width: 210,
+                                height: 66,
+                                alignment: .center
+                            )
+                        .background(viewModel.distanceIndicatorColor)
+                        .padding(.top, 10)
+
+                }
+
             } // end VStack
             .blur(radius: viewModel.isShowingModal ? 6 : 0)
                 .navigationBarTitle(Text(""))

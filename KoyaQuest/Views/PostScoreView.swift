@@ -11,7 +11,8 @@ import CoreData
 struct PostScoreView: View {
     @EnvironmentObject var appData: AppData
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
-    @Environment(\.managedObjectContext) var viewContext: NSManagedObjectContext
+    //@Environment(\.managedObjectContext) var viewContext: NSManagedObjectContext // changed 9-29-21 to:
+    @EnvironmentObject var dataController: DataController
     @StateObject var viewModel = PostScoreViewModel()
     @State var showAllUsernames: Bool = false
     @State var scorePosted: Bool = false
@@ -78,7 +79,7 @@ struct PostScoreView: View {
                 .frame(height: 142, alignment: .center)
                 .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                 .padding()
-                PostScoreBlubView()
+                PostScoreBlurbView()
             }
             Spacer()
         } // end Vstack
@@ -90,7 +91,7 @@ struct PostScoreView: View {
                                       userName: newRecord.userName,
                                       score: newRecord.score,
                                       submitDate: newRecord.date,
-                                      using: viewContext)
+                                      using: dataController.container.viewContext)
                 scorePosted = true
             }
         }
@@ -123,7 +124,7 @@ struct UserInputView_Previews: PreviewProvider {
     }
 }
 
-struct PostScoreBlubView: View {
+struct PostScoreBlurbView: View {
     var body: some View {
         Text("(Well, those who use this app, at least.)")
             .font(.footnote)

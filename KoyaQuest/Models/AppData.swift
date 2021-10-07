@@ -8,23 +8,6 @@
 import Combine
 import SwiftUI
 
-enum ChallengeState {
-    case idle, active, paused
-}
-
-enum GameState {
-    case initial, idle, active, complete, exited
-}
-enum Level: String, CaseIterable, Identifiable {
-    var id : String { UUID().uuidString }
-    case
-            myoo = "Wisdom King",
-            master = "Master",
-            adept = "Adept",
-            journeyman = "Journeyman",
-            novice = "Novice"
-}
-
 final class AppData: ObservableObject {
     // @Published var gameState: GameState = .complete
     // @Published var gameStarted: Bool = false

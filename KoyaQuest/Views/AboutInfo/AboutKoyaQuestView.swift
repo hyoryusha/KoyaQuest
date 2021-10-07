@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AboutGameDetailView: View {
+struct AboutKoyaQuestView: View {
     var contents: Information
     var body: some View {
 
@@ -47,6 +47,6 @@ struct AboutGameDetailView: View {
 
 struct AboutGameDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutGameDetailView(contents: Information.allInfo[2])
+        AboutKoyaQuestView(contents: Information.allInfo[2])
     }
 }

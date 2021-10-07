@@ -19,14 +19,16 @@ struct AboutGameView: View {
                 List {
                     ForEach(viewModel.information) { info in
                         NavigationLink(
-                            destination: AboutGameDetailView(contents: info)
+                            destination: AboutKoyaQuestView(contents: info)
                         ) {
                             HStack {
-                                Image(systemName: "doc")
-                                    .foregroundColor(.koyaDarkText)
+                                Image(systemName: getIcon(id: info.id))
+                                    .font(.title2)
+                                    .foregroundColor(.koyaOrange)
                                 Text(info.title)
-                                .font(.headline)
-                                    .foregroundColor(.koyaDarkText)
+                                    .font(.title2)
+                                    .bold()
+                                    .foregroundColor(.black)
                             }
                         }
                     }
@@ -38,6 +40,29 @@ struct AboutGameView: View {
                     LoadingView()
                 }
         }
+    }
+
+    func getIcon(id: Int) -> String {
+        var icon: String = "doc"
+        switch id {
+        case 1001:
+            icon = "questionmark.diamond"
+        case 1002:
+            icon = "target"
+        case 1003:
+            icon = "scope"
+        case 1004:
+            icon = "puzzlepiece"
+        case 1005:
+            icon = "iphone.radiowaves.left.and.right"
+        case 1006:
+            icon = "map"
+        case 1007:
+            icon = "hands.sparkles"
+        default:
+            icon = "doc"
+        }
+        return icon
     }
 }
 

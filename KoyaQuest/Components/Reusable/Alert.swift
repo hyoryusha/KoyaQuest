@@ -20,7 +20,7 @@ struct AlertActionItem: Identifiable {
     var actionButton: Alert.Button
 }
 
-struct AlertContext { // many of these are from Sean Allen Appetizer app... save for now?
+struct AlertContext { // cf Sean Allen
 
 // MARK: - NETWORK ALERTS
     static let invalidData = AlertItem(title: Text("Server Error"),

@@ -7,15 +7,6 @@
 
 import SwiftUI
 
-//
-//  BonusDisplayView.swift
-//  KoyaQuest
-//
-//  Created by Kevin K Collins on 2021/06/17.
-//
-
-import SwiftUI
-
 struct NewBonusDisplayView: View {
     @EnvironmentObject var appData: AppData
     @Binding var isPlayingGame: Bool

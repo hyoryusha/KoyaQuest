@@ -15,29 +15,26 @@ struct AppInfoView: View {
                 NavigationLink(
                     destination: AboutGameView().navigationBarTitle("About KoyaQuest"),
                     label: {
-                        HStack {
-                            Image(systemName: "questionmark.diamond")
-                            Text("What is KoyaQuest?")
-                        }
-                        .foregroundColor(.koyaDarkText)
+                        AboutViewRow(
+                            icon: "info.circle",
+                            title: "What is KoyaQuest?",
+                            blurb: "Explore the features of this app...")
                     })
                 NavigationLink(
                     destination: LeaderboardView(viewModel: LeaderboardViewModel(), fetchFilter: FinalScoreFilter.allTime).navigationBarTitle("Leaderboard"),
                     label: {
-                        HStack {
-                            Image(systemName: "sparkles")
-                            Text("LeaderBoard")
-                        }.foregroundColor(.koyaDarkText)
-
+                        AboutViewRow(
+                            icon: "list.number",
+                            title: "LeaderBoard",
+                            blurb: "Check out scores and rankings...")
                     })
                 NavigationLink(
                     destination: FAQFilteredScrollView().navigationBarTitle("FAQ"),
                     label: {
-                        HStack {
-                            Image(systemName: "folder.badge.questionmark")
-                            Text("FAQ")
-                        }
-                        .foregroundColor(.koyaDarkText)
+                        AboutViewRow(
+                            icon: "folder.badge.questionmark",
+                            title: "FAQ",
+                            blurb: "Find out more about Mt. Kōya...")
 
                     })
             }
@@ -49,5 +46,29 @@ struct AppInfoView: View {
 struct AppInfoView_Previews: PreviewProvider {
     static var previews: some View {
         AppInfoView(isShowingInfo: .constant(true))
+    }
+}
+
+struct AboutViewRow: View {
+    var icon: String
+    var title: String
+    var blurb: String
+
+    var body: some View {
+        HStack {
+            Image(systemName: icon)
+                .font(.title)
+                .foregroundColor(.koyaOrange)
+            VStack(alignment: .leading, spacing: 6) {
+                Text(title)
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(.black)
+                Text(blurb)
+                    .font(.subheadline)
+                    .italic()
+                    .foregroundColor(Color.gray)
+            }
+        }
     }
 }

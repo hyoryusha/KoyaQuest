@@ -8,6 +8,23 @@
 import Foundation
 import SpriteKit
 
+enum ChallengeState {
+    case idle, active, paused
+}
+
+enum GameState {
+    case initial, idle, active, complete, exited
+}
+enum Level: String, CaseIterable, Identifiable {
+    var id : String { UUID().uuidString }
+    case
+            myoo = "Wisdom King",
+            master = "Master",
+            adept = "Adept",
+            journeyman = "Journeyman",
+            novice = "Novice"
+}
+
 enum Proximity: String { // messages used to help user navigate to target
     case cooler     = "You're getting cooler..."
     case warmer     = "You're getting warmer!"

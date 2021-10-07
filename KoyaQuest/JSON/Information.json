@@ -58,11 +58,23 @@
     } ,
     {
     "id"    :   1006,
+    "title" :   "Suggested Route",
+    "body"  :
+        {
+            "headerOne" :   "A Compact Area",
+            "bodyOne"   :   "Most of the major sites of Mt. Kōya are found in a fairly small area. It is less than 4 kilometers from the Daimon to the Mausoleum of Kōbō-daishi. Therefore, a visitor can see almost everything in a day. Many choose to spend a few hours in the morning exploring the area centered on the Danjō Garan and another few hours in the afternoon at Oku-no-in.",
+            "headerTwo" :   "To Complete the Challenges",
+            "bodyTwo"   :   "For those determined to complete all 12 challenges that make up KoyaQuest, we suggest starting at the Daimon before proceeding (either on foot or bus) to the Danjō Garan and Kongōbuji Temple. Check out the Reihōkan Museum if you have time (though it isn't absolutely necessary for the challenges). But don't neglect to stop by the Nyonindō, or Women's Hall, passing by the Tokugawa Family Mausoleum on the way!\nFor the second part of your visit, stroll along the main street where there are shops, cafes and restautants. A side trip to Kongō-sanmai-in will be well be worth your while (though, again, not an essential stop on the itinerary). Those who take the bus from Kongōbuji to Oku-no-in might miss at least one challenge not too far from Karukayadō Temple.\nGive yourself ample to time to traverse 2 kilometers of the Oku-no-in Sandō, or Path to the Inner Sanctuary. Begin at Ichi-no-Hashi Bridge. You won't miss anything if you stay on the main path, but don't be afraid to explore some of the side paths.\nOut of respect for the sanctity of the area around the Mausoleum of Kōbō-daishi, there are no challenges beyond the Gobyō Bridge, but there might (wink-wink) be one near the river itself.\nWhile less imposing than the older, forested region of the cemetery, the modern section offers many interesting and peculiar sites -- as well as one final challenge!"
+        }
+    },
+
+    {
+    "id"    :   1007,
     "title" :   "Acknowledgements",
     "body"  :
         {
             "headerOne" :   "Photo Credits",
-            "bodyOne"   :   "Special thanks go to Edmundo Gonzalez, Jr., veteran Japan photographer, for persmission to use several of his photographs of Mt. Kōya. \nAppreciation is also given to the Kongōbuji Sōchō Kōshitsu for permission to use a photo of the inside of the Tōrōdō Latern Hall.",
+            "bodyOne"   :   "Special thanks go to Edmundo Gonzalez, Jr., veteran Japan photographer, for persmission to use several of his photographs of Mt. Kōya. \nAppreciation is also given to the Kongōbuji Shūmu Sōchō Kōshitsu 金剛峯寺宗務総長公室 for permission to use the Koyakun© mascot as well as a photo of the inside of the Tōrōdō Latern Hall.",
             "headerTwo" :   "Others",
             "bodyTwo"   :   "Finally, a shout out to Professor Kaizu Ichirō of Wakayama University for the use of his replica of a samurai warrior's armor and helmet for the filming of the ghost of Uesugi Kenshin."
         }

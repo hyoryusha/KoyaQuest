@@ -9,7 +9,7 @@ import CoreData
 import SwiftUI
 
 class DataController: ObservableObject {
-    let container: NSPersistentCloudKitContainer
+    let container: NSPersistentCloudKitContainer // "capable of managing BOTH CloudKit-backed and noncloud stores"
 
     init(inMemory: Bool = false) {
        // container = NSPersistentCloudKitContainer(name: "KoyaQuest")
