@@ -119,5 +119,6 @@ struct ChallengeDisplayView: View {
 struct ChallengeDisplayView_Previews: PreviewProvider {
     static var previews: some View {
         ChallengeDisplayView(isPlayingGame: .constant(true), enteredZone: daimonArea)
+            .preferredColorScheme(.dark)
     }
 }

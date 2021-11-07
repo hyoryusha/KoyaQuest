@@ -21,6 +21,7 @@ struct LandmarkRowView: View {
             VStack(alignment: .leading) {
                 Text(landmark.jname)
                     .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .title3)
+                    .foregroundColor(.koyaDarkText)
                 Text(landmark.name)
                     .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .subheadline)
                     .italic()
@@ -36,5 +37,6 @@ struct LandmarkRowView: View {
 struct LandmarkRowView_Previews: PreviewProvider {
     static var previews: some View {
         LandmarkRowView(landmark: Landmark.allLandmarks[0])
+            .preferredColorScheme(.dark)
     }
 }

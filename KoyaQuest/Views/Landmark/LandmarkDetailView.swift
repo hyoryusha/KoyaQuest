@@ -47,9 +47,9 @@ struct LandmarkDetailView: View {
 
                     HeaderText(text: landmark.name, color: .koyaOrange)
 
-                    BodyText(text: landmark.details.bodyOne, color: Color.koyaLightText)
+                    BodyText(text: landmark.details.bodyOne, color: Color.white)
                     HeaderText(text: landmark.details.headerTwo, color: Color.koyaOrange)
-                    BodyText(text: landmark.details.bodyTwo, color: Color.koyaLightText)
+                    BodyText(text: landmark.details.bodyTwo, color: Color.white)
                 }
 
                 .padding([.bottom, .leading, .trailing], 6)
@@ -57,11 +57,14 @@ struct LandmarkDetailView: View {
                 if checkLocalRating() {
                     LocalRatingsView(landmark: landmark)
                         .padding(.bottom, 10)
-                        .animation(.easeInOut(duration: 0.8))
+                       // .animation(.easeInOut(duration: 0.8))
+                        .animation(.easeInOut(duration: 0.8), value: true)
+
                 } else {
                     RatingsInputView( rating: $rating, locationManager: locationManager, landmark: landmark)
                     .padding(.bottom, 10)
-                    .animation(.easeInOut(duration: 0.8))
+                    //.animation(.easeInOut(duration: 0.8))
+                    .animation(.easeInOut(duration: 0.8), value: true)
                 }
 
                 NavigationLink(destination: MapView(target: landmark)) {
@@ -93,5 +96,6 @@ struct LandmarkDetailView_Previews: PreviewProvider {
     static var previews: some View {
         LandmarkDetailView(locationManager: LocationManager(), landmark: Landmark.allLandmarks[0])
             .environmentObject(AppData())
+            .preferredColorScheme(.dark)
     }
 }

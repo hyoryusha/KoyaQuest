@@ -44,7 +44,7 @@ struct KenshinChallengeView: View {
 
                     .frame(width: 320)
                         .padding(.bottom, 6)
-                        .animation(.easeIn)
+                        .animation(.easeIn(duration: 0.8), value: true)
                     Text(viewModel.success ? "Well done!" : "Your next destination")
                         .font(.callout)
                         .foregroundColor(.white)

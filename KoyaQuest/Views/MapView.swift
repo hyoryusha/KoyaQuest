@@ -35,8 +35,9 @@ struct MapView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
-                .background(Color.koyaSky)
-                .offset(y: -26)
+                .background(Color.secondary)
+                .foregroundColor(.koyaDarkText)
+                .offset(y: -20)
                 BackButton(buttonText: "Back")
                     .padding(.bottom, 28)
               }
@@ -51,5 +52,6 @@ struct MapView: View {
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView(target: Landmark.allLandmarks[0])
+            .preferredColorScheme(.dark)
     }
 }

@@ -8,9 +8,30 @@
 import SpriteKit
 import GameplayKit
 import CoreMotion
+import SwiftUI
 
 class SaigyoSummaryScene: SKScene {
     var viewModel: SaigyoChallengeViewModel?
+
+    @Binding var challengeCompleted: Bool
+
+            init(_ challengeCompleted: Binding<Bool>) {
+                _challengeCompleted = challengeCompleted
+                super.init(size: CGSize(
+                    width: UIScreen.main.bounds.width,
+                    height: UIScreen.main.bounds.height))
+                self.scaleMode = .aspectFill
+            }
+
+            required init?(coder aDecoder: NSCoder) {
+                _challengeCompleted = .constant(false)
+                super.init(coder: aDecoder)
+            }
+
+
+    let exitButton = SKSpriteNode(color: SKColor.orange, size: CGSize(width: 258, height: 66))
+    let exitButtonLabel = SKLabelNode(text: "Exit")
+
 
     let floor = Floor()
     override func didMove(to view: SKView) {
@@ -21,21 +42,23 @@ class SaigyoSummaryScene: SKScene {
         background.zPosition = -1
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
 
-        let commentary = SKSpriteNode(imageNamed: "negawaku_commentary")
-        commentary.position = CGPoint(x: size.width / 2 - 20, y: size.height * 0.25 - 10)
-        commentary.zPosition = 200
-        commentary.setScale(1.0)
-        addChild(commentary)
+
 
         let poem = SKSpriteNode(imageNamed: "negawaku_text")
-        poem.position = CGPoint(x: size.width / 2 - 28, y: size.height * 0.50)
+        poem.position = CGPoint(x: size.width / 2 - 28, y: frame.midY + 20)
         poem.zPosition = 200
         poem.setScale(1.0)
         addChild(poem)
 
+        let commentary = SKSpriteNode(imageNamed: "negawaku_commentary")
+        commentary.position = CGPoint(x: size.width / 2 - 20, y: poem.position.y - poem.size.height)
+        commentary.zPosition = 200
+        commentary.setScale(1.0)
+        addChild(commentary)
+
         let poet = SKSpriteNode(imageNamed: "saigyo_shadow")
         poet.position = CGPoint(x: size.width * 0.4, y: size.height / 3)
-        poet.zPosition = 200
+        poet.zPosition = 3
         poet.setScale(1.1)
         addChild(poet)
         addChild(background)
@@ -49,6 +72,10 @@ class SaigyoSummaryScene: SKScene {
                 SKAction.wait(forDuration: 0.7)
                 ])
             ))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.addExitButton()
+        }
+
     } // end didmove
 
     override func sceneDidLoad() {
@@ -116,6 +143,30 @@ class SaigyoSummaryScene: SKScene {
         let actionGroup = SKAction.group([actionMove, angularAction])
         petal.run(actionGroup)
     }
+
+    func addExitButton() {
+        exitButtonLabel.fontName = SKFont.bold
+        exitButtonLabel.fontSize = 40.0
+        exitButtonLabel.fontColor = UIColor.white
+        exitButtonLabel.position = CGPoint(x: 0, y: -12)
+        exitButton.addChild(exitButtonLabel)
+        exitButton.position = CGPoint(x:self.frame.midX, y:self.frame.size.height * 0.12)
+        exitButton.zPosition = 5
+        let fadeInAction = SKAction.fadeIn(withDuration: 1.0)
+        addChild(exitButton)
+        exitButton.run(fadeInAction)
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+                for touch in touches {
+                let location = touch.location(in: self)
+                    if exitButton.contains(location) {
+                        print("exit button tapped")
+                        //viewModel?.gameOver = true
+                        challengeCompleted = true
+                    }
+                }
+            }
 }
 
 extension SaigyoSummaryScene: SKPhysicsContactDelegate {

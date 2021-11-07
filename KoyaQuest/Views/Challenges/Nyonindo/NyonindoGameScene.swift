@@ -9,92 +9,95 @@ import SpriteKit
 import CoreMotion
 
 class NyonindoGameScene: SKScene  {
-    var viewModel : NyonindoChallengeViewModel?
+    var viewModel = NyonindoChallengeViewModel()
 
-    let startButton = SKSpriteNode(color: .systemOrange, size: CGSize(width: 252, height: 66))
-    //var background = SKSpriteNode(imageNamed: "nyonindo_challenge_bg")
+
+    @Binding var challengeCompleted: Bool
+    @Binding var earnedPoints: Int
+
+    init(_ challengeCompleted: Binding<Bool>, _ earnedPoints: Binding<Int>) {
+            _challengeCompleted = challengeCompleted
+            _earnedPoints = earnedPoints
+            super.init(size: CGSize(
+                width: UIScreen.main.bounds.width,
+                height: UIScreen.main.bounds.height))
+            self.scaleMode = .aspectFill
+        }
+
+        required init?(coder aDecoder: NSCoder) {
+            _challengeCompleted = .constant(false)
+            _earnedPoints = .constant(0)
+            super.init(coder: aDecoder)
+        }
+
     let background = SKSpriteNode(imageNamed: "nyonindo_bg")
     var selectedNode = SKSpriteNode()
     var invasion = 0
     var capture = 0
     var counter = 0
     var points = 0
-    var attempts = 0
+    var gameOver: Bool = false
+    //var attempts: Int
     var rikishiHitPilgrim = false
     var counterTimer = Timer()
     var counterStartValue = 40 // seconds
-    var gameIsOver = false
+    var roundIsOver = false
+   // var showingPostRoundFeedback = false
     let directionsLabel = SKLabelNode(text: "")
     let scoreLabel = SKLabelNode(text: "0")
     let pilgrimLabel = SKLabelNode(text: "(because you hit a pilgrim)")
     let timerLabel = SKLabelNode(text: "-- secs remaining")
-    let roundOver = SKLabelNode(text: "Round Over!")
+    let roundOverLabel = SKLabelNode(text: "Round Over!")
     let pointsEarnedLabel = SKLabelNode(text: "Points this round:")
+    var roundCounterLabel = SKLabelNode(text: "Round X of 3")
+    var roundCounterText = ""
+    var scoreToBeatText = ""
+    var scoreToBeatLabel = SKLabelNode(text: "")
+
+
     let motionManager = CMMotionManager()
-    let fadeOut = SKAction.fadeOut(withDuration: 3)
-    var startButtonLabelText: String = ""
-    
-    let rikishi = Rikishi()
+    let startButton = SKSpriteNode(color: .systemOrange, size: CGSize(width: 258, height: 66))
+    let startButtonLabel = SKLabelNode(text: "Start!")
+
+    let rikishi = SKSpriteNode(imageNamed: "rikishi2")
     let gate = SKSpriteNode(imageNamed: "daimon_illustration")
     let choishi = SKSpriteNode(imageNamed: "choishi_on_path")
     private var oni = SKSpriteNode()
     private var oniDancingFrames: [SKTexture] = []
     private var pilgrim = SKSpriteNode()
     private var pilgrimDancingFrames: [SKTexture] = []
-    
-        
+
+    // MARK: -SOUNDS
+    let oniCollisionSound: SKAction = SKAction.playSoundFileNamed(
+      "oni_collision.wav", waitForCompletion: false)
+    let pilgrimCollisionSound: SKAction = SKAction.playSoundFileNamed(
+      "pilgrim_collision.wav", waitForCompletion: false)
+    let oniEntersGateSound: SKAction = SKAction.playSoundFileNamed(
+      "oni_enters_gate.wav", waitForCompletion: false)
+    let pilgrimEntersGateSound: SKAction = SKAction.playSoundFileNamed(
+      "pilgrim_enters_gate.wav", waitForCompletion: false)
+
 //MARK: - DID MOVE TO VIEW
     override func didMove(to view: SKView) {
-        
         UIApplication.shared.isIdleTimerDisabled = true
-        motionManager.startAccelerometerUpdates()
+        setUpPhysics()
+        layoutScene()
+        addStartButton()
+    }
+     private func setUpPhysics() {
+        physicsWorld.gravity = .zero
+        physicsWorld.contactDelegate = self
         physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
-        counter = counterStartValue
-        //startCounter()
-    
+     }
+
+    func layoutScene() {
+//        counter = counterStartValue
         background.size = self.frame.size
-        background.zPosition = -1
+        background.zPosition = 0
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         addChild(background)
-        addStartButton()
 
-        //choishi.setScale(0.5)
-        choishi.size = CGSize(width: frame.size.width * 0.17,
-                              height: frame.size.height * 0.25)
-        choishi.position = CGPoint(x: frame.size.width * 0.1, y: frame.size.height / 2 )
-        choishi.zPosition = 3
-        addChild(choishi)
-        
-// MARK: - Labels
-        scoreLabel.fontName = SKFont.bold
-        scoreLabel.fontSize = 28.0
-        scoreLabel.fontColor = UIColor.black
-        scoreLabel.position = CGPoint(x: frame.midX, y: frame.minY)
-        scoreLabel.zPosition = 100
-        scoreLabel.text = "\(points)"
-        
-        pilgrimLabel.fontName = SKFont.bold
-        pilgrimLabel.fontSize = 22.0
-        pilgrimLabel.fontColor = UIColor.red
-        pilgrimLabel.position = CGPoint(x: frame.midX, y: frame.midY + 120)
-        pilgrimLabel.zPosition = 100
-
-        timerLabel.fontName = SKFont.bold // AvenirNext-Bold
-        timerLabel.fontSize = 20.0
-        timerLabel.fontColor = UIColor.black
-        timerLabel.position = CGPoint(x: frame.midX, y: frame.minY + 36)
-        timerLabel.text = "00:00"
-        addChild(timerLabel)
-        
-        directionsLabel.fontName = SKFont.medium // AvenirNext-Medium
-        directionsLabel.fontSize = 15.0
-        directionsLabel.fontColor = UIColor.black
-        directionsLabel.position = CGPoint(x: frame.midX, y: frame.minY + 58)
-        directionsLabel.text = "Tilt to move the guardian in that direction."
-        addChild(directionsLabel)
-        
-// MARK: - Gate
-        //gate.physicsBody = SKPhysicsBody(rectangleOf: gate.size)
+        // MARK: - Gate
         gate.physicsBody = SKPhysicsBody(circleOfRadius: gate.size.width * 0.25)
         gate.physicsBody?.isDynamic = false
         gate.physicsBody?.categoryBitMask = NyonindoPhysicsCategory.gate
@@ -102,94 +105,154 @@ class NyonindoGameScene: SKScene  {
         gate.physicsBody?.collisionBitMask = NyonindoPhysicsCategory.none
         gate.physicsBody?.usesPreciseCollisionDetection = true
         gate.position = CGPoint(x: size.width * 0.5, y: size.height * 0.86)
+        gate.zPosition = 3
         addChild(gate)
-        
-        
 
-// MARK: - Rikishi
+        choishi.size = CGSize(width: frame.size.width * 0.17,
+                              height: frame.size.height * 0.25)
+        choishi.position = CGPoint(x: frame.size.width * 0.1, y: frame.size.height / 2 )
+        choishi.zPosition = 4
+        addChild(choishi)
+
+        directionsLabel.fontName = SKFont.medium // AvenirNext-Medium
+        directionsLabel.fontSize = 15.0
+        directionsLabel.fontColor = UIColor.black
+        directionsLabel.position = CGPoint(x: frame.midX, y: frame.minY + 58)
+        directionsLabel.zPosition = 3
+        directionsLabel.text = "Tilt to move the guardian in that direction."
+        addChild(directionsLabel)
+
+        timerLabel.fontName = SKFont.bold // AvenirNext-Bold
+        timerLabel.fontSize = 20.0
+        timerLabel.fontColor = UIColor.black
+        timerLabel.position = CGPoint(x: frame.midX, y: frame.minY + 36)
+        timerLabel.zPosition = 3
+        timerLabel.text = "00:00"
+        addChild(timerLabel)
+
+    }
+    //MARK: - ADD START BUTTON
+        func addStartButton() {
+            startButtonLabel.fontName = SKFont.bold // AvenirNext-Bold
+            startButtonLabel.fontSize = 40.0
+            startButtonLabel.fontColor = UIColor.white
+            startButtonLabel.position = CGPoint(x: 0, y: -12)
+            startButtonLabel.name = "startButtonLabel"
+            //startButton.position = CGPoint(x:self.frame.midX, y:self.frame.midY)
+            startButton.position = CGPoint(x:self.frame.midX, y:self.frame.minY + gate.size.height * 0.7 )
+            startButton.zPosition = 3
+            //determine label
+            var text = ""
+            if self.viewModel.attempts == 0 {
+                text = "Start"
+            }
+            else if self.viewModel.attempts ==  1 {
+                text = "Try Again!"
+            }
+            else if self.viewModel.attempts ==  2 {
+              text = "Last Chance!"
+            }
+            startButtonLabel.text = text
+            startButton.addChild(startButtonLabel)
+            if self.viewModel.attempts < 3{
+                addChild(startButton)
+            }
+        }
+    func addRoundCounter() { // and score to beat label
+        roundCounterLabel.text = roundCounterText
+        roundCounterLabel.fontName = SKFont.medium
+        roundCounterLabel.fontSize = 12.0
+        roundCounterLabel.fontColor = UIColor.black
+        roundCounterLabel.position = CGPoint(x: 46, y: gate.position.y)
+        roundCounterLabel.zPosition = 3
+        if viewModel.attempts < 3 {
+            addChild(roundCounterLabel)
+        }
+
+        scoreToBeatLabel.text = scoreToBeatText
+        scoreToBeatLabel.fontName = SKFont.medium
+        scoreToBeatLabel.fontSize = 12.0
+        scoreToBeatLabel.fontColor = UIColor.black
+        scoreToBeatLabel.position = CGPoint(x: frame.maxX - 48, y: gate.position.y)
+        scoreToBeatLabel.zPosition = 3
+        if viewModel.attempts > 0 && viewModel.attempts < 3 {
+            addChild(scoreToBeatLabel)
+        }
+    }
+
+    func startGameAction() {
+        startButton.removeFromParent()
+        startButtonLabel.removeFromParent()
+        roundIsOver = false
+
+        counter = counterStartValue
+            roundIsOver = false
+            motionManager.startAccelerometerUpdates()
+        //viewModel.setGameToActive() ??
+            addRikishi()
+            startOniAttack()
+            startPilgrim()
+            beginMusic()
+            startCounter()
+        self.scoreToBeatText = "Try to beat \(viewModel.highestScore)"
+        self.scoreToBeatText = "Try to beat \(earnedPoints)"
+        self.roundCounterText = "Round \(viewModel.attempts + 1) of 3"
+        addRoundCounter()
+    }
+// MARK: - MAIN GAME ACTIONS
+    func beginMusic() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+        playBackgroundMusic("oni_attack.mp3")
+        }
+    }
+    func addRikishi() {
         rikishi.physicsBody = SKPhysicsBody(circleOfRadius: rikishi.size.width * 0.44)
-        //rikishi.position = CGPoint(x: 10, y: size.height / 2 + (rikishi.size.height / 3 ))
         rikishi.position = CGPoint(x: size.width * 0.5, y: size.height / 2 + (rikishi.size.height / 3 ))
-        rikishi.zPosition = 2
+        rikishi.zPosition = 3
         rikishi.name = "rikishi"
-        //rikishi.setScale(1.5)
         rikishi.physicsBody?.isDynamic = true
         rikishi.physicsBody?.categoryBitMask = NyonindoPhysicsCategory.rikishi
         rikishi.physicsBody?.contactTestBitMask = NyonindoPhysicsCategory.oni |  NyonindoPhysicsCategory.pilgrim
         rikishi.physicsBody?.collisionBitMask = NyonindoPhysicsCategory.none // this was changed from none to oni; why?
         rikishi.physicsBody?.usesPreciseCollisionDetection = true
-        
-
-        //view.showsPhysics = true
-
-
-    } // end did move to view
-    
-    func startGameAction() {
-        startCounter()
-        let sequence = SKAction.sequence([SKAction.rotate(byAngle: degToRad(degree: -4.0), duration: 0.1),
-                                          SKAction.rotate(byAngle: 0.0, duration: 0.1),
-                                          SKAction.rotate(byAngle: degToRad(degree: 4.0), duration: 0.1)])
-        rikishi.run(SKAction.repeatForever(sequence))
-        self.addChild(rikishi)
-
+        let wobble = SKAction.sequence(
+            [SKAction.rotate(
+                byAngle: degToRad(degree: -4.0),
+                duration: 0.1),
+                  SKAction.rotate(byAngle: 0.0, duration: 0.1),
+                  SKAction.rotate(byAngle: degToRad(degree: 4.0), duration: 0.1)]
+        )
+        rikishi.run(SKAction.repeatForever(wobble))
+        addChild(rikishi)
+    }
+    func startOniAttack() {
         run(SKAction.repeatForever(
           SKAction.sequence([
             SKAction.run(spawnOni),
             SKAction.wait(forDuration: 0.75)
             ])
         ))
-        
+    }
+    func startPilgrim() {
         run(SKAction.repeat(
           SKAction.sequence([
-            SKAction.wait(forDuration: 10.0),
+            SKAction.wait(forDuration: 7.0),
             SKAction.run(spawnPilgrim),
-            SKAction.wait(forDuration: 6.0)
-          ]), count: 6
+            SKAction.wait(forDuration: 3.0)
+          ]), count: 4
         ))
-        physicsWorld.gravity = .zero
-        physicsWorld.contactDelegate = self
     }
-
-    func random() -> CGFloat {
-        return CGFloat(Float(arc4random()) / Float(0xFFFFFFFF))
-    }
-    func randomMinMax(min: CGFloat, max: CGFloat) -> CGFloat {
-      return random() * (max - min) + min
-    }
-    
- //MARK: -ADD START BUTTON
-    func addStartButton() {
-        switch self.viewModel?.attempts {
-        case 0:
-            startButtonLabelText = "Start!"
-        case 1:
-            startButtonLabelText = "Try Again"
-        case 2:
-            startButtonLabelText = "Last Chance!"
-        default:
-            startButtonLabelText = "Start"
-        }
-        let startButtonLabel = SKLabelNode(text: startButtonLabelText)
-        startButtonLabel.fontName = SKFont.bold // AvenirNext-Bold
-        startButtonLabel.fontSize = 40.0
-        startButtonLabel.fontColor = UIColor.white
-        startButtonLabel.position = CGPoint(x: 0, y: -12)
-        startButton.position = CGPoint(x:self.frame.midX, y:self.frame.midY)
-        startButton.addChild(startButtonLabel)
-        self.addChild(startButton)
-    }
- // MARK: - SPAWN ONI
+// MARK: - SPAWN ONI
     func spawnOni() {
-        if gameIsOver {return}
+        if roundIsOver {return}
         let oniAtlas = SKTextureAtlas(named: "Oni")
         var walkFrames: [SKTexture] = []
         let numImages = oniAtlas.textureNames.count
         for i in 1...numImages {
-        let oniName = "oni_\(i)"
-        walkFrames.append(oniAtlas.textureNamed(oniName))
+            let oniName = "oni_\(i)"
+            walkFrames.append(oniAtlas.textureNamed(oniName))
         }
-        
+
         oniDancingFrames = walkFrames
         let firstFrameTexture = oniDancingFrames[0]
         oni = SKSpriteNode(texture: firstFrameTexture)
@@ -197,18 +260,17 @@ class NyonindoGameScene: SKScene  {
         oni.setScale(0.6)
         let randomX = randomMinMax(min: -700, max: size.width + 700)
         oni.position = CGPoint(x: randomX, y: -size.height - oni.size.height )
+        oni.zPosition = 4
         addChild(oni)
-        
+
         oni.physicsBody = SKPhysicsBody(circleOfRadius: oni.size.width * 0.44)
         oni.physicsBody?.isDynamic = true // 2
-        oni.physicsBody?.categoryBitMask = NyonindoPhysicsCategory.oni // 3
-        oni.physicsBody?.contactTestBitMask = NyonindoPhysicsCategory.rikishi // 4
-        oni.physicsBody?.contactTestBitMask = NyonindoPhysicsCategory.gate // 4
-        oni.physicsBody?.collisionBitMask = NyonindoPhysicsCategory.none // 5 I changed this to gate from none; again, why?
-        //it creates a momentary glide? along the surface of the gate before the oni disappears
+        oni.physicsBody?.categoryBitMask = NyonindoPhysicsCategory.oni
+        oni.physicsBody?.contactTestBitMask = NyonindoPhysicsCategory.rikishi
+        oni.physicsBody?.contactTestBitMask = NyonindoPhysicsCategory.gate
+        oni.physicsBody?.collisionBitMask = NyonindoPhysicsCategory.none
         oni.physicsBody?.usesPreciseCollisionDetection = true
 
-    
         // Determine speed of the oni
         let randomDuration = randomMinMax(min: CGFloat(4.0), max: CGFloat(8.0))
         let randomXtarget = randomMinMax(min: size.width * 0.4 , max: size.width * 0.6)
@@ -220,41 +282,34 @@ class NyonindoGameScene: SKScene  {
         let oniRepeat = SKAction.repeatForever(oniAction)
         let oniAttack = SKAction.group([oniRepeat, actionMove])
         oni.run(SKAction.sequence([oniAttack, actionMoveDone]))
-
     }
-    
-    // MARK: - SPAWN PILGRM
-       func spawnPilgrim() {
-        if gameIsOver {return}
+// MARK: - SPAWN PILGRM
+    func spawnPilgrim() {
+        if roundIsOver {return}
         let pilgrimAtlas = SKTextureAtlas(named: "Pilgrim")
         var pilgrimWalkFrames: [SKTexture] = []
         let numImages = pilgrimAtlas.textureNames.count
         for i in 1...numImages {
-        let pilgrimName = "pilgrim_\(i)"
-        pilgrimWalkFrames.append(pilgrimAtlas.textureNamed(pilgrimName))
+            let pilgrimName = "pilgrim_\(i)"
+            pilgrimWalkFrames.append(pilgrimAtlas.textureNamed(pilgrimName))
         }
-        
-            pilgrimDancingFrames = pilgrimWalkFrames
-            let firstFrameTexture = pilgrimDancingFrames[0]
-            pilgrim = SKSpriteNode(texture: firstFrameTexture)
-            pilgrim.setScale(0.3)
-            pilgrim.name = "pilgrim"
-            pilgrim.zPosition = rikishi.zPosition + 1 // i.e. 3
-            addChild(pilgrim)
 
-            pilgrim.physicsBody = SKPhysicsBody(circleOfRadius: pilgrim.size.width * 0.25)
-            pilgrim.physicsBody?.isDynamic = true // 2
-            pilgrim.physicsBody?.categoryBitMask = NyonindoPhysicsCategory.pilgrim //
-            pilgrim.physicsBody?.contactTestBitMask = NyonindoPhysicsCategory.rikishi | NyonindoPhysicsCategory.pilgrim
-            pilgrim.physicsBody?.contactTestBitMask = NyonindoPhysicsCategory.gate //
-            pilgrim.physicsBody?.collisionBitMask = NyonindoPhysicsCategory.none //
-            pilgrim.physicsBody?.usesPreciseCollisionDetection = true
+        pilgrimDancingFrames = pilgrimWalkFrames
+        let firstFrameTexture = pilgrimDancingFrames[0]
+        pilgrim = SKSpriteNode(texture: firstFrameTexture)
+        pilgrim.setScale(0.3)
+        pilgrim.name = "pilgrim"
+        pilgrim.zPosition = rikishi.zPosition + 3 // i.e. 3
+        addChild(pilgrim)
 
-//        if pilgrim.position.y > size.height / 2 + rikishi.size.height / 2 {
-//            pilgrim.zPosition = 0
-//            print("pilgrim above rikishi")
-//        } // this is not working
-        
+        pilgrim.physicsBody = SKPhysicsBody(circleOfRadius: pilgrim.size.width * 0.25)
+        pilgrim.physicsBody?.isDynamic = true // 2
+        pilgrim.physicsBody?.categoryBitMask = NyonindoPhysicsCategory.pilgrim //
+        pilgrim.physicsBody?.contactTestBitMask = NyonindoPhysicsCategory.rikishi | NyonindoPhysicsCategory.pilgrim
+        pilgrim.physicsBody?.contactTestBitMask = NyonindoPhysicsCategory.gate //
+        pilgrim.physicsBody?.collisionBitMask = NyonindoPhysicsCategory.none //
+        pilgrim.physicsBody?.usesPreciseCollisionDetection = true
+
         let pilgrimAction = SKAction.animate(with: pilgrimDancingFrames, timePerFrame: 0.4, resize: false, restore: true)
         let actionMoveDone = SKAction.removeFromParent()
         let pilgrimRepeat = SKAction.repeatForever(pilgrimAction)
@@ -274,92 +329,53 @@ class NyonindoGameScene: SKScene  {
         path.addLine(to: CGPoint(x: size.width * 0.75 , y: size.height * 0.75 ))
         //gate entrance
         path.addLine(to: (CGPoint(x: size.width * 0.5 , y: size.height * 0.9)))
-        
+
         let scaleDown = SKAction.scale(by: 0.75, duration: 20)
-        let followPath = SKAction.follow(path, asOffset: false, orientToPath: false, speed: 80.0) //speed = points per second
+        let followPath = SKAction.follow(path, asOffset: false, orientToPath: false, speed: 90.0) //speed = points per second
         let pilgrimProgress = SKAction.group([scaleDown, pilgrimRepeat , followPath ])
         pilgrim.run(SKAction.sequence([pilgrimProgress, actionMoveDone]))
-       }
+    }
+// MARK: - CLEAR
+    func clearElements() {
+        scoreLabel.removeFromParent()
+        pointsEarnedLabel.removeFromParent()
+        roundOverLabel.removeFromParent()
+        pilgrimLabel.removeFromParent()
+    }
 
-
-    //MARK: - TOUCHES BEGAN
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//      guard let touch = touches.first else {
-//        return
-//      }
-//        let touchLocation = touch.location(in: self)
-//        selectNodeForTouch(touchLocation: touchLocation)
-    }
-// MARK: - Accelerometer Action
-    func processUserMotion(forUpdate currentTime: CFTimeInterval) {
-      // 1
-      if let rikishi = childNode(withName: "rikishi") as? SKSpriteNode {
-        // 2
-        if let data = motionManager.accelerometerData {
-          // 3
-          if fabs(data.acceleration.x) > 0.2 {
-            rikishi.physicsBody!.applyForce(CGVector(dx: 200 * CGFloat(data.acceleration.x), dy: 0))
-          }
-        }
-      }
-    }
-    //converts degress to radians for rotation action
-    func degToRad(degree: Double) -> CGFloat {
-        return CGFloat(Double(degree) / 180.0 * .pi)
-    }
-    
-    func selectNodeForTouch(touchLocation: CGPoint) {
-        let touchedNode = self.atPoint(touchLocation)
-          
-          if touchedNode is SKSpriteNode {
-            
-            if !selectedNode.isEqual(touchedNode) {
-                selectedNode.removeAllActions()
-                selectedNode.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
-                selectedNode = touchedNode as! SKSpriteNode
-
-                if touchedNode == rikishi {
-                    let sequence = SKAction.sequence([SKAction.rotate(byAngle: degToRad(degree: -4.0), duration: 0.1),
-                                                      SKAction.rotate(byAngle: 0.0, duration: 0.1),
-                                                      SKAction.rotate(byAngle: degToRad(degree: 4.0), duration: 0.1)])
-                    selectedNode.run(SKAction.repeatForever(sequence))
-              }
-            }
-          }
-        }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //self.rikishi.move(touchLocation: (touches.first?.location(in: self))!)
-    }
-    
+//MARK: - TOUCHES
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // Get the location of the touch in this scene
         for touch in touches {
         let location = touch.location(in: self)
-        // Check if the location of the touch is within the button's bounds
             if startButton.contains(location) {
-                startButton.removeFromParent()
                 startGameAction()
             }
         }
     }
- 
+
+    // MARK: - Accelerometer Action
+        func processUserMotion(forUpdate currentTime: CFTimeInterval) {
+          // 1
+          if let rikishi = childNode(withName: "rikishi") as? SKSpriteNode {
+            // 2
+            if let data = motionManager.accelerometerData {
+              // 3
+              if fabs(data.acceleration.x) > 0.2 {
+                rikishi.physicsBody!.applyForce(CGVector(dx: 200 * CGFloat(data.acceleration.x), dy: 0))
+              }
+            }
+          }
+        }
+
 //MARK: - GAME MANAGEMENT METHODS
     func startCounter() {
         counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
     }
-    @objc func decrementCounter() {
-        counter -= 1
-        timerLabel.text = "\(counter) secs remaining"
-        if counter == 0 {
-            gameIsOver = true
-            gameOver()
-        }
-    }
+
     func stopCounter() {
         counterTimer.invalidate()
     }
-    
+
     func calculateScore(captures: Int, invasions: Int) -> Int {
         if captures > invasions {
             return captures - invasions
@@ -367,14 +383,14 @@ class NyonindoGameScene: SKScene  {
             return 0
         }
     }
-    
-    
-//MARK: - GAME OVER
-    func gameOver() {
 
-        gameIsOver = true
-        
-        
+//MARK: - GAME OVER
+    func roundOver() {
+        roundIsOver = true
+        //viewModel.setGameToInactive()
+        backgroundMusicPlayer.stop()
+       // self.attempts += 1
+        self.viewModel.attempts += 1
         rikishi.removeAllActions()
         pilgrim.removeAllActions()
         enumerateChildNodes(withName: "oni") { (node, _) in
@@ -387,64 +403,119 @@ class NyonindoGameScene: SKScene  {
         directionsLabel.removeFromParent()
         stopCounter()
         points = calculateScore(captures: capture, invasions: invasion)
-       
-        let scoreLabelAnimation = SKAction.moveBy(x: 0, y: frame.midY - 102, duration: 1.0)
-        let rikishiToCenterAnimation = SKAction.move(to: CGPoint(x: frame.midX, y: frame.midY + 58), duration: 1.0)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [unowned self] in
-            roundOver.fontName = SKFont.bold
-            roundOver.fontSize = 36.0
-            roundOver.fontColor = UIColor.black
-            roundOver.position = CGPoint(x: frame.midX, y: frame.midY + 142)
-            roundOver.zPosition = 100
-            pointsEarnedLabel.fontSize = 26
-            pointsEarnedLabel.fontName = SKFont.medium
-            pointsEarnedLabel.fontColor = UIColor.black
-            pointsEarnedLabel.position = CGPoint(x: frame.midX, y: frame.midY - 60)
-            pointsEarnedLabel.zPosition = 100
-            if rikishiHitPilgrim {addChild(pilgrimLabel) }
-            addChild(pointsEarnedLabel)
-            rikishi.run(rikishiToCenterAnimation)
-            scoreLabel.text = "\(points)"
-            addChild(scoreLabel)
-            scoreLabel.run(scoreLabelAnimation)
-            //scoreLabel.position = CGPoint(x: frame.midX, y: frame.midY - 64)
-            addChild(roundOver)
-            //createReplayButton()
-            physicsWorld.speed = 0
-            //isUserInteractionEnabled = false
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) { [unowned self] in
-            UserDefaults.standard.set(points, forKey: "NyonindoRecentScore")
-            if points > UserDefaults.standard.integer(forKey: "NyonindoHighScore") {
-                UserDefaults.standard.set(points, forKey: "NyonindoHighScore")
-            }
 
-            self.viewModel?.recentScore = points
-            attempts += 1
-            self.viewModel?.attempts += 1
-            if attempts <  3 {
-                addStartButton()
-            }
+        //viewModel.setRecentScore(points: points)
+        viewModel.recentScore = points
+        if points > viewModel.highestScore {
+            viewModel.highestScore = points
+            earnedPoints = points
         }
+        viewModel.recentScore = points
+            if viewModel.attempts > 2 {
+                self.gameOver = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+               // self.showingPostRoundFeedback = true
+                self.showPostRoundFeedback()
+            }
+        } // end round over method
+
+// MARK: - SHOW POST ROUND FEEDBACK
+    func showPostRoundFeedback() {
+        let scoreLabelAnimation = SKAction.moveBy(x: 0, y: frame.midY - 102, duration: 1.0)
+        let rikishiToCenterAnimation = SKAction.move(to: CGPoint(x: size.width * 0.5, y: size.height / 2 + (rikishi.size.height / 3 )), duration: 1.0)
+
+             rikishi.run(rikishiToCenterAnimation)
+
+             roundOverLabel.fontName = SKFont.bold
+             roundOverLabel.fontSize = 36.0
+             roundOverLabel.fontColor = UIColor.black
+             roundOverLabel.position = CGPoint(x: frame.midX, y: frame.midY + 142)
+             roundOverLabel.zPosition = 100
+             roundOverLabel.text = "Round Over"
+
+             scoreLabel.fontName = SKFont.bold
+             scoreLabel.fontSize = 28.0
+             scoreLabel.fontColor = UIColor.black
+             scoreLabel.position = CGPoint(x: frame.midX, y: frame.minY)
+             scoreLabel.zPosition = 100
+             scoreLabel.text = "\(points)"
+
+             pointsEarnedLabel.fontSize = 26
+             pointsEarnedLabel.fontName = SKFont.medium
+             pointsEarnedLabel.fontColor = UIColor.black
+             pointsEarnedLabel.position = CGPoint(x: frame.midX, y: frame.midY - 60)
+             pointsEarnedLabel.zPosition = 100
+             addChild(pointsEarnedLabel)
+
+             if rikishiHitPilgrim {
+                 pilgrimLabel.fontName = SKFont.bold
+                 pilgrimLabel.fontSize = 22.0
+                 pilgrimLabel.fontColor = UIColor.red
+                 pilgrimLabel.position = CGPoint(x: frame.midX, y: frame.midY + 120)
+                 pilgrimLabel.zPosition = 100
+                 addChild(pilgrimLabel)
+             }
+
+             scoreLabel.text = "\(points)"
+             addChild(scoreLabel)
+             scoreLabel.run(scoreLabelAnimation)
+             addChild(roundOverLabel)
+            // physicsWorld.speed = 0
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+
+                self.clearElements()
+                if self.gameOver {
+
+                    self.showSummaryScene(withTransition: .flipVertical(withDuration: 0.5))
+                } else {
+
+                    self.showNewScene(withTransition: .flipVertical(withDuration: 0.5))
+                }
+            } // end dispatch after 6
     }
-    
-// MARK: - COLLISION methods
+
+    private func showNewScene(withTransition transition: SKTransition) {
+            let delay = SKAction.wait(forDuration: 1)
+            let sceneChange = SKAction.run {
+                //let scene = NyonindoGameScene(size: self.size)
+                let scene = NyonindoGameScene(self.$challengeCompleted, self.$earnedPoints)
+                scene.viewModel = self.viewModel
+              self.view?.presentScene(scene, transition: transition)
+            }
+            run(.sequence([delay, sceneChange]))
+          }
+
+    private func showSummaryScene(withTransition transition: SKTransition) {
+             let delay = SKAction.wait(forDuration: 1)
+             let sceneChange = SKAction.run {
+                 let scene = NyonindoSummaryScene(self.$challengeCompleted)
+                 scene.viewModel = self.viewModel
+               self.view?.presentScene(scene, transition: transition)
+             }
+             run(.sequence([delay, sceneChange]))
+           }
+
+// MARK: - COLLISION METHODS
     func oniReachedGate(oni: SKSpriteNode, gate: SKSpriteNode) {
         invasion += 1
+        run(oniEntersGateSound)
         oni.removeFromParent()
     }
-    
+
     func pilgrimReachedGate(pilgrim: SKSpriteNode, gate: SKSpriteNode) {
+        run(pilgrimEntersGateSound)
         let scaleOut = SKAction.scale(to: 0.001, duration: 0.4)
         let fadeOut = SKAction.fadeOut(withDuration: 0.4)
         let group = SKAction.group([scaleOut, fadeOut])
         let sequence = SKAction.sequence([group, .removeFromParent()])
         pilgrim.run(sequence)
-        
     }
-    
+
     func rikishiCaughtOni(oni: SKSpriteNode, rikishi: SKSpriteNode) {
         capture += 2
+        run(oniCollisionSound)
         oni.removeAllActions()
         oni.physicsBody?.affectedByGravity = true
         let randomXtarget = randomMinMax(min: size.width * 0.3 , max: size.width * 0.6)
@@ -457,29 +528,30 @@ class NyonindoGameScene: SKScene  {
         let oniDeath = SKAction.group([oniColorized, actionMove, oniRotation])
         oni.run(SKAction.sequence([oniDeath, actionMoveDone]))
     }
-    
+
     func rikishiHitPilgrim(pilgrim: SKSpriteNode , rikishi: SKSpriteNode) {
+        run(pilgrimCollisionSound)
         rikishiHitPilgrim = true
         //addChild(pilgrimLabel)
-        gameOver()
-        
-       
+        roundOver()
     }
-} //end game scene class
+}
+
+// MARK: EXTENSION
 extension NyonindoGameScene: SKPhysicsContactDelegate {
 
     override func update(_ currentTime: TimeInterval) {
+
         processUserMotion(forUpdate: currentTime)
-        // if pilgrim.zPosition > rikishi.position.y - 10 { // move the pilgrim "behind" the rikishi after passing the rikishi
         if pilgrim.position.y > rikishi.position.y + 10 {
             pilgrim.zPosition = rikishi.zPosition - 1 // i.e. 1 (gate is default 0)
         }
     }
-    
+// MARK: - DID BEGIN
     func didBegin(_ contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody
         var secondBody: SKPhysicsBody
-        
+
             if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
             firstBody = contact.bodyA
             secondBody = contact.bodyB
@@ -487,8 +559,8 @@ extension NyonindoGameScene: SKPhysicsContactDelegate {
                 firstBody = contact.bodyB
                 secondBody = contact.bodyA
             }
-        
-//if RIKISHI hits PILGRIM
+
+// if RIKISHI hits PILGRIM
             if ((firstBody.categoryBitMask & NyonindoPhysicsCategory.pilgrim != 0) &&
             (secondBody.categoryBitMask & NyonindoPhysicsCategory.rikishi != 0)) {
                 if let pilgrim = firstBody.node as? SKSpriteNode,
@@ -496,8 +568,8 @@ extension NyonindoGameScene: SKPhysicsContactDelegate {
                     rikishiHitPilgrim(pilgrim: pilgrim, rikishi: rikishi)
                 }
             }
-                
-        //if RIKISHI catches ONI
+
+// if RIKISHI catches ONI
             if ((firstBody.categoryBitMask & NyonindoPhysicsCategory.oni != 0) &&
             (secondBody.categoryBitMask & NyonindoPhysicsCategory.rikishi != 0)) {
                 if let oni = firstBody.node as? SKSpriteNode,
@@ -506,25 +578,40 @@ extension NyonindoGameScene: SKPhysicsContactDelegate {
                 }
             }
 
-
 //if ONI reaches GATE
-        if ((firstBody.categoryBitMask & NyonindoPhysicsCategory.oni != 0) &&
-        (secondBody.categoryBitMask & NyonindoPhysicsCategory.gate != 0)) {
-            if let oni = firstBody.node as? SKSpriteNode,
-            let gate = secondBody.node as? SKSpriteNode {
-            oniReachedGate(oni: oni, gate: gate)
+            if ((firstBody.categoryBitMask & NyonindoPhysicsCategory.oni != 0) &&
+            (secondBody.categoryBitMask & NyonindoPhysicsCategory.gate != 0)) {
+                if let oni = firstBody.node as? SKSpriteNode,
+                let gate = secondBody.node as? SKSpriteNode {
+                oniReachedGate(oni: oni, gate: gate)
+                }
             }
-        }
 
 //if PILGRIM reaches GATE
-        if ((firstBody.categoryBitMask & NyonindoPhysicsCategory.pilgrim != 0) &&
-        (secondBody.categoryBitMask & NyonindoPhysicsCategory.gate != 0)) {
-        if let pilgrim = firstBody.node as? SKSpriteNode,
-        let gate = secondBody.node as? SKSpriteNode {
-            pilgrimReachedGate(pilgrim: pilgrim, gate: gate)
+            if ((firstBody.categoryBitMask & NyonindoPhysicsCategory.pilgrim != 0) &&
+            (secondBody.categoryBitMask & NyonindoPhysicsCategory.gate != 0)) {
+            if let pilgrim = firstBody.node as? SKSpriteNode,
+            let gate = secondBody.node as? SKSpriteNode {
+                pilgrimReachedGate(pilgrim: pilgrim, gate: gate)
+            }
         }
     }
-        
+
+// MARK: - RANDOMIZERS
+    func random() -> CGFloat {
+        return CGFloat(Float(arc4random()) / Float(0xFFFFFFFF))
+    }
+    func randomMinMax(min: CGFloat, max: CGFloat) -> CGFloat {
+      return random() * (max - min) + min
+    }
+
+// MARK: - OBJC DECREMENT COUNTER
+    @objc func decrementCounter() {
+        counter -= 1
+        timerLabel.text = "\(counter) secs remaining"
+        if counter == 0 {
+            roundIsOver = true
+            roundOver()
+        }
     }
 }
-

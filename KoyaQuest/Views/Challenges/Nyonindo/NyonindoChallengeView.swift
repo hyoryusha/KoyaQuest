@@ -11,36 +11,18 @@ import SpriteKit
 struct NyonindoChallengeView: View {
     @EnvironmentObject var appData: AppData
     @EnvironmentObject var locationManager: LocationManager
-    @ObservedObject var viewModel = NyonindoChallengeViewModel()
+    @State private var earnedPoints: Int = 0
+    @State private var challengeCompleted: Bool = false
 
     var gameScene: SKScene {
-        let scene = NyonindoGameScene(
-            size: CGSize(
-                width: UIScreen.main.bounds.width,
-                height: UIScreen.main.bounds.height
-            )
-        )
-        scene.viewModel = self.viewModel
-        scene.scaleMode = .aspectFill
-        return scene
-        }
-
-    var startEndScene: SKScene {
-        let scene = NyonindoSummaryScene(size: CGSize(
-                                            width: UIScreen.main.bounds.width,
-                                            height: UIScreen.main.bounds.height
-            )
-        )
-        scene.viewModel = self.viewModel
-        scene.scaleMode = .aspectFill
-        return scene
-        }
+        let scene = NyonindoGameScene($challengeCompleted, $earnedPoints)
+            return scene
+            }
 
 var body: some View {
     ZStack {
         GeometryReader { geometry in
-            SpriteView(scene: chooseScene(
-                        for: viewModel.completed),
+            SpriteView(scene: gameScene,
                        transition: .crossFade(
                         withDuration: 1.0
                        )
@@ -51,21 +33,22 @@ var body: some View {
                 )
             }
             .edgesIgnoringSafeArea(.all)
+            .blur(radius: challengeCompleted ? 6 : 0)
 
         VStack {
             XDismissButtonRight()
-                .padding(.top, 4)
-                .padding(.trailing, 12)
+                .padding(.top, 12)
+                .padding(.trailing, 24)
             Spacer()
 
         }
-        // .blur(radius: viewModel.completed ? 6 : 0)
+
         .navigationBarTitle(Text(""))
         .navigationBarHidden(true)
         .statusBar(hidden: true)
 
-        if viewModel.completed {
-            let earnedPoints = UserDefaults.standard.integer(forKey: "NyonindoHighScore")
+        if challengeCompleted {
+//            let earnedPoints = earnedPoints
             let points = min(nyonindoChallenge.maxPoints, earnedPoints) // gets the lower of the two
             ChallengeFeedbackView(
                 appData: appData,
@@ -77,9 +60,6 @@ var body: some View {
         }
     }
 }
-    func chooseScene(for completed: Bool) -> SKScene {
-        completed ? startEndScene : gameScene
-    }
 }
 
 struct NyonindoChallengeView_Previews: PreviewProvider {

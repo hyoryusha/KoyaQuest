@@ -23,7 +23,7 @@ struct ChallengeDescriptionView: View {
                     .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .subheadline)
                     .italic()
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.koyaDarkText)
+                    .foregroundColor(.koyaPurple)
 
                 ChallengeButton(
                     // challenge: challenge!
@@ -35,7 +35,7 @@ struct ChallengeDescriptionView: View {
                             .kerning(0.2)
                             .italic()
                             .multilineTextAlignment(.center)
-                    .foregroundColor(.koyaDarkText)
+                    .foregroundColor(.koyaPurple)
             }
         }
     }
@@ -43,5 +43,6 @@ struct ChallengeDescriptionView: View {
 struct ChallengeDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
         ChallengeDescriptionView(challenge: gorintoChallenge)
+            .preferredColorScheme(.dark)
     }
 }

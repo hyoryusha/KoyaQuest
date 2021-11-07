@@ -10,13 +10,33 @@ import SwiftUI
 import Combine
 
 class GorintoGameScene: SKScene {
-    var viewModel: GorintoChallengeViewModel?
+    var viewModel = GorintoChallengeViewModel()
     var points = 0
+
+    @Binding var challengeCompleted: Bool
+    @Binding var pointsEarned: Int
+
+
+    init(_ challengeCompleted: Binding<Bool>, _ pointsEarned: Binding<Int>) {
+            _challengeCompleted = challengeCompleted
+            _pointsEarned = pointsEarned
+            super.init(size: CGSize(
+                width: UIScreen.main.bounds.width,
+                height: UIScreen.main.bounds.height))
+            self.scaleMode = .aspectFill
+        }
+
+        required init?(coder aDecoder: NSCoder) {
+            _challengeCompleted = .constant(false)
+            _pointsEarned = .constant(0)
+            super.init(coder: aDecoder)
+        }
+
 
     private let elementLabel = "movable"
     var selectedNode = SKSpriteNode()
 
-    var checkButton = SKSpriteNode(color: UIColor.orange, size: CGSize(width: 120, height: 28))
+    var checkButton = SKSpriteNode(color: UIColor.orange, size: CGSize(width: 120, height: 34))
     let checkButtonLabel = SKLabelNode(text: "Check")
     let alertMessage = SKLabelNode(text: "You must move all labels into position.")
     let hintMessage = SKLabelNode(text: "Drag and drop the labels into position.")
@@ -60,12 +80,13 @@ class GorintoGameScene: SKScene {
     addChild(earthLabel)
 
     checkButtonLabel.fontName = SKFont.bold
-    checkButtonLabel.fontSize = 20.0
+    checkButtonLabel.fontSize = 24.0
     checkButtonLabel.fontColor = UIColor.white
     checkButtonLabel.position = CGPoint(x: 0, y: -8)
     checkButton.addChild(checkButtonLabel)
 
-    checkButton.position = CGPoint(x: frame.midX, y: frame.minY + 40)
+    //checkButton.position = CGPoint(x: frame.midX, y: frame.minY + 40)
+     checkButton.position = CGPoint(x: frame.midX, y: frame.size.height * 0.06)
     checkButton.name = "check"
     checkButton.zPosition = 100
     addChild(checkButton)
@@ -74,7 +95,8 @@ class GorintoGameScene: SKScene {
     func setupGorinto() {
         gorinto.size = CGSize(width: 672, height: 989)
         gorinto.setScale(0.5)
-        gorinto.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2 - 20)
+//        gorinto.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2 - 20)
+        gorinto.position = CGPoint(x: frame.midX, y: frame.size.height * 0.45)
         gorinto.zPosition = 1
         gorinto.name = "gorinto"
     }
@@ -83,40 +105,43 @@ class GorintoGameScene: SKScene {
         hintMessage.fontName = SKFont.regular
         hintMessage.fontSize = 16.0
         hintMessage.fontColor = UIColor.white
-        hintMessage.position = CGPoint(x: frame.midX, y: frame.minY + 60)
+//        hintMessage.position = CGPoint(x: frame.midX, y: frame.minY + 60)
+        hintMessage.position = CGPoint(x: frame.midX, y: frame.size.height  * 0.9)
         hintMessage.zPosition = 100
     }
 
     func setupFireLabel() {
-        fireLabel.position = CGPoint(x: frame.size.width / 2, y: frame.size.height - 60)
+        //fireLabel.position = CGPoint(x: frame.size.width / 2, y: frame.size.height - 60)
+        fireLabel.position = CGPoint(x: frame.size.width / 2, y: frame.size.height * 0.85)
         fireLabel.size = labelSize
         fireLabel.name = "C"
         fireLabel.zPosition = labelZPos
     }
 
     func setupWaterLabel() {
-        waterLabel.position = CGPoint(x: frame.size.width / 2 - 95, y: frame.size.height - 60)
+//        waterLabel.position = CGPoint(x: frame.size.width / 2 - 95, y: frame.size.height - 60)
+        waterLabel.position = CGPoint(x: frame.size.width / 2 - 95, y: frame.size.height * 0.85)
         waterLabel.size = labelSize
         waterLabel.name = "B"
         waterLabel.zPosition = labelZPos
     }
 
     func setupSpaceLabel() {
-        spaceLabel.position = CGPoint(x: frame.size.width / 2 + 95, y: frame.size.height - 60)
+        spaceLabel.position = CGPoint(x: frame.size.width / 2 + 95, y: frame.size.height * 0.85)
         spaceLabel.size = labelSize
         spaceLabel.name = "E"
         spaceLabel.zPosition = labelZPos
     }
 
     func setupWindLabel() {
-        windLabel.position = CGPoint(x: frame.size.width * 0.33 + 14, y: frame.size.height - 98)
+        windLabel.position = CGPoint(x: frame.size.width * 0.33 + 14, y: frame.size.height * 0.80)
         windLabel.size = labelSize
         windLabel.name = "D"
         windLabel.zPosition = labelZPos
     }
 
     func setupEarthLabel() {
-        earthLabel.position = CGPoint(x: frame.size.width * 0.66 - 14, y: frame.size.height - 98)
+        earthLabel.position = CGPoint(x: frame.size.width * 0.66 - 14, y: frame.size.height * 0.80)
         earthLabel.size = labelSize
         earthLabel.name = "A"
         earthLabel.zPosition = labelZPos
@@ -252,27 +277,42 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         gameOverLabel.fontName = SKFont.bold
         gameOverLabel.fontSize = 34.0
         gameOverLabel.fontColor = UIColor(red: 0, green: 204 / 255, blue: 131 / 255, alpha: 1.0)
-        gameOverLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 76)
+//        gameOverLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 76)
+        gameOverLabel.position = CGPoint(x: frame.midX, y: frame.size.height * 0.9)
         addChild(gameOverLabel)
 
         let scoreLabel = SKLabelNode(text: "You earned " + "\(points) points")
         scoreLabel.fontName = SKFont.bold
         scoreLabel.fontSize = 22.0
         scoreLabel.fontColor = UIColor.koyaOrange ?? UIColor.orange
-        scoreLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 104)
+//        scoreLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 104)
+        scoreLabel.position = CGPoint(x: frame.midX, y: frame.size.height * 0.85)
         addChild(scoreLabel)
         let message = SKLabelNode(text: "Incorrect answers are shaded in red.")
         message.fontName = SKFont.medium
         message.fontSize = 13.0
         message.fontColor = UIColor(.white)
-        message.position = CGPoint(x: frame.midX, y: frame.maxY - 128)
+//        message.position = CGPoint(x: frame.midX, y: frame.maxY - 128)
+        message.position = CGPoint(x: frame.midX, y: frame.size.height * 0.80)
         addChild(message)
+       viewModel.solved = true
+        viewModel.points = points
+        pointsEarned = points
+// the player has finished; move to summary scene
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { [weak self] in
-            self?.viewModel?.solved = true
-            self?.viewModel?.points = self?.points ?? 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { self.showSummaryScene(withTransition: .crossFade(withDuration:  0.75))
         }
     }
+
+    private func showSummaryScene(withTransition transition: SKTransition) {
+             let delay = SKAction.wait(forDuration: 1)
+             let sceneChange = SKAction.run {
+                 let scene = GorintoSummaryScene(self.$challengeCompleted)
+                 scene.viewModel = self.viewModel
+               self.view?.presentScene(scene, transition: transition)
+             }
+             run(.sequence([delay, sceneChange]))
+           }
 
     func animateLabel(label: SKLabelNode) {
         let scaleUp = SKAction.scale(to: 1.1, duration: 0.5)

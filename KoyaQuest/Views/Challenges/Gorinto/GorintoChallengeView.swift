@@ -12,70 +12,55 @@ struct GorintoChallengeView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var appData: AppData
     @EnvironmentObject var locationManager: LocationManager
-    @ObservedObject var viewModel = GorintoChallengeViewModel()
+    @State private var pointsEarned: Int = 0
+    @State private var challengeCompleted: Bool = false
 
     var gameScene: SKScene {
-        let scene = GorintoGameScene(
-            size: CGSize(
-                width: UIScreen.main.bounds.width,
-                height: UIScreen.main.bounds.height
-            )
-        )
-        scene.viewModel = self.viewModel
-        scene.scaleMode = .aspectFill
-        return scene
-        }
-
-    var summaryScene: SKScene {
-        let scene = GorintoSummaryScene(
-            size: CGSize(
-                width: UIScreen.main.bounds.width,
-                height: UIScreen.main.bounds.height
-            )
-        )
-        scene.viewModel = self.viewModel
-        scene.scaleMode = .aspectFill
-        return scene
-        }
-
-var body: some View {
-    ZStack {
-        GeometryReader { proxy in
-            SpriteView(
-                scene: chooseScene(for: viewModel.solved) ,
-                transition: .crossFade(withDuration: 1.0
-                )
-            )
-                .frame(width: proxy.size.width, height: proxy.size.height)
+        let scene = GorintoGameScene($challengeCompleted, $pointsEarned)
+            return scene
             }
-            .edgesIgnoringSafeArea(.all)
 
-        VStack {
-            XDismissButtonRight()
-                .padding(.trailing, 16)
-                .padding(.top, 0)
-            Spacer()
-        }
-        .blur(radius: viewModel.isShowingFeedback ? 6 : 0)
-        .navigationBarTitle(Text(""))
-        .navigationBarHidden(true)
+    var body: some View {
+        ZStack {
+            GeometryReader { geometry in
+                SpriteView(scene: gameScene,
+                           transition: .crossFade(
+                            withDuration: 1.0
+                           )
+                )
+                    .frame(
+                        width: geometry.size.width,
+                        height: geometry.size.height
+                    )
+                }
+                .edgesIgnoringSafeArea(.all)
+                .blur(radius: challengeCompleted ? 6 : 0)
 
-        if viewModel.isShowingFeedback {
-            ChallengeFeedbackView(
-                appData: appData,
-                locationManager: locationManager,
-                challenge: gorintoChallenge, text: "Success",
-                points: viewModel.points,
-                success: viewModel.solved
-            )
+            VStack {
+                XDismissButtonRight()
+                    .padding(.top, 12)
+                    .padding(.trailing, 24)
+                Spacer()
+
+            }
+
+            .navigationBarTitle(Text(""))
+            .navigationBarHidden(true)
+            .statusBar(hidden: true)
+
+                if challengeCompleted {
+
+                    ChallengeFeedbackView(
+                        appData: appData,
+                        locationManager: locationManager,
+                        challenge: gorintoChallenge, text: "Well Done!",
+                        points: pointsEarned,
+                        success: true
+                    )
+                }
+            }
         }
     }
-    .statusBar(hidden: true)
-}
-    func chooseScene(for solved: Bool) -> SKScene {
-        solved ? summaryScene: gameScene
-    }
-}
 
 struct GorintoChallengeView_Previews: PreviewProvider {
     static var previews: some View {

@@ -64,7 +64,7 @@ struct WelcomeView: View {
         .edgesIgnoringSafeArea([.all])
         .statusBar(hidden: true)
         )
-        .animation(.easeInOut(duration: 0.8))
+        .animation(.easeInOut(duration: 0.8), value: true)
         }
 
 }

@@ -104,7 +104,6 @@ struct DaimonGameView: View {
                             title: Text("Confirm your Selection"),
                             message: Text("Are you sure this is where the difference is?"),
                             primaryButton: .default (Text("Yes")) {
-                                print("user is sure")
                                 selectionConfirmed = true
                                 viewModel.showingSolution = true
                             },
@@ -132,5 +131,4 @@ struct DaimonGameView_Previews: PreviewProvider {
             )
             .preferredColorScheme(.light)
     }
-
 }

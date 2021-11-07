@@ -12,13 +12,15 @@ struct RatingsOverlayView: View {
     var body: some View {
 
         ZStack(alignment: .topTrailing) {
-            HStack {
+            VStack{
+                HStack {
+                    Spacer()
+                    RatingsView(filter: landmark.name)
+                }
+                .padding(.top, 26)
                 Spacer()
-                RatingsView(filter: landmark.name)
             }
-            .padding(.top, 26)
         }
-        Spacer()
     }
 }
 

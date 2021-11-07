@@ -15,11 +15,11 @@ struct GamePlayToggleView: View {
         VStack {
             Toggle(isOn: $isPlayingGame, label: {
                 Image(systemName: "gamecontroller")
-                    .foregroundColor(Color.koyaDarkText)
+                    .foregroundColor(Color.koyaPurple)
                     .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .subheadline)
                 Text("Play Game:")
                     .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .subheadline)
-                    .foregroundColor(Color.koyaDarkText)
+                    .foregroundColor(Color.koyaPurple)
             })
             .padding()
             .toggleStyle(SwitchToggleStyle(tint: Color.koyaGreen))

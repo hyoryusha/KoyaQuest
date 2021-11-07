@@ -20,26 +20,37 @@ struct BonusDisplayView: View {
                         .blur(radius: 2.0)
 
                     VStack {
-                        Image("bonus_banner")
-                            .resizable()
-                            .frame(height: 120)
-                            .cornerRadius(0)
-                        Text("You have unlocked a bonus question!")
-                            .font(.callout)
-                            .padding(.top, 10)
+                        Image("bonus banner test")
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 160)
+                            .clipped()
+                            .overlay(BonusOverlayView())
+                        Spacer()
+                        HStack{
+                            Image(systemName: "lock.open")
+                                .foregroundColor(.koyaGreen)
+                                .font(.headline)
+                            Text("You have unlocked a bonus question!")
+                                .foregroundColor(.white)
+                                .font(.subheadline)
+                        }
                         NavigationLink(
                             destination: BonusListView()) {
                                 ActionButton(
-                                    color: .koyaRed,
+                                    color: .koyaOrange,
                                     text: "View Bonus")
                                     .buttonStyle(ScaleButtonStyle())
                             }
                         Spacer()
                     }
-                    .frame(width: 300, height: 240)
-                    .background(Color.koyaSky)
+//                    .frame(width: 300, height: 240)
+//                    .background(Color.koyaSky)
+//                    .cornerRadius(12)
+//                    .shadow(radius: 40)
+                    .frame(width: 320, height: 300)
+                    .background(Color.black)
                     .cornerRadius(12)
-                    .shadow(radius: 40)
+                    .shadow(radius: 60)
                     //Spacer()
                 }
             }

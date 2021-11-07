@@ -44,5 +44,6 @@ struct KukaiResumeDisplayView: View {
 struct KukaiResumeDisplayView_Previews: PreviewProvider {
     static var previews: some View {
         KukaiResumeDisplayView( isPlayingGame: .constant(true))
+            .preferredColorScheme(.dark)
     }
 }

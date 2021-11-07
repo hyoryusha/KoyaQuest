@@ -63,11 +63,11 @@ struct AboutViewRow: View {
                 Text(title)
                     .font(.title3)
                     .bold()
-                    .foregroundColor(.black)
+                    .foregroundColor(.koyaDarkText)
                 Text(blurb)
                     .font(.subheadline)
                     .italic()
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(.secondary)
             }
         }
     }

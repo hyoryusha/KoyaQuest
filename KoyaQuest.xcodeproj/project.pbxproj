@@ -124,6 +124,8 @@
 		0A4E118E266F149E005F5FA8 /* SaigyoChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E118D266F149E005F5FA8 /* SaigyoChallengeViewModel.swift */; };
 		0A4E1191266F14F1005F5FA8 /* SaigyoSummaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1190266F14F0005F5FA8 /* SaigyoSummaryScene.swift */; };
 		0A4E1194266F15FD005F5FA8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1193266F15FD005F5FA8 /* Card.swift */; };
+		0A4E69B227195AF700F26D66 /* FeedbackOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E69B127195AF700F26D66 /* FeedbackOverlayView.swift */; };
+		0A4E69B4271A6B1600F26D66 /* BonusOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E69B3271A6B1600F26D66 /* BonusOverlayView.swift */; };
 		0A5A982A2664629600074902 /* ChallengeDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A98292664629600074902 /* ChallengeDisplayViewModel.swift */; };
 		0A5A982D2664631200074902 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A982C2664631200074902 /* MainMenuView.swift */; };
 		0A5A98302664639200074902 /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A982F2664639200074902 /* MainMenuViewModel.swift */; };
@@ -218,6 +220,12 @@
 		0A9205C026B157C2007E7BAF /* RatingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9205BF26B157C2007E7BAF /* RatingsTest.swift */; };
 		0A98D45B26A2944F003E5FB4 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A98D45A26A2944F003E5FB4 /* LeaderboardViewModel.swift */; };
 		0A98D45D26A39725003E5FB4 /* FinalScoreRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A98D45C26A39725003E5FB4 /* FinalScoreRow.swift */; };
+		0AA76A7B27347936000BFC2E /* pilgrim_enters_gate.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76A77273478DF000BFC2E /* pilgrim_enters_gate.wav */; };
+		0AA76A7C27347939000BFC2E /* pilgrim_collision.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76A76273478DF000BFC2E /* pilgrim_collision.wav */; };
+		0AA76A7D2734793C000BFC2E /* oni_attack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76A78273478DF000BFC2E /* oni_attack.mp3 */; };
+		0AA76A7E2734793F000BFC2E /* oni_enters_gate.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76A79273478DF000BFC2E /* oni_enters_gate.wav */; };
+		0AA76A7F27347942000BFC2E /* oni_collision.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76A7A273478DF000BFC2E /* oni_collision.wav */; };
+		0AA76A8127347CA8000BFC2E /* NyonindoMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76A8027347CA8000BFC2E /* NyonindoMusic.swift */; };
 		0AB3F417267EFE45006C4E70 /* MizumukeChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F414267EFE44006C4E70 /* MizumukeChallengeView.swift */; };
 		0AB3F418267EFE45006C4E70 /* MizumukeChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F415267EFE44006C4E70 /* MizumukeChallengeViewModel.swift */; };
 		0AB3F419267EFE45006C4E70 /* SilhouettePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F416267EFE45006C4E70 /* SilhouettePickerView.swift */; };
@@ -384,6 +392,8 @@
 		0A4E118D266F149E005F5FA8 /* SaigyoChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaigyoChallengeViewModel.swift; sourceTree = "<group>"; };
 		0A4E1190266F14F0005F5FA8 /* SaigyoSummaryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaigyoSummaryScene.swift; sourceTree = "<group>"; };
 		0A4E1193266F15FD005F5FA8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		0A4E69B127195AF700F26D66 /* FeedbackOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackOverlayView.swift; sourceTree = "<group>"; };
+		0A4E69B3271A6B1600F26D66 /* BonusOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusOverlayView.swift; sourceTree = "<group>"; };
 		0A5A98292664629600074902 /* ChallengeDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDisplayViewModel.swift; sourceTree = "<group>"; };
 		0A5A982C2664631200074902 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		0A5A982F2664639200074902 /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
@@ -483,6 +493,12 @@
 		0A9205BF26B157C2007E7BAF /* RatingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsTest.swift; sourceTree = "<group>"; };
 		0A98D45A26A2944F003E5FB4 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 		0A98D45C26A39725003E5FB4 /* FinalScoreRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScoreRow.swift; sourceTree = "<group>"; };
+		0AA76A76273478DF000BFC2E /* pilgrim_collision.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pilgrim_collision.wav; sourceTree = "<group>"; };
+		0AA76A77273478DF000BFC2E /* pilgrim_enters_gate.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pilgrim_enters_gate.wav; sourceTree = "<group>"; };
+		0AA76A78273478DF000BFC2E /* oni_attack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oni_attack.mp3; sourceTree = "<group>"; };
+		0AA76A79273478DF000BFC2E /* oni_enters_gate.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oni_enters_gate.wav; sourceTree = "<group>"; };
+		0AA76A7A273478DF000BFC2E /* oni_collision.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oni_collision.wav; sourceTree = "<group>"; };
+		0AA76A8027347CA8000BFC2E /* NyonindoMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyonindoMusic.swift; sourceTree = "<group>"; };
 		0AB3F414267EFE44006C4E70 /* MizumukeChallengeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MizumukeChallengeView.swift; sourceTree = "<group>"; };
 		0AB3F415267EFE44006C4E70 /* MizumukeChallengeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MizumukeChallengeViewModel.swift; sourceTree = "<group>"; };
 		0AB3F416267EFE45006C4E70 /* SilhouettePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilhouettePickerView.swift; sourceTree = "<group>"; };
@@ -542,6 +558,7 @@
 		0A3D24022674418100D9CA2F /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				0AA76A75273478DF000BFC2E /* NyonindoGameSounds */,
 				0ACAE8AD26F01EB8007276B2 /* uesugi_ghost.mp4 */,
 				0A92057026AE2BF1007E7BAF /* 1000.mp3 */,
 				0A92056726AE2BE9007E7BAF /* 1001.mp3 */,
@@ -621,9 +638,9 @@
 		0A4E10952669C375005F5FA8 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
-				0A4E116C266B8ACA005F5FA8 /* FeedbackBannerOverlay.swift */,
 				0AEA569F26D72F7200389337 /* NearGobyoWarningView.swift */,
 				0A4E116A266B8AC9005F5FA8 /* ChallengeFeedbackView.swift */,
+				0A4E116C266B8ACA005F5FA8 /* FeedbackBannerOverlay.swift */,
 				0A3D2485267C531200D9CA2F /* BonusFeedbackView.swift */,
 				0A4E10B52669CBDC005F5FA8 /* Alert.swift */,
 				0A4E10BB2669CBDD005F5FA8 /* BackgroundView.swift */,
@@ -636,6 +653,8 @@
 				0A4E10BA2669CBDD005F5FA8 /* TitleImageView.swift */,
 				0A4E10B72669CBDC005F5FA8 /* TitleView.swift */,
 				03318BCE26832D8C00602022 /* AdaptingStack.swift */,
+				0A4E69B127195AF700F26D66 /* FeedbackOverlayView.swift */,
+				0A4E69B3271A6B1600F26D66 /* BonusOverlayView.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -741,6 +760,7 @@
 				0AB3F443268168D1006C4E70 /* NyonindoGameScene.swift */,
 				0AB3F444268168D1006C4E70 /* NyonindoSummaryScene.swift */,
 				0330006A2671E25F00228CFC /* Rikishi.swift */,
+				0AA76A8027347CA8000BFC2E /* NyonindoMusic.swift */,
 				0A3D23D92672D9EC00D9CA2F /* NyonindoPhysics.swift */,
 			);
 			path = Nyonindo;
@@ -1038,6 +1058,18 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		0AA76A75273478DF000BFC2E /* NyonindoGameSounds */ = {
+			isa = PBXGroup;
+			children = (
+				0AA76A76273478DF000BFC2E /* pilgrim_collision.wav */,
+				0AA76A77273478DF000BFC2E /* pilgrim_enters_gate.wav */,
+				0AA76A78273478DF000BFC2E /* oni_attack.mp3 */,
+				0AA76A79273478DF000BFC2E /* oni_enters_gate.wav */,
+				0AA76A7A273478DF000BFC2E /* oni_collision.wav */,
+			);
+			path = NyonindoGameSounds;
+			sourceTree = "<group>";
+		};
 		0AEA56A826E03A7B00389337 /* KoyaQuestUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1151,6 +1183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AA76A7C27347939000BFC2E /* pilgrim_collision.wav in Resources */,
 				0A92059B26AE2C00007E7BAF /* 1005.mp3 in Resources */,
 				0A92055826ABEE0E007E7BAF /* FAQ.json in Resources */,
 				0A9205A226AE2C00007E7BAF /* 1050.mp3 in Resources */,
@@ -1163,6 +1196,7 @@
 				0A5E83CF266397C3000076A9 /* Colors.xcassets in Resources */,
 				0A92059826AE2C00007E7BAF /* 1072.mp3 in Resources */,
 				0A92058C26AE2C00007E7BAF /* 1007.mp3 in Resources */,
+				0AA76A7D2734793C000BFC2E /* oni_attack.mp3 in Resources */,
 				0A92059F26AE2C00007E7BAF /* 1041.mp3 in Resources */,
 				0A92059C26AE2C00007E7BAF /* 1073.mp3 in Resources */,
 				0A9205A726AE2C00007E7BAF /* 1008.mp3 in Resources */,
@@ -1179,6 +1213,7 @@
 				0A5E83AB2663827A000076A9 /* Assets.xcassets in Resources */,
 				0A3D242F2674AA1400D9CA2F /* pop.wav in Resources */,
 				0A92058B26AE2C00007E7BAF /* 1018.mp3 in Resources */,
+				0AA76A7B27347936000BFC2E /* pilgrim_enters_gate.wav in Resources */,
 				0A9205A426AE2C00007E7BAF /* 1061.mp3 in Resources */,
 				0A9205A826AE2C00007E7BAF /* 1006.mp3 in Resources */,
 				0A21654826E2131E007C4034 /* Localizable.strings in Resources */,
@@ -1193,10 +1228,12 @@
 				0A92059326AE2C00007E7BAF /* 1002.mp3 in Resources */,
 				0A92059E26AE2C00007E7BAF /* 1012.mp3 in Resources */,
 				0A92059426AE2C00007E7BAF /* 1009.mp3 in Resources */,
+				0AA76A7E2734793F000BFC2E /* oni_enters_gate.wav in Resources */,
 				0A9205AB26AE2C00007E7BAF /* 1043.mp3 in Resources */,
 				0A92059626AE2C00007E7BAF /* 1011.mp3 in Resources */,
 				0A92059126AE2C00007E7BAF /* 1010.mp3 in Resources */,
 				0A92058A26AE2C00007E7BAF /* 1003.mp3 in Resources */,
+				0AA76A7F27347942000BFC2E /* oni_collision.wav in Resources */,
 				0ACAE8AE26F01EB8007276B2 /* uesugi_ghost.mp4 in Resources */,
 				0A92058626AE2C00007E7BAF /* 1051.mp3 in Resources */,
 				0A92058F26AE2C00007E7BAF /* 1033.mp3 in Resources */,
@@ -1242,6 +1279,7 @@
 				0A5A982D2664631200074902 /* MainMenuView.swift in Sources */,
 				0A98D45D26A39725003E5FB4 /* FinalScoreRow.swift in Sources */,
 				0A4E1133266AF5E3005F5FA8 /* DaimonSummaryView.swift in Sources */,
+				0AA76A8127347CA8000BFC2E /* NyonindoMusic.swift in Sources */,
 				0A5A98302664639200074902 /* MainMenuViewModel.swift in Sources */,
 				0A4E10BF2669CBDE005F5FA8 /* TextViews.swift in Sources */,
 				0A4E1071266982FA005F5FA8 /* AboutGameView.swift in Sources */,
@@ -1272,6 +1310,7 @@
 				0AB3F445268168D1006C4E70 /* NyonindoGameScene.swift in Sources */,
 				0A4E10C12669CBDE005F5FA8 /* CaptionView.swift in Sources */,
 				0A3D23EB2673497900D9CA2F /* ShogunsGameScene.swift in Sources */,
+				0A4E69B4271A6B1600F26D66 /* BonusOverlayView.swift in Sources */,
 				0A4E10CF2669CC25005F5FA8 /* CreditsView.swift in Sources */,
 				0A4E1191266F14F1005F5FA8 /* SaigyoSummaryScene.swift in Sources */,
 				0A4E10DF2669CC4D005F5FA8 /* LandmarkListView.swift in Sources */,
@@ -1335,6 +1374,7 @@
 				0A5E83B82663831B000076A9 /* KoyaQuest.xcdatamodeld in Sources */,
 				0A4E111A266A1B28005F5FA8 /* ToggleStyle+Extension.swift in Sources */,
 				0A4E1104266A0CA5005F5FA8 /* NyonindoChallengeView.swift in Sources */,
+				0A4E69B227195AF700F26D66 /* FeedbackOverlayView.swift in Sources */,
 				0A3D24282674A13700D9CA2F /* KoyakunCatcherVC.swift in Sources */,
 				0AE1AA6726A8AF0900C9FA7D /* DynamicLeaderboardView.swift in Sources */,
 				0A4E1101266A0C98005F5FA8 /* KukaiChallengeView.swift in Sources */,
@@ -1586,7 +1626,7 @@
 				DEVELOPMENT_TEAM = VXX3S4X7D2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KoyaQuest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1611,7 +1651,7 @@
 				DEVELOPMENT_TEAM = VXX3S4X7D2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KoyaQuest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -133,6 +133,7 @@ struct ChoishiStarterView: View {
                                     .foregroundColor(.black)
                             }
                         }
+            .pickerStyle(.wheel)
 
             }
         Button {

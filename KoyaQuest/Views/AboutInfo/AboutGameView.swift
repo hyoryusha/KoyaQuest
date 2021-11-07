@@ -28,7 +28,7 @@ struct AboutGameView: View {
                                 Text(info.title)
                                     .font(.title2)
                                     .bold()
-                                    .foregroundColor(.black)
+                                    .foregroundColor(.koyaDarkText)
                             }
                         }
                     }
@@ -69,5 +69,6 @@ struct AboutGameView: View {
 struct AboutGameView_Previews: PreviewProvider {
     static var previews: some View {
         AboutGameView()
+            .preferredColorScheme(.dark)
     }
 }

@@ -10,6 +10,7 @@ struct BonusListView: View {
     @EnvironmentObject var appData: AppData
     var body: some View {
         // NavigationView {
+       // VStack {
             List {
                 ForEach(Bonus.bonusQuestions) { question in
                     NavigationLink(
@@ -20,7 +21,12 @@ struct BonusListView: View {
                     .navigationTitle(Text("Bonus Questions")).disabled(isLocked(bonus: question))
                 }
             }
-            .navigationTitle("Bonus Questions")
+//            Text("Choose the unlocked bonus")
+//                .font(.subheadline)
+//                .foregroundColor(.black)
+//        }
+        .navigationTitle("Bonus Questions")
+
         }
   //  }
 
@@ -48,6 +54,7 @@ struct BonusListView: View {
         static var previews: some View {
             BonusListView()
                 .environmentObject(AppData())
+                //.preferredColorScheme(.dark)
         }
     }
 }
@@ -59,9 +66,31 @@ struct BonusListViewRow: View {
 
         HStack {
             BonusIconView(state: state)
-            Text("Question No. \(question.id)")
+            VStack(alignment: .leading) {
+                Text("Bonus No. \(question.id)")
+                    .font(.title)
+                Text(getSubText(state: state))
+                    .foregroundColor(.secondary)
+            }
+            .padding(.leading, 6)
         }
+        .padding()
+
     }
+
+    func getSubText(state: BonusState) -> String {
+        var blurb: String = ""
+        switch state {
+        case .completed:
+            blurb = "Completed"
+        case .locked:
+            blurb = "Unavailable"
+        case .active:
+            blurb = "CLICK HERE"
+        }
+        return blurb
+    }
+
 }
 
 struct BonusIconView: View {
@@ -70,13 +99,16 @@ struct BonusIconView: View {
         switch state {
         case .completed:
             Image(systemName: "checkmark.circle.fill")
-                .foregroundColor(.green)
+                .font(.largeTitle)
+                .foregroundColor(.koyaGreen)
         case .active:
             Image(systemName: "lock.open")
-                .foregroundColor(.green)
+                .font(.largeTitle)
+                .foregroundColor(.koyaGreen)
         case .locked:
             Image(systemName: "lock.slash")
-                .foregroundColor(.secondary)
+                .font(.largeTitle)
+                .foregroundColor(.koyaOrange)
         }
     }
 }

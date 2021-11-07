@@ -32,7 +32,12 @@ struct PostScoreView: View {
 
     var body: some View {
         VStack {
-            TitleView(fullCaption: false)
+            Text("Kōya Quest")
+                .font(.system(wideElement(sizeCategory: sizeCategory) ? .body : .title , design: .serif))
+                .italic()
+                .bold()
+                .foregroundColor(Color.koyaDarkText)
+                .padding(.top, 10)
             if scorePosted {
                 Text("Success!")
                     .font(.title)
@@ -51,17 +56,18 @@ struct PostScoreView: View {
                         .font(.title2)
                         .bold()
                         .padding(10)
-                        .foregroundColor(Color.koyaPurple)
+                        .foregroundColor(Color.koyaDarkText)
                     Text("Share your accomplishment with the world!*")
                         .font(.body)
                         .bold()
                         .multilineTextAlignment(.center)
+                        .foregroundColor(Color.koyaDarkText)
                 }
                 Form {
                     Section(header: Text("How do you want your name to appear?")) {
                         TextField("...enter your username here...", text: $viewModel.userName)
                             .padding(.leading, 12)
-                            .background(Color.koyaSky)
+                            //.background(Color.koyaSky)
                             .disableAutocorrection(true)
                         Button{
                             viewModel.checkUserNameAvailable(userNamesArray: userNamesArray)
@@ -76,8 +82,10 @@ struct PostScoreView: View {
                         }
                     }
                 } // end form
-                .frame(height: 142, alignment: .center)
+                .frame(height: 162, alignment: .center)
+                .background(Color.koyaSky)
                 .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+
                 .padding()
                 PostScoreBlurbView()
             }
@@ -101,9 +109,10 @@ struct PostScoreView: View {
         .sheet(isPresented: $showAllUsernames, content: {
             AllUserNamesView(userNamesArray: userNamesArray)
         })
-        .background(Image("mtns")
-        .scaledToFill()
-        .edgesIgnoringSafeArea([.all]))
+       // .background(Image("mtns")
+       // .scaledToFill()
+       // .edgesIgnoringSafeArea([.all]))
+        //.background(Color.koyaPurple)
         .statusBar(hidden: true)
         .alert(isPresented: $viewModel.showingActionAlert) {
             Alert(title: Text("User Name Unavailable"),
@@ -121,6 +130,7 @@ struct UserInputView_Previews: PreviewProvider {
     static var previews: some View {
         PostScoreView(isShowingForm: .constant(true), hidePostScoreButton: .constant(false))
             .environmentObject(AppData())
+            .preferredColorScheme(.dark)
     }
 }
 

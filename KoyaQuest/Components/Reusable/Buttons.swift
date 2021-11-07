@@ -218,7 +218,7 @@ struct ScaleButtonStyle: ButtonStyle {
         configuration.label
             .foregroundColor(.white)
             .scaleEffect(configuration.isPressed ? 1.1 : 1.0)
-            .animation(.easeOut(duration: 0.2))
+            .animation(.easeOut(duration: 0.2), value: true)
     }
 }
 

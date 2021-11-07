@@ -16,9 +16,32 @@ enum CardLevel: CGFloat {
 }
 
 class SaigyoGameScene: SKScene {
-    var viewModel: SaigyoChallengeViewModel?
+    var viewModel = SaigyoChallengeViewModel()
+
+    @Binding var challengeCompleted: Bool
+    @Binding var pointsEarned: Int
+
+
+    init(_ challengeCompleted: Binding<Bool>, _ pointsEarned: Binding<Int>) {
+            _challengeCompleted = challengeCompleted
+            _pointsEarned = pointsEarned
+            super.init(size: CGSize(
+                width: UIScreen.main.bounds.width,
+                height: UIScreen.main.bounds.height))
+            self.scaleMode = .aspectFill
+        }
+
+        required init?(coder aDecoder: NSCoder) {
+            _challengeCompleted = .constant(false)
+            _pointsEarned = .constant(0)
+            super.init(coder: aDecoder)
+        }
+
+
     let landingZone = SKSpriteNode(imageNamed: "blank card")
     let checkAnswerButton = CheckAnswerButton()
+    let proceedToSummaryButton = CheckAnswerButton()
+    let successLabel = SKLabelNode(text: "You've made a match!")
     var selectedNode = SKSpriteNode()
     var finalPositions: [String: CGFloat] = [:]
     var attempts = 0
@@ -97,6 +120,26 @@ class SaigyoGameScene: SKScene {
         checkAnswerButton.addChild(checkAnswerLabel)
         self.addChild(checkAnswerButton)
     }
+
+    func addProceedToSummaryButton() {
+        let proceedButtonLabel = SKLabelNode(text: "Got it!")
+        proceedButtonLabel.fontName = SKFont.medium
+        proceedButtonLabel.fontSize = 20.0
+        proceedButtonLabel.fontColor = UIColor.white
+        proceedButtonLabel.position = CGPoint(x: 0, y: -6.0)
+        proceedToSummaryButton.position = CGPoint(x: self.frame.midX, y: frame.size.height * 0.10 - 6)
+        proceedToSummaryButton.zPosition = 1000
+        proceedToSummaryButton.addChild(proceedButtonLabel)
+        proceedToSummaryButton.name = "proceed button"
+
+        successLabel.fontSize = 18
+        successLabel.fontName = SKFont.medium
+        successLabel.fontColor = UIColor.green
+        successLabel.position = CGPoint(x: frame.midX, y: frame.size.height * 0.14 - 4)
+        successLabel.zPosition = 100
+        self.addChild(proceedToSummaryButton)
+        self.addChild(successLabel)
+    }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
 
             guard let touch = touches.first else {return}
@@ -123,6 +166,10 @@ class SaigyoGameScene: SKScene {
         if checkAnswerButton.contains(location) {
             checkAnswer()
         }
+          if proceedToSummaryButton.contains(location) {
+              self.removeAllChildren()
+              showSummaryScene(withTransition: .crossFade(withDuration: 0.5))
+          }
       }
     }
 
@@ -176,7 +223,9 @@ class SaigyoGameScene: SKScene {
         if playerChoice.name != "" { // not empty
             if playerChoice.name == "77 shimo no ku" { // correct answer
                 checkAnswerButton.removeFromParent()
-                gameOver()
+                if !viewModel.solved {
+                    gameOver()
+                }
             } else {
                 keepTrying()
             }
@@ -186,7 +235,6 @@ class SaigyoGameScene: SKScene {
     }
 
     func gameOver() {
-
         switch attempts {
         case 1:
             points = 30
@@ -199,18 +247,29 @@ class SaigyoGameScene: SKScene {
         default:
             points = 0
         }
-
+        viewModel.solved = true
+        viewModel.points = self.points
+        pointsEarned = points
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.viewModel?.solved = true
-            self.viewModel?.points = self.points
+            self.addProceedToSummaryButton()
         }
     }
+
+    private func showSummaryScene(withTransition transition: SKTransition) {
+             let delay = SKAction.wait(forDuration: 1)
+             let sceneChange = SKAction.run {
+                 let scene = SaigyoSummaryScene(self.$challengeCompleted)
+                 scene.viewModel = self.viewModel
+               self.view?.presentScene(scene, transition: transition)
+             }
+             run(.sequence([delay, sceneChange]))
+           }
 
     func keepTrying() {
         keepTryingLabelDisplayed ? keepTryingLabel.removeFromParent() : nil
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in
         keepTryingLabel.fontSize = 18
-        keepTryingLabel.fontName = "AvenirNext-Medium"
+        keepTryingLabel.fontName = SKFont.medium
         keepTryingLabel.fontColor = UIColor.orange
         keepTryingLabel.position = CGPoint(x: frame.midX, y: frame.size.height * 0.14 - 4)
         keepTryingLabel.zPosition = 100

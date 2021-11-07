@@ -111,7 +111,7 @@ struct MainMenuView: View {
                 }
 
                 .navigationViewStyle(StackNavigationViewStyle())
-                .animation(.easeInOut(duration: 0.8))
+                .animation(.easeInOut(duration: 0.8), value: true)
                 .blur(radius: showChallenge() ? 16 : 0)
                 .onAppear() {
                     if appData.gameState != .exited {
@@ -119,19 +119,18 @@ struct MainMenuView: View {
                     }
                 }
 
-
                 if showChallenge() {
                     ChallengeDisplayView(isPlayingGame: $appData.isPlayingGame,
                                          enteredZone: locationManager.activeTargetZone!)
-                            .animation(.easeInOut(duration: 0.8))
+                        .animation(.easeInOut(duration: 0.8), value: true)
                     }
                 if appData.isShowingResumeKukaiChallenge {
                     KukaiResumeDisplayView(isPlayingGame: $appData.isPlayingGame)
-                            .animation(.easeInOut(duration: 0.8))
+                        .animation(.easeInOut(duration: 0.8), value: true)
                     }
                 if showBonus() {
                     BonusDisplayView(isPlayingGame: $appData.isPlayingGame, isShowingBonusList: $isShowingBonusList)
-                            .animation(.easeOut(duration: 0.8))
+                        .animation(.easeInOut(duration: 0.8), value: true)
                     }
 
 
@@ -212,6 +211,6 @@ struct MainMenuView_Previews: PreviewProvider {
         MainMenuView(landmark: Landmark.allLandmarks[0])
             .environmentObject(AppData())
             .environmentObject(LocationManager())
-           // .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }

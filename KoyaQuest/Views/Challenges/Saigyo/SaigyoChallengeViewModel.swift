@@ -10,6 +10,8 @@ import SwiftUI
 class SaigyoChallengeViewModel: ObservableObject {
     @Published var solved: Bool = false
     @Published var points: Int = 0
+    @Published var showSummaryScene: Bool = false
+    @Published var challengeCompleted: Bool = false
 
     var statusText: String {
         solved  ? "You completed the poem!" : "Keep trying until you complete the poem!"
