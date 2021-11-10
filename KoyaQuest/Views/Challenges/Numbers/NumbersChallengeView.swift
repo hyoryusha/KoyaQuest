@@ -13,64 +13,56 @@ struct NumbersChallengeView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var appData: AppData
     @EnvironmentObject var locationManager: LocationManager
-    @ObservedObject var viewModel = NumbersChallengeViewModel()
+    @State private var pointsEarned: Int = 0
+    @State private var challengeCompleted: Bool = false
 
     var gameScene: SKScene {
-        let scene = NumbersChallengeGameScene(
-            size: CGSize(
-                width: UIScreen.main.bounds.width,
-                height: UIScreen.main.bounds.height
-            )
-        )
-        scene.viewModel = self.viewModel
-        scene.scaleMode = .aspectFill
-        return scene
-        }
-
-var body: some View {
-
-        ZStack {
-            BackgroundView()
-            if !viewModel.complete {
-                GeometryReader { geometry in
-                    SpriteView( scene: gameScene)
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                    }
-                    .edgesIgnoringSafeArea(.all)
+        let scene = NumbersChallengeGameScene($challengeCompleted, $pointsEarned)
+            return scene
             }
+
+    var body: some View {
+        ZStack {
+            GeometryReader { geometry in
+                SpriteView(scene: gameScene,
+                           transition: .crossFade(
+                            withDuration: 1.0
+                           )
+                )
+                    .frame(
+                        width: geometry.size.width,
+                        height: geometry.size.height
+                    )
+                }
+                .edgesIgnoringSafeArea(.all)
+                .blur(radius: challengeCompleted ? 6 : 0)
 
             VStack {
                 XDismissButtonRight()
-                    .padding(.trailing, 16)
-                    .padding(.top, 0)
+                    .padding(.top, 12)
+                    .padding(.trailing, 24)
                 Spacer()
-                //.frame(height: 420)
-                    Text("Tap on a tile to reveal the other side.\nMatch tiles to remove and score points.")
-                        .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .body)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
-                        .padding(.bottom, 80)
 
-                //Spacer()
             }
-            // .blur(radius: viewModel.complete ? 6 : 0)
+
             .navigationBarTitle(Text(""))
             .navigationBarHidden(true)
             .statusBar(hidden: true)
 
-            if viewModel.complete {
-                ChallengeFeedbackView(
-                    appData: appData,
-                    locationManager: locationManager,
-                    challenge: numbersChallenge, text: "Success",
-                    points: viewModel.points,
-                    success: viewModel.complete
-                )
+                if challengeCompleted {
+
+                    ChallengeFeedbackView(
+                        appData: appData,
+                        locationManager: locationManager,
+                        challenge: numbersChallenge, text: "Well Done!",
+                        points: pointsEarned,
+                        success: true
+                    )
+                }
             }
         }
-}
+    }
 
-}
 struct NumbersChallengeView_Previews: PreviewProvider {
     static var previews: some View {
         NumbersChallengeView()

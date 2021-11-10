@@ -39,7 +39,7 @@ struct ChallengeFeedbackView: View {
                 } label: {
 
                     if #available(iOS 15.0, *) {
-                        Text("Exit with 20 Points")
+                        Text("Exit with \(points) Points")
                             .font(.title3)
                             .bold()
                             .frame(
@@ -58,7 +58,7 @@ struct ChallengeFeedbackView: View {
                             .cornerRadius(6)
                     } else {
                         // Fallback on earlier versions
-                        Text("Exit with 20 Points")
+                        Text("Exit with \(points) Points")
                             .font(.title3)
                             .bold()
                             .frame(

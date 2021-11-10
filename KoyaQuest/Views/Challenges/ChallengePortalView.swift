@@ -128,7 +128,7 @@ struct ChallengePortalView_Previews: PreviewProvider {
         Group {
             ChallengePortalView(
                 isShowingChallengePortal: .constant(true),
-                challenge: numbersChallenge
+                challenge: saigyoChallenge
             )
                 .preferredColorScheme(.light)
         }

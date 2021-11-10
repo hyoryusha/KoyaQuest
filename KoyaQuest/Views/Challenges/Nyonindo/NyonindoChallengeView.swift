@@ -49,12 +49,12 @@ var body: some View {
 
         if challengeCompleted {
 //            let earnedPoints = earnedPoints
-            let points = min(nyonindoChallenge.maxPoints, earnedPoints) // gets the lower of the two
+           // let points = min(nyonindoChallenge.maxPoints, earnedPoints) // gets the lower of the two
             ChallengeFeedbackView(
                 appData: appData,
                 locationManager: locationManager,
                 challenge: nyonindoChallenge, text: "Well Done!",
-                points: points,
+                points: earnedPoints,
                 success: true
             )
         }

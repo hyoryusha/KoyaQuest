@@ -10,7 +10,28 @@ import SwiftUI
 import GameplayKit
 
 class ShogunsGameScene: SKScene {
-    var viewModel: ShogunsChallengeViewModel?
+    var viewModel = ShogunsChallengeViewModel()
+
+    @Binding var challengeCompleted: Bool
+    @Binding var pointsEarned: Int
+
+
+    init(_ challengeCompleted: Binding<Bool>, _ pointsEarned: Binding<Int>) {
+            _challengeCompleted = challengeCompleted
+            _pointsEarned = pointsEarned
+            super.init(size: CGSize(
+                width: UIScreen.main.bounds.width,
+                height: UIScreen.main.bounds.height))
+            self.scaleMode = .aspectFill
+        }
+
+        required init?(coder aDecoder: NSCoder) {
+            _challengeCompleted = .constant(false)
+            _pointsEarned = .constant(0)
+            super.init(coder: aDecoder)
+        }
+
+
     var backgroundSprite = SKSpriteNode(imageNamed: "shoguns")
     var ieyasuQuote = SKSpriteNode(imageNamed: "ieyasu_quote")
     var nobunagaQuote = SKSpriteNode(imageNamed: "nobunaga_quote")
@@ -40,7 +61,7 @@ class ShogunsGameScene: SKScene {
         x: ieyasuQuote.size.width / 2 + 6,
         y: frame.size.height - frame.size.height / 9
     )
-    ieyasuQuote.setScale(0.9)
+    ieyasuQuote.setScale(0.8)
     ieyasuQuote.zPosition = 10
     ieyasuQuote.name = "A"
     addChild(ieyasuQuote)
@@ -49,7 +70,7 @@ class ShogunsGameScene: SKScene {
         x: frame.size.width / 2 + 6,
         y: frame.size.height - frame.size.height / 9
     )
-    nobunagaQuote.setScale(0.9)
+    nobunagaQuote.setScale(0.8)
     nobunagaQuote.zPosition = 10
     nobunagaQuote.name = "C"
     addChild(nobunagaQuote)
@@ -58,7 +79,7 @@ class ShogunsGameScene: SKScene {
         x: frame.size.width - ieyasuQuote.size.width / 2 - 6,
         y: frame.size.height - frame.size.height / 9
     )
-    hideyoshiQuote.setScale(0.9)
+    hideyoshiQuote.setScale(0.8)
     hideyoshiQuote.zPosition = 10
     hideyoshiQuote.name = "B"
     addChild(hideyoshiQuote)
@@ -81,7 +102,7 @@ class ShogunsGameScene: SKScene {
     }
 
     func setUpBackground() {
-        backgroundSprite.setScale(0.9)
+        backgroundSprite.setScale(0.8)
         backgroundSprite.position = CGPoint(
             x: frame.size.width / 2,
             y: frame.size.height / 2 - 20
@@ -96,7 +117,7 @@ class ShogunsGameScene: SKScene {
         checkButtonLabel.fontColor = UIColor.white
         checkButtonLabel.position = CGPoint(x: 0, y: -8)
         checkButton.addChild(checkButtonLabel)
-        checkButton.position = CGPoint(x: frame.midX, y: frame.minY + 38)
+        checkButton.position = CGPoint(x: frame.midX, y: frame.size.height * 0.075)
         checkButton.name = "check"
         checkButton.zPosition = 100
     }
@@ -123,6 +144,7 @@ class ShogunsGameScene: SKScene {
         if finalPositions.count < 3 {
             // show alert
             alert.isHidden = false
+
         } else {
            // ready to evaluate
             let keySorted = finalPositions.sorted { $0.0 < $1.0 }
@@ -152,6 +174,7 @@ class ShogunsGameScene: SKScene {
             checkButton.isHidden = true
             kamiNoKu.isHidden = true
             alert.isHidden = true
+            //alertIsHidden = false
             if matchingIndices == 1 {
                 feedback.text = "You made \(matchingIndices) match for \(points) points"
             } else {
@@ -161,13 +184,27 @@ class ShogunsGameScene: SKScene {
             setUpFeedback()
             addChild(feedback)
             colorize(for: matches)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
-                self.viewModel?.solved = true
-                self.viewModel?.matches = matchingIndices
-                self.viewModel?.points = self.points
+            self.viewModel.solved = true
+            //self.viewModel.matches = matchingIndices
+            self.viewModel.points = self.points
+            pointsEarned = self.points
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) { // go to summary scene
+                self.showSummaryScene(withTransition: .crossFade(withDuration:  0.75))
+
             }
         }
     } // end checkAnswers()
+
+    private func showSummaryScene(withTransition transition: SKTransition) {
+             let delay = SKAction.wait(forDuration: 1)
+             let sceneChange = SKAction.run {
+                 let scene = ShogunsSummaryScene(self.$challengeCompleted)
+                 scene.viewModel = self.viewModel
+               self.view?.presentScene(scene, transition: transition)
+             }
+             run(.sequence([delay, sceneChange]))
+           }
+
 
     func setUpFeedback() {
         feedback.fontSize = 17
@@ -189,6 +226,7 @@ class ShogunsGameScene: SKScene {
           let touchedNode = self.atPoint(touchLocation)
 
           if touchedNode is SKSpriteNode && touchedNode.name != "shoguns" {
+
           if !selectedNode.isEqual(touchedNode) {
             selectedNode.removeAllActions()
             selectedNode.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
@@ -209,10 +247,12 @@ class ShogunsGameScene: SKScene {
       }
 
       override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+
          guard let touch = touches.first else {return}
           let positionInScene = touch.location(in: self)
           let previousPosition = touch.previousLocation(in: self)
         let translation = CGPoint(x: positionInScene.x - previousPosition.x, y: positionInScene.y - previousPosition.y)
           panForTranslation(translation: translation)
+          alert.isHidden = true
       }
 }

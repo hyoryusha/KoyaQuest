@@ -226,6 +226,7 @@
 		0AA76A7E2734793F000BFC2E /* oni_enters_gate.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76A79273478DF000BFC2E /* oni_enters_gate.wav */; };
 		0AA76A7F27347942000BFC2E /* oni_collision.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76A7A273478DF000BFC2E /* oni_collision.wav */; };
 		0AA76A8127347CA8000BFC2E /* NyonindoMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76A8027347CA8000BFC2E /* NyonindoMusic.swift */; };
+		0AA76A83273B57E7000BFC2E /* GenericChallengeViewWithGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76A82273B57E7000BFC2E /* GenericChallengeViewWithGameScene.swift */; };
 		0AB3F417267EFE45006C4E70 /* MizumukeChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F414267EFE44006C4E70 /* MizumukeChallengeView.swift */; };
 		0AB3F418267EFE45006C4E70 /* MizumukeChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F415267EFE44006C4E70 /* MizumukeChallengeViewModel.swift */; };
 		0AB3F419267EFE45006C4E70 /* SilhouettePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F416267EFE45006C4E70 /* SilhouettePickerView.swift */; };
@@ -499,6 +500,7 @@
 		0AA76A79273478DF000BFC2E /* oni_enters_gate.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oni_enters_gate.wav; sourceTree = "<group>"; };
 		0AA76A7A273478DF000BFC2E /* oni_collision.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oni_collision.wav; sourceTree = "<group>"; };
 		0AA76A8027347CA8000BFC2E /* NyonindoMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyonindoMusic.swift; sourceTree = "<group>"; };
+		0AA76A82273B57E7000BFC2E /* GenericChallengeViewWithGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericChallengeViewWithGameScene.swift; sourceTree = "<group>"; };
 		0AB3F414267EFE44006C4E70 /* MizumukeChallengeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MizumukeChallengeView.swift; sourceTree = "<group>"; };
 		0AB3F415267EFE44006C4E70 /* MizumukeChallengeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MizumukeChallengeViewModel.swift; sourceTree = "<group>"; };
 		0AB3F416267EFE45006C4E70 /* SilhouettePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilhouettePickerView.swift; sourceTree = "<group>"; };
@@ -678,6 +680,7 @@
 		0A4E10EA2669D338005F5FA8 /* Challenges */ = {
 			isa = PBXGroup;
 			children = (
+				0AA76A82273B57E7000BFC2E /* GenericChallengeViewWithGameScene.swift */,
 				0A4E10E42669CF6E005F5FA8 /* ChallengeDescriptionView.swift */,
 				0A4E10E72669D095005F5FA8 /* ChallengePortalView.swift */,
 				0A4E10D82669CC4D005F5FA8 /* ChallengeDetailView.swift */,
@@ -1392,6 +1395,7 @@
 				0A5E83E62663A7CE000076A9 /* Floor.swift in Sources */,
 				0ACAE8B126F2E6AD007276B2 /* FAQHeaderView.swift in Sources */,
 				0A3D243B2674ABAE00D9CA2F /* KenshinChallengeViewModel.swift in Sources */,
+				0AA76A83273B57E7000BFC2E /* GenericChallengeViewWithGameScene.swift in Sources */,
 				0A676652269E3E8200B3D429 /* PostScoreView.swift in Sources */,
 				0A4E10DA2669CC4D005F5FA8 /* LandmarkRowView.swift in Sources */,
 				0A5E83C22663902D000076A9 /* Landmark.swift in Sources */,
