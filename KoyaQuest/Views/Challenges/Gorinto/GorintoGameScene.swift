@@ -10,8 +10,9 @@ import SwiftUI
 import Combine
 
 class GorintoGameScene: SKScene {
-    var viewModel = GorintoChallengeViewModel()
-    var points = 0
+   // var viewModel = GorintoChallengeViewModel()
+    var points: Int = 0
+    var solved: Bool = false
 
     @Binding var challengeCompleted: Bool
     @Binding var pointsEarned: Int
@@ -90,6 +91,8 @@ class GorintoGameScene: SKScene {
     checkButton.name = "check"
     checkButton.zPosition = 100
     addChild(checkButton)
+
+
     }
 
     func setupGorinto() {
@@ -268,7 +271,8 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         alertMessage.fontName = SKFont.bold
         alertMessage.fontSize = 16.0
         alertMessage.fontColor = UIColor.systemRed
-        alertMessage.position = CGPoint(x: frame.midX, y: frame.minY + 56)
+        //alertMessage.position = CGPoint(x: frame.midX, y: frame.minY + 56)
+        alertMessage.position = CGPoint(x: frame.midX, y: checkButton.position.y + 32)
         alertMessage.zPosition = 100
     }
 
@@ -295,8 +299,9 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        message.position = CGPoint(x: frame.midX, y: frame.maxY - 128)
         message.position = CGPoint(x: frame.midX, y: frame.size.height * 0.80)
         addChild(message)
-       viewModel.solved = true
-        viewModel.points = points
+       //viewModel.solved = true
+        solved = true
+        //viewModel.points = points
         pointsEarned = points
 // the player has finished; move to summary scene
 
@@ -308,7 +313,7 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
              let delay = SKAction.wait(forDuration: 1)
              let sceneChange = SKAction.run {
                  let scene = GorintoSummaryScene(self.$challengeCompleted)
-                 scene.viewModel = self.viewModel
+                //scene.viewModel = self.viewModel
                self.view?.presentScene(scene, transition: transition)
              }
              run(.sequence([delay, sceneChange]))

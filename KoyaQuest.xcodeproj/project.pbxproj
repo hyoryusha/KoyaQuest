@@ -227,6 +227,7 @@
 		0AA76A7F27347942000BFC2E /* oni_collision.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76A7A273478DF000BFC2E /* oni_collision.wav */; };
 		0AA76A8127347CA8000BFC2E /* NyonindoMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76A8027347CA8000BFC2E /* NyonindoMusic.swift */; };
 		0AA76A83273B57E7000BFC2E /* GenericChallengeViewWithGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76A82273B57E7000BFC2E /* GenericChallengeViewWithGameScene.swift */; };
+		0AA76A85273E79E4000BFC2E /* DaimonSolutionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76A84273E79E4000BFC2E /* DaimonSolutionOverlay.swift */; };
 		0AB3F417267EFE45006C4E70 /* MizumukeChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F414267EFE44006C4E70 /* MizumukeChallengeView.swift */; };
 		0AB3F418267EFE45006C4E70 /* MizumukeChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F415267EFE44006C4E70 /* MizumukeChallengeViewModel.swift */; };
 		0AB3F419267EFE45006C4E70 /* SilhouettePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F416267EFE45006C4E70 /* SilhouettePickerView.swift */; };
@@ -501,6 +502,7 @@
 		0AA76A7A273478DF000BFC2E /* oni_collision.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oni_collision.wav; sourceTree = "<group>"; };
 		0AA76A8027347CA8000BFC2E /* NyonindoMusic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyonindoMusic.swift; sourceTree = "<group>"; };
 		0AA76A82273B57E7000BFC2E /* GenericChallengeViewWithGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericChallengeViewWithGameScene.swift; sourceTree = "<group>"; };
+		0AA76A84273E79E4000BFC2E /* DaimonSolutionOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaimonSolutionOverlay.swift; sourceTree = "<group>"; };
 		0AB3F414267EFE44006C4E70 /* MizumukeChallengeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MizumukeChallengeView.swift; sourceTree = "<group>"; };
 		0AB3F415267EFE44006C4E70 /* MizumukeChallengeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MizumukeChallengeViewModel.swift; sourceTree = "<group>"; };
 		0AB3F416267EFE45006C4E70 /* SilhouettePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SilhouettePickerView.swift; sourceTree = "<group>"; };
@@ -709,13 +711,14 @@
 			isa = PBXGroup;
 			children = (
 				0A4E10F6266A0C64005F5FA8 /* DaimonChallengeView.swift */,
-				0A4E1125266AF427005F5FA8 /* DaimonGameView.swift */,
-				0A4E1122266AF3A9005F5FA8 /* DaimonGameViewModel.swift */,
 				0A4E112C266AF523005F5FA8 /* DaimonZoomableScrollView.swift */,
+				0A4E1125266AF427005F5FA8 /* DaimonGameView.swift */,
 				0A4E112F266AF55C005F5FA8 /* DaimonGameScene.swift */,
 				0A4E1132266AF5E3005F5FA8 /* DaimonSummaryView.swift */,
 				0A4E1135266B6CC4005F5FA8 /* OverlayGridView.swift */,
 				0A4E1138266B6D73005F5FA8 /* DaimonLearnMoreView.swift */,
+				0A4E1122266AF3A9005F5FA8 /* DaimonGameViewModel.swift */,
+				0AA76A84273E79E4000BFC2E /* DaimonSolutionOverlay.swift */,
 			);
 			path = Daimon;
 			sourceTree = "<group>";
@@ -1432,6 +1435,7 @@
 				0A3D23FD267440A200D9CA2F /* Tiles.swift in Sources */,
 				0A4E10BE2669CBDE005F5FA8 /* Alert.swift in Sources */,
 				0A5E83EE2663A897000076A9 /* AppData.swift in Sources */,
+				0AA76A85273E79E4000BFC2E /* DaimonSolutionOverlay.swift in Sources */,
 				0A5E842326643E74000076A9 /* Rating+Extension.swift in Sources */,
 				0A3D24262674A13700D9CA2F /* Koyakun.swift in Sources */,
 				0A4E1126266AF427005F5FA8 /* DaimonGameView.swift in Sources */,

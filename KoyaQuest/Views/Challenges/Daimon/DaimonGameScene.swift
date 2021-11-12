@@ -8,8 +8,30 @@
 import SwiftUI
 import SpriteKit
 
-class DaimonGameScene: SKScene {
-    var viewModel: DaimonGameViewModel?
+class DaimonGameScene: SKScene  {
+    //var viewModel: DaimonGameViewModel?
+
+    @Binding var showingAlert: Bool
+    @Binding var success: Bool
+    //@Binding var showingSolution: Bool
+    var respondToTap: Bool = true
+
+    init(_ showingAlert: Binding<Bool>, _ success: Binding<Bool>) {
+            _showingAlert = showingAlert
+            _success = success
+            super.init(size: CGSize(
+                width: UIScreen.main.bounds.width,
+                height: UIScreen.main.bounds.height))
+            self.scaleMode = .aspectFill
+        }
+
+        required init?(coder aDecoder: NSCoder) {
+            _showingAlert = .constant(false)
+            _success = .constant(false)
+            super.init(coder: aDecoder)
+        }
+
+
     let daimon = SKSpriteNode(imageNamed: "daimon_whats_wrong")
     let solution = SKSpriteNode(imageNamed: "daimon_solution")
     let box = SKSpriteNode(color: SKColor.clear, size: CGSize(width: 580, height: 190))
@@ -36,17 +58,17 @@ class DaimonGameScene: SKScene {
         daimon.addChild(box)
         solution.scale(to: CGSize(width: 727, height: 700))
         solution.position = CGPoint(x: 70, y: 400)
-        if viewModel?.showingSolution == true {
-            daimon.addChild(solution)
-            if viewModel?.tapOnTarget == true {
-            } else {
-            }
-        }
+//        if viewModel?.showingSolution == true {
+//            daimon.addChild(solution)
+//            if success == true {
+//            } else {
+//            }
+//        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {return}
-        if viewModel?.respondToTap == true {
+        if respondToTap == true {
             let positionInScene = touch.location(in: self)
             selectNodeForTouch(touchLocation: positionInScene)
         }
@@ -57,12 +79,13 @@ class DaimonGameScene: SKScene {
         if touchedNode is SKSpriteNode {
             // a node has been tapped...
             if touchedNode.name == "target" {
-                viewModel?.tapOnTarget = true
-                viewModel?.points = 20
+//                viewModel?.tapOnTarget = true
+                    success = true
+//                viewModel?.points = 20
             } else {
-                viewModel?.tapOnTarget = false
+                success = false
             }
-            viewModel?.showingAlert = true
+            showingAlert = true
         }
     }
 }

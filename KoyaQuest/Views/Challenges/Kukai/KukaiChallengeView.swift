@@ -41,10 +41,9 @@ struct KukaiChallengeView: View {
                         .foregroundColor(viewModel.statusTextColor)
                         .padding()
             } // End VStack
-
             .blur(radius: viewModel.success ? 6 : 0)
-           // .navigationBarTitle(Text(""))
-           // .navigationBarHidden(true)
+            .navigationBarTitle(Text(""))
+            .navigationBarHidden(true)
             if viewModel.success {
                 ChallengeFeedbackView(
                     appData: appData,
@@ -62,6 +61,8 @@ struct KukaiChallengeView: View {
                 viewModel.startTimer()
             }
         }
+        .navigationBarTitle(Text(""))
+        .navigationBarHidden(true)
         .statusBar(hidden: true)
         .alert(isPresented: $viewModel.showingAlert) {
             Alert(

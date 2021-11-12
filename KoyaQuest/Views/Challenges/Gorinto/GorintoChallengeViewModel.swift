@@ -10,7 +10,7 @@ import SwiftUI
 class GorintoChallengeViewModel: ObservableObject {
     @Published var solved: Bool = false
     @Published var points: Int = 0
-    @Published var isShowingFeedback = false
+    //@Published var isShowingFeedback = false
 
     func check(points: Int) {
         self.solved = true

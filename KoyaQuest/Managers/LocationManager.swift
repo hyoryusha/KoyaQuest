@@ -41,6 +41,12 @@ final class LocationManager: NSObject, ObservableObject {
         }
     }
 
+    @Published var showGobyoAlert = false {
+        willSet {
+            objectWillChange.send()
+        }
+    }
+
     var onEntry: Bool = true
     var location: CLLocation?
     lazy var geocoder = CLGeocoder()
@@ -119,6 +125,7 @@ extension LocationManager: CLLocationManagerDelegate {
 
         if activeArea == torodoArea {
             isNearGobyo = true
+            showGobyoAlert = true
         } else {
             isNearGobyo = false
         }

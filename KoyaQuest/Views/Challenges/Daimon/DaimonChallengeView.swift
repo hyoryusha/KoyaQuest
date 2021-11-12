@@ -11,34 +11,37 @@ struct DaimonChallengeView: View {
     @EnvironmentObject var appData: AppData
     @EnvironmentObject var locationManager: LocationManager
     @State private var showingGameScene = false
+
     @State private var gameOver = false
-    @State private var points = 0
-    @ObservedObject var viewModel = DaimonGameViewModel()
+    @State private var challengeCompleted: Bool = false
+    @State private var success: Bool = false
+
+    //    @ObservedObject var viewModel = DaimonGameViewModel()
     var buttonText = "Ready to Solve!"
     var body: some View {
-        NavigationView {
+        //NavigationView {
             ZStack {
                 Group {
                     VStack {
-                            Text("What's wrong with this picture?")
-                                .font(.title2)
-                                .foregroundColor(.primary)
-                                .padding(.top, 20)
+                        Text("What's wrong with this picture?")
+                            .font(.title2)
+                            .foregroundColor(.primary)
+                            .padding(.top, 20)
                         Text("Instructions:")
-                                .font(.title3)
-                                .foregroundColor(.koyaOrange)
-                                .bold()
-                                .padding(.bottom, 4)
+                            .font(.title3)
+                            .foregroundColor(.koyaOrange)
+                            .bold()
+                            .padding(.bottom, 4)
                         Group {
                             // swiftlint:disable:next line_length
                             Text("Zoom and pan around the image, comparing it to the actual Daimon Gate.\nWhen you think you have found the difference, tap the ")
-                                    .font(.body)
-                                    .foregroundColor(.primary)
-                                + Text(buttonText.uppercased())
-                                    .font(.body)
-                                    .bold()
-                                    .foregroundColor(.koyaOrange)
-                                    .italic()
+                                .font(.body)
+                                .foregroundColor(.primary)
+                            + Text(buttonText.uppercased())
+                                .font(.body)
+                                .bold()
+                                .foregroundColor(.koyaOrange)
+                                .italic()
                             + Text(" button below to move to the next screen.")
                                 .font(.body)
                                 .foregroundColor(.primary)
@@ -51,18 +54,17 @@ struct DaimonChallengeView: View {
                                 .scaledToFit()
                             Spacer()
                         }
-
                     }
                 }
-                .blur(radius: viewModel.isShowingModal ? 6 : 0)
-                if viewModel.isShowingModal {
+                .blur(radius: challengeCompleted ? 6 : 0)
+                if challengeCompleted {
                     ChallengeFeedbackView(
                         appData: appData,
                         locationManager: locationManager,
                         challenge: daimonChallenge,
-                        text: viewModel.tapOnTarget ? "Nice Job!" : "Too bad",
-                        points: viewModel.points,
-                        success: viewModel.tapOnTarget ? true : false)
+                        text: success ? "Nice Job!" : "Too bad",
+                        points: success ? daimonChallenge.maxPoints : 0 ,
+                        success: success ? true : false)
                 }
 
                 VStack {
@@ -72,29 +74,30 @@ struct DaimonChallengeView: View {
                     Spacer()
                     if !gameOver {
                         NavigationLink(destination: DaimonGameView(
-                                        viewModel: viewModel,
-                                        gameOver: $gameOver,
-                                        points: $points)) {
-                            ActionButton(color: Color.koyaOrange, text: buttonText)
-                        }
-                        .buttonStyle(ScaleButtonStyle())
-                        .padding(.bottom, 80)
+                            gameOver: $gameOver,
+                            challengeCompleted: $challengeCompleted,
+                            success: $success)) {
+                                ActionButton(color: Color.koyaOrange, text: buttonText)
+                            }
+                            .buttonStyle(ScaleButtonStyle())
+                            .padding(.bottom, 80)
                     }
+
                 }
-                .blur(radius: viewModel.isShowingModal ? 6 : 0)
+                .blur(radius: challengeCompleted ? 6 : 0)
                 Spacer()
                 Spacer()
             }
-            // .navigationBarTitle(Text(""))
+            .navigationBarTitle(Text(""))
             .navigationBarHidden(true)
             .statusBar(hidden: true)
-        }
+       // } // end navigation view
     }
 }
 
 struct DaimonChallengeView_Previews: PreviewProvider {
     static var previews: some View {
-        DaimonChallengeView(viewModel: DaimonGameViewModel())
+        DaimonChallengeView()
             .environmentObject(AppData())
             .environmentObject(LocationManager())
             .preferredColorScheme(.light)

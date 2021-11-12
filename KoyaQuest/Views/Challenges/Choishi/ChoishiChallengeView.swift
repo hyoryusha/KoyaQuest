@@ -21,6 +21,9 @@ struct ChoishiChallengeView: View {
             BackgroundView()
                 .ignoresSafeArea(.all)
             VStack {
+                XDismissButtonRight()
+                    .padding(.top, 0)
+                    .padding(.trailing, 16)
                 if viewModel.gameOver {
                     Image("choishi_solution")
                         .resizable()
@@ -79,6 +82,8 @@ struct ChoishiChallengeView: View {
             }
             .padding(.top, 32)
         } // end zStack
+        .navigationBarTitle(Text(""))
+        .navigationBarHidden(true)
         .statusBar(hidden: true)
     }
 }
@@ -141,5 +146,7 @@ struct ChoishiStarterView: View {
         } label: {
         ActionButton(color: Color.koyaOrange, text: "Check Answer")
         }
+        .navigationBarTitle(Text(""))
+        .navigationBarHidden(true)
     }
 }

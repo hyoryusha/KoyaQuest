@@ -165,7 +165,12 @@
 
     <wpt lat="34.2217926" lon="135.6058639">
         <name>Tamagawa River</name>
-        <time>2020-08-30T14:12:05Z</time>
+        <time>2020-08-30T14:12:00Z</time>
+    </wpt>
+
+    <wpt lat="34.2217926" lon="135.605739">
+        <name>Tamagawa River</name>
+        <time>2020-08-30T14:12:20Z</time>
     </wpt>
 
     <wpt lat="34.22133507975566" lon="135.60677547761603">

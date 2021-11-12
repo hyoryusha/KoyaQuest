@@ -51,7 +51,7 @@ struct MizumukeChallengeView: View {
 
                 Text("Swipe images up or down to put the them in the correct order")
                     .font(.body)
-                    .foregroundColor(.koyaDarkText)
+                    .foregroundColor(.white)
                     .italic()
                     .multilineTextAlignment(.center)
                     .padding()
@@ -63,7 +63,7 @@ struct MizumukeChallengeView: View {
                     }
                     Text(viewModel.feedbackString)
                             .font(.caption)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(.white)
                             .animation(.easeIn(duration: 0.3))
                 Spacer()
                 }
@@ -73,6 +73,7 @@ struct MizumukeChallengeView: View {
             // .statusBar(hidden: true)
 
             if viewModel.solved {
+
                 ChallengeFeedbackView(
                     appData: appData,
                     locationManager: locationManager,

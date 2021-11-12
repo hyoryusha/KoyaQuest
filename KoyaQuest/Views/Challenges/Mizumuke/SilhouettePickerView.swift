@@ -51,7 +51,7 @@ struct SilhouettePickerView: UIViewRepresentable {
         }
 
         func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-            return UIScreen.main.bounds.width/3 - 30
+            return UIScreen.main.bounds.width / 3 - 32
         }
 
         func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
@@ -66,7 +66,7 @@ struct SilhouettePickerView: UIViewRepresentable {
             let view = UIView(
                 frame: CGRect(
                             x: 0, y: 0,
-                            width: pickerView.bounds.width,
+                            width: pickerView.bounds.width + 20,
                             height: 0
                 )
             )

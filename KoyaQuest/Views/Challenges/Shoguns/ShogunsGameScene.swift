@@ -10,7 +10,7 @@ import SwiftUI
 import GameplayKit
 
 class ShogunsGameScene: SKScene {
-    var viewModel = ShogunsChallengeViewModel()
+   // var viewModel = ShogunsChallengeViewModel()
 
     @Binding var challengeCompleted: Bool
     @Binding var pointsEarned: Int
@@ -49,6 +49,8 @@ class ShogunsGameScene: SKScene {
     var group: SKSpriteNode!
     var finalPositions: [String: CGFloat] = [:]
     var matches: [String] = []
+    var solved: Bool = false
+    //var points: Int  = 0
 
     override func didMove(to view: SKView) {
         UIApplication.shared.isIdleTimerDisabled = true
@@ -184,9 +186,10 @@ class ShogunsGameScene: SKScene {
             setUpFeedback()
             addChild(feedback)
             colorize(for: matches)
-            self.viewModel.solved = true
+            //self.viewModel.solved = true
+            self.solved = true
             //self.viewModel.matches = matchingIndices
-            self.viewModel.points = self.points
+            //self.viewModel.points = self.points
             pointsEarned = self.points
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) { // go to summary scene
                 self.showSummaryScene(withTransition: .crossFade(withDuration:  0.75))
@@ -199,7 +202,7 @@ class ShogunsGameScene: SKScene {
              let delay = SKAction.wait(forDuration: 1)
              let sceneChange = SKAction.run {
                  let scene = ShogunsSummaryScene(self.$challengeCompleted)
-                 scene.viewModel = self.viewModel
+                 //scene.viewModel = self.viewModel
                self.view?.presentScene(scene, transition: transition)
              }
              run(.sequence([delay, sceneChange]))

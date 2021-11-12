@@ -19,7 +19,7 @@ struct ChallengeFeedbackView: View {
 
     var body: some View {
 
-            VStack{
+            VStack {
                 Image(randomImage())
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -86,6 +86,7 @@ struct ChallengeFeedbackView: View {
                 //.buttonStyle(ScaleButtonStyle())
 
             }
+
             .background(Color.black)
          //   .background(
            //     LinearGradient(gradient: Gradient(colors: [.black, .purple, .black]), //startPoint: .top, endPoint: .bottom)

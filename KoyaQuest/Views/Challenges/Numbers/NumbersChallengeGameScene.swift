@@ -10,7 +10,7 @@ import ARKit
 import SwiftUI
 
 class NumbersChallengeGameScene: SKScene {
-    var viewModel = NumbersChallengeViewModel()
+    //var viewModel = NumbersChallengeViewModel()
 
     @Binding var challengeCompleted: Bool
     @Binding var pointsEarned: Int
@@ -36,6 +36,7 @@ class NumbersChallengeGameScene: SKScene {
     var matchesMade = 0
     var counterTimer = Timer()
     var counterStartValue = 60 // seconds
+    var complete: Bool = false
 
     var touchCount = 0
 
@@ -88,7 +89,7 @@ class NumbersChallengeGameScene: SKScene {
 
         backgroundColor = UIColor(red: 30 / 255, green: 32 / 255, blue: 53 / 255, alpha: 1.0)
         layoutScene()
-        if self.viewModel.complete != true{
+        if self.complete != true{
 
             counter = counterStartValue
             startCounter()
@@ -298,8 +299,8 @@ class NumbersChallengeGameScene: SKScene {
         finalScoreLabel.zPosition = 100
         addChild(finalScoreLabel)
 
-        self.viewModel.points = self.points
-        self.viewModel.complete = true
+        //self.viewModel.points = self.points
+        self.complete = true
         pointsEarned = self.points
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {

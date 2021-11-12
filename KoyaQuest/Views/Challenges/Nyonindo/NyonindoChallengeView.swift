@@ -11,11 +11,11 @@ import SpriteKit
 struct NyonindoChallengeView: View {
     @EnvironmentObject var appData: AppData
     @EnvironmentObject var locationManager: LocationManager
-    @State private var earnedPoints: Int = 0
+    @State private var pointsEarned: Int = 0
     @State private var challengeCompleted: Bool = false
 
     var gameScene: SKScene {
-        let scene = NyonindoGameScene($challengeCompleted, $earnedPoints)
+        let scene = NyonindoGameScene($challengeCompleted, $pointsEarned)
             return scene
             }
 
@@ -54,7 +54,7 @@ var body: some View {
                 appData: appData,
                 locationManager: locationManager,
                 challenge: nyonindoChallenge, text: "Well Done!",
-                points: earnedPoints,
+                points: pointsEarned,
                 success: true
             )
         }

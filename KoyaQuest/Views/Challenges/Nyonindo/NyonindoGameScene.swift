@@ -13,11 +13,11 @@ class NyonindoGameScene: SKScene  {
 
 
     @Binding var challengeCompleted: Bool
-    @Binding var earnedPoints: Int
+    @Binding var pointsEarned: Int
 
-    init(_ challengeCompleted: Binding<Bool>, _ earnedPoints: Binding<Int>) {
+    init(_ challengeCompleted: Binding<Bool>, _ pointsEarned: Binding<Int>) {
             _challengeCompleted = challengeCompleted
-            _earnedPoints = earnedPoints
+            _pointsEarned = pointsEarned
             super.init(size: CGSize(
                 width: UIScreen.main.bounds.width,
                 height: UIScreen.main.bounds.height))
@@ -26,7 +26,7 @@ class NyonindoGameScene: SKScene  {
 
         required init?(coder aDecoder: NSCoder) {
             _challengeCompleted = .constant(false)
-            _earnedPoints = .constant(0)
+            _pointsEarned = .constant(0)
             super.init(coder: aDecoder)
         }
 
@@ -195,7 +195,7 @@ class NyonindoGameScene: SKScene  {
             beginMusic()
             startCounter()
         self.scoreToBeatText = "Try to beat \(viewModel.highestScore)"
-        self.scoreToBeatText = "Try to beat \(earnedPoints)"
+        self.scoreToBeatText = "Try to beat \(pointsEarned)"
         self.roundCounterText = "Round \(viewModel.attempts + 1) of 3"
         addRoundCounter()
     }
@@ -408,7 +408,7 @@ class NyonindoGameScene: SKScene  {
         viewModel.recentScore = points
         if points > viewModel.highestScore {
             viewModel.highestScore = points
-            earnedPoints = points
+            pointsEarned = points
         }
         viewModel.recentScore = points
             if viewModel.attempts > 2 {
@@ -480,7 +480,7 @@ class NyonindoGameScene: SKScene  {
             let delay = SKAction.wait(forDuration: 1)
             let sceneChange = SKAction.run {
                 //let scene = NyonindoGameScene(size: self.size)
-                let scene = NyonindoGameScene(self.$challengeCompleted, self.$earnedPoints)
+                let scene = NyonindoGameScene(self.$challengeCompleted, self.$pointsEarned)
                 scene.viewModel = self.viewModel
               self.view?.presentScene(scene, transition: transition)
             }

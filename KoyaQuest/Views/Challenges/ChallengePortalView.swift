@@ -94,21 +94,26 @@ struct ChallengePortalView: View {
         case vajraChallenge:
             return AnyView(VajraChallengeView())
         case nyonindoChallenge:
-            return AnyView(NyonindoChallengeView())
+            //return AnyView(NyonindoChallengeView())
+            return AnyView(GenericChallengeWithGameSceneView(challenge: challenge))
         case gorintoChallenge:
-            return AnyView(GorintoChallengeView())
+           // return AnyView(GorintoChallengeView())
+            return AnyView(GenericChallengeWithGameSceneView(challenge: challenge))
+        case saigyoChallenge:
+            //return AnyView(SaigyoChallengeView())
+            return AnyView(GenericChallengeWithGameSceneView(challenge: challenge))
+        case numbersChallenge:
+            //return AnyView(NumbersChallengeView())
+            return AnyView(GenericChallengeWithGameSceneView(challenge: challenge))
+        case shogunsChallenge:
+            //return AnyView(ShogunsChallengeView())
+            return AnyView(GenericChallengeWithGameSceneView(challenge: challenge))
         case mizumukeChallenge:
             return AnyView(MizumukeChallengeView())
         case kukaiChallenge:
             return AnyView(KukaiChallengeView())
-        case saigyoChallenge:
-            return AnyView(SaigyoChallengeView())
         case choishiChallenge:
             return AnyView(ChoishiChallengeView())
-        case numbersChallenge:
-            return AnyView(NumbersChallengeView())
-        case shogunsChallenge:
-            return AnyView(ShogunsChallengeView())
         case koyakunChallenge:
             return AnyView(KoyakunChallengeView())
         case kenshinChallenge:
@@ -128,7 +133,7 @@ struct ChallengePortalView_Previews: PreviewProvider {
         Group {
             ChallengePortalView(
                 isShowingChallengePortal: .constant(true),
-                challenge: saigyoChallenge
+                challenge: daimonChallenge
             )
                 .preferredColorScheme(.light)
         }

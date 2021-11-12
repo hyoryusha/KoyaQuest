@@ -16,7 +16,7 @@ enum CardLevel: CGFloat {
 }
 
 class SaigyoGameScene: SKScene {
-    var viewModel = SaigyoChallengeViewModel()
+    //var viewModel = SaigyoChallengeViewModel()
 
     @Binding var challengeCompleted: Bool
     @Binding var pointsEarned: Int
@@ -37,7 +37,8 @@ class SaigyoGameScene: SKScene {
             super.init(coder: aDecoder)
         }
 
-
+    var points: Int  = 0
+    var solved: Bool = false
     let landingZone = SKSpriteNode(imageNamed: "blank card")
     let checkAnswerButton = CheckAnswerButton()
     let proceedToSummaryButton = CheckAnswerButton()
@@ -47,7 +48,7 @@ class SaigyoGameScene: SKScene {
     var attempts = 0
     var buttonText = "CHECK ANSWER"
     var playerChoice = SKSpriteNode()
-    var points = 0
+//    var points = 0
     let keepTryingLabel = SKLabelNode(text: "Try again!")
     var keepTryingLabelDisplayed = false
     let gameOverLabel = SKLabelNode(text: "You Completed the Poem!")
@@ -223,7 +224,8 @@ class SaigyoGameScene: SKScene {
         if playerChoice.name != "" { // not empty
             if playerChoice.name == "77 shimo no ku" { // correct answer
                 checkAnswerButton.removeFromParent()
-                if !viewModel.solved {
+                //if !viewModel.solved {
+                if !solved {
                     gameOver()
                 }
             } else {
@@ -247,8 +249,9 @@ class SaigyoGameScene: SKScene {
         default:
             points = 0
         }
-        viewModel.solved = true
-        viewModel.points = self.points
+       // viewModel.solved = true
+        self.solved = true
+       // viewModel.points = self.points
         pointsEarned = points
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.addProceedToSummaryButton()
@@ -259,7 +262,7 @@ class SaigyoGameScene: SKScene {
              let delay = SKAction.wait(forDuration: 1)
              let sceneChange = SKAction.run {
                  let scene = SaigyoSummaryScene(self.$challengeCompleted)
-                 scene.viewModel = self.viewModel
+                // scene.viewModel = self.viewModel
                self.view?.presentScene(scene, transition: transition)
              }
              run(.sequence([delay, sceneChange]))
