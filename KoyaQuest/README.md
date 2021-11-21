@@ -37,3 +37,6 @@ Hoping to complete the project for an initial release in July, 2021.
 
 ## Background
 This app and its contents grew out of a Scavenger Hunt game that I made for my students during annual field trips to Mt. Kōya. It is my first app. (Though there are good things to be said about a baptism by fire, I probably should have started with something less complicated.)
+
+ASO:
+koya,koyasan,japan,travel,guide,game,interactive,world,heritage,buddhism,shingon,wakayama,learn,fun

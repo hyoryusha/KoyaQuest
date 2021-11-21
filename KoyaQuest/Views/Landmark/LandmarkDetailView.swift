@@ -44,46 +44,44 @@ struct LandmarkDetailView: View {
                         .padding([.top, .bottom], 12)
                         .layoutPriority(2)
                         .overlay(RatingsOverlayView(landmark: landmark))
-
                     HeaderText(text: landmark.name, color: .koyaOrange)
-
                     BodyText(text: landmark.details.bodyOne, color: Color.white)
                     HeaderText(text: landmark.details.headerTwo, color: Color.koyaOrange)
                     BodyText(text: landmark.details.bodyTwo, color: Color.white)
                 }
-
                 .padding([.bottom, .leading, .trailing], 6)
 
                 if checkLocalRating() {
                     LocalRatingsView(landmark: landmark)
                         .padding(.bottom, 10)
-                       // .animation(.easeInOut(duration: 0.8))
                         .animation(.easeInOut(duration: 0.8), value: true)
 
                 } else {
-                    RatingsInputView( rating: $rating, locationManager: locationManager, landmark: landmark)
-                    .padding(.bottom, 10)
-                    //.animation(.easeInOut(duration: 0.8))
-                    .animation(.easeInOut(duration: 0.8), value: true)
+                    RatingsInputView(rating: $rating,
+                                     locationManager: locationManager,
+                                     landmark: landmark
+                    )
+                        .padding(.bottom, 10)
+                        .animation(.easeInOut(duration: 0.8), value: true)
                 }
 
                 NavigationLink(destination: MapView(target: landmark)) {
                     Image(systemName: "mappin.and.ellipse")
                         .font(.caption)
                         .foregroundColor(Color.koyaDarkText)
-                        Text("See on map".uppercased())
+                    Text("See on map".uppercased())
                         .font(.caption)
-                            .foregroundColor(Color.koyaDarkText)
-                 }
+                        .foregroundColor(Color.koyaDarkText)
+                }
                 BackButton(buttonText: "Back")
             }
             .padding(.bottom, 14)
             .padding(.top, 6)
             .statusBar(hidden: true)
         }
-     }
+    }
 
-     func checkLocalRating() -> Bool {
+    func checkLocalRating() -> Bool {
         if appData.localRatings.contains(where: {$0.landmark == landmark.name}) {
             return true
         } else {
@@ -94,7 +92,9 @@ struct LandmarkDetailView: View {
 
 struct LandmarkDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetailView(locationManager: LocationManager(), landmark: Landmark.allLandmarks[0])
+        LandmarkDetailView(locationManager: LocationManager(),
+                           landmark: Landmark.allLandmarks[0]
+        )
             .environmentObject(AppData())
             .preferredColorScheme(.dark)
     }

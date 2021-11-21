@@ -29,7 +29,12 @@ var allPlaces: [PlaceAnnotation] = getPlaceAnnotations()
 func getPlaceAnnotations() -> [PlaceAnnotation] {
     var places: [PlaceAnnotation] = []
     Landmark.allLandmarks.forEach { landmark in
-        let newItem = PlaceAnnotation(title: landmark.name, image: landmark.imageName, coordinate: landmark.coordinate, isSection: landmark.isSection)
+        let newItem = PlaceAnnotation(
+         title: landmark.name,
+         image: landmark.imageName,
+         coordinate: landmark.coordinate,
+         isSection: landmark.isSection
+        )
         places.append(newItem)
     }
     return places

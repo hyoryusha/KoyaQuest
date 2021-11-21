@@ -10,32 +10,29 @@ import GameplayKit
 import SwiftUI
 
 enum CardLevel: CGFloat {
-  case board = 2
-  case moving = 100
-  case enlarged = 200
+    case board = 2
+    case moving = 100
+    case enlarged = 200
 }
-
+// swiftlint:disable:next type_body_length
 class SaigyoGameScene: SKScene {
-    //var viewModel = SaigyoChallengeViewModel()
-
     @Binding var challengeCompleted: Bool
     @Binding var pointsEarned: Int
 
-
     init(_ challengeCompleted: Binding<Bool>, _ pointsEarned: Binding<Int>) {
-            _challengeCompleted = challengeCompleted
-            _pointsEarned = pointsEarned
-            super.init(size: CGSize(
-                width: UIScreen.main.bounds.width,
-                height: UIScreen.main.bounds.height))
-            self.scaleMode = .aspectFill
-        }
+        _challengeCompleted = challengeCompleted
+        _pointsEarned = pointsEarned
+        super.init(size: CGSize(
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height))
+        self.scaleMode = .aspectFill
+    }
 
-        required init?(coder aDecoder: NSCoder) {
-            _challengeCompleted = .constant(false)
-            _pointsEarned = .constant(0)
-            super.init(coder: aDecoder)
-        }
+    required init?(coder aDecoder: NSCoder) {
+        _challengeCompleted = .constant(false)
+        _pointsEarned = .constant(0)
+        super.init(coder: aDecoder)
+    }
 
     var points: Int  = 0
     var solved: Bool = false
@@ -48,7 +45,6 @@ class SaigyoGameScene: SKScene {
     var attempts = 0
     var buttonText = "CHECK ANSWER"
     var playerChoice = SKSpriteNode()
-//    var points = 0
     let keepTryingLabel = SKLabelNode(text: "Try again!")
     var keepTryingLabelDisplayed = false
     let gameOverLabel = SKLabelNode(text: "You Completed the Poem!")
@@ -143,78 +139,78 @@ class SaigyoGameScene: SKScene {
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
 
-            guard let touch = touches.first else {return}
-            let positionInScene = touch.location(in: self)
-            let previousPosition = touch.previousLocation(in: self)
-            let translation = CGPoint(
-                x: positionInScene.x - previousPosition.x,
-                y: positionInScene.y - previousPosition.y
-            )
-            panForTranslation(translation: translation)
+        guard let touch = touches.first else {return}
+        let positionInScene = touch.location(in: self)
+        let previousPosition = touch.previousLocation(in: self)
+        let translation = CGPoint(
+            x: positionInScene.x - previousPosition.x,
+            y: positionInScene.y - previousPosition.y
+        )
+        panForTranslation(translation: translation)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      for touch in touches {
+        for touch in touches {
 
-        let location = touch.location(in: self)
-        if let card = atPoint(location) as? Card {
-          card.zPosition = CardLevel.moving.rawValue
-            card.removeAction(forKey: "drop")
-            let scaleUp = SKAction.scale(to: 1.4, duration: 0.25)
-            card.run(scaleUp, withKey: "pickup")
-            selectNodeForTouch(touchLocation: location)
+            let location = touch.location(in: self)
+            if let card = atPoint(location) as? Card {
+                card.zPosition = CardLevel.moving.rawValue
+                card.removeAction(forKey: "drop")
+                let scaleUp = SKAction.scale(to: 1.4, duration: 0.25)
+                card.run(scaleUp, withKey: "pickup")
+                selectNodeForTouch(touchLocation: location)
+            }
+            if checkAnswerButton.contains(location) {
+                checkAnswer()
+            }
+            if proceedToSummaryButton.contains(location) {
+                self.removeAllChildren()
+                showSummaryScene(withTransition: .crossFade(withDuration: 0.5))
+            }
         }
-        if checkAnswerButton.contains(location) {
-            checkAnswer()
-        }
-          if proceedToSummaryButton.contains(location) {
-              self.removeAllChildren()
-              showSummaryScene(withTransition: .crossFade(withDuration: 0.5))
-          }
-      }
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-      for touch in touches {
-        let location = touch.location(in: self)
-        if let card = atPoint(location) as? Card {
-          card.zPosition = CardLevel.board.rawValue
-          card.removeFromParent()
-          addChild(card)
-            card.removeAction(forKey: "pickup")
-            card.run(SKAction.scale(to: 1.0, duration: 0.25), withKey: "drop")
+        for touch in touches {
+            let location = touch.location(in: self)
+            if let card = atPoint(location) as? Card {
+                card.zPosition = CardLevel.board.rawValue
+                card.removeFromParent()
+                addChild(card)
+                card.removeAction(forKey: "pickup")
+                card.run(SKAction.scale(to: 1.0, duration: 0.25), withKey: "drop")
+            }
         }
-      }
     }
 
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
 
- // MARK: - METHODS
-  func selectNodeForTouch(touchLocation: CGPoint) {
-    // 1
-      let touchedNode = self.atPoint(touchLocation)
-      if !selectedNode.isEqual(touchedNode) {
+    // MARK: - METHODS
+    func selectNodeForTouch(touchLocation: CGPoint) {
+        // 1
+        let touchedNode = self.atPoint(touchLocation)
+        if !selectedNode.isEqual(touchedNode) {
             selectedNode.removeAllActions()
             selectedNode.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
-        // swiftlint:disable force_cast
+            // swiftlint:disable force_cast
             selectedNode = touchedNode as! SKSpriteNode
-        // swiftlint:enable force_cast
-      }
-  }
+            // swiftlint:enable force_cast
+        }
+    }
 
     func panForTranslation(translation: CGPoint) {
-      let position = selectedNode.position
+        let position = selectedNode.position
         if selectedNode.name != "77 kami no ku" { // do not allow kami no ku to move
-        let newPosition = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
-        selectedNode.position = newPosition
+            let newPosition = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
+            selectedNode.position = newPosition
             selectedNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             let minHeight = size.height / 2 + 100
             if newPosition.y > minHeight { // the card must be moved above landingZone
                 playerChoice = selectedNode
+            }
         }
-      }
     }
 
     func checkAnswer() {
@@ -224,7 +220,6 @@ class SaigyoGameScene: SKScene {
         if playerChoice.name != "" { // not empty
             if playerChoice.name == "77 shimo no ku" { // correct answer
                 checkAnswerButton.removeFromParent()
-                //if !viewModel.solved {
                 if !solved {
                     gameOver()
                 }
@@ -249,9 +244,7 @@ class SaigyoGameScene: SKScene {
         default:
             points = 0
         }
-       // viewModel.solved = true
         self.solved = true
-       // viewModel.points = self.points
         pointsEarned = points
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.addProceedToSummaryButton()
@@ -259,23 +252,22 @@ class SaigyoGameScene: SKScene {
     }
 
     private func showSummaryScene(withTransition transition: SKTransition) {
-             let delay = SKAction.wait(forDuration: 1)
-             let sceneChange = SKAction.run {
-                 let scene = SaigyoSummaryScene(self.$challengeCompleted)
-                // scene.viewModel = self.viewModel
-               self.view?.presentScene(scene, transition: transition)
-             }
-             run(.sequence([delay, sceneChange]))
-           }
+        let delay = SKAction.wait(forDuration: 1)
+        let sceneChange = SKAction.run {
+            let scene = SaigyoSummaryScene(self.$challengeCompleted)
+            self.view?.presentScene(scene, transition: transition)
+        }
+        run(.sequence([delay, sceneChange]))
+    }
 
     func keepTrying() {
         keepTryingLabelDisplayed ? keepTryingLabel.removeFromParent() : nil
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in
-        keepTryingLabel.fontSize = 18
-        keepTryingLabel.fontName = SKFont.medium
-        keepTryingLabel.fontColor = UIColor.orange
-        keepTryingLabel.position = CGPoint(x: frame.midX, y: frame.size.height * 0.14 - 4)
-        keepTryingLabel.zPosition = 100
+            keepTryingLabel.fontSize = 18
+            keepTryingLabel.fontName = SKFont.medium
+            keepTryingLabel.fontColor = UIColor.orange
+            keepTryingLabel.position = CGPoint(x: frame.midX, y: frame.size.height * 0.14 - 4)
+            keepTryingLabel.zPosition = 100
             switch attempts {
             case 0:
                 keepTryingLabel.text = ""
@@ -288,8 +280,8 @@ class SaigyoGameScene: SKScene {
             default:
                 keepTryingLabel.text = ""
             }
-        addChild(keepTryingLabel)
-        keepTryingLabelDisplayed = true
+            addChild(keepTryingLabel)
+            keepTryingLabelDisplayed = true
         }
     }
 }

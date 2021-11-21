@@ -23,17 +23,19 @@ class ChallengeCompletionTests: BaseTestCase {
         appData.addCompletedChallenge(newItem)
         challenge.completed = true
         appData.completedChallenges.append(challenge)
-
         XCTAssertEqual(appData.completedChallenges[0].completed, true)
     }
 
-    func testAddCompletedChallenge() { //this uses UserDefaults
+    func testAddCompletedChallenge() { // this uses UserDefaults
         UserDefaults.standard.removeObject(forKey: completedKey)
         let completedChallenge = CompletedChallenge(challenge: challenge.name, points: points)
 
         appData.addCompletedChallenge(completedChallenge)
 
-        XCTAssertEqual(appData.completedChallengeSummary[0].points, daimonChallenge.maxPoints, "Failed to add completed challenge to array of completed challenges.")
+        XCTAssertEqual(appData.completedChallengeSummary[0].points,
+                       daimonChallenge.maxPoints,
+                       "Failed to add completed challenge to array of completed challenges."
+        )
 
         let completedChallengesFromUserData: [CompletedChallenge] = AppData.loadCompletedSummary()
 
@@ -41,7 +43,7 @@ class ChallengeCompletionTests: BaseTestCase {
 
     }
 
-    func testCheckForBonus() { //this relies on UserData
+    func testCheckForBonus() { // this relies on UserData
         UserDefaults.standard.removeObject(forKey: completedKey)
         UserDefaults.standard.removeObject(forKey: completedBonusKey)
         appData.checkForBonus(challenge: challenge)
@@ -53,21 +55,20 @@ class ChallengeCompletionTests: BaseTestCase {
         XCTAssertEqual(appData.completedBonuses[0].id, bonus.id)
     }
 
-    func testAddCompletedBonus() { //this uses UserDefaults
+    func testAddCompletedBonus() { // this uses UserDefaults
         UserDefaults.standard.removeObject(forKey: completedKey)
         UserDefaults.standard.removeObject(forKey: completedBonusKey)
         let completedBonus = CompletedBonus(id: bonus.id, points: bonusPoints)
         appData.addCompletedBonus(completedBonus)
-        //check if isShowingBonus is set to false:
+        // check if isShowingBonus is set to false:
         XCTAssertFalse(appData.isShowingBonus)
-        //check game over status:
+        // check game over status:
         XCTAssertFalse(appData.gameState == .complete)
 
-        //check if new item was persisted to UserDefaults:
+        // check if new item was persisted to UserDefaults:
         // NOT SURE HOW TO DO THIS YET
         let completedBonuses = AppData.loadCompletedBonusSummary()
         XCTAssertEqual(completedBonuses.count, 1)
-
     }
 
     func testCheckForGameOver() {
@@ -78,7 +79,4 @@ class ChallengeCompletionTests: BaseTestCase {
         appData.changeGameState(newState: .exited)
         XCTAssertEqual(appData.gameState, .exited)
     }
-
 }
-// NOTE: I need to be careful with tests that use UserDefaults as these DO get saved in the UserDefaults of the simulator! One solution is to delete the app from the simulator in question...
-// another solution is to test around the UserDefaults (i.e. avoid any functions that use them...

@@ -11,12 +11,12 @@ struct ChallengeListLinkView: View {
     var body: some View {
         NavigationLink(destination: ChallengeListView()) {
             Image(systemName: "list.dash")
-            .font(.headline)
+                .font(.headline)
                 .foregroundColor(.koyaOrange)
             Text("See List of All \(allChallenges.count) Challenges".uppercased())
-            .font(.body)
+                .font(.body)
                 .foregroundColor(.white)
-         }
+        }
     }
 }
 

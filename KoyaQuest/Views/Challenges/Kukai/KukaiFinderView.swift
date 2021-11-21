@@ -16,7 +16,8 @@ struct KukaiFinderView: UIViewControllerRepresentable {
         KukaiFinderVC(kukaiFinderDelegate: context.coordinator)
     }
 
-    func updateUIViewController(_ uiViewController: KukaiFinderVC, context: Context) {}
+    func updateUIViewController(_ uiViewController: KukaiFinderVC,
+                                context: Context) {}
 
     func makeCoordinator() -> Coordinator {
         Coordinator(kukaiFinderView: self)

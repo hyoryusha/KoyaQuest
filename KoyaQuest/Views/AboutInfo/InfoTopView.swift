@@ -32,7 +32,6 @@ struct CancelButton: View {
             Image(systemName: "xmark")
                 .font(.headline)
                 .foregroundColor(Color.koyaLightText)
-                // swiftlint:disable:next colon
                 .frame(width: 26, height: 26, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .foregroundColor(Color.koyaLightText)
                 .background(
@@ -41,6 +40,6 @@ struct CancelButton: View {
                 )
                 .padding(.top, 20)
                 .padding(.trailing, 30)
-        }
+        } .accessibilityIdentifier("welcome view close button")
     }
 }

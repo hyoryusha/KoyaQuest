@@ -13,78 +13,80 @@ struct ChallengePortalView: View {
     @Binding var isShowingChallengePortal: Bool
     var challenge: Challenge
     var body: some View {
-    NavigationView {
-        ZStack {
-            BackgroundView()
-                .ignoresSafeArea(.all)
-            VStack(spacing: 20) {
-                HStack {
-                    Spacer()
-                    Button(action: hideChallenge) {
-                        Image(systemName: "xmark")
-                            .font(.caption2)
-                            .foregroundColor(Color.white)
-                            .frame(
-                                width: 24,
-                                height: 24,
-                                alignment: .center
-                            )
-                            .foregroundColor(Color.white)
-                            .background(
-                                Circle()
-                                    .fill(Color.koyaOrange)
-                            )
-                            .padding(.top, 10)
-                            .padding(.trailing, 16)
-                            .padding(.bottom, 0)
+        NavigationView {
+            ZStack {
+                BackgroundView()
+                    .ignoresSafeArea(.all)
+                VStack(spacing: 20) {
+                    HStack {
+                        Spacer()
+                        Button(action: hideChallenge) {
+                            Image(systemName: "xmark")
+                                .font(.caption2)
+                                .foregroundColor(Color.white)
+                                .frame(
+                                    width: 24,
+                                    height: 24,
+                                    alignment: .center
+                                )
+                                .foregroundColor(Color.white)
+                                .background(
+                                    Circle()
+                                        .fill(Color.koyaOrange)
+                                )
+                                .padding(.top, 10)
+                                .padding(.trailing, 16)
+                                .padding(.bottom, 0)
+                        }
                     }
-                }
-                ScrollView {
-                    Text(challenge.name)
-                        .foregroundColor(.koyaOrange)
-                        .font(.title)
-                        .bold()
-                        .multilineTextAlignment(.center)
-                    Text(challenge.details.teaser)
-                        .foregroundColor(.gray)
-                        .font(.body)
-                        .bold()
-                        .italic()
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    if challenge.details.imageName != "" {
-                        Image(challenge.details.imageName)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 260)
-                    }
+                    ScrollView {
+                        Text(challenge.name)
+                            .foregroundColor(.koyaOrange)
+                            .font(.title)
+                            .bold()
+                            .multilineTextAlignment(.center)
+                        Text(challenge.details.teaser)
+                            .foregroundColor(.gray)
+                            .font(.body)
+                            .bold()
+                            .italic()
+                            .multilineTextAlignment(.center)
+                            .padding()
+                        if challenge.details.imageName != "" {
+                            Image(challenge.details.imageName)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 260)
+                        }
 
-                    Text(challenge.details.instructions)
-                        .bodyStyle(color: .white)
-                    if challenge.details.extra != "" {
-                        Divider()
-                            .background(Color.koyaOrange)
-                        Text(challenge.details.extra)
+                        Text(challenge.details.instructions)
                             .bodyStyle(color: .white)
+                        if challenge.details.extra != "" {
+                            Divider()
+                                .background(Color.koyaOrange)
+                            Text(challenge.details.extra)
+                                .bodyStyle(color: .white)
                         }
                     } // end scroll
-                .padding([.leading, .trailing, .bottom], 8)
-                NavigationLink(destination: subView()) {
-                    ActionButton(color: Color.koyaOrange, text: "Begin Challenge")
-                        .buttonStyle(ScaleButtonStyle())
-                }
-                .simultaneousGesture(TapGesture().onEnded {
-                    appData.challengeState = .active
-                    locationManager.pauseRegionMonitoring()
-                })
-                Spacer()
-                    .frame(height: 24)
-            }// end vstack
+                    .padding([.leading, .trailing, .bottom], 8)
+                    NavigationLink(destination: subView()) {
+                        ActionButton(color: Color.koyaOrange,
+                                     text: "Begin Challenge"
+                        )
+                            .buttonStyle(ScaleButtonStyle())
+                    }
+                    .simultaneousGesture(TapGesture().onEnded {
+                        appData.challengeState = .active
+                        locationManager.pauseRegionMonitoring()
+                    })
+                    Spacer()
+                        .frame(height: 24)
+                } // end vstack
+            }
+            .navigationBarTitle(Text(""))
+            .navigationBarHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-        .navigationBarTitle(Text(""))
-        .navigationBarHidden(true)
-        .navigationViewStyle(StackNavigationViewStyle())
-    }
         .statusBar(hidden: true)
     }
     func subView() -> some View {
@@ -94,20 +96,25 @@ struct ChallengePortalView: View {
         case vajraChallenge:
             return AnyView(VajraChallengeView())
         case nyonindoChallenge:
-            //return AnyView(NyonindoChallengeView())
-            return AnyView(GenericChallengeWithGameSceneView(challenge: challenge))
+            return AnyView(GenericChallengeWithGameSceneView(
+                challenge: challenge
+            ))
         case gorintoChallenge:
-           // return AnyView(GorintoChallengeView())
-            return AnyView(GenericChallengeWithGameSceneView(challenge: challenge))
+            return AnyView(GenericChallengeWithGameSceneView(
+                challenge: challenge)
+            )
         case saigyoChallenge:
-            //return AnyView(SaigyoChallengeView())
-            return AnyView(GenericChallengeWithGameSceneView(challenge: challenge))
+            return AnyView(GenericChallengeWithGameSceneView(
+                challenge: challenge)
+            )
         case numbersChallenge:
-            //return AnyView(NumbersChallengeView())
-            return AnyView(GenericChallengeWithGameSceneView(challenge: challenge))
+            return AnyView(GenericChallengeWithGameSceneView(
+                challenge: challenge)
+            )
         case shogunsChallenge:
-            //return AnyView(ShogunsChallengeView())
-            return AnyView(GenericChallengeWithGameSceneView(challenge: challenge))
+            return AnyView(GenericChallengeWithGameSceneView(
+                challenge: challenge)
+            )
         case mizumukeChallenge:
             return AnyView(MizumukeChallengeView())
         case kukaiChallenge:
@@ -119,7 +126,9 @@ struct ChallengePortalView: View {
         case kenshinChallenge:
             return AnyView(KenshinChallengeView())
         default:
-            return AnyView(MainMenuView(landmark: Landmark.allLandmarks[0])) // is EmptyView okay?
+            return AnyView(MainMenuView(
+                landmark: Landmark.allLandmarks[0])
+            )
         }
     }
     func hideChallenge() {

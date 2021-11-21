@@ -26,22 +26,21 @@ struct FinalScoreRow: View {
             Text("\(finalScore.score)")
                 .frame(width: 50, alignment: .leading)
                 .font(wideElement(sizeCategory: sizeCategory) ? . caption2 : .caption)
-                //.padding(.leading, 6)
+            // .padding(.leading, 6)
             Spacer()
-            //Text("\(finalScore.submitDate!.addingTimeInterval(0), style: .date)")
-            Text(convertDate(date:finalScore.submitDate!.addingTimeInterval(0)))
+            // Text("\(finalScore.submitDate!.addingTimeInterval(0), style: .date)")
+            Text(convertDate(date: finalScore.submitDate!.addingTimeInterval(0)))
                 .frame(width: 110, alignment: .leading)
                 .font(wideElement(sizeCategory: sizeCategory) ? . caption2 : .caption)
-                //.padding(.trailing, 4)
+            // .padding(.trailing, 4)
         }
         .padding([.leading, .trailing], 10)
     }
 
     func convertDate(date: Date) -> String {
         let formatter = DateFormatter()
-        //formatter.dateStyle = .short
+        // formatter.dateStyle = .short
         formatter.dateFormat = "MMM. d, y"
         return formatter.string(from: date)
     }
 }
-

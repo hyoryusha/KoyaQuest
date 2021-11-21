@@ -29,23 +29,23 @@ struct GameOverSummary: View {
                         scoreSummaryIsVisible = true
                         activeSheet = .second
                     },
-                        label: {
-                            HStack {
-                                Text("Score Summary")
-                                    .font(.footnote)
-                                    .foregroundColor(.koyaGreen)
-                                Image(systemName: "list.bullet")
-                                    .font(.body)
-                                    .foregroundColor(Color.koyaGreen)
-                            }
+                           label: {
+                        HStack {
+                            Text("Score Summary")
+                                .font(.footnote)
+                                .foregroundColor(.koyaGreen)
+                            Image(systemName: "list.bullet")
+                                .font(.body)
+                                .foregroundColor(Color.koyaGreen)
+                        }
                     })
-                    .padding([.top, .trailing, .bottom], 3)
-                    }
+                        .padding([.top, .trailing, .bottom], 3)
+                }
                 .padding(.trailing, 6)
 
-            Divider()
-                .padding(.bottom, 4)
-                VStack (alignment: .leading, spacing: 1) {
+                Divider()
+                    .padding(.bottom, 4)
+                VStack(alignment: .leading, spacing: 1) {
                     Text("You have earned the rank of:")
                         .font(.body)
                         .foregroundColor(.koyaPurple)
@@ -91,18 +91,21 @@ struct GameOverSummary: View {
                             } label: {
                                 HStack {
                                     Text("Post Score".uppercased())
-                                .font(.title3)
-                                .bold()
-                                .padding(10)
-                                Spacer()
+                                        .font(.title3)
+                                        .bold()
+                                        .padding(10)
+                                    Spacer()
                                     Image(systemName: "icloud.and.arrow.up" )
                                         .font(.title3)
-                            }
-                            .padding()
-                            .frame(width: wideElement(sizeCategory: sizeCategory) ? 330 : 220, height: 50, alignment: .center)
+                                }
+                                .padding()
+                                .frame(width: wideElement(sizeCategory: sizeCategory) ? 330 : 220,
+                                       height: 50,
+                                       alignment: .center
+                                )
                                 .background(Color.koyaGreen)
                                 .foregroundColor(Color.koyaLightText)
-                            .buttonStyle(ScaleButtonStyle())
+                                .buttonStyle(ScaleButtonStyle())
                             }
                         } // end group
                         .padding(.bottom, 10)
@@ -111,13 +114,17 @@ struct GameOverSummary: View {
             } // end VStack frame
             .frame(width: 360, alignment: .center)
             .background(Color.koyaSky.opacity(0.6))
-            } // end ZStack
-        }
+        } // end ZStack
     }
+}
 
 struct GameOverSummary_Previews: PreviewProvider {
     static var previews: some View {
-        GameOverSummary(isShowingForm: .constant(false), hidePostScoreButton: .constant(false), scoreSummaryIsVisible: .constant(false), activeSheet: .constant(.first))
+        GameOverSummary(isShowingForm: .constant(false),
+                        hidePostScoreButton: .constant(false),
+                        scoreSummaryIsVisible: .constant(false),
+                        activeSheet: .constant(.first)
+        )
             .environmentObject(AppData())
     }
 }

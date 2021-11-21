@@ -16,10 +16,10 @@ enum GameState {
     case initial, idle, active, complete, exited
 }
 enum Level: String, CaseIterable, Identifiable {
-    var id : String { UUID().uuidString }
+    var id: String { UUID().uuidString }
     case
             myoo = "Wisdom King",
-            master = "Master",
+            mstr = "Master",
             adept = "Adept",
             journeyman = "Journeyman",
             novice = "Novice"
@@ -107,7 +107,7 @@ enum RatingsConstants {
 }
 
 enum ActiveSheet: Identifiable {
-    case first, second, third , none
+    case first, second, third, none
     var id: Int {
         hashValue
     }

@@ -33,26 +33,31 @@ struct GameOverView: View {
                     .multilineTextAlignment(.center)
             }
 
-            GameOverSummary(isShowingForm: $isShowingForm, hidePostScoreButton: $hidePostScoreButton, scoreSummaryIsVisible: $scoreSummaryIsVisible, activeSheet: $activeSheet)
+            GameOverSummary(isShowingForm: $isShowingForm,
+                            hidePostScoreButton: $hidePostScoreButton,
+                            scoreSummaryIsVisible: $scoreSummaryIsVisible,
+                            activeSheet: $activeSheet
+            )
                 .padding(.bottom, 8)
 
             Divider()
 
             Text("What's next?")
-                .font(.system(wideElement(sizeCategory: sizeCategory) ? .body : .title2 , design: .serif))
+                .font(.system(wideElement(sizeCategory: sizeCategory) ? .body : .title2, design: .serif))
                 .italic()
                 .bold()
                 .foregroundColor(Color.koyaPurple)
                 .padding(.top, 4)
+            // swiftlint:disable:next line_length
             Text("Once completed, the game cannot be replayed. However, you can continue to use this app as a guide to Mt. Kōya by tapping the button below:")
                 .font(.caption)
                 .italic()
                 .padding(4)
                 .multilineTextAlignment(.center)
 
-                Button {
-                    appData.changeGameState(newState: .exited)
-                } label: {
+            Button {
+                appData.changeGameState(newState: .exited)
+            } label: {
                 Text("Use App as a Guide".uppercased())
                     .font(.title3)
                     .bold()
@@ -60,14 +65,16 @@ struct GameOverView: View {
                     .frame(width: wideElement(sizeCategory: sizeCategory) ? 330 : 220, height: 50, alignment: .center)
                     .border(Color.white)
                     .foregroundColor(Color.white)
-                }
-                .buttonStyle(ScaleButtonStyle())
-                .padding(.bottom, 20)
+            }
+            .buttonStyle(ScaleButtonStyle())
+            .padding(.bottom, 20)
         }
         .sheet(item: $activeSheet) { item in
             switch item {
             case .first:
-                PostScoreView(isShowingForm: $isShowingForm, hidePostScoreButton: $hidePostScoreButton).environmentObject(appData) .environment(\.managedObjectContext, viewContext)
+                PostScoreView(isShowingForm: $isShowingForm,
+                              // swiftlint:disable:next line_length
+                              hidePostScoreButton: $hidePostScoreButton).environmentObject(appData) .environment(\.managedObjectContext, viewContext)
             case .second:
                 ScoreSummaryView(scoreSummaryIsVisible: $scoreSummaryIsVisible)
             case .third:
@@ -77,8 +84,8 @@ struct GameOverView: View {
             }
         }
         .background(Image("mtns")
-        .scaledToFill()
-        .edgesIgnoringSafeArea([.all]))
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea([.all]))
         .statusBar(hidden: true)
     }
 }
@@ -89,4 +96,3 @@ struct GameOverView_Previews: PreviewProvider {
             .environmentObject(AppData())
     }
 }
-

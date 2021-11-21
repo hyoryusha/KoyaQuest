@@ -9,7 +9,6 @@ import SwiftUI
 import CoreData
 
 struct RatingsInputView: View {
-    //@Environment(\.managedObjectContext) var viewContext: NSManagedObjectContext  // changed 9-29-21 to:
     @EnvironmentObject var dataController: DataController
     @EnvironmentObject var appData: AppData
     @Binding var rating: Int
@@ -40,7 +39,7 @@ struct RatingsInputView: View {
                                 Rating.createWith(landmark: landmark.name,
                                                   rating: Int16(number),
                                                   date: Date(),
-                                                  //using: self.viewContext) // changed 9-29-21 to:
+                                                  // using: self.viewContext) // changed 9-29-21 to:
                                                   using: dataController.container.viewContext)
                                 self.appData.recordLocalRating(
                                     landmark: landmark.name,

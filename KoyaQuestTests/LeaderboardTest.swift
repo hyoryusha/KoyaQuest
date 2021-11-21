@@ -9,7 +9,7 @@ import CoreData
 import XCTest
 @testable import KoyaQuest
 
-class LeaderboardTest: BaseTestCase  {
+class LeaderboardTest: BaseTestCase {
     var viewModel = PostScoreViewModel()
     let username = "don johnson"
 
@@ -25,7 +25,8 @@ class LeaderboardTest: BaseTestCase  {
             submitDate: newRecord.date,
             using: managedObjectContext)
 
-        XCTAssertEqual(dataController.count(for: FinalScore.fetchRequest()), 1)
+        XCTAssertEqual(dataController.count(
+            for: FinalScore.fetchRequest()), 1)
     }
 
     func testCheckUserNameAvailable() throws {
@@ -51,29 +52,30 @@ class LeaderboardTest: BaseTestCase  {
             submitDate: secondRecord.date,
             using: managedObjectContext)
 
-
-        let request = NSFetchRequest<FinalScore>(entityName: "FinalScore")
+        let request = NSFetchRequest<FinalScore>(
+            entityName: "FinalScore"
+        )
         let finalScores = try managedObjectContext.fetch(request)
 
         var userNamesArray: [String] {
             finalScores.compactMap { $0.userName }
         }
 
-//        var testFinalScore: [FinalScore]?
-//
-//        let testFoundFinalScore = finalScores.contains(where: {
-//            $0.userName == username
-//        })
-//
-//        if testFoundFinalScore {
-//            testFinalScore = finalScores.filter {
-//                $0.score == 312
-//            }
-//        }
-//
-//        XCTAssertEqual(testFinalScore?[0].score, 312)
+        var testFinalScore: [FinalScore]?
 
-        //viewModel.checkUserNameAvailable(userNamesArray: userNamesArray)
+        let testFoundFinalScore = finalScores.contains(where: {
+            $0.userName == username
+        })
+
+        if testFoundFinalScore {
+            testFinalScore = finalScores.filter {
+                $0.score == 312
+            }
+        }
+
+        XCTAssertFalse(testFinalScore?.isEmpty == true)
+
+        viewModel.checkUserNameAvailable(userNamesArray: userNamesArray)
 
         let lowerCasedNames = userNamesArray.map {
             $0.lowercased()
@@ -84,12 +86,7 @@ class LeaderboardTest: BaseTestCase  {
         }
     if filteredArray.isEmpty {
         viewModel.userNameAvailable = true
-        } else {
-            viewModel.showingActionAlert = true
-            viewModel.userNameAvailable = false
         }
-
         XCTAssertTrue(viewModel.userNameAvailable)
-
     }
 }

@@ -12,11 +12,10 @@ struct BonusOverlayView: View {
         Spacer()
         ZStack {
             VStack {
-                //Spacer()
                 HStack {
                     Spacer()
                     Text("Bonus!")
-                        .font(.system( .largeTitle , design: .serif))
+                        .font(.system( .largeTitle, design: .serif))
                         .bold()
                         .padding(.trailing, 10)
                         .shadow(color: Color.black, radius: 6, x: 5, y: 5)

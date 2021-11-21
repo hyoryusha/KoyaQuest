@@ -8,24 +8,7 @@
 import SwiftUI
 
 struct DynamicLeaderboardView: View {
-//    var fetchFilter: FinalScoreFilter
-//    var finalScores : FetchedResults<FinalScore>
-//
-//    init(fetchFilter: FinalScoreFilter) {
-//        self.fetchFilter = fetchFilter
-//        switch fetchFilter {
-//        case .allTime:
-//            let fetchRequest = FinalScore.fetchByScoreAndDate()
-//            finalScores = fetchRequest.wrappedValue
-//            print("Count all time: \(finalScores.count)")
-//        case .today:
-//            let fetchRequest = FinalScore.fetchTodaysScores()
-//            finalScores = fetchRequest.wrappedValue
-//            print("Count todays: \(finalScores.count)")
-//        }
-//    }
-    var fetchRequest:FetchRequest<FinalScore>
-    //var finalScores : FetchedResults<FinalScore>
+    var fetchRequest: FetchRequest<FinalScore>
 
     init(fetchFilter: FinalScoreFilter) {
         switch fetchFilter {
@@ -35,7 +18,7 @@ struct DynamicLeaderboardView: View {
             fetchRequest = FetchRequest<FinalScore>(
                 entity: FinalScore.entity(),
                 sortDescriptors: [scoreSortDescriptor, dateSortDescriptor]
-                    )
+            )
 
         case .today:
             let calendar = Calendar.current
@@ -44,9 +27,13 @@ struct DynamicLeaderboardView: View {
             fetchRequest = FetchRequest<FinalScore>(
                 entity: FinalScore.entity(),
                 sortDescriptors: [NSSortDescriptor(key: "score", ascending: false),
-                    NSSortDescriptor(key: "submitDate", ascending: false)]
-                    ,
-            predicate: NSPredicate(format : "submitDate <= %@ AND submitDate >= %@", dateTo! as CVarArg, dateFrom as CVarArg)
+                                  NSSortDescriptor(key: "submitDate", ascending: false)]
+                ,
+                predicate: NSPredicate(
+                    format: "submitDate <= %@ AND submitDate >= %@",
+                    dateTo! as CVarArg,
+                    dateFrom as CVarArg
+                )
             )
         } // end init
 
@@ -56,7 +43,6 @@ struct DynamicLeaderboardView: View {
     }
 
     var body: some View {
-
         ScrollView {
             ForEach(finalScores, id: \.self) { finalScore in
                 let ordinal: Int = finalScores.firstIndex(of: finalScore)! + 1
@@ -66,4 +52,3 @@ struct DynamicLeaderboardView: View {
         }
     }
 }
-

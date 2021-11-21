@@ -10,7 +10,6 @@ import CoreHaptics
 
 struct ChallengeDisplayView: View {
     @EnvironmentObject var appData: AppData
-    
     @State private var engine: CHHapticEngine?
     @Binding var isPlayingGame: Bool
 
@@ -22,7 +21,6 @@ struct ChallengeDisplayView: View {
                 .cornerRadius(0)
             Spacer()
             ChallengeDescriptionView(
-                //enteredZone: enteredZone
                 challenge: enteredZone.challenge!
             )
                 .padding()
@@ -30,34 +28,34 @@ struct ChallengeDisplayView: View {
         .onAppear {
             vibrationAlert()
         }
-            .frame(width: 300, height: 472)
-            .background(Color.koyaSky)
-            .statusBar(hidden: true)
-            .cornerRadius(12)
-            .overlay(Button {
-                isPlayingGame = false
-            } label: {
-                HStack {
-                    XDismissButton()
-                    Text("Disable Gameplay")
-                        .baselineOffset(6.0)
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                }
-
-            }, alignment: .topLeading)
-        }
-
-// MARK: - HAPTICS
-        func prepareHaptics() {
-            guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
-            do {
-                self.engine = try CHHapticEngine()
-                try engine?.start()
-            } catch {
-                print("There was an error creating the engine: \(error.localizedDescription)")
+        .frame(width: 300, height: 472)
+        .background(Color.koyaSky)
+        .statusBar(hidden: true)
+        .cornerRadius(12)
+        .overlay(Button {
+            isPlayingGame = false
+        } label: {
+            HStack {
+                XDismissButton()
+                Text("Disable Gameplay")
+                    .baselineOffset(6.0)
+                    .font(.footnote)
+                    .foregroundColor(.gray)
             }
+
+        }, alignment: .topLeading)
+    }
+
+    // MARK: - HAPTICS
+    func prepareHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+        do {
+            self.engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
         }
+    }
 
     func vibrationAlert() {
         prepareHaptics()

@@ -73,7 +73,7 @@
         <name>Tokugawa Mausoleum</name>
         <time>2020-08-30T14:02:50Z</time>
     </wpt>
-
+-->
     <wpt lat="34.21701697334374" lon="135.58236903943072">
         <name>Tokugawa Mausoleum 2</name>
         <time>2020-08-30T14:03:10Z</time>
@@ -88,7 +88,7 @@
         <name>Nyonindo 2</name>
         <time>2020-08-30T14:05:40Z</time>
     </wpt>
--->
+
     <wpt lat="34.21283838342336" lon="135.58958918800167">
         <name>Choishi 10</name>
         <time>2020-08-30T14:06:55Z</time>
@@ -168,30 +168,30 @@
         <time>2020-08-30T14:12:00Z</time>
     </wpt>
 
-    <wpt lat="34.2217926" lon="135.605739">
-        <name>Tamagawa River</name>
-        <time>2020-08-30T14:12:20Z</time>
+    <wpt lat="34.22191" lon="135.60592">
+        <name>Tamagawa River 1</name>
+        <time>2020-08-30T14:12:15Z</time>
     </wpt>
 
     <wpt lat="34.22133507975566" lon="135.60677547761603">
         <name>Tamagawa River 2</name>
-        <time>2020-08-30T14:12:45Z</time>
+        <time>2020-08-30T14:12:55Z</time>
     </wpt>
 
     <wpt lat="34.22312" lon="135.60576973055655">
         <name>Torodo</name>
-        <time>2020-08-30T14:13:00Z</time>
+        <time>2020-08-30T14:13:20Z</time>
     </wpt>
 
 
     <wpt lat="34.21605616024564" lon="135.60445876968933">
         <name>Nakanohashi Parking</name>
-        <time>2020-08-30T14:14:30Z</time>
+        <time>2020-08-30T14:14:40Z</time>
     </wpt>
 
     <wpt lat="34.217000" lon="135.605000">
         <name>Nakanohashi Parking</name>
-        <time>2020-08-30T14:15:00Z</time>
+        <time>2020-08-30T14:15:10Z</time>
     </wpt>
 
     <wpt lat="34.20970989236701" lon="135.5872414883954">

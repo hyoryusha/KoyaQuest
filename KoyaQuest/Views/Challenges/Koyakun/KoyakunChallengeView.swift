@@ -17,15 +17,14 @@ struct KoyakunChallengeView: View {
         ZStack {
             KoyakunCatcherView(viewModel: self.viewModel,
                                completed: $viewModel.completed)
-                // Rectangle()
             VStack {
                 XDismissButtonRight()
-                    .offset(x: 0, y: 0 )
+                    .offset(x: 0, y: 0)
                     .padding(.top, 24)
                     .padding(.trailing, 30)
                 Spacer()
             }
-            //.blur(radius: viewModel.completed ? 6 : 0)
+            .overlay( viewModel.completed ? MountainOverlayView() : nil)
             if viewModel.completed {
                 let earnedPoints = viewModel.points
                 let points = min(koyakunChallenge.maxPoints, earnedPoints)

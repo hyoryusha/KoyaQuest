@@ -14,49 +14,46 @@ struct ChallengeButton: View {
     // @Binding var isShowingChallenge: Bool
     var body: some View {
 
-            Button {
-                self.isShowingChallengePortal = true
-            } label: {
-                HStack {
-                    Text(challenge.name)
-                        .font(wideElement(sizeCategory: sizeCategory) ? .caption2: .body)
-                        .bold()
-                    if !wideElement(sizeCategory: sizeCategory) {
-                        Spacer()
-                        Image(systemName: completed ?  "checkmark.circle" : "arrowshape.turn.up.right.circle")
-                    }
+        Button {
+            self.isShowingChallengePortal = true
+        } label: {
+            HStack {
+                Text(challenge.name)
+                    .font(wideElement(sizeCategory: sizeCategory) ? .caption2: .body)
+                    .bold()
+                if !wideElement(sizeCategory: sizeCategory) {
+                    Spacer()
+                    Image(systemName: completed ?  "checkmark.circle" : "arrowshape.turn.up.right.circle")
                 }
-
-                .frame(
-                    minWidth: 250,
-                    idealWidth: 270,
-                    maxWidth: 280,
-                    minHeight: 30,
-                    idealHeight: 38,
-                    maxHeight: 42,
-                    alignment: .center
-                )
-                .padding([.top, .bottom], 4 )
-                .padding([.leading, .trailing], 14 )
-                .background(Color.koyaOrange)
-                .foregroundColor(.white)
-                // .cornerRadius(6)
-                // .shadow(color: Color(.black), radius: 1, x: 2, y: 2 )
-                .fullScreenCover(
-                    isPresented: $isShowingChallengePortal,
-                    onDismiss: {},
-                    content: {
-                    ChallengePortalView(isShowingChallengePortal: $isShowingChallengePortal, challenge: challenge)
-                    }
-                )
             }
-            .buttonStyle(ScaleButtonStyle())
-            .padding(.bottom, 6)
+
+            .frame(
+                minWidth: 250,
+                idealWidth: 270,
+                maxWidth: 280,
+                minHeight: 30,
+                idealHeight: 38,
+                maxHeight: 42,
+                alignment: .center
+            )
+            .padding([.top, .bottom], 4 )
+            .padding([.leading, .trailing], 14 )
+            .background(Color.koyaOrange)
+            .foregroundColor(.white)
+            // .cornerRadius(6)
+            // .shadow(color: Color(.black), radius: 1, x: 2, y: 2 )
+            .fullScreenCover(
+                isPresented: $isShowingChallengePortal,
+                onDismiss: {},
+                content: {
+                    ChallengePortalView(isShowingChallengePortal: $isShowingChallengePortal, challenge: challenge)
+                }
+            )
         }
+        .buttonStyle(ScaleButtonStyle())
+        .padding(.bottom, 6)
     }
-
-
-
+}
 
 struct ActionButton: View {
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
@@ -80,18 +77,18 @@ struct ActionButton: View {
             .padding([.leading, .trailing], 14 )
             .background(color)
             .foregroundColor(.white)
-            // .cornerRadius(6)
+        // .cornerRadius(6)
     }
 }
 
-struct BackButton: View { 
+struct BackButton: View {
     var buttonText: String
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
     var body: some View {
         Button(action: {
-                self.presentationMode.wrappedValue.dismiss()
-        // swiftlint:disable:next multiple_closures_with_trailing_closure
+            self.presentationMode.wrappedValue.dismiss()
+            // swiftlint:disable:next multiple_closures_with_trailing_closure
         }) {
             HStack {
                 Image(systemName: "arrowshape.turn.up.left.circle")
@@ -179,7 +176,7 @@ struct XDismissButtonRight: View {
                         Circle()
                             .fill(Color.red)
                     )
-                    // .padding([.top,.trailing], 20)
+                // .padding([.top,.trailing], 20)
             }
         }
     }
@@ -207,14 +204,14 @@ struct XExitButtonRight: View {
                         Circle()
                             .fill(Color.red)
                     )
-                    // .padding([.top,.trailing], 20)
+                // .padding([.top,.trailing], 20)
             }
         }
     }
 }
 
 struct ScaleButtonStyle: ButtonStyle {
-        func makeBody(configuration: Self.Configuration) -> some View {
+    func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .foregroundColor(.white)
             .scaleEffect(configuration.isPressed ? 1.1 : 1.0)

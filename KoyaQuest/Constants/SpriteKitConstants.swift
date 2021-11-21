@@ -12,8 +12,8 @@ class CheckAnswerButton: SKSpriteNode {
     init() {
         super.init(texture: nil, color: SKColor.orange, size: SKButtonSize.checkButton)
     }
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -180,18 +180,28 @@ enum SKFont {
         public static let bold: String              = "HelveticaNeue-CondensedBold"
         public static let black: String             = "HelveticaNeue-CondensedBlack"
     }
-        public static let regular: String           = "HelveticaNeue"
-        public static let medium: String            = "HelveticaNeue-Medium"
-        public static let italic: String            = "HelveticaNeue-Italic"
-        public static let bold: String              = "HelveticaNeue-Bold"
-        public static let light: String             = "HelveticaNeue-UltraLight"
-        public static let lightItalic: String       = "HelveticaNeue-LightItalic"
-        public static let mediumItalic: String      = "HelveticaNeue-MediumItalic"
-        public static let heavyItalic: String       = "HelveticaNeue-HeavyItalic"
-        public static let heavy: String             = "HelveticaNeue-CondensedBlack"
-        public static let kanji: String             = "HiraMaruProN-W4"
+    public static let regular: String           = "HelveticaNeue"
+    public static let medium: String            = "HelveticaNeue-Medium"
+    public static let italic: String            = "HelveticaNeue-Italic"
+    public static let bold: String              = "HelveticaNeue-Bold"
+    public static let light: String             = "HelveticaNeue-UltraLight"
+    public static let lightItalic: String       = "HelveticaNeue-LightItalic"
+    public static let mediumItalic: String      = "HelveticaNeue-MediumItalic"
+    public static let heavyItalic: String       = "HelveticaNeue-HeavyItalic"
+    public static let heavy: String             = "HelveticaNeue-CondensedBlack"
+    public static let kanji: String             = "HiraginoSans-W3"
 
 }
+
+/*
+ AVAILABLE JAPANESE FONTS
+ HiraMaruProN-W4
+ HiraMinProN-W3
+ HiraMinProN-W6
+ HiraginoSans-W3
+ HiraginoSans-W6
+ HiraginoSans-W7
+ */
 
 enum SKColor { // to be discontinued?
     public static let black     = UIColor(red: 0.098, green: 0.098, blue: 0.098, alpha: 1.0)

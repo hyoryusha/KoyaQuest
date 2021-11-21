@@ -35,6 +35,7 @@ struct GenericChallengeWithGameSceneView: View {
             }
             .edgesIgnoringSafeArea(.all)
             .blur(radius: challengeCompleted ? 6 : 0)
+            .overlay(challengeCompleted ? MountainOverlayView() : nil)
 
             VStack {
                 XDismissButtonRight()
@@ -62,23 +63,29 @@ struct GenericChallengeWithGameSceneView: View {
     func chooseScene(for challenge: Challenge) -> SKScene {
         switch challenge {
         case saigyoChallenge:
-            return SaigyoGameScene($challengeCompleted, $pointsEarned)
+            return SaigyoGameScene($challengeCompleted,
+                                   $pointsEarned)
         case nyonindoChallenge:
-            return NyonindoGameScene($challengeCompleted, $pointsEarned)
+            return NyonindoGameScene($challengeCompleted,
+                                     $pointsEarned)
         case shogunsChallenge:
-            return ShogunsGameScene($challengeCompleted, $pointsEarned)
+            return ShogunsGameScene($challengeCompleted,
+                                    $pointsEarned)
         case gorintoChallenge:
-            return GorintoGameScene($challengeCompleted, $pointsEarned)
+            return GorintoGameScene($challengeCompleted,
+                                    $pointsEarned)
         case numbersChallenge:
-            return NumbersChallengeGameScene($challengeCompleted, $pointsEarned)
+            return NumbersChallengeGameScene($challengeCompleted,
+                                             $pointsEarned)
         default:
-            return SaigyoGameScene($challengeCompleted, $pointsEarned) // or something else?
+            return SaigyoGameScene($challengeCompleted,
+                                   $pointsEarned) // or something else?
         }
     }
 }
 
 struct GenericChallengeWithGameSceneView_Previews: PreviewProvider {
     static var previews: some View {
-        GenericChallengeWithGameSceneView(challenge: saigyoChallenge)
+        GenericChallengeWithGameSceneView(challenge: numbersChallenge)
     }
 }

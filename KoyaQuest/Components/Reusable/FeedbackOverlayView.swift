@@ -8,17 +8,15 @@
 import SwiftUI
 
 struct FeedbackOverlayView: View {
-    //var feedBackResults: ChallengeResults
     var success: Bool
     var body: some View {
 
         Spacer()
         ZStack(alignment: .topLeading) {
             VStack(alignment: .leading) {
-                //Spacer()
                 HStack {
                     Text(getFeedbackString(success: success))
-                        .font(.system( .largeTitle , design: .serif))
+                        .font(.system( .largeTitle, design: .serif))
                         .bold()
                         .padding(.leading, 10)
                         .shadow(color: Color.black, radius: 6, x: 5, y: 5)
@@ -40,8 +38,8 @@ struct FeedbackOverlayView: View {
             return negativeFeedbackStrings[index]
         }
     }
-    var positiveFeedbackStrings = ["Excellent!" , "Well Done!" , "Good Job!" , "Success!"]
-    var negativeFeedbackStrings = ["Too Bad" , "Better Luck Next Time" , "Can't Win 'em All"]
+    var positiveFeedbackStrings = ["Excellent!", "Well Done!", "Good Job!", "Success!"]
+    var negativeFeedbackStrings = ["Too Bad", "Better Luck Next Time", "Can't Win 'em All"]
 }
 
 struct FeedbackOverlayView_Previews: PreviewProvider {

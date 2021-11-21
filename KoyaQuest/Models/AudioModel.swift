@@ -5,9 +5,6 @@
 //  Created by Kevin K Collins on 2021/06/30.
 //
 
-import SwiftUI
-import AVFoundation
-
 import Foundation
 import SwiftUI
 import AVFoundation
@@ -15,30 +12,30 @@ import AVFoundation
 class AudioModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
     @Published var didFinishPlaying = false
     @Published var isPlaying: Bool = false {
-           willSet {
-               if newValue == true {
-                   playAudio()
-               }
-           }
-       }
+        willSet {
+            if newValue == true {
+                playAudio()
+            }
+        }
+    }
     @Published var alertItem: AlertItem?
     @Published var hidePlayButton: Bool = false
     var currentTime: TimeInterval?
-    //var audioPlayer = AVAudioPlayer()
+    // var audioPlayer = AVAudioPlayer()
     var audioPlayer: AVAudioPlayer!
     var soundFileName = ""
 
     override init() {
-           super.init()
-           //audioPlayer.delegate = self
-       }
+        super.init()
+        // audioPlayer.delegate = self
+    }
 
     func playAudio() {
         guard let path = Bundle.main.path(forResource: soundFileName, ofType: "mp3") else {
             self.alertItem = AlertContext.noAudioFile
             self.hidePlayButton = true
             return
-            
+
         }
         self.hidePlayButton = false
         let url = URL(fileURLWithPath: path)
@@ -48,8 +45,7 @@ class AudioModel: NSObject, ObservableObject, AVAudioPlayerDelegate {
             audioPlayer.delegate = self
             audioPlayer.currentTime = self.currentTime ?? 0.0
             audioPlayer.play()
-        }
-        catch {
+        } catch {
             // error
             self.alertItem = AlertContext.noAudioFile
         }

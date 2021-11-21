@@ -29,21 +29,21 @@ class Area: NSObject, Identifiable, ObservableObject {
          challenge: Challenge?,
          isTargetZone: Bool,
          radius: CLLocationDistance) {
-            self.identifier = identifier
-            self.challenge = challenge
-            self.isTargetZone = isTargetZone
-            self.radius = radius
-            self.location = CLLocation(latitude: latitude,
-                                       longitude: longitude)
+        self.identifier = identifier
+        self.challenge = challenge
+        self.isTargetZone = isTargetZone
+        self.radius = radius
+        self.location = CLLocation(latitude: latitude,
+                                   longitude: longitude)
     }
 
     static let greaterArea = Area(
-    latitude: 34.2109456915934,
-    longitude: 135.59842651113263,
-    identifier: "Mount Kōya",
-    challenge: nil,
-    isTargetZone: false,
-    radius: 5000) // this will be the all-encompassing area
+        latitude: 34.2109456915934,
+        longitude: 135.59842651113263,
+        identifier: "Mount Kōya",
+        challenge: nil,
+        isTargetZone: false,
+        radius: 5000) // this will be the all-encompassing area
 }
 
 // MARK: - Area Extension
@@ -51,19 +51,18 @@ extension Area: MKAnnotation {
 
     var coordinate: CLLocationCoordinate2D {
         // get { // Swiftlint: (implicit_getter)
-            return location.coordinate
+        return location.coordinate
         // }
     }
 
     var title: String? { // optional
         // get { // Swiftlint: (implicit_getter)
-            return identifier
+        return identifier
         // }
     }
 }
 
 // MARK: - REAL COORDS
-
 let daimonArea = Area(
     latitude: 34.21316180316554,
     longitude: 135.57287620970556,
@@ -71,7 +70,7 @@ let daimonArea = Area(
     challenge: daimonChallenge,
     isTargetZone: true,
     radius: 200
- )
+)
 
 let westGaranArea = Area(
     latitude: 34.21405673565949,
@@ -91,7 +90,6 @@ let eastGaranArea = Area(
     radius: 110
 )
 
-
 let kongobujiArea = Area(
     latitude: 34.21412606524347,
     longitude: 135.584203528666,
@@ -100,7 +98,7 @@ let kongobujiArea = Area(
     isTargetZone: true,
     radius: 140
 )
-//34.211489107492206, 135.58114351464857 //34.211302, 135.58114351464857
+// 34.211489107492206, 135.58114351464857 //34.211302, 135.58114351464857
 let reihokanArea = Area(
     latitude: 34.211302,
     longitude: 135.58114351464857,
@@ -109,7 +107,6 @@ let reihokanArea = Area(
     isTargetZone: true,
     radius: 100
 )
-
 
 let tokugawaArea = Area(
     latitude: 34.21738288146782,
@@ -128,7 +125,7 @@ let nyonindoArea = Area(
     isTargetZone: true,
     radius: 110
 )
-//34.21283838342336,135.58958918800167 // 34.212838383,135.58969
+// 34.21283838342336,135.58958918800167 // 34.212838383,135.58969
 let choishiTenArea = Area(
     latitude: 34.212838383,
     longitude: 135.58969,
@@ -163,8 +160,8 @@ let ichinohashiArea = Area(
     challenge: gorintoChallenge,
     isTargetZone: true,
     radius: 100
- )
-//34.21795458937127, 135.59820076202416 / 34.21651619489697, 135.59862060484994
+)
+// 34.21795458937127, 135.59820076202416 / 34.21651619489697, 135.59862060484994
 
 let kenshinArea = Area(
     latitude: 34.21638,
@@ -192,7 +189,9 @@ let bashoArea = Area(
     isTargetZone: true,
     radius: 100
 )
-// 34.22133507975566, 135.60677547761603 // 34.22211073890209, 135.60602196144063 //, 34.2193499, 135.60509 //34.22191, 135.60592
+// 34.22133507975566, 135.60677547761603
+// 34.22211073890209, 135.60602196144063
+// 34.2193499, 135.60509 //34.22191, 135.60592
 let tamagawaArea = Area(
     latitude: 34.22191,
     longitude: 135.60592,
@@ -201,7 +200,7 @@ let tamagawaArea = Area(
     isTargetZone: true,
     radius: 90
 )
-//34.22312, 135.60576973055655
+// 34.22312, 135.60576973055655
 let torodoArea = Area(
     latitude: 34.22312,
     longitude: 135.60576973055655,

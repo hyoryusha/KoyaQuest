@@ -17,7 +17,6 @@ struct KenshinChallengeView: View {
 
     var body: some View {
         ZStack {
-            //Color(.black)
             BackgroundView()
                 .ignoresSafeArea(.all)
             VStack {
@@ -41,8 +40,7 @@ struct KenshinChallengeView: View {
                     Image(viewModel.success ? "uesugi_summary": "takeda shingen haka")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-
-                    .frame(width: 320)
+                        .frame(width: 320)
                         .padding(.bottom, 6)
                         .animation(.easeIn(duration: 0.8), value: true)
                     Text(viewModel.success ? "Well done!" : "Your next destination")
@@ -55,11 +53,10 @@ struct KenshinChallengeView: View {
                         instructions: $viewModel.instructions,
                         didCompleteVideo: $viewModel.didConcludeVideo
                     )
-                        // Rectangle()
-                        .frame(height: 380) // previous 380
+                        .frame(height: 380)
                         .transition(.move(edge: .leading))
                         .padding(.bottom, 6)
-
+// swiftlint:disable:next line_length
                     Text(viewModel.didFindGhost ? "Listen for your instructions.\nMove closer for better viewing." : viewModel.instructions)
                         .multilineTextAlignment(.center)
                         .font(.caption)
@@ -68,81 +65,91 @@ struct KenshinChallengeView: View {
                 }
 
                 if viewModel.didConcludeVideo && viewModel.success == false { // found Uesugi & watched video
-                            Button {
-                                // viewMission = true
-                                activeSheet = .first
-                            } label: {
-                                HStack {
-                                    Image(systemName: "signpost.right")
-                                        .font(.body)
-                                        .foregroundColor(.koyaOrange)
+                    Button {
+                        // viewMission = true
+                        activeSheet = .first
+                    } label: {
+                        HStack {
+                            Image(systemName: "signpost.right")
+                                .font(.body)
+                                .foregroundColor(.koyaOrange)
 
-                                    Text("Review Your Mission")
-                                        .font(.body)
-                                        .foregroundColor(.koyaOrange)
-                                        .bold()
-                                }
-                            }
-                            .padding(.bottom, 6)
-
-                            Button {
-                                activeSheet = .second
-                            } label: {
-                                HStack {
-                                    Image(systemName: "figure.walk")
-                                        .foregroundColor(.green)
-                                    Text("Proceed to Next Step".uppercased())
-                                        .font(.title3)
-                                        .bold()
-                                        .foregroundColor(.green)
-                                }
-                            }
+                            Text("Review Your Mission")
+                                .font(.body)
+                                .foregroundColor(.koyaOrange)
+                                .bold()
                         }
-                                if viewModel.success {
-                                    Button {
-                                        self.presentationMode.wrappedValue.dismiss()
-                                        appData.recordCompletedChallenge(
-                                            challenge: kenshinChallenge,
-                                            points: kenshinChallenge.maxPoints
-                                        )
-                                        appData.challengeState = .idle
-                                        locationManager.resumeRegionMonitoring()
-                                    } label: {
-                                        Text("Exit and Claim \(kenshinChallenge.maxPoints) Points".uppercased())
-                                            .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .title3)
-                                            .bold()
-                                            .frame(
-                                                minWidth: 235,
-                                                idealWidth: 300,
-                                                maxWidth: 342,
-                                                minHeight: 50,
-                                                idealHeight: 50,
-                                                maxHeight: 50,
-                                                alignment: .center
-                                            )
-                                            .padding([.top, .bottom], 2 )
-                                            .padding([.leading, .trailing], 14 )
-                                            .background(Color.koyaGreen)
-                                            .foregroundColor(.white)
-                                            .padding()
-                                    }
+                    }
+                    .padding(.bottom, 6)
 
-                                } else {
-                                    EmptyView()
-                                        .frame(
-                                            minHeight: 50,
-                                            idealHeight: 50,
-                                            maxHeight: 50,
-                                            alignment: .center
-                                        )
-                                }
+                    Button {
+                        activeSheet = .second
+                    } label: {
+                        HStack {
+                            Image(systemName: "figure.walk")
+                                .foregroundColor(.green)
+                            Text("Proceed to Next Step".uppercased())
+                                .font(.title3)
+                                .bold()
+                                .foregroundColor(.green)
+                        }
+                    }
+                }
+                if viewModel.success {
+                    Text("Mission Accomplished")
+                        .font(.subheadline)
+                        .bold()
+                        .foregroundColor(.koyaGreen)
+                    Button {
+                        viewModel.challengeCompleted = true
+                    } label: {
+                        Text("Got it!")
+                            .font(FontSwap.caption2ForTitle3(for: sizeCategory))
+                            .bold()
+                            .frame(
+                                minWidth: 235,
+                                idealWidth: 300,
+                                maxWidth: 342,
+                                minHeight: 50,
+                                idealHeight: 50,
+                                maxHeight: 50,
+                                alignment: .center
+                            )
+                            .padding([.top, .bottom], 2 )
+                            .padding([.leading, .trailing], 14 )
+                            .background(Color.koyaGreen)
+                            .foregroundColor(.white)
+                            .padding()
+                    }
+
+                } else {
+                    EmptyView()
+                        .frame(
+                            minHeight: 50,
+                            idealHeight: 50,
+                            maxHeight: 50,
+                            alignment: .center
+                        )
+                }
                 Spacer()
             } // end vstack
             .padding(.top, 10)
+
+            .overlay(viewModel.challengeCompleted ? MountainOverlayView() : nil)
+            if viewModel.challengeCompleted {
+                ChallengeFeedbackView(
+                    appData: appData,
+                    locationManager: locationManager,
+                    challenge: kenshinChallenge,
+                    text: viewModel.success ? "Nice Job!" : "Too bad",
+                    points: kenshinChallenge.maxPoints,
+                    success: viewModel.success ? true : false
+                )
+            }
         }
         .fullScreenCover(item: $activeSheet) { item in
             switch item {
-            case .first, .none: // added "none" when creating GameOverView
+            case .first, .none:
                 KenshinMissionView()
                     .transition(.move(edge: .bottom))
             case .second:

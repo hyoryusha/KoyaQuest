@@ -7,23 +7,7 @@
 
 import SwiftUI
 
-
 class LeaderboardViewModel: ObservableObject {
-
+// what happened here???
 
 }
-/*
-var thisUserName = "Maggie"
-var playerRank: Int
-    var userIndexInAllFinalScores: Int {
-        allFinalScores.firstIndex(where: {$0.userName == thisUserName})!
-        }
-    }
-
-    init(playerRank: Int) {
-        var userIndexInAllFinalScores: Int {
-            allFinalScores.firstIndex(where: {$0.userName == thisUserName})!
-        }
-        self.playerRank = userIndexInAllFinalScores + 1
-    }
- */

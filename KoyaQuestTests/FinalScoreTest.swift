@@ -9,7 +9,6 @@ import XCTest
 @testable import KoyaQuest
 
 class FinalScoreTest: BaseTestCase {
-    
 
     func testCreateNewFinalScore() {
         FinalScore.createWith(
@@ -18,8 +17,6 @@ class FinalScoreTest: BaseTestCase {
             score: 200,
             submitDate: Date(),
             using: managedObjectContext)
-
         XCTAssertEqual(dataController.count(for: FinalScore.fetchRequest()), 1)
     }
-
 }

@@ -10,7 +10,6 @@ import SwiftUI
 struct MainMenuView: View {
     @EnvironmentObject var appData: AppData
     @EnvironmentObject var locationManager: LocationManager
-    //@EnvironmentObject var dataController: DataController // is this needed here?
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
     @StateObject var viewModel = MainMenuViewModel()
     @State var landmark: Landmark
@@ -25,6 +24,8 @@ struct MainMenuView: View {
                 VStack {
                     if appData.gameState != .exited {
                         gamePlayControls
+                    } else {
+                        gameOverSummary
                     }
                     TitleView(fullCaption: false)
                     // MARK: - First NavLink
@@ -46,7 +47,7 @@ struct MainMenuView: View {
                         selection: $selection) { EmptyView() }
                     Group {
                         mapButton
-                        if appData.gameState != .exited{
+                        if appData.gameState != .exited {
                             scoreBox
                         } else {
                             Spacer()
@@ -60,7 +61,7 @@ struct MainMenuView: View {
                         }
                     }
                     if appData.kukaiChallengeState == .paused && appData.isPlayingGame {
-                        ResumeKukaiChallenge(isShowingResumeKukaiChallenge: $appData.isShowingResumeKukaiChallenge) // button
+                        ResumeKukaiChallenge(isShowingResumeKukaiChallenge: $appData.isShowingResumeKukaiChallenge)
                     }
                     MainMenuScrollView(selection: $landmark)
                     // MARK: - LINK TO LIST
@@ -103,14 +104,18 @@ struct MainMenuView: View {
                     ScoreSummary(scoreSummaryIsVisible: $scoreSummaryIsVisible)
                 })
                 .alert(isPresented: $locationManager.showGobyoAlert) {
-                    Alert(title: Text("Important message"), message: Text("You are near the Gobyō, the most sacred area of Mt. Kōya. Use of devices is not permitted beyond the bridge."), dismissButton: .default(Text("Got it!")))
+                    Alert(title: Text("Important message"),
+                          // swiftlint:disable:next line_length
+                          message: Text("You are near the Gobyō, the most sacred area of Mt. Kōya. Use of devices is not permitted beyond the bridge."),
+                          dismissButton: .default(Text("Got it!"))
+                    )
                 }
             }
 
             .navigationViewStyle(StackNavigationViewStyle())
             .animation(.easeInOut(duration: 0.8), value: true)
             .blur(radius: showChallenge() ? 16 : 0)
-            .onAppear() {
+            .onAppear {
                 if appData.gameState != .exited {
                     appData.checkForGameOver()
                 }
@@ -129,8 +134,6 @@ struct MainMenuView: View {
                 BonusDisplayView(isPlayingGame: $appData.isPlayingGame, isShowingBonusList: $isShowingBonusList)
                     .animation(.easeInOut(duration: 0.8), value: true)
             }
-
-
         } // end zstack
     } // end body view
 
@@ -172,6 +175,53 @@ struct MainMenuView: View {
             }
             Spacer()
             GamePlayToggleView(isPlayingGame: $appData.isPlayingGame)
+        }
+    }
+
+    var gameOverSummary: some View {
+        VStack {
+            HStack {
+                Button(action: {
+                    scoreSummaryIsVisible = true
+              // swiftlint:disable:next multiple_closures_with_trailing_closure
+                }) {
+                    ZStack {
+                        Rectangle()
+                            .frame(width: 96, height: 20)
+                            .foregroundColor(.koyaOrange)
+                            .cornerRadius(10.0)
+                        VStack(alignment: .leading) {
+                            Text("\(appData.level.rawValue)".uppercased())
+                                .font(.caption2)
+                                .foregroundColor(.white)
+                                .bold()
+                        }
+                    }
+                    .padding(.leading)
+                }
+
+                Spacer()
+                Button(action: {
+                    scoreSummaryIsVisible = true
+                    // swiftlint:disable:next multiple_closures_with_trailing_closure
+                }) {
+                    ZStack {
+                        Rectangle()
+                            .frame(width: 96, height: 20)
+                            .foregroundColor(.koyaGreen)
+                            .cornerRadius(10.0)
+                        VStack(alignment: .leading) {
+                            Text("SCORE: \(appData.totalScore)")
+                                .font(.caption2)
+                                .foregroundColor(.white)
+                                .bold()
+                        }
+                    }
+                    .padding(.trailing)
+                }
+
+            }
+            .padding(.top, 8)
         }
     }
 

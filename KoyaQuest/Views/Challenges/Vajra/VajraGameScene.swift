@@ -69,11 +69,11 @@ class VajraGameScene: SKScene, CLLocationManagerDelegate {
         }
     }
 
-// MARK: - SPRITE NODES
+    // MARK: - SPRITE NODES
 
     private func setUp() {
         guard let currentFrame = sceneView.session.currentFrame
-            else { return }
+        else { return }
         var translation = matrix_identity_float4x4
         translation.columns.3.z = -3.0 // this is the apparent distance from user in meters
         let transform = currentFrame.camera.transform * translation
@@ -115,10 +115,10 @@ class VajraGameScene: SKScene, CLLocationManagerDelegate {
                 let url: URL = URL(fileURLWithPath: path)
                 let audioPlayer: AVAudioPlayer = try AVAudioPlayer(contentsOf: url)
                 audioPlayer.prepareToPlay()
-                }
-            } catch {
             }
+        } catch {
         }
+    }
 
     override func touchesBegan(_ touches: Set<UITouch>,
                                with event: UIEvent?) {
@@ -127,21 +127,13 @@ class VajraGameScene: SKScene, CLLocationManagerDelegate {
         let hitNodes = nodes(at: location)
         var hitSanko: SKNode?
 
-        /*
-         code below was changed from: for node in hitNodes {
-         if node.name == "sanko" {
-             hitSanko = node
-             break
-         }
-     } as per swiftlint recommendation
-         */
         for node in hitNodes  where node.name == "sanko" {
             hitSanko = node
         }
 
         // if the sanko was "captured"
         if let hitSanko = hitSanko,
-            let anchor = sceneView.anchor(for: hitSanko) {
+           let anchor = sceneView.anchor(for: hitSanko) {
             let action = SKAction.run {
                 self.run(SKAction.playSoundFileNamed("zapped", waitForCompletion: false))
                 self.sceneView.session.remove(anchor: anchor)

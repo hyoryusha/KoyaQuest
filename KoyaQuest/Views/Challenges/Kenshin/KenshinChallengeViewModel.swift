@@ -12,6 +12,7 @@ final class KenshinChallengeViewModel: ObservableObject {
     @Published var didConcludeVideo = false
     @Published var didExitChallenge = false
     @Published var success = false
+    @Published var challengeCompleted: Bool = false
     @Published var instructions: String = ""
     @Published var scannedCode = ""
     @Published var foundLocation = "Keep searching..."

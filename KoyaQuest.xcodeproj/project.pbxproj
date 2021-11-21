@@ -11,24 +11,21 @@
 		033000612671DCA400228CFC /* KukaiFinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033000602671DCA400228CFC /* KukaiFinderView.swift */; };
 		033000632671DD9900228CFC /* KukaiFinderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033000622671DD9900228CFC /* KukaiFinderVC.swift */; };
 		033000652671DF1900228CFC /* NyonindoChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033000642671DF1900228CFC /* NyonindoChallengeViewModel.swift */; };
-		0330006B2671E25F00228CFC /* Rikishi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0330006A2671E25F00228CFC /* Rikishi.swift */; };
 		03318BCF26832D8C00602022 /* AdaptingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03318BCE26832D8C00602022 /* AdaptingStack.swift */; };
 		03377FA1269684FA008F3DBF /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03377FA0269684FA008F3DBF /* NavigationConfigurator.swift */; };
-		03377FA52697D96E008F3DBF /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03377FA42697D96E008F3DBF /* SignInWithApple.swift */; };
 		03377FA926985720008F3DBF /* UserData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03377FA826985720008F3DBF /* UserData+Extension.swift */; };
 		03377FAB26985980008F3DBF /* FinalScore+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03377FAA26985980008F3DBF /* FinalScore+Extension.swift */; };
+		0A14874A27472C5400852F82 /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14874927472C5400852F82 /* LocationManagerTests.swift */; };
+		0A14874E2748C7CD00852F82 /* FontSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14874D2748C7CD00852F82 /* FontSwap.swift */; };
 		0A21654826E2131E007C4034 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A21654A26E2131E007C4034 /* Localizable.strings */; };
 		0A27E5EE270872DB00641E30 /* AsynchTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A27E5ED270872DB00641E30 /* AsynchTestCase.swift */; };
 		0A3D23DA2672D9EC00D9CA2F /* NyonindoPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D23D92672D9EC00D9CA2F /* NyonindoPhysics.swift */; };
-		0A3D23E8267348FE00D9CA2F /* ShogunsChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D23E7267348FE00D9CA2F /* ShogunsChallengeViewModel.swift */; };
 		0A3D23EB2673497900D9CA2F /* ShogunsGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D23EA2673497900D9CA2F /* ShogunsGameScene.swift */; };
 		0A3D23EE26734A2100D9CA2F /* ShogunsSummaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D23ED26734A2100D9CA2F /* ShogunsSummaryScene.swift */; };
-		0A3D23F72674403D00D9CA2F /* NumbersChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D23F62674403D00D9CA2F /* NumbersChallengeViewModel.swift */; };
 		0A3D23FA2674406200D9CA2F /* NumbersChallengeGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D23F92674406200D9CA2F /* NumbersChallengeGameScene.swift */; };
 		0A3D23FD267440A200D9CA2F /* Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D23FC267440A200D9CA2F /* Tiles.swift */; };
 		0A3D2404267441A200D9CA2F /* flip_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A3D2403267441A200D9CA2F /* flip_sound.mp3 */; };
 		0A3D24072674458700D9CA2F /* NumbersChallengeChildren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D24062674458700D9CA2F /* NumbersChallengeChildren.swift */; };
-		0A3D240A2674724700D9CA2F /* GorintoChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D24092674724700D9CA2F /* GorintoChallengeViewModel.swift */; };
 		0A3D240D2674727700D9CA2F /* GorintoGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D240C2674727700D9CA2F /* GorintoGameScene.swift */; };
 		0A3D24102674735600D9CA2F /* GorintoSummaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D240F2674735600D9CA2F /* GorintoSummaryScene.swift */; };
 		0A3D24242674A13700D9CA2F /* KoyakunChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D241F2674A13500D9CA2F /* KoyakunChallengeViewModel.swift */; };
@@ -82,9 +79,7 @@
 		0A4E10C42669CBDE005F5FA8 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10BB2669CBDD005F5FA8 /* BackgroundView.swift */; };
 		0A4E10C52669CBDE005F5FA8 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10BC2669CBDE005F5FA8 /* Buttons.swift */; };
 		0A4E10CD2669CC25005F5FA8 /* AboutKoyaQuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10C82669CC24005F5FA8 /* AboutKoyaQuestView.swift */; };
-		0A4E10CE2669CC25005F5FA8 /* AppInfoTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10C92669CC24005F5FA8 /* AppInfoTabView.swift */; };
 		0A4E10CF2669CC25005F5FA8 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10CA2669CC25005F5FA8 /* CreditsView.swift */; };
-		0A4E10D02669CC25005F5FA8 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10CB2669CC25005F5FA8 /* UserView.swift */; };
 		0A4E10D12669CC25005F5FA8 /* WelcomeIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10CC2669CC25005F5FA8 /* WelcomeIntroView.swift */; };
 		0A4E10DA2669CC4D005F5FA8 /* LandmarkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10D42669CC4C005F5FA8 /* LandmarkRowView.swift */; };
 		0A4E10DB2669CC4D005F5FA8 /* LandmarkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10D52669CC4C005F5FA8 /* LandmarkDetailView.swift */; };
@@ -97,21 +92,15 @@
 		0A4E10E82669D095005F5FA8 /* ChallengePortalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10E72669D095005F5FA8 /* ChallengePortalView.swift */; };
 		0A4E10F7266A0C64005F5FA8 /* DaimonChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10F6266A0C64005F5FA8 /* DaimonChallengeView.swift */; };
 		0A4E10FB266A0C81005F5FA8 /* VajraChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10FA266A0C81005F5FA8 /* VajraChallengeView.swift */; };
-		0A4E10FE266A0C8F005F5FA8 /* SaigyoChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E10FD266A0C8F005F5FA8 /* SaigyoChallengeView.swift */; };
 		0A4E1101266A0C98005F5FA8 /* KukaiChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1100266A0C98005F5FA8 /* KukaiChallengeView.swift */; };
-		0A4E1104266A0CA5005F5FA8 /* NyonindoChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1103266A0CA5005F5FA8 /* NyonindoChallengeView.swift */; };
-		0A4E1107266A0CB7005F5FA8 /* ShogunsChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1106266A0CB7005F5FA8 /* ShogunsChallengeView.swift */; };
-		0A4E110A266A0CC2005F5FA8 /* GorintoChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1109266A0CC2005F5FA8 /* GorintoChallengeView.swift */; };
 		0A4E110D266A0CCA005F5FA8 /* KenshinChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E110C266A0CCA005F5FA8 /* KenshinChallengeView.swift */; };
 		0A4E1110266A0CD6005F5FA8 /* KoyakunChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E110F266A0CD6005F5FA8 /* KoyakunChallengeView.swift */; };
-		0A4E1113266A0CDF005F5FA8 /* NumbersChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1112266A0CDF005F5FA8 /* NumbersChallengeView.swift */; };
 		0A4E111A266A1B28005F5FA8 /* ToggleStyle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1119266A1B28005F5FA8 /* ToggleStyle+Extension.swift */; };
 		0A4E1123266AF3A9005F5FA8 /* DaimonGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1122266AF3A9005F5FA8 /* DaimonGameViewModel.swift */; };
 		0A4E1126266AF427005F5FA8 /* DaimonGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1125266AF427005F5FA8 /* DaimonGameView.swift */; };
 		0A4E112D266AF523005F5FA8 /* DaimonZoomableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E112C266AF523005F5FA8 /* DaimonZoomableScrollView.swift */; };
 		0A4E1130266AF55C005F5FA8 /* DaimonGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E112F266AF55C005F5FA8 /* DaimonGameScene.swift */; };
 		0A4E1133266AF5E3005F5FA8 /* DaimonSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1132266AF5E3005F5FA8 /* DaimonSummaryView.swift */; };
-		0A4E1136266B6CC4005F5FA8 /* OverlayGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1135266B6CC4005F5FA8 /* OverlayGridView.swift */; };
 		0A4E1139266B6D73005F5FA8 /* DaimonLearnMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1138266B6D73005F5FA8 /* DaimonLearnMoreView.swift */; };
 		0A4E116D266B8ACA005F5FA8 /* ChallengeFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E116A266B8AC9005F5FA8 /* ChallengeFeedbackView.swift */; };
 		0A4E116F266B8ACA005F5FA8 /* FeedbackBannerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E116C266B8ACA005F5FA8 /* FeedbackBannerOverlay.swift */; };
@@ -121,7 +110,6 @@
 		0A4E1181266CC479005F5FA8 /* VajraGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1180266CC479005F5FA8 /* VajraGameScene.swift */; };
 		0A4E1188266EC978005F5FA8 /* DisabledMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1187266EC978005F5FA8 /* DisabledMessageView.swift */; };
 		0A4E118B266F135B005F5FA8 /* SaigyoGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E118A266F135B005F5FA8 /* SaigyoGameScene.swift */; };
-		0A4E118E266F149E005F5FA8 /* SaigyoChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E118D266F149E005F5FA8 /* SaigyoChallengeViewModel.swift */; };
 		0A4E1191266F14F1005F5FA8 /* SaigyoSummaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1190266F14F0005F5FA8 /* SaigyoSummaryScene.swift */; };
 		0A4E1194266F15FD005F5FA8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1193266F15FD005F5FA8 /* Card.swift */; };
 		0A4E69B227195AF700F26D66 /* FeedbackOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E69B127195AF700F26D66 /* FeedbackOverlayView.swift */; };
@@ -218,6 +206,7 @@
 		0A9205BC26B144C8007E7BAF /* AssetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9205BB26B144C8007E7BAF /* AssetTest.swift */; };
 		0A9205BE26B14A57007E7BAF /* FinalScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9205BD26B14A57007E7BAF /* FinalScoreTest.swift */; };
 		0A9205C026B157C2007E7BAF /* RatingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9205BF26B157C2007E7BAF /* RatingsTest.swift */; };
+		0A95DE6A273FAC510080EA48 /* MountainOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A95DE69273FAC510080EA48 /* MountainOverlayView.swift */; };
 		0A98D45B26A2944F003E5FB4 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A98D45A26A2944F003E5FB4 /* LeaderboardViewModel.swift */; };
 		0A98D45D26A39725003E5FB4 /* FinalScoreRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A98D45C26A39725003E5FB4 /* FinalScoreRow.swift */; };
 		0AA76A7B27347936000BFC2E /* pilgrim_enters_gate.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AA76A77273478DF000BFC2E /* pilgrim_enters_gate.wav */; };
@@ -246,10 +235,8 @@
 		0AD224D12668C15A00D5D935 /* ChallengeDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = 0AD224D02668C15A00D5D935 /* ChallengeDetails.json */; };
 		0AD224D42668C37000D5D935 /* ChallengeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD224D32668C37000D5D935 /* ChallengeDetail.swift */; };
 		0AE1AA6726A8AF0900C9FA7D /* DynamicLeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1AA6626A8AF0900C9FA7D /* DynamicLeaderboardView.swift */; };
-		0AE1AAAA26A952B600C9FA7D /* CurrentPlayerRankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1AAA926A952B600C9FA7D /* CurrentPlayerRankView.swift */; };
 		0AE90D1A26C0DC72008EEE0A /* KukaiResumeDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE90D1926C0DC72008EEE0A /* KukaiResumeDisplayView.swift */; };
 		0AE90D1C26C0DE14008EEE0A /* ResumeKukaiChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE90D1B26C0DE14008EEE0A /* ResumeKukaiChallenge.swift */; };
-		0AEA569E26D4B45100389337 /* NewBonusDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA569D26D4B45100389337 /* NewBonusDisplayView.swift */; };
 		0AEA56A026D72F7200389337 /* NearGobyoWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA569F26D72F7200389337 /* NearGobyoWarningView.swift */; };
 		0AEA56A226DF18C900389337 /* ChallengeCompletionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA56A126DF18C900389337 /* ChallengeCompletionTests.swift */; };
 		0AEA56AA26E03A7B00389337 /* KoyaQuestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA56A926E03A7B00389337 /* KoyaQuestUITests.swift */; };
@@ -278,25 +265,22 @@
 		033000602671DCA400228CFC /* KukaiFinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KukaiFinderView.swift; sourceTree = "<group>"; };
 		033000622671DD9900228CFC /* KukaiFinderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KukaiFinderVC.swift; sourceTree = "<group>"; };
 		033000642671DF1900228CFC /* NyonindoChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyonindoChallengeViewModel.swift; sourceTree = "<group>"; };
-		0330006A2671E25F00228CFC /* Rikishi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rikishi.swift; sourceTree = "<group>"; };
 		03318BCE26832D8C00602022 /* AdaptingStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptingStack.swift; sourceTree = "<group>"; };
 		03377FA0269684FA008F3DBF /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
-		03377FA42697D96E008F3DBF /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		03377FA826985720008F3DBF /* UserData+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+Extension.swift"; sourceTree = "<group>"; };
 		03377FAA26985980008F3DBF /* FinalScore+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinalScore+Extension.swift"; sourceTree = "<group>"; };
+		0A14874927472C5400852F82 /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
+		0A14874D2748C7CD00852F82 /* FontSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSwap.swift; sourceTree = "<group>"; };
 		0A21654926E2131E007C4034 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0A21654B26E2F1AA007C4034 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0A27E5ED270872DB00641E30 /* AsynchTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchTestCase.swift; sourceTree = "<group>"; };
 		0A3D23D92672D9EC00D9CA2F /* NyonindoPhysics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyonindoPhysics.swift; sourceTree = "<group>"; };
-		0A3D23E7267348FE00D9CA2F /* ShogunsChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShogunsChallengeViewModel.swift; sourceTree = "<group>"; };
 		0A3D23EA2673497900D9CA2F /* ShogunsGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShogunsGameScene.swift; sourceTree = "<group>"; };
 		0A3D23ED26734A2100D9CA2F /* ShogunsSummaryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShogunsSummaryScene.swift; sourceTree = "<group>"; };
-		0A3D23F62674403D00D9CA2F /* NumbersChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersChallengeViewModel.swift; sourceTree = "<group>"; };
 		0A3D23F92674406200D9CA2F /* NumbersChallengeGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersChallengeGameScene.swift; sourceTree = "<group>"; };
 		0A3D23FC267440A200D9CA2F /* Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiles.swift; sourceTree = "<group>"; };
 		0A3D2403267441A200D9CA2F /* flip_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flip_sound.mp3; sourceTree = "<group>"; };
 		0A3D24062674458700D9CA2F /* NumbersChallengeChildren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersChallengeChildren.swift; sourceTree = "<group>"; };
-		0A3D24092674724700D9CA2F /* GorintoChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GorintoChallengeViewModel.swift; sourceTree = "<group>"; };
 		0A3D240C2674727700D9CA2F /* GorintoGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GorintoGameScene.swift; sourceTree = "<group>"; };
 		0A3D240F2674735600D9CA2F /* GorintoSummaryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GorintoSummaryScene.swift; sourceTree = "<group>"; };
 		0A3D241F2674A13500D9CA2F /* KoyakunChallengeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoyakunChallengeViewModel.swift; sourceTree = "<group>"; };
@@ -350,9 +334,7 @@
 		0A4E10BB2669CBDD005F5FA8 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		0A4E10BC2669CBDE005F5FA8 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		0A4E10C82669CC24005F5FA8 /* AboutKoyaQuestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutKoyaQuestView.swift; sourceTree = "<group>"; };
-		0A4E10C92669CC24005F5FA8 /* AppInfoTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppInfoTabView.swift; sourceTree = "<group>"; };
 		0A4E10CA2669CC25005F5FA8 /* CreditsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
-		0A4E10CB2669CC25005F5FA8 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		0A4E10CC2669CC25005F5FA8 /* WelcomeIntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeIntroView.swift; sourceTree = "<group>"; };
 		0A4E10D42669CC4C005F5FA8 /* LandmarkRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkRowView.swift; sourceTree = "<group>"; };
 		0A4E10D52669CC4C005F5FA8 /* LandmarkDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkDetailView.swift; sourceTree = "<group>"; };
@@ -365,14 +347,9 @@
 		0A4E10E72669D095005F5FA8 /* ChallengePortalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePortalView.swift; sourceTree = "<group>"; };
 		0A4E10F6266A0C64005F5FA8 /* DaimonChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaimonChallengeView.swift; sourceTree = "<group>"; };
 		0A4E10FA266A0C81005F5FA8 /* VajraChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VajraChallengeView.swift; sourceTree = "<group>"; };
-		0A4E10FD266A0C8F005F5FA8 /* SaigyoChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaigyoChallengeView.swift; sourceTree = "<group>"; };
 		0A4E1100266A0C98005F5FA8 /* KukaiChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KukaiChallengeView.swift; sourceTree = "<group>"; };
-		0A4E1103266A0CA5005F5FA8 /* NyonindoChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyonindoChallengeView.swift; sourceTree = "<group>"; };
-		0A4E1106266A0CB7005F5FA8 /* ShogunsChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShogunsChallengeView.swift; sourceTree = "<group>"; };
-		0A4E1109266A0CC2005F5FA8 /* GorintoChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GorintoChallengeView.swift; sourceTree = "<group>"; };
 		0A4E110C266A0CCA005F5FA8 /* KenshinChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KenshinChallengeView.swift; sourceTree = "<group>"; };
 		0A4E110F266A0CD6005F5FA8 /* KoyakunChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoyakunChallengeView.swift; sourceTree = "<group>"; };
-		0A4E1112266A0CDF005F5FA8 /* NumbersChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersChallengeView.swift; sourceTree = "<group>"; };
 		0A4E1119266A1B28005F5FA8 /* ToggleStyle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToggleStyle+Extension.swift"; sourceTree = "<group>"; };
 		0A4E111C266A26A0005F5FA8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A4E1122266AF3A9005F5FA8 /* DaimonGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaimonGameViewModel.swift; sourceTree = "<group>"; };
@@ -380,7 +357,6 @@
 		0A4E112C266AF523005F5FA8 /* DaimonZoomableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaimonZoomableScrollView.swift; sourceTree = "<group>"; };
 		0A4E112F266AF55C005F5FA8 /* DaimonGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaimonGameScene.swift; sourceTree = "<group>"; };
 		0A4E1132266AF5E3005F5FA8 /* DaimonSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaimonSummaryView.swift; sourceTree = "<group>"; };
-		0A4E1135266B6CC4005F5FA8 /* OverlayGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayGridView.swift; sourceTree = "<group>"; };
 		0A4E1138266B6D73005F5FA8 /* DaimonLearnMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaimonLearnMoreView.swift; sourceTree = "<group>"; };
 		0A4E116A266B8AC9005F5FA8 /* ChallengeFeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeFeedbackView.swift; sourceTree = "<group>"; };
 		0A4E116C266B8ACA005F5FA8 /* FeedbackBannerOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackBannerOverlay.swift; sourceTree = "<group>"; };
@@ -391,7 +367,6 @@
 		0A4E1180266CC479005F5FA8 /* VajraGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VajraGameScene.swift; sourceTree = "<group>"; };
 		0A4E1187266EC978005F5FA8 /* DisabledMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisabledMessageView.swift; sourceTree = "<group>"; };
 		0A4E118A266F135B005F5FA8 /* SaigyoGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaigyoGameScene.swift; sourceTree = "<group>"; };
-		0A4E118D266F149E005F5FA8 /* SaigyoChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaigyoChallengeViewModel.swift; sourceTree = "<group>"; };
 		0A4E1190266F14F0005F5FA8 /* SaigyoSummaryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaigyoSummaryScene.swift; sourceTree = "<group>"; };
 		0A4E1193266F15FD005F5FA8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0A4E69B127195AF700F26D66 /* FeedbackOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackOverlayView.swift; sourceTree = "<group>"; };
@@ -493,6 +468,7 @@
 		0A9205BB26B144C8007E7BAF /* AssetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTest.swift; sourceTree = "<group>"; };
 		0A9205BD26B14A57007E7BAF /* FinalScoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScoreTest.swift; sourceTree = "<group>"; };
 		0A9205BF26B157C2007E7BAF /* RatingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsTest.swift; sourceTree = "<group>"; };
+		0A95DE69273FAC510080EA48 /* MountainOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainOverlayView.swift; sourceTree = "<group>"; };
 		0A98D45A26A2944F003E5FB4 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 		0A98D45C26A39725003E5FB4 /* FinalScoreRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScoreRow.swift; sourceTree = "<group>"; };
 		0AA76A76273478DF000BFC2E /* pilgrim_collision.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pilgrim_collision.wav; sourceTree = "<group>"; };
@@ -521,10 +497,8 @@
 		0AD224D02668C15A00D5D935 /* ChallengeDetails.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ChallengeDetails.json; sourceTree = "<group>"; };
 		0AD224D32668C37000D5D935 /* ChallengeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetail.swift; sourceTree = "<group>"; };
 		0AE1AA6626A8AF0900C9FA7D /* DynamicLeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLeaderboardView.swift; sourceTree = "<group>"; };
-		0AE1AAA926A952B600C9FA7D /* CurrentPlayerRankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlayerRankView.swift; sourceTree = "<group>"; };
 		0AE90D1926C0DC72008EEE0A /* KukaiResumeDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KukaiResumeDisplayView.swift; sourceTree = "<group>"; };
 		0AE90D1B26C0DE14008EEE0A /* ResumeKukaiChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeKukaiChallenge.swift; sourceTree = "<group>"; };
-		0AEA569D26D4B45100389337 /* NewBonusDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBonusDisplayView.swift; sourceTree = "<group>"; };
 		0AEA569F26D72F7200389337 /* NearGobyoWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearGobyoWarningView.swift; sourceTree = "<group>"; };
 		0AEA56A126DF18C900389337 /* ChallengeCompletionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCompletionTests.swift; sourceTree = "<group>"; };
 		0AEA56A726E03A7B00389337 /* KoyaQuestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoyaQuestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -627,7 +601,6 @@
 			isa = PBXGroup;
 			children = (
 				0A98D45C26A39725003E5FB4 /* FinalScoreRow.swift */,
-				0AE1AAA926A952B600C9FA7D /* CurrentPlayerRankView.swift */,
 				0AE1AA6626A8AF0900C9FA7D /* DynamicLeaderboardView.swift */,
 				0A676655269EE93F00B3D429 /* LeaderboardView.swift */,
 				0A67665926A050CB00B3D429 /* AllUserNamesView.swift */,
@@ -643,6 +616,7 @@
 			isa = PBXGroup;
 			children = (
 				0AEA569F26D72F7200389337 /* NearGobyoWarningView.swift */,
+				0A95DE69273FAC510080EA48 /* MountainOverlayView.swift */,
 				0A4E116A266B8AC9005F5FA8 /* ChallengeFeedbackView.swift */,
 				0A4E116C266B8ACA005F5FA8 /* FeedbackBannerOverlay.swift */,
 				0A3D2485267C531200D9CA2F /* BonusFeedbackView.swift */,
@@ -669,11 +643,9 @@
 				0A4E106D2669818C005F5FA8 /* AppInfoTopView.swift */,
 				0A5A983B2664673C00074902 /* InfoTopView.swift */,
 				0A4E10C82669CC24005F5FA8 /* AboutKoyaQuestView.swift */,
-				0A4E10C92669CC24005F5FA8 /* AppInfoTabView.swift */,
 				0ACAE8B726F5E09F007276B2 /* AppInfoView.swift */,
 				0A4E10CA2669CC25005F5FA8 /* CreditsView.swift */,
 				0A4E1070266982FA005F5FA8 /* AboutGameView.swift */,
-				0A4E10CB2669CC25005F5FA8 /* UserView.swift */,
 				0A4E10CC2669CC25005F5FA8 /* WelcomeIntroView.swift */,
 			);
 			path = AboutInfo;
@@ -715,7 +687,6 @@
 				0A4E1125266AF427005F5FA8 /* DaimonGameView.swift */,
 				0A4E112F266AF55C005F5FA8 /* DaimonGameScene.swift */,
 				0A4E1132266AF5E3005F5FA8 /* DaimonSummaryView.swift */,
-				0A4E1135266B6CC4005F5FA8 /* OverlayGridView.swift */,
 				0A4E1138266B6D73005F5FA8 /* DaimonLearnMoreView.swift */,
 				0A4E1122266AF3A9005F5FA8 /* DaimonGameViewModel.swift */,
 				0AA76A84273E79E4000BFC2E /* DaimonSolutionOverlay.swift */,
@@ -738,9 +709,7 @@
 		0A4E10ED2669D384005F5FA8 /* Saigyo */ = {
 			isa = PBXGroup;
 			children = (
-				0A4E10FD266A0C8F005F5FA8 /* SaigyoChallengeView.swift */,
 				0A4E118A266F135B005F5FA8 /* SaigyoGameScene.swift */,
-				0A4E118D266F149E005F5FA8 /* SaigyoChallengeViewModel.swift */,
 				0A4E1190266F14F0005F5FA8 /* SaigyoSummaryScene.swift */,
 				0A4E1193266F15FD005F5FA8 /* Card.swift */,
 			);
@@ -761,11 +730,9 @@
 		0A4E10EF2669D39D005F5FA8 /* Nyonindo */ = {
 			isa = PBXGroup;
 			children = (
-				0A4E1103266A0CA5005F5FA8 /* NyonindoChallengeView.swift */,
 				033000642671DF1900228CFC /* NyonindoChallengeViewModel.swift */,
 				0AB3F443268168D1006C4E70 /* NyonindoGameScene.swift */,
 				0AB3F444268168D1006C4E70 /* NyonindoSummaryScene.swift */,
-				0330006A2671E25F00228CFC /* Rikishi.swift */,
 				0AA76A8027347CA8000BFC2E /* NyonindoMusic.swift */,
 				0A3D23D92672D9EC00D9CA2F /* NyonindoPhysics.swift */,
 			);
@@ -775,8 +742,6 @@
 		0A4E10F02669D3A8005F5FA8 /* Shoguns */ = {
 			isa = PBXGroup;
 			children = (
-				0A4E1106266A0CB7005F5FA8 /* ShogunsChallengeView.swift */,
-				0A3D23E7267348FE00D9CA2F /* ShogunsChallengeViewModel.swift */,
 				0A3D23EA2673497900D9CA2F /* ShogunsGameScene.swift */,
 				0A3D23ED26734A2100D9CA2F /* ShogunsSummaryScene.swift */,
 			);
@@ -786,8 +751,6 @@
 		0A4E10F12669D3B8005F5FA8 /* Gorinto */ = {
 			isa = PBXGroup;
 			children = (
-				0A4E1109266A0CC2005F5FA8 /* GorintoChallengeView.swift */,
-				0A3D24092674724700D9CA2F /* GorintoChallengeViewModel.swift */,
 				0A3D240C2674727700D9CA2F /* GorintoGameScene.swift */,
 				0A3D240F2674735600D9CA2F /* GorintoSummaryScene.swift */,
 			);
@@ -824,8 +787,6 @@
 		0A4E10F42669D3E3005F5FA8 /* Numbers */ = {
 			isa = PBXGroup;
 			children = (
-				0A4E1112266A0CDF005F5FA8 /* NumbersChallengeView.swift */,
-				0A3D23F62674403D00D9CA2F /* NumbersChallengeViewModel.swift */,
 				0A3D23F92674406200D9CA2F /* NumbersChallengeGameScene.swift */,
 				0A3D23FC267440A200D9CA2F /* Tiles.swift */,
 				0A3D24062674458700D9CA2F /* NumbersChallengeChildren.swift */,
@@ -931,6 +892,7 @@
 				0A5E83E02663A7A7000076A9 /* ChallengeDescriptions.swift */,
 				0A5E83DB2663A2C7000076A9 /* Constants.swift */,
 				0A5E83FF2663AA99000076A9 /* PhysicsCategory.swift */,
+				0A14874D2748C7CD00852F82 /* FontSwap.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -964,7 +926,6 @@
 			children = (
 				0A5E83F42663A971000076A9 /* LocationManager.swift */,
 				0A5E83F32663A970000076A9 /* NetworkManager.swift */,
-				03377FA42697D96E008F3DBF /* SignInWithApple.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1018,7 +979,6 @@
 				0ACAE8BB26FF0B7E007276B2 /* ScoreSummary.swift */,
 				0A4E10E12669CE55005F5FA8 /* ChallengeDisplayView.swift */,
 				0AE90D1926C0DC72008EEE0A /* KukaiResumeDisplayView.swift */,
-				0AEA569D26D4B45100389337 /* NewBonusDisplayView.swift */,
 				0A3D2445267AD85A00D9CA2F /* BonusDisplayView.swift */,
 				0AB6AD54268938AF006F9690 /* GameOverView.swift */,
 				0A676653269E523D00B3D429 /* GameOverSummary.swift */,
@@ -1039,6 +999,7 @@
 				0A9205BF26B157C2007E7BAF /* RatingsTest.swift */,
 				0ACBCE16270597DF00B87539 /* LeaderboardTest.swift */,
 				0AEA56A126DF18C900389337 /* ChallengeCompletionTests.swift */,
+				0A14874927472C5400852F82 /* LocationManagerTests.swift */,
 			);
 			path = KoyaQuestTests;
 			sourceTree = "<group>";
@@ -1276,9 +1237,8 @@
 				0A3D2446267AD85A00D9CA2F /* BonusDisplayView.swift in Sources */,
 				0ACAE8B626F2E75C007276B2 /* Binding+Extensions.swift in Sources */,
 				0A3D24072674458700D9CA2F /* NumbersChallengeChildren.swift in Sources */,
-				0AEA569E26D4B45100389337 /* NewBonusDisplayView.swift in Sources */,
+				0A95DE6A273FAC510080EA48 /* MountainOverlayView.swift in Sources */,
 				03377FAB26985980008F3DBF /* FinalScore+Extension.swift in Sources */,
-				0A3D23E8267348FE00D9CA2F /* ShogunsChallengeViewModel.swift in Sources */,
 				0A5E83F52663A971000076A9 /* NetworkManager.swift in Sources */,
 				0A4E105926697654005F5FA8 /* GamePlayToggleView.swift in Sources */,
 				03318BCF26832D8C00602022 /* AdaptingStack.swift in Sources */,
@@ -1307,12 +1267,9 @@
 				0AB3F446268168D1006C4E70 /* NyonindoSummaryScene.swift in Sources */,
 				0A4E10BD2669CBDE005F5FA8 /* TextOverlayView.swift in Sources */,
 				0A4E10DD2669CC4D005F5FA8 /* ChallengeListView.swift in Sources */,
-				0A4E10FE266A0C8F005F5FA8 /* SaigyoChallengeView.swift in Sources */,
 				0A4E106E2669818C005F5FA8 /* AppInfoTopView.swift in Sources */,
 				0A4E10AF2669CBA2005F5FA8 /* LocalRatingsView.swift in Sources */,
-				03377FA52697D96E008F3DBF /* SignInWithApple.swift in Sources */,
 				0A3D2480267C4B5A00D9CA2F /* BonusQuestionView.swift in Sources */,
-				0A3D23F72674403D00D9CA2F /* NumbersChallengeViewModel.swift in Sources */,
 				0AB3F445268168D1006C4E70 /* NyonindoGameScene.swift in Sources */,
 				0A4E10C12669CBDE005F5FA8 /* CaptionView.swift in Sources */,
 				0A3D23EB2673497900D9CA2F /* ShogunsGameScene.swift in Sources */,
@@ -1321,7 +1278,6 @@
 				0A4E1191266F14F1005F5FA8 /* SaigyoSummaryScene.swift in Sources */,
 				0A4E10DF2669CC4D005F5FA8 /* LandmarkListView.swift in Sources */,
 				0AB3F419267EFE45006C4E70 /* SilhouettePickerView.swift in Sources */,
-				0A3D240A2674724700D9CA2F /* GorintoChallengeViewModel.swift in Sources */,
 				0A4E116F266B8ACA005F5FA8 /* FeedbackBannerOverlay.swift in Sources */,
 				0A3D24272674A13700D9CA2F /* KoyakunCatcherView.swift in Sources */,
 				0A4E10F7266A0C64005F5FA8 /* DaimonChallengeView.swift in Sources */,
@@ -1333,6 +1289,7 @@
 				0A4E10E52669CF6E005F5FA8 /* ChallengeDescriptionView.swift in Sources */,
 				0A5E83F02663A897000076A9 /* PlaceAnnotations.swift in Sources */,
 				0AB3F417267EFE45006C4E70 /* MizumukeChallengeView.swift in Sources */,
+				0A14874E2748C7CD00852F82 /* FontSwap.swift in Sources */,
 				0A92055726ABECF5007E7BAF /* FAQDetailView.swift in Sources */,
 				0A676654269E523D00B3D429 /* GameOverSummary.swift in Sources */,
 				0A4E10AE2669CBA2005F5FA8 /* RatinsgInputView.swift in Sources */,
@@ -1347,28 +1304,21 @@
 				0A676656269EE93F00B3D429 /* LeaderboardView.swift in Sources */,
 				0A5A982A2664629600074902 /* ChallengeDisplayViewModel.swift in Sources */,
 				0A4E10A22669C983005F5FA8 /* ScoreSummaryRow.swift in Sources */,
-				0A4E1107266A0CB7005F5FA8 /* ShogunsChallengeView.swift in Sources */,
 				0A4E108D2669967F005F5FA8 /* CompletedChallenge.swift in Sources */,
 				0A5E841226643A00000076A9 /* MapView.swift in Sources */,
 				0A4E10E22669CE55005F5FA8 /* ChallengeDisplayView.swift in Sources */,
 				0A61A724268C7EF900A5F5F5 /* AudioModel.swift in Sources */,
 				0A3D2486267C531200D9CA2F /* BonusFeedbackView.swift in Sources */,
-				0A4E10CE2669CC25005F5FA8 /* AppInfoTabView.swift in Sources */,
-				0A4E110A266A0CC2005F5FA8 /* GorintoChallengeView.swift in Sources */,
 				0A5E83A726638278000076A9 /* KoyaQuestApp.swift in Sources */,
 				0A4E10C22669CBDE005F5FA8 /* LoadingView.swift in Sources */,
 				0A5E83ED2663A897000076A9 /* Challenges.swift in Sources */,
-				0AE1AAAA26A952B600C9FA7D /* CurrentPlayerRankView.swift in Sources */,
 				0A5E83DC2663A2C7000076A9 /* Constants.swift in Sources */,
 				0A3D244B267ADE6000D9CA2F /* Bonus.swift in Sources */,
 				0ACAE8B226F2E6AD007276B2 /* FAQFilteredScrollView.swift in Sources */,
 				0A4E10B02669CBA2005F5FA8 /* RatingsView.swift in Sources */,
 				0A67665A26A050CB00B3D429 /* AllUserNamesView.swift in Sources */,
 				0A3D24102674735600D9CA2F /* GorintoSummaryScene.swift in Sources */,
-				0A4E10D02669CC25005F5FA8 /* UserView.swift in Sources */,
 				0A5A983C2664673C00074902 /* InfoTopView.swift in Sources */,
-				0A4E1136266B6CC4005F5FA8 /* OverlayGridView.swift in Sources */,
-				0A4E118E266F149E005F5FA8 /* SaigyoChallengeViewModel.swift in Sources */,
 				0A3D247D267C4AF500D9CA2F /* BonusListView.swift in Sources */,
 				0A4E117E266CC3EA005F5FA8 /* VajraFinderVC.swift in Sources */,
 				0A4E107B266984AE005F5FA8 /* AboutGameViewModel.swift in Sources */,
@@ -1379,7 +1329,6 @@
 				0A4E1139266B6D73005F5FA8 /* DaimonLearnMoreView.swift in Sources */,
 				0A5E83B82663831B000076A9 /* KoyaQuest.xcdatamodeld in Sources */,
 				0A4E111A266A1B28005F5FA8 /* ToggleStyle+Extension.swift in Sources */,
-				0A4E1104266A0CA5005F5FA8 /* NyonindoChallengeView.swift in Sources */,
 				0A4E69B227195AF700F26D66 /* FeedbackOverlayView.swift in Sources */,
 				0A3D24282674A13700D9CA2F /* KoyakunCatcherVC.swift in Sources */,
 				0AE1AA6726A8AF0900C9FA7D /* DynamicLeaderboardView.swift in Sources */,
@@ -1439,7 +1388,6 @@
 				0A5E842326643E74000076A9 /* Rating+Extension.swift in Sources */,
 				0A3D24262674A13700D9CA2F /* Koyakun.swift in Sources */,
 				0A4E1126266AF427005F5FA8 /* DaimonGameView.swift in Sources */,
-				0330006B2671E25F00228CFC /* Rikishi.swift in Sources */,
 				0A5E840D2663ACAE000076A9 /* Color+Extension.swift in Sources */,
 				0A3D24C3267DB9AD00D9CA2F /* ChoishiHintView.swift in Sources */,
 				0A4E10A62669C9AE005F5FA8 /* ScoreCardView.swift in Sources */,
@@ -1449,7 +1397,6 @@
 				0A3D24BB267DB8E600D9CA2F /* ChoishiChallengeView.swift in Sources */,
 				0AB6AD55268938AF006F9690 /* GameOverView.swift in Sources */,
 				0ACAE8BC26FF0B7E007276B2 /* ScoreSummary.swift in Sources */,
-				0A4E1113266A0CDF005F5FA8 /* NumbersChallengeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1460,6 +1407,7 @@
 				0A9205C026B157C2007E7BAF /* RatingsTest.swift in Sources */,
 				0A27E5EE270872DB00641E30 /* AsynchTestCase.swift in Sources */,
 				0ACBCE17270597DF00B87539 /* LeaderboardTest.swift in Sources */,
+				0A14874A27472C5400852F82 /* LocationManagerTests.swift in Sources */,
 				0A9205BE26B14A57007E7BAF /* FinalScoreTest.swift in Sources */,
 				0AEA56A226DF18C900389337 /* ChallengeCompletionTests.swift in Sources */,
 				0A9205BC26B144C8007E7BAF /* AssetTest.swift in Sources */,
@@ -1629,7 +1577,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KoyaQuest/KoyaQuest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"KoyaQuest/Preview Content\"";
 				DEVELOPMENT_TEAM = VXX3S4X7D2;
 				ENABLE_PREVIEWS = YES;
@@ -1654,7 +1602,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = KoyaQuest/KoyaQuest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"KoyaQuest/Preview Content\"";
 				DEVELOPMENT_TEAM = VXX3S4X7D2;
 				ENABLE_PREVIEWS = YES;

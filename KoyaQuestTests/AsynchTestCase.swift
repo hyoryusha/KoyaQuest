@@ -10,11 +10,13 @@ import XCTest
 import CoreAudio
 
 class AsynchTestCase: XCTestCase {
-    let timeout : TimeInterval = 5
+    let timeout: TimeInterval = 5
     var expectation: XCTestExpectation!
 
     override func setUp() {
-        expectation = expectation(description: "Server responds in reasonable time.")
+        expectation = expectation(
+            description: "Server responds in reasonable time."
+        )
     }
 
     func testNoServerResponse() {
@@ -32,7 +34,9 @@ class AsynchTestCase: XCTestCase {
     }
 
     func testReadingJsonInfoFile() {
-        let url = URL(string: "https://www.collins-sweet.com/kq/backend/json/Information.json")!
+        let url = URL(
+            string: "https://www.collins-sweet.com/kq/backend/json/Information.json"
+        )!
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             defer { self.expectation.fulfill() }
@@ -45,14 +49,12 @@ class AsynchTestCase: XCTestCase {
                 XCTAssertNoThrow(
                     try JSONDecoder().decode([Information].self, from: data)
                 )
-            }
-            catch {
+            } catch {
 
             }
         }
         .resume()
         waitForExpectations(timeout: timeout)
-
     }
 
     func testReadingJsonLandmarkFile() {
@@ -69,8 +71,7 @@ class AsynchTestCase: XCTestCase {
                 XCTAssertNoThrow(
                     try JSONDecoder().decode([Landmark].self, from: data)
                 )
-            }
-            catch {
+            } catch {
 
             }
         }
@@ -80,7 +81,9 @@ class AsynchTestCase: XCTestCase {
     }
 
     func testReadingJsonFAQFile() {
-        let url = URL(string: "https://www.collins-sweet.com/kq/backend/json/FAQ2.json")!
+        let url = URL(
+            string: "https://www.collins-sweet.com/kq/backend/json/FAQ2.json"
+        )!
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             defer { self.expectation.fulfill() }
@@ -90,12 +93,11 @@ class AsynchTestCase: XCTestCase {
                 let response = try XCTUnwrap( response as? HTTPURLResponse)
                 XCTAssert(response.statusCode == 200) // 200 = success
 
-               let data = try XCTUnwrap(data)
+                let data = try XCTUnwrap(data)
                 XCTAssertNoThrow(
                     try JSONDecoder().decode([FAQ].self, from: data)
                 )
-            }
-            catch {
+            } catch {
 
             }
         }
@@ -105,7 +107,9 @@ class AsynchTestCase: XCTestCase {
     }
 
     func test404() {
-        let url = URL(string: "https://www.collins-sweet.com/kq/backend/json/AFQ2.json")! // note the wrong URL here
+        let url = URL(
+            string: "https://www.collins-sweet.com/kq/backend/json/AFQ2.json"
+        )! // note the wrong URL here
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             defer { self.expectation.fulfill() }
@@ -115,13 +119,13 @@ class AsynchTestCase: XCTestCase {
                 let response = try XCTUnwrap( response as? HTTPURLResponse)
                 XCTAssertEqual(response.statusCode, 404) // 200 = success
 
-               let data = try XCTUnwrap(data)
+                let data = try XCTUnwrap(data)
 
                 XCTAssertThrowsError(
                     try JSONDecoder().decode([FAQ].self, from: data)
                 ) { error in
                     guard case DecodingError.dataCorrupted = error else {
-                        XCTFail()
+                        XCTFail("fail")
                         return
                     }
                 }
@@ -129,7 +133,5 @@ class AsynchTestCase: XCTestCase {
         }
         .resume()
         waitForExpectations(timeout: timeout)
-
     }
-
 }

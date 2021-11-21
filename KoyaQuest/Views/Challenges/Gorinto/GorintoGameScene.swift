@@ -7,32 +7,28 @@
 
 import SpriteKit
 import SwiftUI
-import Combine
-
+// swiftlint:disable type_body_length
 class GorintoGameScene: SKScene {
-   // var viewModel = GorintoChallengeViewModel()
     var points: Int = 0
     var solved: Bool = false
 
     @Binding var challengeCompleted: Bool
     @Binding var pointsEarned: Int
 
-
     init(_ challengeCompleted: Binding<Bool>, _ pointsEarned: Binding<Int>) {
-            _challengeCompleted = challengeCompleted
-            _pointsEarned = pointsEarned
-            super.init(size: CGSize(
-                width: UIScreen.main.bounds.width,
-                height: UIScreen.main.bounds.height))
-            self.scaleMode = .aspectFill
-        }
+        _challengeCompleted = challengeCompleted
+        _pointsEarned = pointsEarned
+        super.init(size: CGSize(
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height))
+        self.scaleMode = .aspectFill
+    }
 
-        required init?(coder aDecoder: NSCoder) {
-            _challengeCompleted = .constant(false)
-            _pointsEarned = .constant(0)
-            super.init(coder: aDecoder)
-        }
-
+    required init?(coder aDecoder: NSCoder) {
+        _challengeCompleted = .constant(false)
+        _pointsEarned = .constant(0)
+        super.init(coder: aDecoder)
+    }
 
     private let elementLabel = "movable"
     var selectedNode = SKSpriteNode()
@@ -55,50 +51,51 @@ class GorintoGameScene: SKScene {
     var matches: [String] = []
     var misMatches: [String] = []
 
- override func didMove(to view: SKView) {
-    UIApplication.shared.isIdleTimerDisabled = true
-    self.backgroundColor = UIColor.koyaPurple
-        ?? UIColor(red: 30 / 255, green: 32 / 255, blue: 53 / 255, alpha: 1.0)
+    override func didMove(to view: SKView) {
+        UIApplication.shared.isIdleTimerDisabled = true
+        self.backgroundColor = UIColor.koyaPurple
+        ?? UIColor(
+            red: 30 / 255,
+            green: 32 / 255,
+            blue: 53 / 255,
+            alpha: 1.0
+        )
 
-    setupGorinto()
-    addChild(gorinto)
+        setupGorinto()
+        addChild(gorinto)
 
-    setupHint()
-    addChild(hintMessage)
-    setupFireLabel()
-    addChild(fireLabel)
+        setupHint()
+        addChild(hintMessage)
+        setupFireLabel()
+        addChild(fireLabel)
 
-    setupWaterLabel()
-    addChild(waterLabel)
+        setupWaterLabel()
+        addChild(waterLabel)
 
-    setupSpaceLabel()
-    addChild(spaceLabel)
+        setupSpaceLabel()
+        addChild(spaceLabel)
 
-    setupWindLabel()
-    addChild(windLabel)
+        setupWindLabel()
+        addChild(windLabel)
 
-    setupEarthLabel()
-    addChild(earthLabel)
+        setupEarthLabel()
+        addChild(earthLabel)
 
-    checkButtonLabel.fontName = SKFont.bold
-    checkButtonLabel.fontSize = 24.0
-    checkButtonLabel.fontColor = UIColor.white
-    checkButtonLabel.position = CGPoint(x: 0, y: -8)
-    checkButton.addChild(checkButtonLabel)
+        checkButtonLabel.fontName = SKFont.bold
+        checkButtonLabel.fontSize = 24.0
+        checkButtonLabel.fontColor = UIColor.white
+        checkButtonLabel.position = CGPoint(x: 0, y: -8)
+        checkButton.addChild(checkButtonLabel)
 
-    //checkButton.position = CGPoint(x: frame.midX, y: frame.minY + 40)
-     checkButton.position = CGPoint(x: frame.midX, y: frame.size.height * 0.06)
-    checkButton.name = "check"
-    checkButton.zPosition = 100
-    addChild(checkButton)
-
-
+        checkButton.position = CGPoint(x: frame.midX, y: frame.size.height * 0.06)
+        checkButton.name = "check"
+        checkButton.zPosition = 100
+        addChild(checkButton)
     }
 
     func setupGorinto() {
         gorinto.size = CGSize(width: 672, height: 989)
         gorinto.setScale(0.5)
-//        gorinto.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2 - 20)
         gorinto.position = CGPoint(x: frame.midX, y: frame.size.height * 0.45)
         gorinto.zPosition = 1
         gorinto.name = "gorinto"
@@ -108,13 +105,11 @@ class GorintoGameScene: SKScene {
         hintMessage.fontName = SKFont.regular
         hintMessage.fontSize = 16.0
         hintMessage.fontColor = UIColor.white
-//        hintMessage.position = CGPoint(x: frame.midX, y: frame.minY + 60)
         hintMessage.position = CGPoint(x: frame.midX, y: frame.size.height  * 0.9)
         hintMessage.zPosition = 100
     }
 
     func setupFireLabel() {
-        //fireLabel.position = CGPoint(x: frame.size.width / 2, y: frame.size.height - 60)
         fireLabel.position = CGPoint(x: frame.size.width / 2, y: frame.size.height * 0.85)
         fireLabel.size = labelSize
         fireLabel.name = "C"
@@ -122,7 +117,6 @@ class GorintoGameScene: SKScene {
     }
 
     func setupWaterLabel() {
-//        waterLabel.position = CGPoint(x: frame.size.width / 2 - 95, y: frame.size.height - 60)
         waterLabel.position = CGPoint(x: frame.size.width / 2 - 95, y: frame.size.height * 0.85)
         waterLabel.size = labelSize
         waterLabel.name = "B"
@@ -149,7 +143,7 @@ class GorintoGameScene: SKScene {
         earthLabel.name = "A"
         earthLabel.zPosition = labelZPos
     }
-// MARK: - COLORIZE
+    // MARK: - COLORIZE
     func colorize(for matches: [String]) {
         let colorize = SKAction.colorize(with: .red, colorBlendFactor: 0.5, duration: 1.5)
         for match in matches {
@@ -158,16 +152,16 @@ class GorintoGameScene: SKScene {
         }
     }
 
-override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    guard let touch = touches.first else {return}
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {return}
 
-    let positionInScene = touch.location(in: self)
-    if checkButton.contains(positionInScene) {
-        checkAnswers()
+        let positionInScene = touch.location(in: self)
+        if checkButton.contains(positionInScene) {
+            checkAnswers()
+        }
+
+        selectNodeForTouch(touchLocation: positionInScene)
     }
-
-    selectNodeForTouch(touchLocation: positionInScene)
-    } // end touches began
 
     func selectNodeForTouch(touchLocation: CGPoint) {
 
@@ -182,30 +176,30 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             }
 
             if !selectedNode.isEqual(touchedNode) {
-            selectedNode.removeAllActions()
-            selectedNode.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
-            // swiftlint:disable force_cast
-            selectedNode = touchedNode as! SKSpriteNode
-            // swiftlint:enable force_cast
+                selectedNode.removeAllActions()
+                selectedNode.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
+                // swiftlint:disable force_cast
+                selectedNode = touchedNode as! SKSpriteNode
+                // swiftlint:enable force_cast
             }
         }
     }
     func panForTranslation(translation: CGPoint) {
-      let position = selectedNode.position
+        let position = selectedNode.position
 
-      if selectedNode.name == elementLabel {
-        selectedNode.position = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
-      } else {
-        let newPosition = CGPoint(
-            x: position.x + translation.x,
-            y: position.y + translation.y
-        )
-        selectedNode.position = newPosition
-        let minHeight = gorinto.frame.maxY
-        if newPosition.y < minHeight {
-            finalPositions[selectedNode.name ?? ""] = newPosition.y
+        if selectedNode.name == elementLabel {
+            selectedNode.position = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
+        } else {
+            let newPosition = CGPoint(
+                x: position.x + translation.x,
+                y: position.y + translation.y
+            )
+            selectedNode.position = newPosition
+            let minHeight = gorinto.frame.maxY
+            if newPosition.y < minHeight {
+                finalPositions[selectedNode.name ?? ""] = newPosition.y
+            }
         }
-      }
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {return}
@@ -217,51 +211,48 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
     func checkAnswers() {
         if finalPositions.count < 5 {
-            // show alert
             if alertMessage.parent != nil {
                 alertMessage.removeFromParent()
             }
             setupAlert()
             addChild(alertMessage)
-
         } else {
-           // ready to evaluate
             let keySorted = finalPositions.sorted {
                 $0.0 < $1.0
             } // this gives a fixed order array based on alphabetical order of keys
-                      let correctSorted = finalPositions.sorted {
-                        $0.1 < $1.1
-                      } // this gives a fixed order array based on values
-                      var matchingIndices = 0
-                      let keyNames  = ["A", "B", "C", "D", "E"]
+            let correctSorted = finalPositions.sorted {
+                $0.1 < $1.1
+            } // this gives a fixed order array based on values
+            var matchingIndices = 0
+            let keyNames  = ["A", "B", "C", "D", "E"]
 
-                      var matches: [String] = []
-                      for name in keyNames {
-                        let correctIndexForName = keySorted.firstIndex(where: { $0.key == name })
-                        let returnedIndexForName = correctSorted.firstIndex(where: { $0.key == name })
-                          if correctIndexForName! == returnedIndexForName! {
-                              matchingIndices += 1
-                              matches.append(name)
-                          } else {
-                            misMatches.append(name)
-                          }
-                      }
-                      switch matchingIndices {
-                      case 5:
-                          points = 30
-                      case 4:
-                          points = 20
-                      case 3:
-                          points = 15
-                      case 2:
-                          points = 10
-                      case 1:
-                          points = 5
-                      case 0:
-                          points = 0
-                      default:
-                          points = 0
-                      }
+            var matches: [String] = []
+            for name in keyNames {
+                let correctIndexForName = keySorted.firstIndex(where: { $0.key == name })
+                let returnedIndexForName = correctSorted.firstIndex(where: { $0.key == name })
+                if correctIndexForName! == returnedIndexForName! {
+                    matchingIndices += 1
+                    matches.append(name)
+                } else {
+                    misMatches.append(name)
+                }
+            }
+            switch matchingIndices {
+            case 5:
+                points = 30
+            case 4:
+                points = 20
+            case 3:
+                points = 15
+            case 2:
+                points = 10
+            case 1:
+                points = 5
+            case 0:
+                points = 0
+            default:
+                points = 0
+            }
             displayScore(points: points)
             colorize(for: misMatches)
         }
@@ -271,7 +262,6 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         alertMessage.fontName = SKFont.bold
         alertMessage.fontSize = 16.0
         alertMessage.fontColor = UIColor.systemRed
-        //alertMessage.position = CGPoint(x: frame.midX, y: frame.minY + 56)
         alertMessage.position = CGPoint(x: frame.midX, y: checkButton.position.y + 32)
         alertMessage.zPosition = 100
     }
@@ -281,7 +271,6 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         gameOverLabel.fontName = SKFont.bold
         gameOverLabel.fontSize = 34.0
         gameOverLabel.fontColor = UIColor(red: 0, green: 204 / 255, blue: 131 / 255, alpha: 1.0)
-//        gameOverLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 76)
         gameOverLabel.position = CGPoint(x: frame.midX, y: frame.size.height * 0.9)
         addChild(gameOverLabel)
 
@@ -289,35 +278,32 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         scoreLabel.fontName = SKFont.bold
         scoreLabel.fontSize = 22.0
         scoreLabel.fontColor = UIColor.koyaOrange ?? UIColor.orange
-//        scoreLabel.position = CGPoint(x: frame.midX, y: frame.maxY - 104)
         scoreLabel.position = CGPoint(x: frame.midX, y: frame.size.height * 0.85)
         addChild(scoreLabel)
         let message = SKLabelNode(text: "Incorrect answers are shaded in red.")
         message.fontName = SKFont.medium
         message.fontSize = 13.0
         message.fontColor = UIColor(.white)
-//        message.position = CGPoint(x: frame.midX, y: frame.maxY - 128)
         message.position = CGPoint(x: frame.midX, y: frame.size.height * 0.80)
         addChild(message)
-       //viewModel.solved = true
         solved = true
-        //viewModel.points = points
         pointsEarned = points
-// the player has finished; move to summary scene
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { self.showSummaryScene(withTransition: .crossFade(withDuration:  0.75))
+        DispatchQueue.main.asyncAfter(
+            deadline: .now() + 2.5) { self.showSummaryScene(
+                withTransition: .crossFade(withDuration: 0.75)
+            )
         }
     }
 
     private func showSummaryScene(withTransition transition: SKTransition) {
-             let delay = SKAction.wait(forDuration: 1)
-             let sceneChange = SKAction.run {
-                 let scene = GorintoSummaryScene(self.$challengeCompleted)
-                //scene.viewModel = self.viewModel
-               self.view?.presentScene(scene, transition: transition)
-             }
-             run(.sequence([delay, sceneChange]))
-           }
+        let delay = SKAction.wait(forDuration: 1)
+        let sceneChange = SKAction.run {
+            let scene = GorintoSummaryScene(self.$challengeCompleted)
+            self.view?.presentScene(scene, transition: transition)
+        }
+        run(.sequence([delay, sceneChange]))
+    }
 
     func animateLabel(label: SKLabelNode) {
         let scaleUp = SKAction.scale(to: 1.1, duration: 0.5)

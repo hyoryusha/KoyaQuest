@@ -21,7 +21,10 @@ struct AppInfoView: View {
                             blurb: "Explore the features of this app...")
                     })
                 NavigationLink(
-                    destination: LeaderboardView(viewModel: LeaderboardViewModel(), fetchFilter: FinalScoreFilter.allTime).navigationBarTitle("Leaderboard"),
+                    destination: LeaderboardView(
+                        viewModel: LeaderboardViewModel(),
+                        // swiftlint:disable:next line_length
+                                                 fetchFilter: FinalScoreFilter.allTime).navigationBarTitle("Leaderboard"),
                     label: {
                         AboutViewRow(
                             icon: "list.number",
@@ -39,7 +42,7 @@ struct AppInfoView: View {
                     })
             }
         }
-            .navigationBarItems(leading: Text("Back to Main Menu"))
+        .navigationBarItems(leading: Text("Back to Main Menu"))
     }
 }
 

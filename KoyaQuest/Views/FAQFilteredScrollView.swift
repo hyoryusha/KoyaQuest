@@ -15,39 +15,38 @@ struct FAQFilteredScrollView: View {
     @State private var initialState: Bool = true
     var body: some View {
         VStack {
-             //NavigationView {
-                ScrollView {
-                    SearchBarView(text: $filterString.onChange(applyFilter))
-                        .padding(.bottom, 30)
-                    ForEach(FAQ.allCats, id: \.self) { category in
-                        Section(header: FAQHeaderView(header: "\(category.rawValue)")) {
-                            ForEach(initialState ? viewModel.faq : filteredItems) { faq in
-                                    if faq.category == category {
-                                        NavigationLink(destination: FAQDetailView(contents: faq, isShowingAnswer: $isShowingAnswer)) {
-                                            Text(faq.title)
-                                            .font(.body)
-                                            .foregroundColor(.koyaDarkText)
-                                                .fixedSize(horizontal: false, vertical: true)
-                                                .padding(.leading)
-                                            Spacer()
-                                            Divider()
-                                            .background(Color(.systemGray4))
-                                            .padding(.leading)
-                                    }
+            ScrollView {
+                SearchBarView(text: $filterString.onChange(applyFilter))
+                    .padding(.bottom, 30)
+                ForEach(FAQ.allCats, id: \.self) { category in
+                    Section(header: FAQHeaderView(header: "\(category.rawValue)")) {
+                        ForEach(initialState ? viewModel.faq : filteredItems) { faq in
+                            if faq.category == category {
+                                NavigationLink(
+                                    destination: FAQDetailView(
+                                        contents: faq,
+                                        isShowingAnswer: $isShowingAnswer)) {
+                                    Text(faq.title)
+                                        .font(.body)
+                                        .multilineTextAlignment(.leading)
+                                        .foregroundColor(.koyaDarkText)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                        .padding(.leading)
+                                    Spacer()
+                                    Divider()
+                                        .background(Color(.systemGray4))
+                                        .padding(.leading)
                                 }
                             }
                         }
                     }
-
-                //}
-                .onAppear() {
+                }
+                .onAppear {
                     viewModel.getFAQ()
-                    //applyFilter()
                 }
 
-//                    .navigationBarTitle("FAQ", displayMode: .automatic)
             }
-                .padding()
+            .padding()
             if viewModel.isLoading {
                 LoadingView()
             }
@@ -60,7 +59,7 @@ struct FAQFilteredScrollView: View {
             filteredItems = viewModel.faq
         } else {
             filteredItems = viewModel.faq.filter { $0.filter
-                   .localizedCaseInsensitiveContains(cleanedFilter)
+                    .localizedCaseInsensitiveContains(cleanedFilter)
             }
         }
     }
@@ -69,5 +68,6 @@ struct FAQFilteredScrollView: View {
 struct FAQFilteredScrollView_Previews: PreviewProvider {
     static var previews: some View {
         FAQFilteredScrollView()
+            .preferredColorScheme(.dark)
     }
 }

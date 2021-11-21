@@ -14,11 +14,10 @@ struct MizumukeChallengeView: View {
     @EnvironmentObject var locationManager: LocationManager
     @ObservedObject var viewModel = MizumukeChallengeViewModel()
     @State private var columns: [Int] = []
-       var body: some View {
+    var body: some View {
         ZStack {
-                BackgroundView()
-                    .ignoresSafeArea(.all)
-            
+            BackgroundView()
+                .ignoresSafeArea(.all)
             VStack {
                 XDismissButtonRight()
                     .padding(.top, 12)
@@ -56,18 +55,19 @@ struct MizumukeChallengeView: View {
                     .multilineTextAlignment(.center)
                     .padding()
 
-                    Button {
-                        viewModel.check(columns: columns)
-                    } label: {
-                        ActionButton(color: .koyaOrange, text: "Check")
-                    }
-                    Text(viewModel.feedbackString)
-                            .font(.caption)
-                            .foregroundColor(.white)
-                            .animation(.easeIn(duration: 0.3))
-                Spacer()
+                Button {
+                    viewModel.check(columns: columns)
+                } label: {
+                    ActionButton(color: .koyaOrange, text: "Check")
                 }
-            .blur(radius: viewModel.solved ? 6 : 0)
+                Text(viewModel.feedbackString)
+                    .font(.caption)
+                    .foregroundColor(.white)
+                    .animation(.easeIn(duration: 0.3))
+                Spacer()
+            }
+            .overlay(viewModel.solved ? MountainOverlayView() : nil)
+            .blur(radius: viewModel.solved ? 0 : 0)
             .navigationBarTitle(Text(""))
             .navigationBarHidden(true)
             // .statusBar(hidden: true)
@@ -84,7 +84,7 @@ struct MizumukeChallengeView: View {
                 )
             }
         } // end ZStack
-       }
+    }
 }
 struct MizumukeChallengeView_Previews: PreviewProvider {
     static var previews: some View {

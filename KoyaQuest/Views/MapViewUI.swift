@@ -54,7 +54,7 @@ struct MapViewUI: UIViewRepresentable {
                     }
                 }
                 return annotationView
-                case let placeAnnotation as PlaceAnnotation:
+            case let placeAnnotation as PlaceAnnotation:
                 let annotationView = mapView.dequeueReusableAnnotationView(
                     withIdentifier: "Landmark") as? MKMarkerAnnotationView ??
                 MKMarkerAnnotationView(annotation: annotation,
@@ -64,9 +64,9 @@ struct MapViewUI: UIViewRepresentable {
                 annotationView.markerTintColor = UIColor.koyaOrange
                 annotationView.titleVisibility = .visible
                 annotationView.clusteringIdentifier = "cluster"
-                    if placeAnnotation.isSection {
-                        annotationView.displayPriority = .defaultHigh
-                    }
+                if placeAnnotation.isSection {
+                    annotationView.displayPriority = .defaultHigh
+                }
 
                 let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 105, height: 105))
                 imageView.image = UIImage(named: placeAnnotation.image)
@@ -75,26 +75,6 @@ struct MapViewUI: UIViewRepresentable {
                 return annotationView
             default: return nil
             }
-
-
-            /* guard let placeAnnotation = annotation as? PlaceAnnotation else {
-                return nil
-            }
-
-            let annotationView = mapView.dequeueReusableAnnotationView(
-                withIdentifier: "Landmark") as? MKMarkerAnnotationView ??
-            MKMarkerAnnotationView(annotation: annotation,
-                                   reuseIdentifier: "Landmark")
-            annotationView.canShowCallout = true
-            annotationView.glyphText = "❀"
-            annotationView.markerTintColor = UIColor.koyaOrange
-            annotationView.titleVisibility = .visible
-            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 105, height: 75))
-            imageView.image = UIImage(named: placeAnnotation.image)
-            imageView.contentMode = .scaleAspectFill
-            annotationView.rightCalloutAccessoryView = imageView
-            return annotationView
-*/
         }
     }
 }

@@ -16,10 +16,8 @@ struct DaimonChallengeView: View {
     @State private var challengeCompleted: Bool = false
     @State private var success: Bool = false
 
-    //    @ObservedObject var viewModel = DaimonGameViewModel()
     var buttonText = "Ready to Solve!"
     var body: some View {
-        //NavigationView {
             ZStack {
                 Group {
                     VStack {
@@ -57,15 +55,6 @@ struct DaimonChallengeView: View {
                     }
                 }
                 .blur(radius: challengeCompleted ? 6 : 0)
-                if challengeCompleted {
-                    ChallengeFeedbackView(
-                        appData: appData,
-                        locationManager: locationManager,
-                        challenge: daimonChallenge,
-                        text: success ? "Nice Job!" : "Too bad",
-                        points: success ? daimonChallenge.maxPoints : 0 ,
-                        success: success ? true : false)
-                }
 
                 VStack {
                     XDismissButtonRight()
@@ -84,14 +73,22 @@ struct DaimonChallengeView: View {
                     }
 
                 }
-                .blur(radius: challengeCompleted ? 6 : 0)
+                .overlay(challengeCompleted ? MountainOverlayView() : nil)
                 Spacer()
                 Spacer()
-            }
+                if challengeCompleted {
+                    ChallengeFeedbackView(
+                        appData: appData,
+                        locationManager: locationManager,
+                        challenge: daimonChallenge,
+                        text: success ? "Nice Job!" : "Too bad",
+                        points: success ? daimonChallenge.maxPoints : 0 ,
+                        success: success ? true : false)
+                }
+            } // end Zstack
             .navigationBarTitle(Text(""))
             .navigationBarHidden(true)
             .statusBar(hidden: true)
-       // } // end navigation view
     }
 }
 

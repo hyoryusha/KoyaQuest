@@ -20,18 +20,19 @@ struct WelcomeView: View {
             Spacer()
             TitleView(fullCaption: true)
             Button {
-               // appData.gameStarted = true
-               // appData.changeGameState(newState: .login)
                 appData.changeGameState(newState: .active)
                 locationManager.verifyGPSAuthorization()
             } label: {
-            Text("Get Started".uppercased())
-                .font(.title2)
-                .bold()
-                .padding(10)
-                .frame(width: wideElement(sizeCategory: sizeCategory) ? 330 : 220, height: 50, alignment: .center)
-                .border(Color.white)
-                .foregroundColor(Color.white)
+                Text("Get Started".uppercased())
+                    .font(.title2)
+                    .bold()
+                    .padding(10)
+                    .frame(width: wideElement(sizeCategory: sizeCategory) ? 330 : 220,
+                           height: 50,
+                           alignment: .center
+                    )
+                    .border(Color.white)
+                    .foregroundColor(Color.white)
             }
             .accessibility(label: Text("Get started"))
             Spacer()
@@ -45,9 +46,7 @@ struct WelcomeView: View {
                     Image(systemName: "info.circle" )
                 }
                 .padding(10)
-                // swiftlint:disable:next colon
-                 .frame(width: wideElement(sizeCategory: sizeCategory) ? 330 : 220, height: 50, alignment: .center)
-               // .frame(width: 220, height: 50, alignment: .center)
+                .frame(width: wideElement(sizeCategory: sizeCategory) ? 330 : 220, height: 50, alignment: .center)
                 .background(Color.koyaSky)
                 .border(Color(.white))
                 .foregroundColor(Color(.black))
@@ -60,13 +59,12 @@ struct WelcomeView: View {
             .padding(.bottom, 20)
         }
         .background(Image("mtns")
-        .scaledToFill()
-        .edgesIgnoringSafeArea([.all])
-        .statusBar(hidden: true)
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea([.all])
+                        .statusBar(hidden: true)
         )
         .animation(.easeInOut(duration: 0.8), value: true)
-        }
-
+    }
 }
 
 struct WelcomeView_Previews: PreviewProvider {

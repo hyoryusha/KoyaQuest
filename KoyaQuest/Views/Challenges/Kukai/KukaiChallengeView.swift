@@ -25,23 +25,42 @@ struct KukaiChallengeView: View {
                     Image(systemName: "camera.viewfinder")
                     Text("Find Kūkai")
                 }
+                .frame(
+                    minWidth: 320,
+                    idealWidth: 420,
+                    maxWidth: 420,
+                    minHeight: 32,
+                    idealHeight: 50,
+                    maxHeight: 52,
+                    alignment: .center
+                )
                 .font(.title)
-                .foregroundColor(.orange)
+                .foregroundColor(.koyaOrange)
                 .padding(.bottom, 6)
 
                 Text("Point your camera at the image when you find it.")
                     .font(.footnote)
                     .foregroundColor(.white)
-                    KukaiFinderView(foundImage: $viewModel.foundImage, success: $viewModel.success)
-                        // Rectangle()
-                        .frame(height: 380)
-                            .padding(.bottom, 6)
-                    Text(viewModel.statusText)
-                        .font(.title3)
-                        .foregroundColor(viewModel.statusTextColor)
-                        .padding()
+                KukaiFinderView(
+                    foundImage: $viewModel.foundImage,
+                    success: $viewModel.success
+                )
+                    .frame(
+                        minWidth: 320,
+                        idealWidth: 400,
+                        maxWidth: 412,
+                        minHeight: 320,
+                        idealHeight: 520,
+                        maxHeight: 536,
+                        alignment: .center
+                    )
+                    .padding(.bottom, 6)
+                Text(viewModel.statusText)
+                    .font(.title3)
+                    .foregroundColor(viewModel.statusTextColor)
+                    .padding()
             } // End VStack
-            .blur(radius: viewModel.success ? 6 : 0)
+            .overlay(viewModel.success ? MountainOverlayView() : nil)
             .navigationBarTitle(Text(""))
             .navigationBarHidden(true)
             if viewModel.success {
@@ -54,25 +73,23 @@ struct KukaiChallengeView: View {
             }
 
         } // End ZStack?
-        .onAppear() {
+        .onAppear {
             if viewModel.success {
                 viewModel.stopTimer()
             } else {
                 viewModel.startTimer()
             }
         }
-        .navigationBarTitle(Text(""))
-        .navigationBarHidden(true)
         .statusBar(hidden: true)
         .alert(isPresented: $viewModel.showingAlert) {
             Alert(
                 title: Text("Taking a long time?"),
-                               message: Text("You can pause this challenge and resume later (when you find the target)."),
+                message: Text("You can pause this challenge and resume later (when you find the target)."),
                 primaryButton: .default(Text("Save for Later")) {
-                                appData.kukaiChallengeState = .paused
-                                appData.isPlayingGame = false
-                                locationManager.resumeRegionMonitoring()
-                               },
+                    appData.kukaiChallengeState = .paused
+                    appData.isPlayingGame = false
+                    locationManager.resumeRegionMonitoring()
+                },
                 secondaryButton: .cancel(Text("I'll keep looking")) {
                     viewModel.secondsLeft = 10
                     viewModel.startTimer()
@@ -85,6 +102,8 @@ struct KukaiChallengeView: View {
 struct KukaiChallengeView_Previews: PreviewProvider {
     static var previews: some View {
         KukaiChallengeView()
+            .environmentObject(AppData())
+            .environmentObject(LocationManager())
             .preferredColorScheme(.light)
     }
 }

@@ -23,14 +23,17 @@ final class KukaiChallengeViewModel: ObservableObject {
     var timer = Timer()
 
     func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true , block: { timer in
-            if self.secondsLeft == 0 {
-                self.secondsLeft = 0
-                self.timer.invalidate()
-                self.showingAlert = true
-            }
-            self.secondsLeft -= 1
-        })
+        timer = Timer.scheduledTimer(
+            withTimeInterval: 1.0,
+            repeats: true ,
+            block: { timer in
+                if self.secondsLeft == 0 {
+                    self.secondsLeft = 0
+                    self.timer.invalidate()
+                    self.showingAlert = true
+                }
+                self.secondsLeft -= 1
+            })
     }
     func stopTimer() {
         self.timer.invalidate()

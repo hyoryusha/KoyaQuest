@@ -29,9 +29,9 @@ class PostScoreViewModel: ObservableObject {
             objectWillChange.send()
         }
     }
-    
+
     func saveChanges() {
-        guard isValidForm , userNameAvailable else {return}
+        guard isValidForm, userNameAvailable else {return}
         // record fact that a score for THIS DEVICE has been recorded:
         UserDefaults.standard.set(true, forKey: "postedScore")
         let encoder = JSONEncoder()
@@ -57,17 +57,15 @@ class PostScoreViewModel: ObservableObject {
         let lowerCasedNames = userNamesArray.map {
             $0.lowercased()
         }
-    // let filteredArray = userNamesArray.filter { $0.localizedCaseInsensitiveContains(userName)}
+        // let filteredArray = userNamesArray.filter { $0.localizedCaseInsensitiveContains(userName)}
         let filteredArray = lowerCasedNames.filter {
             $0 == userName
         }
-    if filteredArray.isEmpty {
+        if filteredArray.isEmpty {
             userNameAvailable = true
         } else {
             showingActionAlert = true
             userNameAvailable = false
         }
     }
-
 }
-

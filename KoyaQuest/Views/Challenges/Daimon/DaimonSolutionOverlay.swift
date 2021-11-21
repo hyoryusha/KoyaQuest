@@ -11,7 +11,6 @@ struct DaimonSolutionOverlay: View {
     var body: some View {
         Image("daimon_solution")
             .resizable()
-            //.scaledToFit()
             .frame(width: 200, height: 150)
             .offset(y: -82)
     }

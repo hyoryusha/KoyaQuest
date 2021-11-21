@@ -50,9 +50,9 @@ final class AppData: ObservableObject {
         case 100...179:
             return .journeyman
         case 180...249:
-        return .adept
+            return .adept
         case 249...299:
-            return .master
+            return .mstr
         case 300...:
             return .myoo
         default:
@@ -106,7 +106,7 @@ final class AppData: ObservableObject {
         }
     }
 
-// MARK: - Static
+    // MARK: - Static
     static let completedKey = "Completed Challenges"
     static let completedBonusKey = "Completed Bonuses"
     static let ratingsKey = "Local Ratings"
@@ -115,20 +115,20 @@ final class AppData: ObservableObject {
     static let mockRatings: [LocalRating] = [rating1]
     static let mockBonus: [CompletedBonus] = []
 
-// MARK: - GameOverCheck
+    // MARK: - GameOverCheck
     func checkForGameOver() {
         if completedBonusSummary.count == Bonus.bonusQuestions.count &&
             completedChallengeSummary.count == allChallenges.count {
             self.gameState = .complete
-        } 
+        }
     }
 
-// MARK: - ChangeGameState
+    // MARK: - ChangeGameState
     func changeGameState(newState: GameState) {
         self.gameState = newState
     }
 
-// MARK: - Handle Completed Challenge
+    // MARK: - Handle Completed Challenge
 
     func recordCompletedChallenge(challenge: Challenge, points: Int) {
         let newItem = CompletedChallenge(challenge: challenge.name, points: points)
@@ -147,11 +147,11 @@ final class AppData: ObservableObject {
         persistCompletedChallenge()
     }
     private func persistCompletedChallenge() {
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(completedChallengeSummary) {
-                UserDefaults.standard.set(encoded, forKey: AppData.completedKey)
-            }
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(completedChallengeSummary) {
+            UserDefaults.standard.set(encoded, forKey: AppData.completedKey)
         }
+    }
 
     func checkForBonus(challenge: Challenge) {
         if challenge.bonus == true {
@@ -169,7 +169,7 @@ final class AppData: ObservableObject {
         }
     }
 
-// MARK: - Handle Completed Bonus
+    // MARK: - Handle Completed Bonus
 
     func recordCompletedBonus(bonus: Bonus, points: Int) {
         let newItem = CompletedBonus(id: bonus.id, points: points)
@@ -184,13 +184,13 @@ final class AppData: ObservableObject {
     }
 
     private func persistCompletedBonus() {
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(completedBonusSummary) {
-                UserDefaults.standard.set(encoded, forKey: AppData.completedBonusKey)
-            }
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(completedBonusSummary) {
+            UserDefaults.standard.set(encoded, forKey: AppData.completedBonusKey)
         }
+    }
 
-// MARK: - Handle Local Ratings
+    // MARK: - Handle Local Ratings
     func addLocalRatings(_ rating: LocalRating) {
         localRatings.append(rating)
         persistRating()
@@ -203,43 +203,43 @@ final class AppData: ObservableObject {
     }
 
     private func persistRating() {
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(localRatings) {
-                UserDefaults.standard.set(encoded, forKey: AppData.ratingsKey)
-            }
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(localRatings) {
+            UserDefaults.standard.set(encoded, forKey: AppData.ratingsKey)
         }
+    }
 
-// MARK: - LOAD USER DEFAULTS
+    // MARK: - LOAD USER DEFAULTS
 
     static func loadLocalRatings() -> [LocalRating] {
         let savedRatings = UserDefaults.standard.object(forKey: AppData.ratingsKey )
         if let savedRatings = savedRatings as? Data {
-        let decoder = JSONDecoder()
-        return (try? decoder.decode([LocalRating].self, from: savedRatings))
+            let decoder = JSONDecoder()
+            return (try? decoder.decode([LocalRating].self, from: savedRatings))
             ?? AppData.mockRatings
         }
         return AppData.mockRatings
-        }
+    }
 
     static func loadCompletedSummary() -> [CompletedChallenge] {
-            let savedCompleted = UserDefaults.standard.object(forKey: AppData.completedKey )
-            if let savedCompleted = savedCompleted as? Data {
+        let savedCompleted = UserDefaults.standard.object(forKey: AppData.completedKey )
+        if let savedCompleted = savedCompleted as? Data {
             let decoder = JSONDecoder()
             return (try? decoder.decode([CompletedChallenge].self, from: savedCompleted))
-                ?? AppData.mockData
-            }
-            return AppData.mockData
-            }
+            ?? AppData.mockData
+        }
+        return AppData.mockData
+    }
 
     static func loadCompletedBonusSummary() -> [CompletedBonus] {
         let savedCompleted = UserDefaults.standard.object(forKey: AppData.completedBonusKey )
         if let savedCompleted = savedCompleted as? Data {
-        let decoder = JSONDecoder()
-        return (try? decoder.decode([CompletedBonus].self, from: savedCompleted))
+            let decoder = JSONDecoder()
+            return (try? decoder.decode([CompletedBonus].self, from: savedCompleted))
             ?? AppData.mockBonus
         }
         return AppData.mockBonus
-        }
+    }
 
     static func checkScorePosted() -> Bool {
         let userDefaults = UserDefaults.standard
@@ -250,8 +250,8 @@ final class AppData: ObservableObject {
         }
     }
 
-// MARK: - Challenge Display funcs
-        func showChallenge() {
-                self.isShowingChallenge = true
-        }
+    // MARK: - Challenge Display funcs
+    func showChallenge() {
+        self.isShowingChallenge = true
+    }
 }

@@ -6,10 +6,9 @@
 //
 
 import Foundation
-extension UserDefaults {
 
+extension UserDefaults {
     func valueIsTrue(forKey key: String) -> Bool {
         return bool(forKey: key)
     }
-
 }

@@ -9,7 +9,6 @@ import XCTest
 @testable import KoyaQuest
 
 class BaseTestCase: XCTestCase {
-    
     var dataController: DataController!
     var managedObjectContext: NSManagedObjectContext!
 
@@ -17,5 +16,4 @@ class BaseTestCase: XCTestCase {
         dataController = DataController(inMemory: true)
         managedObjectContext = dataController.container.viewContext
     }
-    
 }

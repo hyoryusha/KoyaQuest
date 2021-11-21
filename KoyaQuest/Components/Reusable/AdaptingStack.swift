@@ -8,32 +8,32 @@
 import SwiftUI
 
 struct AdaptingStack<Content>: View where Content: View {
-  init(@ViewBuilder content: @escaping () -> Content) {
-    self.content = content
-  }
-  
-  var content: () -> Content
-  @Environment(\.sizeCategory) var sizeCategory
-  
+    init(@ViewBuilder content: @escaping () -> Content) {
+        self.content = content
+    }
+
+    var content: () -> Content
+    @Environment(\.sizeCategory) var sizeCategory
+
     var body: some View {
-      switch sizeCategory {
-      case .accessibilityLarge,
-           .accessibilityExtraLarge,
-           .accessibilityExtraExtraLarge,
-           .accessibilityExtraExtraExtraLarge:
-        return AnyView(VStack(content: self.content).padding(.top, 10))
-      default:
-        return AnyView(HStack(alignment: .top, content: self.content))
-      }
+        switch sizeCategory {
+        case .accessibilityLarge,
+                .accessibilityExtraLarge,
+                .accessibilityExtraExtraLarge,
+                .accessibilityExtraExtraExtraLarge:
+            return AnyView(VStack(content: self.content).padding(.top, 10))
+        default:
+            return AnyView(HStack(alignment: .top, content: self.content))
+        }
     }
 }
 func wideElement(sizeCategory: ContentSizeCategory) -> Bool {
     switch sizeCategory {
     case .accessibilityMedium,
-         .accessibilityLarge,
-         .accessibilityExtraLarge,
-         .accessibilityExtraExtraLarge,
-         .accessibilityExtraExtraExtraLarge:
+            .accessibilityLarge,
+            .accessibilityExtraLarge,
+            .accessibilityExtraExtraLarge,
+            .accessibilityExtraExtraExtraLarge:
         return true
     default:
         return false

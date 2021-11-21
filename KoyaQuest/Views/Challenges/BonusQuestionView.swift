@@ -42,7 +42,7 @@ struct BonusQuestionView: View {
                 .ignoresSafeArea(.all)
             VStack {
                 Text("Multiple-Choice Question")
-                    .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .title)
+                    .font(FontSwap.caption2ForTitle(for: sizeCategory))
                     .foregroundColor(.white)
                     .padding(.bottom)
                 HStack {
@@ -59,49 +59,49 @@ struct BonusQuestionView: View {
                     .background(Color.white)
                     .padding([.bottom, .leading, .trailing], 2)
 
-                        Text(question.question)
-                            .foregroundColor(Color.white)
-                            .multilineTextAlignment(.leading)
-                            .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .title3)
-                            .padding(20)
+                Text(question.question)
+                    .foregroundColor(Color.white)
+                    .multilineTextAlignment(.leading)
+                    .font(FontSwap.caption2ForTitle3(for: sizeCategory))
+                    .padding(20)
 
-                        if firstChoiceIsShowing {
-                            showChoice(for: question.choices[0], tag: 0)
-                                .buttonStyle(MCButtonStyle(color: Color.koyaOrange))
-                        } else {
-                            showDisabledButton(for: question.choices[0], tag: 0)
-                                .disabled(true)
-                                .buttonStyle(MCButtonStyle(color: .gray))
-                        }
-
-                        if secondChoiceIsShowing {
-                            showChoice(for: question.choices[1], tag: 1)
-                                .buttonStyle(MCButtonStyle(color: Color.koyaOrange))
-                        } else {
-                            showDisabledButton(for: question.choices[1], tag: 1)
-                                .disabled(true)
-                                .buttonStyle(MCButtonStyle(color: .gray))
-                        }
-
-                        if thirdChoiceIsShowing {
-                            showChoice(for: question.choices[2], tag: 2)
-                                .buttonStyle(MCButtonStyle(color: Color.koyaOrange))
-                        } else {
-                            showDisabledButton(for: question.choices[2], tag: 2)
-                                .disabled(true)
-                                .buttonStyle(MCButtonStyle(color: .gray))
-                        }
-
-                        if fourthChoiceIsShowing {
-                            showChoice(for: question.choices[3], tag: 3)
-                                .buttonStyle(MCButtonStyle(color: Color.koyaOrange))
-                        } else {
-                            showDisabledButton(for: question.choices[3], tag: 3)
-                                .disabled(true)
-                                .buttonStyle(MCButtonStyle(color: .gray))
-                        }
-                Spacer()
+                if firstChoiceIsShowing {
+                    showChoice(for: question.choices[0], tag: 0)
+                        .buttonStyle(MCButtonStyle(color: Color.koyaOrange))
+                } else {
+                    showDisabledButton(for: question.choices[0], tag: 0)
+                        .disabled(true)
+                        .buttonStyle(MCButtonStyle(color: .gray))
                 }
+
+                if secondChoiceIsShowing {
+                    showChoice(for: question.choices[1], tag: 1)
+                        .buttonStyle(MCButtonStyle(color: Color.koyaOrange))
+                } else {
+                    showDisabledButton(for: question.choices[1], tag: 1)
+                        .disabled(true)
+                        .buttonStyle(MCButtonStyle(color: .gray))
+                }
+
+                if thirdChoiceIsShowing {
+                    showChoice(for: question.choices[2], tag: 2)
+                        .buttonStyle(MCButtonStyle(color: Color.koyaOrange))
+                } else {
+                    showDisabledButton(for: question.choices[2], tag: 2)
+                        .disabled(true)
+                        .buttonStyle(MCButtonStyle(color: .gray))
+                }
+
+                if fourthChoiceIsShowing {
+                    showChoice(for: question.choices[3], tag: 3)
+                        .buttonStyle(MCButtonStyle(color: Color.koyaOrange))
+                } else {
+                    showDisabledButton(for: question.choices[3], tag: 3)
+                        .disabled(true)
+                        .buttonStyle(MCButtonStyle(color: .gray))
+                }
+                Spacer()
+            }
             .blur(radius: isShowingModal ? 6 : 0)
             if isShowingModal {
                 BonusFeedbackView(
@@ -115,37 +115,37 @@ struct BonusQuestionView: View {
 
     func showChoice(for choice: Answers, tag: Int) -> some View {
 
-         Button {
-             if choice.correct {
+        Button {
+            if choice.correct {
                 viewModel.calculateScore()
                 isShowingModal = true
-             } else {
-                 viewModel.count += 1
-                 hideChoice(tag: tag)
-             }
-         } label: {
-             HStack {
-                 Image(systemName: "square")
-                 Spacer()
-                 Text(choice.text)
-                    .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .body)
-                 Spacer()
+            } else {
+                viewModel.count += 1
+                hideChoice(tag: tag)
+            }
+        } label: {
+            HStack {
+                Image(systemName: "square")
+                Spacer()
+                Text(choice.text)
+                    .font(FontSwap.caption2ForBody(for: sizeCategory))
+                Spacer()
 
-             }
-         }
-         .padding(.bottom, 6)
+            }
+        }
+        .padding(.bottom, 6)
     }
 
-        func showDisabledButton(for choice: Answers, tag: Int ) -> some View {
-            Button {
-                // no action yet
-            } label: {
-                HStack {
-                    Image(systemName: "xmark.square")
-                    Spacer()
-                    Text(choice.text)
-                    Spacer()
-                }
+    func showDisabledButton(for choice: Answers, tag: Int ) -> some View {
+        Button {
+            // no action yet
+        } label: {
+            HStack {
+                Image(systemName: "xmark.square")
+                Spacer()
+                Text(choice.text)
+                Spacer()
+            }
         }
         .padding(.bottom, 6)
     }

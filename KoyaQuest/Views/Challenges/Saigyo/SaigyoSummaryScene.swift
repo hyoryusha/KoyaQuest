@@ -11,27 +11,24 @@ import CoreMotion
 import SwiftUI
 
 class SaigyoSummaryScene: SKScene {
-    var viewModel: SaigyoChallengeViewModel?
 
     @Binding var challengeCompleted: Bool
 
-            init(_ challengeCompleted: Binding<Bool>) {
-                _challengeCompleted = challengeCompleted
-                super.init(size: CGSize(
-                    width: UIScreen.main.bounds.width,
-                    height: UIScreen.main.bounds.height))
-                self.scaleMode = .aspectFill
-            }
+    init(_ challengeCompleted: Binding<Bool>) {
+        _challengeCompleted = challengeCompleted
+        super.init(size: CGSize(
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height))
+        self.scaleMode = .aspectFill
+    }
 
-            required init?(coder aDecoder: NSCoder) {
-                _challengeCompleted = .constant(false)
-                super.init(coder: aDecoder)
-            }
-
+    required init?(coder aDecoder: NSCoder) {
+        _challengeCompleted = .constant(false)
+        super.init(coder: aDecoder)
+    }
 
     let exitButton = SKSpriteNode(color: SKColor.orange, size: CGSize(width: 258, height: 66))
     let exitButtonLabel = SKLabelNode(text: "Exit")
-
 
     let floor = Floor()
     override func didMove(to view: SKView) {
@@ -41,8 +38,6 @@ class SaigyoSummaryScene: SKScene {
         background.size = self.size
         background.zPosition = -1
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
-
-
 
         let poem = SKSpriteNode(imageNamed: "negawaku_text")
         poem.position = CGPoint(x: size.width / 2 - 28, y: frame.midY + 20)
@@ -65,38 +60,36 @@ class SaigyoSummaryScene: SKScene {
         addChild(floor)
 
         run(SKAction.repeatForever(
-              SKAction.sequence([
+            SKAction.sequence([
                 SKAction.run(spawnBlossom),
                 SKAction.wait(forDuration: 0.25),
                 SKAction.run(spawnPetal),
                 SKAction.wait(forDuration: 0.7)
-                ])
-            ))
+            ])
+        ))
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.addExitButton()
         }
 
-    } // end didmove
+    } // end did move
 
     override func sceneDidLoad() {
-            physicsWorld.contactDelegate = self
-        }
+        physicsWorld.contactDelegate = self
+    }
 
     func random() -> CGFloat {
         return CGFloat(Float(arc4random()) / Float(0xFFFFFFFF))
     }
 
     func random(min: CGFloat, max: CGFloat) -> CGFloat {
-      return random() * (max - min) + min
+        return random() * (max - min) + min
     }
 
     func spawnBlossom() {
 
-      // Create sprite
-      let blossom = SKSpriteNode(imageNamed: "cherry_blossom")
+        let blossom = SKSpriteNode(imageNamed: "cherry_blossom")
 
-      // Determine where to spawn the blossom
-      let randomX = random(min: -50, max: size.width / 2)
+        let randomX = random(min: -50, max: size.width / 2)
 
         blossom.position = CGPoint(x: randomX, y: size.height - 20)
         blossom.physicsBody = SKPhysicsBody(circleOfRadius: blossom.size.width)
@@ -110,7 +103,7 @@ class SaigyoSummaryScene: SKScene {
         blossom.zPosition = 1
         addChild(blossom)
 
-      let angle = CGVector(dx: 120, dy: 0)
+        let angle = CGVector(dx: 120, dy: 0)
         let angularAction = SKAction.applyImpulse(angle, duration: 2.0)
         let randomRotation = random(min: 45, max: 270)
         let actionMove = SKAction.rotate(toAngle: randomRotation, duration: 40.0)
@@ -119,9 +112,7 @@ class SaigyoSummaryScene: SKScene {
     }
 
     func spawnPetal() {
-      // Create sprite
         let petal = SKSpriteNode(imageNamed: "cherry_petal")
-          // Determine where to spawn the blossom
         let randomX = random(min: -50, max: size.width / 2)
 
         petal.position = CGPoint(x: randomX, y: size.height - 20)
@@ -129,14 +120,14 @@ class SaigyoSummaryScene: SKScene {
         petal.physicsBody?.isDynamic = true // 2
         petal.physicsBody?.categoryBitMask = PhysicsCategory.blossom // 3
         petal.physicsBody?.contactTestBitMask = PhysicsCategory.floor // 4
-        petal.physicsBody?.collisionBitMask = PhysicsCategory.floor // 5 I changed this to gate from none; again, why?
+        petal.physicsBody?.collisionBitMask = PhysicsCategory.floor // 5 changed to gate from none
         petal.physicsBody?.usesPreciseCollisionDetection = true
         petal.physicsBody?.linearDamping = 6
         petal.setScale(0.8)
         petal.zPosition = 1
         addChild(petal)
 
-      let angle = CGVector(dx: 100, dy: 0)
+        let angle = CGVector(dx: 100, dy: 0)
         let angularAction = SKAction.applyImpulse(angle, duration: 2.0)
         let randomRotation = random(min: 45, max: 270)
         let actionMove = SKAction.rotate(toAngle: randomRotation, duration: 30.0)
@@ -150,7 +141,7 @@ class SaigyoSummaryScene: SKScene {
         exitButtonLabel.fontColor = UIColor.white
         exitButtonLabel.position = CGPoint(x: 0, y: -12)
         exitButton.addChild(exitButtonLabel)
-        exitButton.position = CGPoint(x:self.frame.midX, y:self.frame.size.height * 0.12)
+        exitButton.position = CGPoint(x: self.frame.midX, y: self.frame.size.height * 0.12)
         exitButton.zPosition = 5
         let fadeInAction = SKAction.fadeIn(withDuration: 1.0)
         addChild(exitButton)
@@ -158,15 +149,14 @@ class SaigyoSummaryScene: SKScene {
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-                for touch in touches {
-                let location = touch.location(in: self)
-                    if exitButton.contains(location) {
-                        print("exit button tapped")
-                        //viewModel?.gameOver = true
-                        challengeCompleted = true
-                    }
-                }
+        for touch in touches {
+            let location = touch.location(in: self)
+            if exitButton.contains(location) {
+                print("exit button tapped")
+                challengeCompleted = true
             }
+        }
+    }
 }
 
 extension SaigyoSummaryScene: SKPhysicsContactDelegate {

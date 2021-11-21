@@ -52,5 +52,3 @@ func randomNumber (lowerBound lower: Int, upperBound upper: Int) -> Int {
 
 var koyakunCatchGameOver: Bool = false
 var koyakunCatchPoints: Int = 0
-//var koyakunPracticeRound: Bool = false
-// var koyakunIdle: Bool = true

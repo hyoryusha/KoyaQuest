@@ -15,7 +15,6 @@ enum CameraError {
 }
 
 enum KoyaLocation: String {
-
     case takedaGrave = "Takeda Shingen's Grave"
     case unknown = "Unrecognized QR Code"
     case excluded = "QR-Code does not belong to Mt. Koya"
@@ -91,7 +90,6 @@ extension ScannerVC: AVCaptureMetadataOutputObjectsDelegate {
                         didOutput metadataObjects: [AVMetadataObject],
                         from connection: AVCaptureConnection) {
         guard let object = metadataObjects.first else {
-            // scannerDelegate?.didSurface(error: .invalidFirstObject)
             return
         }
         guard let machineReadableObject = object as? AVMetadataMachineReadableCodeObject else {
@@ -102,9 +100,8 @@ extension ScannerVC: AVCaptureMetadataOutputObjectsDelegate {
             scannerDelegate?.didSurface(error: .invalidScannedValue)
             return
         }
-        // scannerDelegate?.SOMETHING
         scannerDelegate?.didMatchLocation(barcode: barcode)
-        scannerDelegate?.didFind(barcode: barcode) // this, finally, sends the found barcode string to the delegate
+        scannerDelegate?.didFind(barcode: barcode)
         // captureSession.stopRunning() // this can be called after one barcode is found
     }
 }

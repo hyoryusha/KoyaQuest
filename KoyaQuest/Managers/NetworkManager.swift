@@ -24,7 +24,6 @@ final class NetworkManager {
     private let FAQURL = baseURL + "FAQ2.json"
     private init() {
     }
-// TODO: - Create a func that takes params for the specific json file I want OR create separate funcs for each.
     // problem: how to pass params (Result<[???]> , and url string required for each
     func getInfo(completed: @escaping (Result<[Information], APError>) -> Void ) {
         guard let url = URL(string: infoURL) else {
@@ -50,9 +49,6 @@ final class NetworkManager {
 
             do {
                 let decoder = JSONDecoder()
-//                let decodedResponse = try decoder.decode(InformationResponse.self, from: data)
-//                completed(.success(decodedResponse.request))
-
                 let decodedResponse = try decoder.decode([Information].self, from: data)
                 completed(.success(decodedResponse))
 
@@ -62,7 +58,6 @@ final class NetworkManager {
         }
         task.resume()
     }
-
 
     func getFAQ(completed: @escaping (Result<[FAQ], APError>) -> Void ) {
         guard let url = URL(string: FAQURL) else {
@@ -88,8 +83,8 @@ final class NetworkManager {
 
             do {
                 let decoder = JSONDecoder()
-                //let decodedResponse = try decoder.decode(FAQResponse.self, from: data)
-               // completed(.success(decodedResponse.request))
+                // let decodedResponse = try decoder.decode(FAQResponse.self, from: data)
+                // completed(.success(decodedResponse.request))
                 let decodedResponse = try decoder.decode([FAQ].self, from: data)
                 completed(.success(decodedResponse))
 
@@ -99,5 +94,4 @@ final class NetworkManager {
         }
         task.resume()
     }
-
 }

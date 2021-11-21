@@ -12,9 +12,10 @@ class ChoishiChallengeViewModel: ObservableObject {
     @Published var gameOver: Bool = false
     @Published var points: Int = 0
     @Published var hintUsed: Bool = false
+    @Published var challengeCompleted: Bool = false
 
-    var feedbackString: String {
-        points > 0 ? "and Claim" : "with"
+    var success: Bool {
+        points > 0 ? true : false
     }
 
     func check(selection: Int) {

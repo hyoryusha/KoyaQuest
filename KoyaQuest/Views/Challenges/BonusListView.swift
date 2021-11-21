@@ -9,26 +9,27 @@ import SwiftUI
 struct BonusListView: View {
     @EnvironmentObject var appData: AppData
     var body: some View {
-        // NavigationView {
-       // VStack {
-            List {
-                ForEach(Bonus.bonusQuestions) { question in
-                    NavigationLink(
-                        destination: BonusQuestionView(question: question, appData: appData)
-                    ) {
-                        BonusListViewRow(question: question, state: bonusState(bonus: question))
-                    }
-                    .navigationTitle(Text("Bonus Questions")).disabled(isLocked(bonus: question))
+        List {
+            ForEach(Bonus.bonusQuestions) { question in
+                NavigationLink(
+                    destination: BonusQuestionView(
+                        question: question,
+                        appData: appData)
+                ) {
+                    BonusListViewRow(
+                        question: question,
+                        state: bonusState(bonus: question)
+                    )
                 }
+                .navigationTitle(
+                    Text("Bonus Questions")).disabled(isLocked(
+                        bonus: question)
+                    )
             }
-//            Text("Choose the unlocked bonus")
-//                .font(.subheadline)
-//                .foregroundColor(.black)
-//        }
+        }
         .navigationTitle("Bonus Questions")
 
-        }
-  //  }
+    }
 
     func bonusState(bonus: Bonus) -> BonusState {
         var state: BonusState = .locked
@@ -54,7 +55,6 @@ struct BonusListView: View {
         static var previews: some View {
             BonusListView()
                 .environmentObject(AppData())
-                //.preferredColorScheme(.dark)
         }
     }
 }
@@ -75,7 +75,6 @@ struct BonusListViewRow: View {
             .padding(.leading, 6)
         }
         .padding()
-
     }
 
     func getSubText(state: BonusState) -> String {

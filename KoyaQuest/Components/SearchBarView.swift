@@ -13,9 +13,6 @@ struct SearchBarView: View {
 
     var body: some View {
         VStack {
-//        Text("Enter a keyword to search:")
-//            .font(.headline)
-//            .multilineTextAlignment(.leading)
             HStack {
                 TextField("Search ...", text: $text)
                     .padding(7)
@@ -32,6 +29,7 @@ struct SearchBarView: View {
                             if isEditing {
                                 Button(action: {
                                     self.text = ""
+                                    // swiftlint:disable multiple_closures_with_trailing_closure
                                 }) {
                                     Image(systemName: "xmark.circle.fill")
                                         .foregroundColor(.gray)
@@ -49,7 +47,11 @@ struct SearchBarView: View {
                     Button(action: {
                         self.isEditing = false
                         self.text = ""
-                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
+                                                        to: nil,
+                                                        from: nil,
+                                                        for: nil
+                        )
 
                     }) {
                         Text("Cancel")
@@ -58,11 +60,10 @@ struct SearchBarView: View {
                     .transition(.move(edge: .trailing))
                     .animation(.default, value: true)
                 }
-            } 
+            }
         }
     }
 }
-
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {

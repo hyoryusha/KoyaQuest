@@ -21,7 +21,6 @@ struct ScoreSummaryTopView: View {
                 Image(systemName: "xmark")
                     .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .headline)
                     .foregroundColor(Color.white)
-                    // swiftlint:disable:next colon
                     .frame(width: 26, height: 26, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(Color.white)
                     .background(

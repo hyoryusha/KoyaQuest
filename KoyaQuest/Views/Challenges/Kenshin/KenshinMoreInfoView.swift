@@ -11,18 +11,18 @@ struct KenshinMoreInfoView: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack {
-                Text("More Info on Haka-mairi Customs")
-                    .font(.body)
-                    .multilineTextAlignment(.leading)
-                    .foregroundColor(.primary)
-                    .padding()
+            Text("More Info on Haka-mairi Customs")
+                .font(.body)
+                .multilineTextAlignment(.leading)
+                .foregroundColor(.primary)
+                .padding()
 
             Button {
                 self.presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("Exit")
                     .font(.headline)
-                    .foregroundColor(.orange)
+                    .foregroundColor(.koyaOrange)
             }
         }
     }

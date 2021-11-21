@@ -34,7 +34,8 @@ struct MainMenuScrollView: View {
                         .onChange(of: locationManager.scrollIndex) { _ in
                             scrollView.scrollTo(locationManager.scrollIndex, anchor: .leading)
                             // update the main image with the scrollIndex:
-                            let index = Landmark.allLandmarks.firstIndex(where: { $0.id == locationManager.scrollIndex } )
+                            let index = Landmark.allLandmarks.firstIndex(
+                                where: {$0.id == locationManager.scrollIndex })
                             selection = Landmark.allLandmarks[index ?? 0]
                         }
                     }
@@ -45,7 +46,7 @@ struct MainMenuScrollView: View {
                         .font(.caption2)
                         .foregroundColor(.primary)
                         .italic()
-                     + Text("yellow.")
+                    + Text("yellow.")
                         .font(.caption2)
                         .foregroundColor(.yellow)
                         .bold()

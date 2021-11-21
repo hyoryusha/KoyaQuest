@@ -20,7 +20,6 @@ struct KoyaQuestApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(AppData())
-               // .environmentObject(SignInWithApple())
                 .environmentObject(LocationManager())
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)

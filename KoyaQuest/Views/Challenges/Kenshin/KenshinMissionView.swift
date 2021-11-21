@@ -20,10 +20,10 @@ struct KenshinMissionView: View {
                 .padding()
             if playable {
                 VideoPlayer(player: AVPlayer(
-                                url: Bundle.main.url(
-                                    forResource: "uesugi_ghost",
-                                    withExtension: "mp4")!
-                    )
+                    url: Bundle.main.url(
+                        forResource: "uesugi_ghost",
+                        withExtension: "mp4")!
+                )
                 )
                     .frame(height: 280)
 
@@ -41,16 +41,16 @@ struct KenshinMissionView: View {
                 Text(playable ? "Hide Video" : "Show Video Again")
 
             }
-                .font(.footnote)
-                .foregroundColor(.koyaOrange)
-                .padding(.top)
+            .font(.footnote)
+            .foregroundColor(.koyaOrange)
+            .padding(.top)
 
             ScrollView {
                 // swiftlint:disable:next line_length
                 Text("\"My name is Uesugi Kenshin. Now, I rest peacefully here at Mt. Kōya, but in life I was a warrior and led many soldiers into bloody battle. \nAt a place called Kawanakajima, I fought many times to defeat my arch enemy. To no avail.\nNow, he, too, awaits salvation beneath the moss of Oku-no-in.\nYour mission is to seek out the nearby resting place of the man known as the \"Tiger of Kai,\" and offer a prayer for his soul.\"")
-                .font(.body)
-                .multilineTextAlignment(.leading)
-                .foregroundColor(.white)
+                    .font(.body)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(.white)
                     .padding()
             }
             Button {

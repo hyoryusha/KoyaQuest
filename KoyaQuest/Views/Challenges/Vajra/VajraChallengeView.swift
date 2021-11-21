@@ -11,7 +11,6 @@ struct VajraChallengeView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var appData: AppData
     @EnvironmentObject var locationManager: LocationManager
-    // @ObservedObject var challengeDisplayViewModel: ChallengeDisplayViewModel
     @StateObject var viewModel = VajraChallengeViewModel()
 
     var body: some View {
@@ -19,12 +18,11 @@ struct VajraChallengeView: View {
             BackgroundView()
                 .ignoresSafeArea(.all)
             VStack {
-                
                 XDismissButtonRight()
                     .padding(.top, 4)
                     .padding(.trailing, 8)
                 HStack {
-                    Image(systemName: "eyes") //camera.viewfinder
+                    Image(systemName: "eyes")
                     Text("Search for the Vajra!")
                 }
                 .frame(
@@ -72,22 +70,29 @@ struct VajraChallengeView: View {
                     .foregroundColor(.white)
                     .padding(.top)
                 ZStack {
-                    //Color.red.frame(width: 210, height: 66)
-                    Text(viewModel.distance == 0 ? "" : viewModel.proximity)
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
-                        .frame(
-                            width: 210,
-                            height: 66,
-                            alignment: .center
-                        )
-                        .background(viewModel.distanceIndicatorColor)
-                        .padding(.top, 10)
+                    HStack {
+                        Image(systemName: "arrow.left.and.right")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding(.leading, 6)
+                        Text(viewModel.distance == 0 ? "" : viewModel.proximity)
+                            .font(.title)
+                            .foregroundColor(.white)
+                    }
+                    .frame(
+                        width: 210,
+                        height: 66,
+                        alignment: .center
+                    )
+
+                    .background(viewModel.distanceIndicatorColor)
+                    .cornerRadius(20.0)
+                    .padding(.top, 10)
 
                 }
 
             } // end VStack
-            .blur(radius: viewModel.isShowingModal ? 6 : 0)
+            .overlay(viewModel.isShowingModal ? MountainOverlayView() : nil)
             .navigationBarTitle(Text(""))
             .navigationBarHidden(true)
             if viewModel.isShowingModal {
@@ -107,6 +112,8 @@ struct VajraChallengeView: View {
 struct VajraChallengeView_Previews: PreviewProvider {
     static var previews: some View {
         VajraChallengeView()
+            .environmentObject(AppData())
+            .environmentObject(LocationManager())
             .preferredColorScheme(.light)
     }
 }

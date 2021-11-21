@@ -24,40 +24,25 @@ struct LeaderboardView: View {
     }
 
     var body: some View {
-        // NavigationView {
-            ZStack {
-                VStack {
-//                    HStack {
-//                        Image(systemName: "sparkles")
-//                        Text("Points Leaderboard")
-//                            .bold()
-//                    }
-//                    .font(.title)
-//                    .foregroundColor(.koyaOrange)
-//                    .padding(.bottom)
-                    Group {
-                        Text("Total Scores Submitted: \(allFinalScores.count)")
-                            .font(wideElement(sizeCategory: sizeCategory) ? .footnote : .footnote)
-                            .foregroundColor(.secondary)
-                            + Text(" (as of \(Date().addingTimeInterval(60 * 60 * 1), style: .date))")
-                            .font(wideElement(sizeCategory: sizeCategory) ? .footnote : .footnote)
-                            .foregroundColor(.secondary)
-                    }
-                    .padding(.bottom, 6)
-                    // add a view for the current user if can be found?
-                    if appData.userName != "" {
-                        CurrentPlayerRankView(userName: appData.userName)
-                    }
-                    Divider()
-                        .border(Color.koyaOrange)
-                    ColumnLabelRowView()
-                    DynamicLeaderboardView(fetchFilter: fetchFilter)
-                    SearchFilterPickerView(fetchFilter: $fetchFilter)
-                    } // end V
-                } // end Z
-           // .navigationBarTitle("")
-           // .navigationBarHidden(true)
-        // } // end Nav
+        ZStack {
+            VStack {
+                Group {
+                    Text("Total Scores Submitted: \(allFinalScores.count)")
+                        .font(wideElement(sizeCategory: sizeCategory) ? .footnote : .footnote)
+                        .foregroundColor(.secondary)
+                    + Text(" (as of \(Date().addingTimeInterval(60 * 60 * 1), style: .date))")
+                        .font(wideElement(sizeCategory: sizeCategory) ? .footnote : .footnote)
+                        .foregroundColor(.secondary)
+                }
+                .padding(.bottom, 6)
+                // add a view for the current user if can be found?
+                Divider()
+                    .border(Color.koyaOrange)
+                ColumnLabelRowView()
+                DynamicLeaderboardView(fetchFilter: fetchFilter)
+                SearchFilterPickerView(fetchFilter: $fetchFilter)
+            } // end V
+        } // end Z
     }
 }
 
@@ -77,9 +62,9 @@ struct SearchFilterPickerView: View {
             .foregroundColor(.koyaDarkText)
         Picker("Search by:", selection: $fetchFilter) {
             ForEach(FinalScoreFilter.allCases, id: \.self) { value in
-                        Text(value.localizedName).tag(value)
-                       }
-                   }
+                Text(value.localizedName).tag(value)
+            }
+        }
         .pickerStyle(SegmentedPickerStyle())
         .padding(10)
     }
@@ -95,7 +80,7 @@ struct ColumnLabelRowView: View {
             ScoreLabel(labelText: "Score", width: 60, alignment: .center)
             Spacer()
             ScoreLabel(labelText: "Date", width: 80, alignment: .center)
-            //Spacer()
+            // Spacer()
         }
         .multilineTextAlignment(.leading)
         .padding()

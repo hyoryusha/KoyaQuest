@@ -18,7 +18,8 @@ struct KoyakunCatcherView: UIViewControllerRepresentable {
         return view
     }
 
-    func updateUIViewController(_ uiViewController: KoyakunCatcherVC, context: Context) {
+    func updateUIViewController(_ uiViewController: KoyakunCatcherVC,
+                                context: Context) {
         uiViewController.viewModel = self.viewModel
     }
 

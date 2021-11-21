@@ -25,7 +25,7 @@ struct TakedaScannerView: UIViewControllerRepresentable {
     }
 
     final class Coordinator: NSObject, ScannerVCDelegate {
-       private let scannerView: TakedaScannerView
+        private let scannerView: TakedaScannerView
 
         init(scannerView: TakedaScannerView) {
             self.scannerView = scannerView
@@ -33,7 +33,6 @@ struct TakedaScannerView: UIViewControllerRepresentable {
 
         func didFind(barcode: String) {
             scannerView.scannedCode = barcode
-            // print(barcode)
         }
 
         func didSurface(error: CameraError) {
@@ -49,8 +48,8 @@ struct TakedaScannerView: UIViewControllerRepresentable {
             var url = String.SubSequence()
             var location = KoyaLocation(rawValue: "")
             if let range = barcode.range(of: "=") {
-            locationIdentifier = barcode[range.upperBound...]
-            url = barcode[...range.lowerBound]
+                locationIdentifier = barcode[range.upperBound...]
+                url = barcode[...range.lowerBound]
             }
             // make sure its a Koyasan QR code
             if url == "http://www.koyasan.net/i/map/index.php?place=" {

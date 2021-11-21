@@ -20,13 +20,12 @@ class Tile: SKSpriteNode {
     let setID: Int
     let zPos = CGFloat(1.0)
     let isText: Bool
-
     var faceUp = true
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("NSCoding not supported")
     }
-// swiftlint:disable function_body_length
+    // swiftlint:disable function_body_length
     init(tileType: TileType) {
         self.tileType = tileType
 
@@ -100,20 +99,19 @@ class Tile: SKSpriteNode {
         let firstHalfFlip = SKAction.scaleX(to: 0.0, duration: 0.4)
         let secondHalfFlip = SKAction.scaleX(to: 1.0, duration: 0.4)
         setScale(1.0)
-      if faceUp {
-        run(firstHalfFlip, completion: {
-          self.texture = self.faceTexture
+        if faceUp {
+            run(firstHalfFlip, completion: {
+                self.texture = self.faceTexture
 
-          self.run(secondHalfFlip)
-            self.run(sound)
-        })
-      } else {
-        run(firstHalfFlip, completion: {
-          self.texture = self.backTexture
-          self.run(secondHalfFlip)
-            // self.run(sound)
-        })
-      }
-      faceUp = !faceUp
+                self.run(secondHalfFlip)
+                self.run(sound)
+            })
+        } else {
+            run(firstHalfFlip, completion: {
+                self.texture = self.backTexture
+                self.run(secondHalfFlip)
+            })
+        }
+        faceUp = !faceUp
     }
 }

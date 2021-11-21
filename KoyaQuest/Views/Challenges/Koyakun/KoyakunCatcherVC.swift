@@ -41,7 +41,7 @@ class KoyakunCatcherVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let koyakunConfiguration = ARWorldTrackingConfiguration()
-       sceneView.session.run(koyakunConfiguration)
+        sceneView.session.run(koyakunConfiguration)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,7 +50,6 @@ class KoyakunCatcherVC: UIViewController {
     }
 }
 // MARK: - ARSKViewDelegate
-
 extension KoyakunCatcherVC: ARSKViewDelegate {
 
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
@@ -64,8 +63,7 @@ extension KoyakunCatcherVC: ARSKViewDelegate {
     }
 
     func session(_ session: ARSession, didFailWithError error: Error) {
-        // present error message to user
-        print("did fail with error: \(error.localizedDescription)")
+        // print("did fail with error: \(error.localizedDescription)")
         fatalError("Fatal error: \(error.localizedDescription)")
     }
 

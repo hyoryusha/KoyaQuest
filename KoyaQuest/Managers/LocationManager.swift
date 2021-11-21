@@ -66,26 +66,25 @@ final class LocationManager: NSObject, ObservableObject {
     }
 
     func startLocationServices() {
-         print("Start location services...")
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.activityType = .fitness
-            locationManager.pausesLocationUpdatesAutomatically = true // do I want this?
-            locationManager.distanceFilter = 10 // updating will only occur when the user moves 5 meters
-            locationManager.allowsBackgroundLocationUpdates = true
-            locationManager.showsBackgroundLocationIndicator = true
-            locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.activityType = .fitness
+        locationManager.pausesLocationUpdatesAutomatically = true // do I want this?
+        locationManager.distanceFilter = 10 // updating will only occur when the user moves 5 meters
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.showsBackgroundLocationIndicator = true
+        locationManager.startUpdatingLocation()
 
-            if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-                for target in areas {
-                    locationManager.startMonitoring(for: target.region)
-                    locationManager.requestState(for: target.region)
-                    target.region.notifyOnEntry = true
-                    target.region.notifyOnExit = true
-                }
-            } else {
-                print("Location monitoring not available")
+        if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+            for target in areas {
+                locationManager.startMonitoring(for: target.region)
+                locationManager.requestState(for: target.region)
+                target.region.notifyOnEntry = true
+                target.region.notifyOnExit = true
             }
+        } else {
+            print("Location monitoring not available")
         }
+    }
 
     func stopLocationUpdates() {
         locationManager.stopUpdatingLocation()
@@ -144,32 +143,32 @@ extension LocationManager: CLLocationManagerDelegate {
     }
     // MARK: - DID DETERMINE STATE
     func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
-       if state == .inside {
+        if state == .inside {
+            guard !region.identifier.isEmpty else {return}
+            onEntry = false
+            handleActiveArea(region)
+        }
+    }
+
+    // MARK: - DID ENTER REGION
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         guard !region.identifier.isEmpty else {return}
-           onEntry = false
         handleActiveArea(region)
-       }
-   }
+    }
 
-// MARK: - DID ENTER REGION
-   func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-    guard !region.identifier.isEmpty else {return}
-    handleActiveArea(region)
-   }
+    // MARK: - DID EXIT REGION
 
-// MARK: - DID EXIT REGION
-
-   func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-    guard !region.identifier.isEmpty else {return}
-    activeArea = convertRegionToArea(region: region.identifier)
-    isInTargetZone = false
-    activeTargetZone = nil
-   }
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        guard !region.identifier.isEmpty else {return}
+        activeArea = convertRegionToArea(region: region.identifier)
+        isInTargetZone = false
+        activeTargetZone = nil
+    }
 
     func locationManager(_ manager: CLLocationManager,
                          monitoringDidFailFor region: CLRegion?,
                          withError error: Error) {
-      print(error.localizedDescription)
+        print(error.localizedDescription)
     }
 
     func locationManager(_ manager: CLLocationManager,
@@ -182,7 +181,7 @@ extension LocationManager: CLLocationManagerDelegate {
         case .denied, .restricted:
             alertItem = AlertContext.authorizationRequest
         default:
-        break
+            break
         }
     }
 
@@ -206,7 +205,7 @@ extension LocationManager: CLLocationManagerDelegate {
             alertItem = AlertContext.outOfRange
         }
     }
-// MARK: - ERRORS
+    // MARK: - ERRORS
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         guard let clError = error as? CLError else { return }
         switch clError {
@@ -218,7 +217,7 @@ extension LocationManager: CLLocationManagerDelegate {
         case CLError.deferredAccuracyTooLow: print("accuracy too low")
             alertItem = AlertContext.lowAccuracy
         case CLError.denied: print("Access denied")
-       case CLError.locationUnknown: print("Location is Unknown")
+        case CLError.locationUnknown: print("Location is Unknown")
         default: print("Catch all errors.")
         }
     }

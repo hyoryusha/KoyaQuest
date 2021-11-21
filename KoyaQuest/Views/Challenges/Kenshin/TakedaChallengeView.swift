@@ -36,9 +36,9 @@ struct TakedaChallengeView: View {
                     foundLocation: $viewModel.foundLocation,
                     success: $viewModel.success,
                     foundTakeda: $viewModel.foundTakeda)
-                    // Rectangle()
+                // Rectangle()
                     .frame(height: 380)
-                        .padding(.bottom, 6)
+                    .padding(.bottom, 6)
 
                 if viewModel.foundTakeda {
                     Text("Congratulations! You found:")

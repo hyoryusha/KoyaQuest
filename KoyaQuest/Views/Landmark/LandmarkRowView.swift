@@ -14,20 +14,19 @@ struct LandmarkRowView: View {
     var body: some View {
         HStack {
             if !wideElement(sizeCategory: sizeCategory) {
-            Image(landmark.imageName)
-                .resizable()
-                .frame(width: 70, height: 50)
+                Image(landmark.imageName)
+                    .resizable()
+                    .frame(width: 70, height: 50)
             }
             VStack(alignment: .leading) {
                 Text(landmark.jname)
-                    .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .title3)
+                    .font(FontSwap.caption2ForTitle3(for: sizeCategory))
                     .foregroundColor(.koyaDarkText)
                 Text(landmark.name)
-                    .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .subheadline)
+                    .font(FontSwap.caption2ForSubheadline(for: sizeCategory))
                     .italic()
                     .foregroundColor(.secondary)
             }
-
             Spacer()
             RatingsView(filter: landmark.name)
         }

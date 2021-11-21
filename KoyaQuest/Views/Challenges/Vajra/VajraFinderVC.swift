@@ -11,8 +11,8 @@ import ARKit
 import SpriteKit
 
 protocol VajraFinderVCDelegate: AnyObject {
-//    func didFind()
-//    func didSurface(error: CameraError)
+    //    func didFind()
+    //    func didSurface(error: CameraError)
 }
 
 class VajraFinderVC: UIViewController {
@@ -25,53 +25,51 @@ class VajraFinderVC: UIViewController {
         super.viewDidLoad()
         self.view.addSubview(sceneView)
 
-        // add autolayout contstraints
         sceneView.translatesAutoresizingMaskIntoConstraints = false
         sceneView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         sceneView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
         sceneView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
         sceneView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
 
-        // Set the view's delegate
-                sceneView.delegate = self
-                let scene = VajraGameScene(size: sceneView.bounds.size)
-                scene.viewModel = viewModel
-                scene.scaleMode = .resizeFill
-                sceneView.presentScene(scene)
-        }
+        sceneView.delegate = self
+        let scene = VajraGameScene(size: sceneView.bounds.size)
+        scene.viewModel = viewModel
+        scene.scaleMode = .resizeFill
+        sceneView.presentScene(scene)
+    }
 
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            let configuration = ARWorldTrackingConfiguration()
-            sceneView.session.run(configuration) // this is where the app crashes:
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let configuration = ARWorldTrackingConfiguration()
+        sceneView.session.run(configuration)
+    }
 
-        override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
-            sceneView.session.pause()
-        }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        sceneView.session.pause()
+    }
 
-        override var shouldAutorotate: Bool {
-            return true
-        }
+    override var shouldAutorotate: Bool {
+        return true
+    }
 
-        override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-            if UIDevice.current.userInterfaceIdiom == .phone {
-                return .allButUpsideDown
-            } else {
-                return .all
-            }
-        }
-
-        override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-            // Release any cached data, images, etc that aren't in use.
-        }
-
-        override var prefersStatusBarHidden: Bool {
-            return true
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
+        } else {
+            return .all
         }
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Release any cached data, images, etc that aren't in use.
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+}
 
 // MARK: - EXTENSION
 

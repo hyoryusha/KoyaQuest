@@ -9,7 +9,6 @@ import CoreData
 import XCTest
 @testable import KoyaQuest
 
-
 class RatingsTest: BaseTestCase {
 
     func testCreateNewRating()  throws {
@@ -38,7 +37,5 @@ class RatingsTest: BaseTestCase {
         }
         XCTAssertEqual(testRating?[0].rating, newRating)
         XCTAssertNotEqual(testRating?[0].rating, wrongRating)
-
     }
-
 }

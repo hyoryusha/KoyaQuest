@@ -8,12 +8,11 @@
 import SwiftUI
 import SpriteKit
 
-class DaimonGameScene: SKScene  {
-    //var viewModel: DaimonGameViewModel?
+class DaimonGameScene: SKScene {
 
     @Binding var showingAlert: Bool
     @Binding var success: Bool
-    //@Binding var showingSolution: Bool
+
     var respondToTap: Bool = true
 
     init(_ showingAlert: Binding<Bool>, _ success: Binding<Bool>) {
@@ -31,13 +30,10 @@ class DaimonGameScene: SKScene  {
             super.init(coder: aDecoder)
         }
 
-
     let daimon = SKSpriteNode(imageNamed: "daimon_whats_wrong")
     let solution = SKSpriteNode(imageNamed: "daimon_solution")
     let box = SKSpriteNode(color: SKColor.clear, size: CGSize(width: 580, height: 190))
-    // let successLabel = SKLabelNode(text: "You got it!")
     let successLabel = SuccessLabel(text: "You got it!")
-    // let failLabel = SKLabelNode(text: "Too bad, you missed it.")
     let failLabel = FailLabel(text: "No, that was incorrect")
 
     override func didMove(to view: SKView) {
@@ -45,7 +41,6 @@ class DaimonGameScene: SKScene  {
         view.allowsTransparency = true
         view.backgroundColor = UIColor(.clear)
         daimon.scale(to: CGSize(width: frame.size.width, height: frame.size.width * 0.75))
-        // daimon.scale(to: CGSize(width: 400, height: 300))
         daimon.zPosition = 1
         daimon.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
         daimon.name = "daimon"
@@ -58,12 +53,6 @@ class DaimonGameScene: SKScene  {
         daimon.addChild(box)
         solution.scale(to: CGSize(width: 727, height: 700))
         solution.position = CGPoint(x: 70, y: 400)
-//        if viewModel?.showingSolution == true {
-//            daimon.addChild(solution)
-//            if success == true {
-//            } else {
-//            }
-//        }
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

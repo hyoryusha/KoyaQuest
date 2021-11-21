@@ -13,7 +13,7 @@ struct TitleView: View {
     var body: some View {
         VStack {
             Text("Kōya Quest")
-                .font(.system(wideElement(sizeCategory: sizeCategory) ? .body : .title , design: .serif))
+                .font(.system(wideElement(sizeCategory: sizeCategory) ? .body : .title, design: .serif))
                 .italic()
                 .bold()
                 .foregroundColor(Color.koyaPurple)

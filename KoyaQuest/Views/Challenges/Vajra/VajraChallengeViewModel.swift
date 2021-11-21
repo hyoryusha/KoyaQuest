@@ -13,7 +13,6 @@ final class VajraChallengeViewModel: ObservableObject {
     @Published var distance: Double = 1000.00
     @Published var isShowingModal = false
 
-
     var statusText: String {
         found  ? "You found it!" : "Keep searching..."
     }
@@ -27,7 +26,6 @@ final class VajraChallengeViewModel: ObservableObject {
     }
 
     var distanceIndicatorColor: Color {
-
         switch distance {
         case 99.00..<1000.00:
             return Color.red
@@ -37,8 +35,6 @@ final class VajraChallengeViewModel: ObservableObject {
             return Color.koyaGreen
         default:
             return Color.red
-
         }
     }
-
 }

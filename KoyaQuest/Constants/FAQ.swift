@@ -19,7 +19,6 @@ enum FAQCategory: String, CaseIterable, Codable {
     case customs = "Customs & Practices"
 }
 
-
 struct FAQ: Hashable, Codable, Identifiable {
     var id: Int
     var filter: String
@@ -31,10 +30,8 @@ struct FAQ: Hashable, Codable, Identifiable {
                           FAQCategory.people,
                           FAQCategory.buddhism,
                           FAQCategory.customs]
-
 }
 
 struct FAQResponse: Decodable {
     let request: [FAQ]
 }
-

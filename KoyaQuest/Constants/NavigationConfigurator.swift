@@ -9,12 +9,14 @@ import SwiftUI
 struct NavigationConfigurator: UIViewControllerRepresentable {
     var configure: (UINavigationController) -> Void = { _ in }
 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
+    func makeUIViewController(
+        context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
         UIViewController()
     }
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
-        if let nc = uiViewController.navigationController {
-            self.configure(nc)
+    func updateUIViewController(_ uiViewController: UIViewController,
+                                context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+        if let navc = uiViewController.navigationController {
+            self.configure(navc)
         }
     }
 

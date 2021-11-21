@@ -30,14 +30,10 @@ struct ChoishiChallengeView: View {
                         .scaledToFit()
                         .cornerRadius(3.0)
                     Button {
-                        appData.showChallenge()
-                        appData.recordCompletedChallenge(challenge: choishiChallenge, points: viewModel.points)
-                        locationManager.resumeRegionMonitoring()
-                        appData.challengeState = .idle
-                        choishiChallenge.completed = true
+                        viewModel.challengeCompleted = true
                     } label: {
-                        Text("Exit \(viewModel.feedbackString) \(viewModel.points) Points")
-                            .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .title3)
+                        Text("Got it!")
+                            .font(FontSwap.caption2ForTitle3(for: sizeCategory))
                             .bold()
                             .frame(
                                 minWidth: 210,
@@ -58,7 +54,7 @@ struct ChoishiChallengeView: View {
 
                 } else {
                     Text("Chōishi Challenge")
-                        .font(wideElement(sizeCategory: sizeCategory) ? .caption : .title)
+                        .font(FontSwap.caption2ForTitle(for: sizeCategory))
                         .foregroundColor(.koyaOrange)
                         .bold()
                     ChoishiStarterView(isShowingAlert: $isShowingAlert, selection: $selection, viewModel: viewModel)
@@ -81,6 +77,17 @@ struct ChoishiChallengeView: View {
                 )
             }
             .padding(.top, 32)
+            .overlay(viewModel.challengeCompleted ? MountainOverlayView() : nil)
+            if viewModel.challengeCompleted {
+                ChallengeFeedbackView(
+                    appData: appData,
+                    locationManager: locationManager,
+                    challenge: choishiChallenge,
+                    text: viewModel.success ? "Nice Job!" : "Too bad",
+                    points: viewModel.points,
+                    success: viewModel.success ? true : false
+                )
+            }
         } // end zStack
         .navigationBarTitle(Text(""))
         .navigationBarHidden(true)
@@ -91,7 +98,7 @@ struct ChoishiChallengeView: View {
 struct ChoishiChallengeView_Previews: PreviewProvider {
     static var previews: some View {
         ChoishiChallengeView()
-            .preferredColorScheme(.light)
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -107,44 +114,44 @@ struct ChoishiStarterView: View {
         Image("choishi_?")
             .resizable()
             .scaledToFit()
-            .frame(height: wideElement(sizeCategory: sizeCategory) ? 140 : 180)
+            .frame(height: wideElement(sizeCategory: sizeCategory) ? 120 : 140)
         // swiftlint:disable:next line_length
         Text("The chōishi seen above is one of thirty-six that lead from the Danjō Garan to Oku-no-in.\nFind it and determine which number it is.\nChoose from the picker view below.")
-            .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .subheadline)
+            .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .caption)
+            .foregroundColor(.white)
             .multilineTextAlignment(.center)
             .padding(4)
 
-            Button {
-                isShowingAlert = true
-            } label: {
-                HStack {
-                    Image(systemName: "key.fill")
-                    Text("View Hint")
-                        .bold()
+        Button {
+            isShowingAlert = true
+        } label: {
+            HStack {
+                Image(systemName: "key.fill")
+                Text("View Hint")
+                    .bold()
 
-                }
-                .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .headline)
-                .foregroundColor(.koyaRed)
-                .padding(2)
             }
-            .buttonStyle(ScaleButtonStyle())
+            .font(FontSwap.caption2ForSubheadline(for: sizeCategory))
+            .foregroundColor(.koyaRed)
+            .padding(2)
+        }
+        .buttonStyle(ScaleButtonStyle())
         ZStack {
             Image("choishi_white_on_gray")
                 .resizable()
                 .scaledToFit()
             Picker("", selection: $selection) {
                 ForEach(viewModel.numbers, id: \.self) {
-                                Text("\($0)")
-                                    .foregroundColor(.black)
-                            }
-                        }
-            .pickerStyle(.wheel)
-
+                    Text("\($0)")
+                        .foregroundColor(.black)
+                }
             }
+            .pickerStyle(.wheel)
+        }
         Button {
             viewModel.check(selection: selection)
         } label: {
-        ActionButton(color: Color.koyaOrange, text: "Check Answer")
+            ActionButton(color: Color.koyaOrange, text: "Check Answer")
         }
         .navigationBarTitle(Text(""))
         .navigationBarHidden(true)

@@ -16,7 +16,7 @@ struct DaimonGameView: View {
     @State var showingAlert: Bool = false
     @State var showingSolution: Bool = false
 
-   // @ObservedObject var viewModel = DaimonGameViewModel()
+    // @ObservedObject var viewModel = DaimonGameViewModel()
 
     @Binding var gameOver: Bool
     @Binding var challengeCompleted: Bool
@@ -30,7 +30,6 @@ struct DaimonGameView: View {
         scene.size = CGSize(width: 400, height: 300)
         scene.scaleMode = .aspectFit
         scene.backgroundColor = UIColor(.clear)
-        //scene.viewModel = viewModel
         return scene
     }
 
@@ -61,7 +60,6 @@ struct DaimonGameView: View {
                         .foregroundColor(success ? Color.koyaGreen : Color.koyaRed)
                         .padding()
                     Button {
-                        //handleGameOver(points: points)
                         challengeCompleted = true
                         self.presentationMode.wrappedValue.dismiss()
                     } label: {
@@ -91,12 +89,11 @@ struct DaimonGameView: View {
             Alert(
                 title: Text("Confirm your Selection"),
                 message: Text("Are you sure this is where the difference is?"),
-                primaryButton: .default (Text("Yes")) {
+                primaryButton: .default(Text("Yes")) {
                     selectionConfirmed = true
                     showingSolution = true
-                    print("should show solution")
                 },
-                secondaryButton: .destructive (
+                secondaryButton: .destructive(
                     Text("No (try again)"))
             )
         } // end alert is presented

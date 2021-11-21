@@ -23,8 +23,10 @@ struct AboutKoyaQuestView: View {
                 ScrollView {
                     HeaderText(text: contents.body.headerOne,
                                color: Color.koyaOrange)
-                        .navigationBarTitle("About Kōya Quest", displayMode: .inline)
-                        
+                        .navigationBarTitle("About Kōya Quest",
+                                            displayMode: .inline
+                        )
+
                     BodyText(text: contents.body.bodyOne,
                              color: .white)
                     HeaderText(text: contents.body.headerTwo,
@@ -32,7 +34,6 @@ struct AboutKoyaQuestView: View {
                     BodyText(text: contents.body.bodyTwo,
                              color: .white)
                 }
-                // Spacer()
                 if contents.id == 1004 {
                     ChallengeListLinkView()
                         .padding(.top, 30)

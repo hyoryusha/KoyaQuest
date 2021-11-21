@@ -10,37 +10,31 @@ import SwiftUI
 import GameplayKit
 
 class ShogunsGameScene: SKScene {
-   // var viewModel = ShogunsChallengeViewModel()
-
     @Binding var challengeCompleted: Bool
     @Binding var pointsEarned: Int
 
-
     init(_ challengeCompleted: Binding<Bool>, _ pointsEarned: Binding<Int>) {
-            _challengeCompleted = challengeCompleted
-            _pointsEarned = pointsEarned
-            super.init(size: CGSize(
-                width: UIScreen.main.bounds.width,
-                height: UIScreen.main.bounds.height))
-            self.scaleMode = .aspectFill
-        }
+        _challengeCompleted = challengeCompleted
+        _pointsEarned = pointsEarned
+        super.init(size: CGSize(
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height))
+        self.scaleMode = .aspectFill
+    }
 
-        required init?(coder aDecoder: NSCoder) {
-            _challengeCompleted = .constant(false)
-            _pointsEarned = .constant(0)
-            super.init(coder: aDecoder)
-        }
-
+    required init?(coder aDecoder: NSCoder) {
+        _challengeCompleted = .constant(false)
+        _pointsEarned = .constant(0)
+        super.init(coder: aDecoder)
+    }
 
     var backgroundSprite = SKSpriteNode(imageNamed: "shoguns")
     var ieyasuQuote = SKSpriteNode(imageNamed: "ieyasu_quote")
     var nobunagaQuote = SKSpriteNode(imageNamed: "nobunaga_quote")
     var hideyoshiQuote = SKSpriteNode(imageNamed: "hideyoshi_quote")
-
     var kamiNoKu = SKLabelNode(text: "If the cuckoo will not sing...")
     var points = 0
     var selectedNode = SKSpriteNode()
-//    var checkButton = SKSpriteNode(color: SKColor.orange, size: CGSize(width: 120, height: 28))
     var checkButton = CheckAnswerButton()
     let checkButtonLabel = SKLabelNode(text: "Check")
     let alert = SKLabelNode(text: "You must move all the quotes into position.")
@@ -50,57 +44,56 @@ class ShogunsGameScene: SKScene {
     var finalPositions: [String: CGFloat] = [:]
     var matches: [String] = []
     var solved: Bool = false
-    //var points: Int  = 0
 
     override func didMove(to view: SKView) {
         UIApplication.shared.isIdleTimerDisabled = true
         self.backgroundColor = SKColor.purple
 
-    setUpBackground()
-    addChild(backgroundSprite)
+        setUpBackground()
+        addChild(backgroundSprite)
 
-    ieyasuQuote.position = CGPoint(
-        x: ieyasuQuote.size.width / 2 + 6,
-        y: frame.size.height - frame.size.height / 9
-    )
-    ieyasuQuote.setScale(0.8)
-    ieyasuQuote.zPosition = 10
-    ieyasuQuote.name = "A"
-    addChild(ieyasuQuote)
+        ieyasuQuote.position = CGPoint(
+            x: ieyasuQuote.size.width / 2 + 6,
+            y: frame.size.height - frame.size.height / 9
+        )
+        ieyasuQuote.setScale(0.8)
+        ieyasuQuote.zPosition = 10
+        ieyasuQuote.name = "A"
+        addChild(ieyasuQuote)
 
-    nobunagaQuote.position = CGPoint(
-        x: frame.size.width / 2 + 6,
-        y: frame.size.height - frame.size.height / 9
-    )
-    nobunagaQuote.setScale(0.8)
-    nobunagaQuote.zPosition = 10
-    nobunagaQuote.name = "C"
-    addChild(nobunagaQuote)
+        nobunagaQuote.position = CGPoint(
+            x: frame.size.width / 2 + 6,
+            y: frame.size.height - frame.size.height / 9
+        )
+        nobunagaQuote.setScale(0.8)
+        nobunagaQuote.zPosition = 10
+        nobunagaQuote.name = "C"
+        addChild(nobunagaQuote)
 
-    hideyoshiQuote.position = CGPoint(
-        x: frame.size.width - ieyasuQuote.size.width / 2 - 6,
-        y: frame.size.height - frame.size.height / 9
-    )
-    hideyoshiQuote.setScale(0.8)
-    hideyoshiQuote.zPosition = 10
-    hideyoshiQuote.name = "B"
-    addChild(hideyoshiQuote)
+        hideyoshiQuote.position = CGPoint(
+            x: frame.size.width - ieyasuQuote.size.width / 2 - 6,
+            y: frame.size.height - frame.size.height / 9
+        )
+        hideyoshiQuote.setScale(0.8)
+        hideyoshiQuote.zPosition = 10
+        hideyoshiQuote.name = "B"
+        addChild(hideyoshiQuote)
 
-    kamiNoKu.fontSize = 15.0
-    kamiNoKu.fontName = SKFont.mediumItalic
-    kamiNoKu.fontColor = UIColor.white
-    kamiNoKu.position = CGPoint(
-        x: frame.size.width / 2,
-        y: frame.size.height - frame.size.height / 9 + ieyasuQuote.size.height * 0.8
-    )
-    kamiNoKu.zPosition = 100
-    addChild(kamiNoKu)
-    setUpCheckButton()
-    addChild(checkButton)
-    setUpAlert()
+        kamiNoKu.fontSize = 15.0
+        kamiNoKu.fontName = SKFont.mediumItalic
+        kamiNoKu.fontColor = UIColor.white
+        kamiNoKu.position = CGPoint(
+            x: frame.size.width / 2,
+            y: frame.size.height - frame.size.height / 9 + ieyasuQuote.size.height * 0.8
+        )
+        kamiNoKu.zPosition = 100
+        addChild(kamiNoKu)
+        setUpCheckButton()
+        addChild(checkButton)
+        setUpAlert()
 
-    addChild(alert)
-    alert.isHidden = true
+        addChild(alert)
+        alert.isHidden = true
     }
 
     func setUpBackground() {
@@ -132,51 +125,45 @@ class ShogunsGameScene: SKScene {
         alert.zPosition = 100
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      guard let touch = touches.first else {return}
-      let positionInScene = touch.location(in: self)
-      // let touchedNodes = self.nodes(at: positionInScene)
-      selectNodeForTouch(touchLocation: positionInScene)
+        guard let touch = touches.first else {return}
+        let positionInScene = touch.location(in: self)
+        selectNodeForTouch(touchLocation: positionInScene)
         if checkButton.contains(positionInScene) {
             checkAnswers()
         }
-      } // end touches began
+    } // end touches began
 
     func checkAnswers() {
-
         if finalPositions.count < 3 {
-            // show alert
             alert.isHidden = false
-
         } else {
-           // ready to evaluate
             let keySorted = finalPositions.sorted { $0.0 < $1.0 }
-                      let correctSorted = finalPositions.sorted { $0.1 < $1.1 }
-                      var matchingIndices = 0
-                      let keyNames  = ["A", "B", "C"]
-                      var matches: [String] = []
-                      for name in keyNames {
-                        let correctIndexForName = keySorted.firstIndex(where: {$0.key == name})
-                        let returnedIndexForName = correctSorted.firstIndex(where: {$0.key == name})
-                          if correctIndexForName! == returnedIndexForName! {
-                              matchingIndices += 1
-                              matches.append(name)
-                          }
-                      }
-                      switch matchingIndices {
-                      case 3:
-                          points = 20
-                      case 1:
-                          points = 8
-                      case 0:
-                          points = 0
-                      default:
-                          points = 0
-                      }
+            let correctSorted = finalPositions.sorted { $0.1 < $1.1 }
+            var matchingIndices = 0
+            let keyNames  = ["A", "B", "C"]
+            var matches: [String] = []
+            for name in keyNames {
+                let correctIndexForName = keySorted.firstIndex(where: {$0.key == name})
+                let returnedIndexForName = correctSorted.firstIndex(where: {$0.key == name})
+                if correctIndexForName! == returnedIndexForName! {
+                    matchingIndices += 1
+                    matches.append(name)
+                }
+            }
+            switch matchingIndices {
+            case 3:
+                points = 20
+            case 1:
+                points = 8
+            case 0:
+                points = 0
+            default:
+                points = 0
+            }
 
             checkButton.isHidden = true
             kamiNoKu.isHidden = true
             alert.isHidden = true
-            //alertIsHidden = false
             if matchingIndices == 1 {
                 feedback.text = "You made \(matchingIndices) match for \(points) points"
             } else {
@@ -186,28 +173,22 @@ class ShogunsGameScene: SKScene {
             setUpFeedback()
             addChild(feedback)
             colorize(for: matches)
-            //self.viewModel.solved = true
             self.solved = true
-            //self.viewModel.matches = matchingIndices
-            //self.viewModel.points = self.points
             pointsEarned = self.points
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) { // go to summary scene
-                self.showSummaryScene(withTransition: .crossFade(withDuration:  0.75))
-
+                self.showSummaryScene(withTransition: .crossFade(withDuration: 0.75))
             }
         }
     } // end checkAnswers()
 
     private func showSummaryScene(withTransition transition: SKTransition) {
-             let delay = SKAction.wait(forDuration: 1)
-             let sceneChange = SKAction.run {
-                 let scene = ShogunsSummaryScene(self.$challengeCompleted)
-                 //scene.viewModel = self.viewModel
-               self.view?.presentScene(scene, transition: transition)
-             }
-             run(.sequence([delay, sceneChange]))
-           }
-
+        let delay = SKAction.wait(forDuration: 1)
+        let sceneChange = SKAction.run {
+            let scene = ShogunsSummaryScene(self.$challengeCompleted)
+            self.view?.presentScene(scene, transition: transition)
+        }
+        run(.sequence([delay, sceneChange]))
+    }
 
     func setUpFeedback() {
         feedback.fontSize = 17
@@ -216,46 +197,45 @@ class ShogunsGameScene: SKScene {
         feedback.position = CGPoint(x: frame.size.width / 2, y: frame.size.height - frame.size.height / 8)
         feedback.zPosition = 100
     }
-      func colorize(for matches: [String]) {
+    func colorize(for matches: [String]) {
         let colorOverlay = UIColor(red: 0, green: 204 / 255, blue: 131 / 255, alpha: 1.0)
-          let colorize = SKAction.colorize(with: colorOverlay, colorBlendFactor: 0.5, duration: 1.5)
-          for match in matches {
-              let sprite = childNode(withName: match)
-              sprite?.run(colorize)
-          }
-      }
-
-      func selectNodeForTouch(touchLocation: CGPoint) {
-          let touchedNode = self.atPoint(touchLocation)
-
-          if touchedNode is SKSpriteNode && touchedNode.name != "shoguns" {
-
-          if !selectedNode.isEqual(touchedNode) {
-            selectedNode.removeAllActions()
-            selectedNode.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
-            // swiftlint:disable force_cast
-            selectedNode = touchedNode as! SKSpriteNode
-            // swiftlint:enable force_cast
-              }
-          }
-      }
-      func panForTranslation(translation: CGPoint) {
-        let position = selectedNode.position
-          let newPosition = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
-          selectedNode.position = newPosition
-          let minHeight = backgroundSprite.frame.maxY
-          if newPosition.y < minHeight {
-              finalPositions[selectedNode.name ?? "something"] = newPosition.y
+        let colorize = SKAction.colorize(with: colorOverlay, colorBlendFactor: 0.5, duration: 1.5)
+        for match in matches {
+            let sprite = childNode(withName: match)
+            sprite?.run(colorize)
         }
-      }
+    }
 
-      override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    func selectNodeForTouch(touchLocation: CGPoint) {
+        let touchedNode = self.atPoint(touchLocation)
 
-         guard let touch = touches.first else {return}
-          let positionInScene = touch.location(in: self)
-          let previousPosition = touch.previousLocation(in: self)
+        if touchedNode is SKSpriteNode && touchedNode.name != "shoguns" {
+
+            if !selectedNode.isEqual(touchedNode) {
+                selectedNode.removeAllActions()
+                selectedNode.run(SKAction.rotate(toAngle: 0.0, duration: 0.1))
+                // swiftlint:disable force_cast
+                selectedNode = touchedNode as! SKSpriteNode
+                // swiftlint:enable force_cast
+            }
+        }
+    }
+    func panForTranslation(translation: CGPoint) {
+        let position = selectedNode.position
+        let newPosition = CGPoint(x: position.x + translation.x, y: position.y + translation.y)
+        selectedNode.position = newPosition
+        let minHeight = backgroundSprite.frame.maxY
+        if newPosition.y < minHeight {
+            finalPositions[selectedNode.name ?? "something"] = newPosition.y
+        }
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {return}
+        let positionInScene = touch.location(in: self)
+        let previousPosition = touch.previousLocation(in: self)
         let translation = CGPoint(x: positionInScene.x - previousPosition.x, y: positionInScene.y - previousPosition.y)
-          panForTranslation(translation: translation)
-          alert.isHidden = true
-      }
+        panForTranslation(translation: translation)
+        alert.isHidden = true
+    }
 }

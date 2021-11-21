@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct ScoreSummary: View {
     @EnvironmentObject var appData: AppData
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
@@ -30,54 +28,59 @@ struct ScoreSummary: View {
             BackgroundView()
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack {
-                    ScoreSummaryTopView(scoreSummaryIsVisible: $scoreSummaryIsVisible)
-                    Text("Score Summary")
-                        .font(.title)
-                        .bold()
-                        .foregroundColor(Color.white)
-                    Text("Total Score: \(appData.totalScore)")
-                        .font(wideElement(sizeCategory: sizeCategory) ? .caption : .headline)
-                        .foregroundColor(.koyaGreen)
-                        .padding([.bottom, .top], 2)
-                    Text("\(appData.progressString) for \(appData.challengeScore) points")
-                        .font(wideElement(sizeCategory: sizeCategory) ? .caption : .footnote)
-                        .foregroundColor(.gray)
-                    Divider()
-                        .padding()
+                ScoreSummaryTopView(scoreSummaryIsVisible: $scoreSummaryIsVisible)
+                Text("Score Summary")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(Color.white)
+                Text("Total Score: \(appData.totalScore)")
+                    .font(wideElement(sizeCategory: sizeCategory) ? .caption : .headline)
+                    .foregroundColor(.koyaGreen)
+                    .padding([.bottom, .top], 2)
+                Text("\(appData.progressString) for \(appData.challengeScore) points")
+                    .font(wideElement(sizeCategory: sizeCategory) ? .caption : .footnote)
+                    .foregroundColor(.gray)
+                Divider()
+                    .padding()
 
                 GeometryReader { geo in
                     if isNarrowScreen(geo: geo) {
                         ScrollView {
                             LazyVGrid(columns: narrowScreenColumns, spacing: 8) {
-                            ForEach(allChallenges) { item in
-                                ScoreBadgeView(challenge: item.name, complete: didCompleteChallenge(challenge: item), points: getScoreForCompletedChallenge(challenge: item))
+                                ForEach(allChallenges) { item in
+                                    ScoreBadgeView(challenge: item.name,
+                                                   complete: didCompleteChallenge(challenge: item),
+                                                   points: getScoreForCompletedChallenge(challenge: item)
+                                    )
                                 } // end for each
                             }
                             .padding()
                         }
-                        //.padding()
                     } else {
                         ScrollView {
                             LazyVGrid(columns: wideScreenColumns, spacing: 20) {
                                 ForEach(allChallenges) { item in
-                                    ScoreBadgeView(challenge: item.name, complete: didCompleteChallenge(challenge: item), points: getScoreForCompletedChallenge(challenge: item))
-                                    } // end for each
-                                }
+                                    ScoreBadgeView(challenge: item.name,
+                                                   complete: didCompleteChallenge(challenge: item),
+                                                   points: getScoreForCompletedChallenge(challenge: item)
+                                    )
+                                } // end for each
                             }
+                        }
                         .padding()
                     }
                 }
 
-                    Text("Bonus Points: \(appData.bonusScore)")
-                        .font(.headline)
-                        .foregroundColor(.koyaGreen)
+                Text("Bonus Points: \(appData.bonusScore)")
+                    .font(.headline)
+                    .foregroundColor(.koyaGreen)
 
-                    Text("\(appData.bonusProgressString)")
-                        .font(.footnote)
-                        .foregroundColor(.gray)
-                        .padding(.bottom)
-                }
-                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                Text("\(appData.bonusProgressString)")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .padding(.bottom)
+            }
+            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         }
     }
     func isNarrowScreen(geo: GeometryProxy) -> Bool {
@@ -107,7 +110,6 @@ struct ScoreSummary: View {
         }
     }
 }
-
 
 struct ScoreSummary_Previews: PreviewProvider {
     static var previews: some View {

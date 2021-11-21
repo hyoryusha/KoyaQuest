@@ -9,28 +9,28 @@ import SwiftUI
 struct LandmarkListView: View {
     var locationManager: LocationManager
     var body: some View {
-       // NavigationView {
-            List {
-                ForEach(Landmark.allSections, id: \.self) { section in
-                    Section(header: Text("\(section.rawValue)")) {
-                        ForEach(Landmark.allLandmarks) { landmark in
-                            if landmark.section == section {
-                                NavigationLink(
-                                    destination: LandmarkDetailView(locationManager: locationManager,
-                                        landmark: landmark)
-                                ) {
-                                    LandmarkRowView(landmark: landmark)
-                                }
-                                .accessibility(label: Text("\(landmark.name)"))
+        List {
+            ForEach(Landmark.allSections, id: \.self) { section in
+                Section(header: Text("\(section.rawValue)")) {
+                    ForEach(Landmark.allLandmarks) { landmark in
+                        if landmark.section == section {
+                            NavigationLink(
+                                destination: LandmarkDetailView(
+                                    locationManager: locationManager,
+                                    landmark: landmark
+                                )
+                            ) {
+                                LandmarkRowView(landmark: landmark)
                             }
+                            .accessibility(label: Text("\(landmark.name)"))
                         }
                     }
                 }
-                .listStyle(GroupedListStyle())
             }
-            .padding(.bottom, 10)
-            .statusBar(hidden: true)
-       // }
+            .listStyle(GroupedListStyle())
+        }
+        .padding(.bottom, 10)
+        .statusBar(hidden: true)
         .navigationBarTitle(Text("Points of Interest"))
     }
 }

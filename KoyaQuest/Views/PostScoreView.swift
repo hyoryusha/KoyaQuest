@@ -11,7 +11,6 @@ import CoreData
 struct PostScoreView: View {
     @EnvironmentObject var appData: AppData
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
-    //@Environment(\.managedObjectContext) var viewContext: NSManagedObjectContext // changed 9-29-21 to:
     @EnvironmentObject var dataController: DataController
     @StateObject var viewModel = PostScoreViewModel()
     @State var showAllUsernames: Bool = false
@@ -19,9 +18,8 @@ struct PostScoreView: View {
     @Binding var isShowingForm: Bool
     @Binding var hidePostScoreButton: Bool
 
-//get the usernames here; pass to other views as needed
     let fetchRequest = FinalScore.basicFetchRequest()
-    var finalScores : FetchedResults<FinalScore> {
+    var finalScores: FetchedResults<FinalScore> {
         fetchRequest.wrappedValue
     }
 
@@ -29,11 +27,12 @@ struct PostScoreView: View {
         finalScores.compactMap { $0.userName }
     }
 
-
     var body: some View {
         VStack {
             Text("Kōya Quest")
-                .font(.system(wideElement(sizeCategory: sizeCategory) ? .body : .title , design: .serif))
+                .font(.system(wideElement(sizeCategory: sizeCategory) ? .body : .title,
+                              design: .serif)
+                )
                 .italic()
                 .bold()
                 .foregroundColor(Color.koyaDarkText)
@@ -49,7 +48,9 @@ struct PostScoreView: View {
                     .italic()
                 Divider()
                     .padding(.bottom, 6)
-                LeaderboardView(viewModel: LeaderboardViewModel(),  fetchFilter: FinalScoreFilter.allTime)
+                LeaderboardView(viewModel: LeaderboardViewModel(),
+                                fetchFilter: FinalScoreFilter.allTime
+                )
             } else {
                 VStack {
                     Text("Congratulations!".uppercased())
@@ -67,9 +68,8 @@ struct PostScoreView: View {
                     Section(header: Text("How do you want your name to appear?")) {
                         TextField("...enter your username here...", text: $viewModel.userName)
                             .padding(.leading, 12)
-                            //.background(Color.koyaSky)
                             .disableAutocorrection(true)
-                        Button{
+                        Button {
                             viewModel.checkUserNameAvailable(userNamesArray: userNamesArray)
                             viewModel.saveChanges()
                         } label: {
@@ -90,11 +90,14 @@ struct PostScoreView: View {
                 PostScoreBlurbView()
             }
             Spacer()
-        } // end Vstack
+        }
         .onChange(of: viewModel.readyToPostScore) {_ in
             hidePostScoreButton = true
             if viewModel.readyToPostScore == true {
-                let newRecord = FinalScoreRecord(userName: viewModel.userName, date: Date(), score: viewModel.totalScore)
+                let newRecord = FinalScoreRecord(userName: viewModel.userName,
+                                                 date: Date(),
+                                                 score: viewModel.totalScore
+                )
                 FinalScore.createWith(userIdentifier: UUID().uuidString,
                                       userName: newRecord.userName,
                                       score: newRecord.score,
@@ -109,20 +112,16 @@ struct PostScoreView: View {
         .sheet(isPresented: $showAllUsernames, content: {
             AllUserNamesView(userNamesArray: userNamesArray)
         })
-       // .background(Image("mtns")
-       // .scaledToFill()
-       // .edgesIgnoringSafeArea([.all]))
-        //.background(Color.koyaPurple)
         .statusBar(hidden: true)
         .alert(isPresented: $viewModel.showingActionAlert) {
             Alert(title: Text("User Name Unavailable"),
                   message: Text("The username you selected is already in use. Try entering a different name."),
-                primaryButton: .cancel(Text("Got it!")),
-                secondaryButton: .default(Text("View UserNames") , action: {
-                    showAllUsernames = true
-                }
-                ))
+                  primaryButton: .cancel(Text("Got it!")),
+                  secondaryButton: .default(Text("View UserNames"), action: {
+                showAllUsernames = true
             }
+                                           ))
+        }
     }
 }
 

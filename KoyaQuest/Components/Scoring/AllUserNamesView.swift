@@ -9,14 +9,6 @@ import SwiftUI
 
 struct AllUserNamesView: View {
     var userNamesArray: [String] // passed in from PostScoreView()
-//    let fetchRequest = FinalScore.basicFetchRequest()
-//    var finalScores : FetchedResults<FinalScore> {
-//        fetchRequest.wrappedValue
-//    }
-//
-//    var userNamesArray: [String] {
-//        finalScores.compactMap { $0.userName }
-//    }
 
     var body: some View {
 
@@ -45,6 +37,6 @@ struct AllUserNamesView: View {
 
 struct AllUserNamesView_Previews: PreviewProvider {
     static var previews: some View {
-        AllUserNamesView(userNamesArray: ["bart" , "homer" , "lisa"])
+        AllUserNamesView(userNamesArray: ["bart", "homer", "lisa"])
     }
 }
