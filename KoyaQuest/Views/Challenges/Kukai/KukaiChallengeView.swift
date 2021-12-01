@@ -86,6 +86,7 @@ struct KukaiChallengeView: View {
                 title: Text("Taking a long time?"),
                 message: Text("You can pause this challenge and resume later (when you find the target)."),
                 primaryButton: .default(Text("Save for Later")) {
+                    UserDefaults.standard.set(true, forKey: "KukaiSaved") // Bool
                     appData.kukaiChallengeState = .paused
                     appData.isPlayingGame = false
                     locationManager.resumeRegionMonitoring()

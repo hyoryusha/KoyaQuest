@@ -17,6 +17,7 @@
 		03377FAB26985980008F3DBF /* FinalScore+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03377FAA26985980008F3DBF /* FinalScore+Extension.swift */; };
 		0A14874A27472C5400852F82 /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14874927472C5400852F82 /* LocationManagerTests.swift */; };
 		0A14874E2748C7CD00852F82 /* FontSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14874D2748C7CD00852F82 /* FontSwap.swift */; };
+		0A1AFC3C274B37720069CBAB /* KoyasanLocations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A1AFC3B274B37720069CBAB /* KoyasanLocations.gpx */; };
 		0A21654826E2131E007C4034 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A21654A26E2131E007C4034 /* Localizable.strings */; };
 		0A27E5EE270872DB00641E30 /* AsynchTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A27E5ED270872DB00641E30 /* AsynchTestCase.swift */; };
 		0A3D23DA2672D9EC00D9CA2F /* NyonindoPhysics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D23D92672D9EC00D9CA2F /* NyonindoPhysics.swift */; };
@@ -25,7 +26,6 @@
 		0A3D23FA2674406200D9CA2F /* NumbersChallengeGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D23F92674406200D9CA2F /* NumbersChallengeGameScene.swift */; };
 		0A3D23FD267440A200D9CA2F /* Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D23FC267440A200D9CA2F /* Tiles.swift */; };
 		0A3D2404267441A200D9CA2F /* flip_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A3D2403267441A200D9CA2F /* flip_sound.mp3 */; };
-		0A3D24072674458700D9CA2F /* NumbersChallengeChildren.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D24062674458700D9CA2F /* NumbersChallengeChildren.swift */; };
 		0A3D240D2674727700D9CA2F /* GorintoGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D240C2674727700D9CA2F /* GorintoGameScene.swift */; };
 		0A3D24102674735600D9CA2F /* GorintoSummaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D240F2674735600D9CA2F /* GorintoSummaryScene.swift */; };
 		0A3D24242674A13700D9CA2F /* KoyakunChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D241F2674A13500D9CA2F /* KoyakunChallengeViewModel.swift */; };
@@ -42,7 +42,6 @@
 		0A3D243E2674ABAE00D9CA2F /* TakedaScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D24352674ABAC00D9CA2F /* TakedaScannerView.swift */; };
 		0A3D243F2674ABAE00D9CA2F /* KenshinScannerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D24362674ABAD00D9CA2F /* KenshinScannerAlert.swift */; };
 		0A3D24402674ABAE00D9CA2F /* KenshinFinderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D24372674ABAD00D9CA2F /* KenshinFinderVC.swift */; };
-		0A3D24412674ABAE00D9CA2F /* KenshinMoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D24382674ABAE00D9CA2F /* KenshinMoreInfoView.swift */; };
 		0A3D24422674ABAE00D9CA2F /* TakedaChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D24392674ABAE00D9CA2F /* TakedaChallengeView.swift */; };
 		0A3D2446267AD85A00D9CA2F /* BonusDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D2445267AD85A00D9CA2F /* BonusDisplayView.swift */; };
 		0A3D244A267ADE6000D9CA2F /* CompletedBonus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3D2448267ADE5F00D9CA2F /* CompletedBonus.swift */; };
@@ -271,6 +270,7 @@
 		03377FAA26985980008F3DBF /* FinalScore+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinalScore+Extension.swift"; sourceTree = "<group>"; };
 		0A14874927472C5400852F82 /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
 		0A14874D2748C7CD00852F82 /* FontSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSwap.swift; sourceTree = "<group>"; };
+		0A1AFC3B274B37720069CBAB /* KoyasanLocations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = KoyasanLocations.gpx; sourceTree = "<group>"; };
 		0A21654926E2131E007C4034 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0A21654B26E2F1AA007C4034 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0A27E5ED270872DB00641E30 /* AsynchTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchTestCase.swift; sourceTree = "<group>"; };
@@ -280,7 +280,6 @@
 		0A3D23F92674406200D9CA2F /* NumbersChallengeGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersChallengeGameScene.swift; sourceTree = "<group>"; };
 		0A3D23FC267440A200D9CA2F /* Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiles.swift; sourceTree = "<group>"; };
 		0A3D2403267441A200D9CA2F /* flip_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flip_sound.mp3; sourceTree = "<group>"; };
-		0A3D24062674458700D9CA2F /* NumbersChallengeChildren.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersChallengeChildren.swift; sourceTree = "<group>"; };
 		0A3D240C2674727700D9CA2F /* GorintoGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GorintoGameScene.swift; sourceTree = "<group>"; };
 		0A3D240F2674735600D9CA2F /* GorintoSummaryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GorintoSummaryScene.swift; sourceTree = "<group>"; };
 		0A3D241F2674A13500D9CA2F /* KoyakunChallengeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KoyakunChallengeViewModel.swift; sourceTree = "<group>"; };
@@ -297,7 +296,6 @@
 		0A3D24352674ABAC00D9CA2F /* TakedaScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakedaScannerView.swift; sourceTree = "<group>"; };
 		0A3D24362674ABAD00D9CA2F /* KenshinScannerAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KenshinScannerAlert.swift; sourceTree = "<group>"; };
 		0A3D24372674ABAD00D9CA2F /* KenshinFinderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KenshinFinderVC.swift; sourceTree = "<group>"; };
-		0A3D24382674ABAE00D9CA2F /* KenshinMoreInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KenshinMoreInfoView.swift; sourceTree = "<group>"; };
 		0A3D24392674ABAE00D9CA2F /* TakedaChallengeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakedaChallengeView.swift; sourceTree = "<group>"; };
 		0A3D2445267AD85A00D9CA2F /* BonusDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusDisplayView.swift; sourceTree = "<group>"; };
 		0A3D2448267ADE5F00D9CA2F /* CompletedBonus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedBonus.swift; sourceTree = "<group>"; };
@@ -360,7 +358,6 @@
 		0A4E1138266B6D73005F5FA8 /* DaimonLearnMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaimonLearnMoreView.swift; sourceTree = "<group>"; };
 		0A4E116A266B8AC9005F5FA8 /* ChallengeFeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeFeedbackView.swift; sourceTree = "<group>"; };
 		0A4E116C266B8ACA005F5FA8 /* FeedbackBannerOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackBannerOverlay.swift; sourceTree = "<group>"; };
-		0A4E1173266C4611005F5FA8 /* KoyaLocations.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = KoyaLocations.gpx; sourceTree = "<group>"; };
 		0A4E1177266CC256005F5FA8 /* VajraChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VajraChallengeViewModel.swift; sourceTree = "<group>"; };
 		0A4E117A266CC2CC005F5FA8 /* VajraFinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VajraFinderView.swift; sourceTree = "<group>"; };
 		0A4E117D266CC3EA005F5FA8 /* VajraFinderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VajraFinderVC.swift; sourceTree = "<group>"; };
@@ -765,7 +762,6 @@
 				0A3D24372674ABAD00D9CA2F /* KenshinFinderVC.swift */,
 				0A3D24342674ABAC00D9CA2F /* KenshinFinderView.swift */,
 				0A3D24332674ABAB00D9CA2F /* KenshinMissionView.swift */,
-				0A3D24382674ABAE00D9CA2F /* KenshinMoreInfoView.swift */,
 				0A3D24362674ABAD00D9CA2F /* KenshinScannerAlert.swift */,
 				0A3D24392674ABAE00D9CA2F /* TakedaChallengeView.swift */,
 				0A3D24312674ABAB00D9CA2F /* TakedaScannerVC.swift */,
@@ -789,7 +785,6 @@
 			children = (
 				0A3D23F92674406200D9CA2F /* NumbersChallengeGameScene.swift */,
 				0A3D23FC267440A200D9CA2F /* Tiles.swift */,
-				0A3D24062674458700D9CA2F /* NumbersChallengeChildren.swift */,
 			);
 			path = Numbers;
 			sourceTree = "<group>";
@@ -883,7 +878,7 @@
 		0A5E83DE2663A76D000076A9 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				0A4E1173266C4611005F5FA8 /* KoyaLocations.gpx */,
+				0A1AFC3B274B37720069CBAB /* KoyasanLocations.gpx */,
 				03377FA0269684FA008F3DBF /* NavigationConfigurator.swift */,
 				0A5E83FC2663AA43000076A9 /* Information.swift */,
 				0A92055326ABE826007E7BAF /* FAQ.swift */,
@@ -1205,6 +1200,7 @@
 				0A92058626AE2C00007E7BAF /* 1051.mp3 in Resources */,
 				0A92058F26AE2C00007E7BAF /* 1033.mp3 in Resources */,
 				0A9205AC26AE2C00007E7BAF /* 1016.mp3 in Resources */,
+				0A1AFC3C274B37720069CBAB /* KoyasanLocations.gpx in Resources */,
 				0A5E83BF2663900F000076A9 /* Landmarks.json in Resources */,
 				0A9205A126AE2C00007E7BAF /* 1020.mp3 in Resources */,
 				0A9205A026AE2C00007E7BAF /* 1070.mp3 in Resources */,
@@ -1236,7 +1232,6 @@
 				033000612671DCA400228CFC /* KukaiFinderView.swift in Sources */,
 				0A3D2446267AD85A00D9CA2F /* BonusDisplayView.swift in Sources */,
 				0ACAE8B626F2E75C007276B2 /* Binding+Extensions.swift in Sources */,
-				0A3D24072674458700D9CA2F /* NumbersChallengeChildren.swift in Sources */,
 				0A95DE6A273FAC510080EA48 /* MountainOverlayView.swift in Sources */,
 				03377FAB26985980008F3DBF /* FinalScore+Extension.swift in Sources */,
 				0A5E83F52663A971000076A9 /* NetworkManager.swift in Sources */,
@@ -1260,7 +1255,6 @@
 				03377FA1269684FA008F3DBF /* NavigationConfigurator.swift in Sources */,
 				0A98D45B26A2944F003E5FB4 /* LeaderboardViewModel.swift in Sources */,
 				0A4E116D266B8ACA005F5FA8 /* ChallengeFeedbackView.swift in Sources */,
-				0A3D24412674ABAE00D9CA2F /* KenshinMoreInfoView.swift in Sources */,
 				0A4E1090266996B0005F5FA8 /* LocalRating.swift in Sources */,
 				0A3D243A2674ABAE00D9CA2F /* TakedaScannerVC.swift in Sources */,
 				0A4E10C42669CBDE005F5FA8 /* BackgroundView.swift in Sources */,

@@ -60,7 +60,7 @@ struct MainMenuView: View {
                             Spacer()
                         }
                     }
-                    if appData.kukaiChallengeState == .paused && appData.isPlayingGame {
+                    if (appData.kukaiChallengeState == .paused || UserDefaults.standard.bool(forKey: "KukaiSaved") == true ) && appData.isPlayingGame {
                         ResumeKukaiChallenge(isShowingResumeKukaiChallenge: $appData.isShowingResumeKukaiChallenge)
                     }
                     MainMenuScrollView(selection: $landmark)
@@ -154,9 +154,8 @@ struct MainMenuView: View {
     }
 
     func showBonus() -> Bool {
-        locationManager.isInTargetZone &&
+//        locationManager.isInTargetZone &&
         appData.isShowingBonus &&
-        //            isShowingBonusList &&
         appData.isPlayingGame
     }
 
@@ -244,7 +243,8 @@ struct MainMenuView: View {
     var scoreBox: some View {
         Group {
             if appData.isPlayingGame {
-                ScoreCardView(scoreSummaryIsVisible: $scoreSummaryIsVisible, text: "Total").padding(.top, 20)
+                ScoreCardView(scoreSummaryIsVisible: $scoreSummaryIsVisible,
+                              text: "Total").padding(.top, 20)
             }
             Spacer()
         }

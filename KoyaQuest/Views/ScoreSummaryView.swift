@@ -11,7 +11,6 @@ struct ScoreSummaryView: View {
     @EnvironmentObject var appData: AppData
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
     @Binding var scoreSummaryIsVisible: Bool
-
     var body: some View {
             VStack {
                 ScoreSummaryTopView(scoreSummaryIsVisible: $scoreSummaryIsVisible)

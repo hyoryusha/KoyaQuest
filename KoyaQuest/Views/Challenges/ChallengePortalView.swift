@@ -142,7 +142,7 @@ struct ChallengePortalView_Previews: PreviewProvider {
         Group {
             ChallengePortalView(
                 isShowingChallengePortal: .constant(true),
-                challenge: daimonChallenge
+                challenge: mizumukeChallenge
             )
                 .preferredColorScheme(.light)
         }

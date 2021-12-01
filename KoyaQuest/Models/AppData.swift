@@ -120,6 +120,7 @@ final class AppData: ObservableObject {
         if completedBonusSummary.count == Bonus.bonusQuestions.count &&
             completedChallengeSummary.count == allChallenges.count {
             self.gameState = .complete
+            self.isShowingResumeKukaiChallenge = false
         }
     }
 

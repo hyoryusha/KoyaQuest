@@ -14,24 +14,15 @@ struct ChallengeFeedbackView: View {
     var points: Int
     var success: Bool
 
-    var feedbackImages = ["fb_oku-no-in",
-                          "fb_bronze_komainu",
-                          "fb_lone_priest",
-                          "fb_six_priests",
-                          "fb_shojingu_snow",
-                          "fb_daito_interior",
-                          "fb_gobyo_bridge",
-                          "fb_four_lanterns"]
-
     var body: some View {
 
         VStack {
-            Image(randomImage())
+            Image(FeedbackConstants.randomImage())
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 360, height: 200)
                 .clipped()
-                .overlay(FeedbackOverlayView(success: success))
+                .overlay(FeedbackOverlayView(type: .challenge, success: success))
                 .foregroundColor(.white)
             Button {
                 appData.showChallenge()
@@ -92,10 +83,6 @@ struct ChallengeFeedbackView: View {
         .frame(width: 320, height: 320)
         .cornerRadius(12)
         .shadow(color: .koyaPurple.opacity(0.35), radius: 0.5, x: 12, y: 12 )
-    }
-    func randomImage() -> String {
-        let index = Int.random(in: 0...feedbackImages.count - 1)
-        return feedbackImages[index]
     }
 }
 

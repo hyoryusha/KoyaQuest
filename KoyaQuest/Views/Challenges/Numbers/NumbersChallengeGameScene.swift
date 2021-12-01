@@ -8,7 +8,7 @@
 import SpriteKit
 import ARKit
 import SwiftUI
-
+// swiftlint:disable:next type_body_length
 class NumbersChallengeGameScene: SKScene {
 
     @Binding var challengeCompleted: Bool
@@ -36,6 +36,22 @@ class NumbersChallengeGameScene: SKScene {
     var counterStartValue = 60 // seconds
     var complete: Bool = false
     var touchCount = 0
+    let backTileUL = Tile(tileType: .temples)
+    let backTileUC = Tile(tileType: .choishiCount)
+    let backTileUR = Tile(tileType: .meals)
+
+    let backTile2L = Tile(tileType: .gorintoCount)
+    let backTile2C = Tile(tileType: .mealsCount)
+    let backTile2R = Tile(tileType: .hakaCount)
+
+    let backTile3L = Tile(tileType: .haka)
+    let backTile3C = Tile(tileType: .templesCount)
+    let backTile3R = Tile(tileType: .gorinto)
+
+    let backTile4L = Tile(tileType: .lotusPetalsCount)
+    let backTile4C = Tile(tileType: .lotusPetals)
+    let backTile4R = Tile(tileType: .choishi)
+
     var flippedTiles: [Tile] = []
     let scoreLabel = SKLabelNode(text: "0")
     let timerLabel = SKLabelNode(text: "-- secs remaining")
@@ -47,6 +63,10 @@ class NumbersChallengeGameScene: SKScene {
 
     let fadeOut = SKAction.fadeOut(withDuration: 3)
     let remove = SKAction.removeFromParent()
+
+    override func sceneDidLoad() {
+        print("Scene did load")
+    }
 
     override func didMove(to view: SKView) {
         print("did move to view")
@@ -62,26 +82,77 @@ class NumbersChallengeGameScene: SKScene {
         } catch {
         }
 
-        backgroundColor = UIColor(
-            red: 30 / 255,
-            green: 32 / 255,
-            blue: 53 / 255,
-            alpha: 1.0
-        )
+        backgroundColor = UIColor(red: 30 / 255, green: 32 / 255, blue: 53 / 255, alpha: 1.0)
         layoutScene()
         if self.complete != true {
+
             counter = counterStartValue
             startCounter()
         }
     }
-
+// swiftlint:disable:next function_body_length
     func layoutScene() {
 
         let tileSize = CGSize(width: frame.size.width/3 - 10, height: frame.size.width/3 - 10)
-        var positions = NumbersChallengeChildren.setUpRowPositions(
-            frame: self.frame,
-            tileSize: tileSize
-        )
+
+        let upperRowLPosition = CGPoint(
+            x: frame.midX - tileSize.width,
+            y: frame.size.height * 0.45 + tileSize.width * 2)
+        let upperRowCPosition = CGPoint(
+            x: frame.midX,
+            y: frame.size.height * 0.45 + tileSize.width * 2)
+        let upperRowRPosition = CGPoint(
+            x: frame.midX + tileSize.width,
+            y: frame.size.height * 0.45 + tileSize.width * 2)
+
+        let row2LPosition = CGPoint(
+            x: frame.midX - tileSize.width,
+            y: frame.size.height * 0.45 + tileSize.width)
+        let row2CPosition = CGPoint(
+            x: frame.midX,
+            y: frame.size.height * 0.45 + tileSize.width)
+        let row2RPosition = CGPoint(
+            x: frame.midX + tileSize.width,
+            y: frame.size.height * 0.45 + tileSize.width)
+
+        let row3LPosition = CGPoint(
+            x: frame.midX - tileSize.width,
+            y: frame.size.height * 0.45 )
+        let row3CPosition = CGPoint(
+            x: frame.midX,
+            y: frame.size.height * 0.45 )
+        let row3RPosition = CGPoint(
+            x: frame.midX + tileSize.width,
+            y: frame.size.height * 0.45 )
+
+        let row4LPosition = CGPoint(
+            x: frame.midX - tileSize.width,
+            y: frame.size.height * 0.45 - tileSize.width )
+        let row4CPosition = CGPoint(
+            x: frame.midX,
+            y: frame.size.height * 0.45 - tileSize.width)
+        let row4RPosition = CGPoint(
+            x: frame.midX + tileSize.width,
+            y: frame.size.height * 0.45 - tileSize.width )
+
+        var positions = [CGPoint]()
+
+        positions.append(upperRowLPosition)
+        positions.append(upperRowCPosition)
+        positions.append(upperRowRPosition)
+
+        positions.append(row2LPosition)
+        positions.append(row2CPosition)
+        positions.append(row2RPosition)
+
+        positions.append(row3LPosition)
+        positions.append(row3CPosition)
+        positions.append(row3RPosition)
+
+        positions.append(row4LPosition)
+        positions.append(row4CPosition)
+        positions.append(row4RPosition)
+
         positions.shuffle()
 
         scoreLabel.fontName = SKFont.bold
@@ -99,7 +170,53 @@ class NumbersChallengeGameScene: SKScene {
         timerLabel.text = "00:00"
         addChild(timerLabel)
 
-        NumbersChallengeChildren.setupBackTiles(scene: self, tileSize: tileSize, positions: positions)
+        backTileUL.size = tileSize
+        backTileUL.position = positions[0]
+        addChild(backTileUL)
+
+        backTileUC.size = tileSize
+        backTileUC.position = positions[1]
+        addChild(backTileUC)
+
+        backTileUR.size = tileSize
+        backTileUR.position = positions[2]
+        addChild(backTileUR)
+
+        backTile2L.size = tileSize
+        backTile2L.position = positions[3]
+        addChild(backTile2L)
+
+        backTile2C.size = tileSize
+        backTile2C.position = positions[4]
+        addChild(backTile2C)
+
+        backTile2R.size = tileSize
+        backTile2R.position = positions[5]
+        addChild(backTile2R)
+
+        backTile3L.size = tileSize
+        backTile3L.position = positions[6]
+        addChild(backTile3L)
+
+        backTile3C.size = tileSize
+        backTile3C.position = positions[7]
+        addChild(backTile3C)
+
+        backTile3R.size = tileSize
+        backTile3R.position = positions[8]
+        addChild(backTile3R)
+
+        backTile4L.size = tileSize
+        backTile4L.position = positions[9]
+        addChild(backTile4L)
+
+        backTile4C.size = tileSize
+        backTile4C.position = positions[10]
+        addChild(backTile4C)
+
+        backTile4R.size = tileSize
+        backTile4R.position = positions[11]
+        addChild(backTile4R)
 
         bottomInstructions.fontName = SKFont.regular
         bottomInstructions.fontSize = 18.0
@@ -114,6 +231,7 @@ class NumbersChallengeGameScene: SKScene {
         topInstructions.position = CGPoint(x: frame.midX, y: frame.size.height * 0.90)
         topInstructions.zPosition = 100
         addChild(topInstructions)
+
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -129,7 +247,7 @@ class NumbersChallengeGameScene: SKScene {
                             if flippedTiles.count == 2 {
 
                                 if flippedTiles[0].setID == flippedTiles[1].setID
-                                    && flippedTiles[0].isText != flippedTiles[1].isText { // if they match
+                                    && flippedTiles[0].isText != flippedTiles[1].isText {
                                     isUserInteractionEnabled = false
                                     handleMatch()
                                 } else {
@@ -144,7 +262,7 @@ class NumbersChallengeGameScene: SKScene {
                         }
                     }
                 } // end for touchCount less than 3
-            }
+            }// end of for touch in touches
         }
     }
     func startCounter() {
@@ -162,6 +280,7 @@ class NumbersChallengeGameScene: SKScene {
     }
 
     func handleMatch() {
+
         flippedTiles[0].run(SKAction.sequence([fadeOut, remove]))
         flippedTiles[1].run(SKAction.sequence([fadeOut, remove]))
         points += 2
@@ -182,18 +301,14 @@ class NumbersChallengeGameScene: SKScene {
         gameOverLabel.fontName = SKFont.medium
         gameOverLabel.fontSize = 38.0
         gameOverLabel.fontColor = UIColor.orange
-        gameOverLabel.position = CGPoint(
-            x: frame.midX,
-            y: frame.size.height * 0.9)
+        gameOverLabel.position = CGPoint(x: frame.midX, y: frame.size.height * 0.86)
         gameOverLabel.zPosition = 100
         addChild(gameOverLabel)
 
         finalScoreLabel.fontName = SKFont.regular
         finalScoreLabel.fontSize = 18.0
         finalScoreLabel.fontColor = UIColor.white
-        finalScoreLabel.position = CGPoint(
-            x: frame.midX,
-            y: scoreLabel.position.y + 38.0)
+        finalScoreLabel.position = CGPoint(x: frame.midX, y: scoreLabel.position.y + 38.0)
         finalScoreLabel.zPosition = 100
         addChild(finalScoreLabel)
 
@@ -201,7 +316,7 @@ class NumbersChallengeGameScene: SKScene {
         pointsEarned = self.points
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            self.challengeCompleted = true // this should trigger exit
+            self.challengeCompleted = true
         }
     }
 

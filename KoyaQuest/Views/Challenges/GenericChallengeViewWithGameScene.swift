@@ -49,13 +49,12 @@ struct GenericChallengeWithGameSceneView: View {
             .statusBar(hidden: true)
 
             if challengeCompleted {
-
                 ChallengeFeedbackView(
                     appData: appData,
                     locationManager: locationManager,
                     challenge: challenge, text: "Well Done!",
                     points: pointsEarned,
-                    success: true
+                    success: determineSuccess(pointsEarned: pointsEarned)
                 )
             }
         }
@@ -80,6 +79,13 @@ struct GenericChallengeWithGameSceneView: View {
         default:
             return SaigyoGameScene($challengeCompleted,
                                    $pointsEarned) // or something else?
+        }
+    }
+    func determineSuccess(pointsEarned: Int) -> Bool {
+        if pointsEarned > 0 {
+            return true
+        } else {
+            return false
         }
     }
 }

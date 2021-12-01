@@ -193,7 +193,8 @@ class ShogunsGameScene: SKScene {
     func setUpFeedback() {
         feedback.fontSize = 17
         feedback.fontName = SKFont.medium
-        feedback.fontColor = UIColor(red: 0, green: 204 / 255, blue: 131 / 255, alpha: 1.0)
+        // feedback.fontColor = UIColor(red: 0, green: 204 / 255, blue: 131 / 255, alpha: 1.0)
+        feedback.fontColor = UIColor.koyaGreen
         feedback.position = CGPoint(x: frame.size.width / 2, y: frame.size.height - frame.size.height / 8)
         feedback.zPosition = 100
     }

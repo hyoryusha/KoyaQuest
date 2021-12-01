@@ -33,7 +33,7 @@ class GorintoGameScene: SKScene {
     private let elementLabel = "movable"
     var selectedNode = SKSpriteNode()
 
-    var checkButton = SKSpriteNode(color: UIColor.orange, size: CGSize(width: 120, height: 34))
+    var checkButton = SKSpriteNode(color: UIColor.koyaOrange ?? UIColor.orange, size: CGSize(width: 120, height: 34))
     let checkButtonLabel = SKLabelNode(text: "Check")
     let alertMessage = SKLabelNode(text: "You must move all labels into position.")
     let hintMessage = SKLabelNode(text: "Drag and drop the labels into position.")

@@ -149,15 +149,12 @@ struct KenshinChallengeView: View {
         }
         .fullScreenCover(item: $activeSheet) { item in
             switch item {
-            case .first, .none:
+            case .first, .third, .none:
                 KenshinMissionView()
                     .transition(.move(edge: .bottom))
             case .second:
                 TakedaChallengeView(success: $viewModel.success)
                     .transition(.move(edge: .trailing))
-            case .third:
-                KenshinMoreInfoView()
-                    .transition(.move(edge: .bottom))
             }
         }
         .navigationBarTitle(Text(""))

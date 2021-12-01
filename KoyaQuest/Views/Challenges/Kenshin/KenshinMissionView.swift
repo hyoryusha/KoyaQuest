@@ -17,7 +17,7 @@ struct KenshinMissionView: View {
                 .font(.title3)
                 .bold()
                 .foregroundColor(.koyaOrange)
-                .padding()
+                .padding(.top, 30)
             if playable {
                 VideoPlayer(player: AVPlayer(
                     url: Bundle.main.url(
@@ -62,7 +62,7 @@ struct KenshinMissionView: View {
                     .foregroundColor(.koyaOrange)
                     .padding()
             }
-            Spacer()
+            //Spacer()
         }
         .background(Color(.black))
         .ignoresSafeArea()

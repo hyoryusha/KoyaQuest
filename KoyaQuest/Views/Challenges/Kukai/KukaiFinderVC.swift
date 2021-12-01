@@ -24,7 +24,9 @@ class KukaiFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     required init?(coder: NSCoder) {fatalError("init(coder:) has not been implemented") }
 
     let targetImageNames = [
-        "kukai": "Kūkai"
+        "kukai": "Kūkai",
+        "kukai white silhouette": "Kūkai",
+        "shinbetsuden kukai": "Kūkai"
     ]
 
     var isRestartAvailable = true
@@ -117,6 +119,6 @@ class KukaiFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 
     func handleSuccess(imageName: String) {
         kukaiFinderDelegate?.didFind(foundImage: imageName)
-        print(printMessage)
+        UserDefaults.standard.set(false, forKey: "KukaiSaved")
     }
 }

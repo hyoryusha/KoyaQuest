@@ -131,7 +131,7 @@ class SaigyoGameScene: SKScene {
 
         successLabel.fontSize = 18
         successLabel.fontName = SKFont.medium
-        successLabel.fontColor = UIColor.green
+        successLabel.fontColor = UIColor.koyaGreen
         successLabel.position = CGPoint(x: frame.midX, y: frame.size.height * 0.14 - 4)
         successLabel.zPosition = 100
         self.addChild(proceedToSummaryButton)
@@ -227,7 +227,7 @@ class SaigyoGameScene: SKScene {
                 keepTrying()
             }
         } else {
-            print("empty")
+            // print("empty")
         }
     }
 
@@ -240,7 +240,7 @@ class SaigyoGameScene: SKScene {
         case 3:
             points = 10
         case 4:
-            points = 5
+            points = 0
         default:
             points = 0
         }
@@ -265,7 +265,7 @@ class SaigyoGameScene: SKScene {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in
             keepTryingLabel.fontSize = 18
             keepTryingLabel.fontName = SKFont.medium
-            keepTryingLabel.fontColor = UIColor.orange
+            keepTryingLabel.fontColor = UIColor.koyaOrange
             keepTryingLabel.position = CGPoint(x: frame.midX, y: frame.size.height * 0.14 - 4)
             keepTryingLabel.zPosition = 100
             switch attempts {
