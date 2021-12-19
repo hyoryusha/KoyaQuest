@@ -19,6 +19,7 @@
         <attribute name="userIdentifier" optional="YES" attributeType="String"/>
         <relationship name="score" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FinalScore" inverseName="user" inverseEntity="FinalScore"/>
     </entity>
+    <configuration name="Local"/>
     <elements>
         <element name="FinalScore" positionX="65.90234375" positionY="252.8828125" width="128" height="104"/>
         <element name="Rating" positionX="-414.94140625" positionY="-136.23046875" width="128" height="74"/>

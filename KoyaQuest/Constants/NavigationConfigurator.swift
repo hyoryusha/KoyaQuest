@@ -19,5 +19,4 @@ struct NavigationConfigurator: UIViewControllerRepresentable {
             self.configure(navc)
         }
     }
-
 }

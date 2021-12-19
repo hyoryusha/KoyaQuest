@@ -10,9 +10,8 @@ import CoreData
 
 struct ContentView: View {
     @EnvironmentObject var appData: AppData
-     @EnvironmentObject var dataContoller: DataController
+    @EnvironmentObject var dataController: DataController
     @StateObject var locationManager = LocationManager()
-    @StateObject var challengeManager = ChallengeDisplayViewModel()
 
 @ViewBuilder
     var body: some View {
@@ -29,7 +28,8 @@ struct ContentView: View {
                 GameOverView()
             }
         }
-    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

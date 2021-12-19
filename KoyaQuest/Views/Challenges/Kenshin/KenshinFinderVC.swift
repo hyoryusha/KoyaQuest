@@ -119,7 +119,6 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         guard isRestartAvailable else { return }
         isRestartAvailable = false
         startARSession()
-        print("Experience restarted")
         // Disable for a few seconds to give the AR session time to restart.
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.isRestartAvailable = true
@@ -142,7 +141,6 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 
     private func handleFoundImage(_ imageAnchor: ARImageAnchor, _ node: SCNNode) {
         foundAnchor = imageAnchor
-        print("found anchor set")
         let size = imageAnchor.referenceImage.physicalSize
         if let videoNode = makeGhostVideo(size: size) {
             node.addChildNode(videoNode)
@@ -169,12 +167,9 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         ) { _ in
             self.avPlayer?.seek(to: .zero)
             self.kenshinFinderDelegate?.videoCompleted()
-            print("Delegate video completed called.")
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [unowned self] in
                 self.kenshinFinderDelegate?.videoCompleted() // why is this called twice?
-                print("Delegate video completed called after async delay.")
                 videoPlayCount += 1
-                print("Video play count is \(videoPlayCount)")
             }
         }
 

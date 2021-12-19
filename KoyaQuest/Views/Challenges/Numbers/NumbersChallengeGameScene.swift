@@ -65,11 +65,9 @@ class NumbersChallengeGameScene: SKScene {
     let remove = SKAction.removeFromParent()
 
     override func sceneDidLoad() {
-        print("Scene did load")
     }
 
     override func didMove(to view: SKView) {
-        print("did move to view")
         UIApplication.shared.isIdleTimerDisabled = true
         do {
             let sounds: [String] = ["flip_sound"]

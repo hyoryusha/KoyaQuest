@@ -14,13 +14,30 @@ class DataController: ObservableObject {
     init(inMemory: Bool = false) {
         // container = NSPersistentCloudKitContainer(name: "KoyaQuest")
         container = NSPersistentCloudKitContainer(name: "KoyaQuest", managedObjectModel: Self.model)
+
+        // following block added 12-11-21 following apple video tutorial
+        guard let description = container.persistentStoreDescriptions.first else {
+            fatalError("###\(#function): Failed to retrieve persistent store description.")
+        }
+        description.cloudKitContainerOptions?.databaseScope = .public
+//        let publicStoreURL = description.url!.deletingLastPathComponent().appendingPathComponent("KoyaQuest-public.sqlite")
+//        let identifier = description.cloudKitContainerOptions!.containerIdentifier
+//        let publicDescription = NSPersistentStoreDescription(url: publicStoreURL)
+//        publicDescription.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+//        publicDescription.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+//        let publicOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: identifier)
+//        publicOptions.databaseScope = .public
+//        publicDescription.cloudKitContainerOptions = publicOptions
+//        container.persistentStoreDescriptions.append(publicDescription)
+        // END of new lines (from 12-11-21)
+
+
         // container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         if inMemory { // write to a dead zone
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
         // container.viewContext.automaticallyMergesChangesFromParent = true
         // container.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
-
         container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("Fatal error loading data store: \(error.localizedDescription)")
@@ -33,6 +50,8 @@ class DataController: ObservableObject {
             }
 #endif
         }
+
+
     }
 
     static var preview: DataController = {
@@ -45,8 +64,6 @@ class DataController: ObservableObject {
         }
         return dataController
     }()
-
-    // added July 8, 2021 (cf Ultimate portfolio video on testing:
 
     static let model: NSManagedObjectModel = {
         guard let url = Bundle.main.url(forResource: "KoyaQuest", withExtension: "momd") else {

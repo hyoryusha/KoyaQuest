@@ -17,21 +17,17 @@ class KoyaQuestUITests: XCTestCase {
         continueAfterFailure = false
     }
 
-    func x_testExample() {
-        let app = XCUIApplication()
-        app.buttons["About"].tap()
-        app.tables.buttons["What is KoyaQuest?, Explore the features of this app..."].tap()
+    func testExample() {
+
+
 
     }
-    func x_testNavigationToAboutView() throws {
+    func testNavigationToAboutView() throws {
         let app = XCUIApplication()
         app.buttons["Get started"].tap()
-        app.buttons["About"].tap()
-        XCTAssertTrue(app.buttons["About"].exists)
-        app.buttons["About"].tap()
+        XCUIApplication().buttons["About"].tap()
         XCTAssertEqual(app.tables.cells.count,
-                       3 ,
-                       "Number of cells in list should be 3.")
+                       3, "Number of cells in list should be 3.")
     }
 
     func testNavigationWelcomeInfoView() throws {
@@ -43,7 +39,7 @@ class KoyaQuestUITests: XCTestCase {
     }
 
     func testNavigationToListLandmarkListView() throws {
-        let currentLandmarkCount = 41 // I need to hard code the number because a UITest cannot access the model!
+        let currentLandmarkCount = 42 // I need to hard code the number because a UITest cannot access the model!
         app.buttons["Get started"].tap()
         app.buttons["See List"].tap()
         XCTAssertEqual(app.tables.cells.count,
@@ -76,16 +72,6 @@ class KoyaQuestUITests: XCTestCase {
         XCTAssertTrue(targetText.exists)
     }
 
-    func testNavigationToAboutView() throws {
-
-        app.buttons["Get started"].tap()
-        app.buttons["About"].tap()
-        // swiftlint:disable:next line_length
-        app.tables.cells["What is KoyaQuest?, Explore the features of this app..."].children(matching: .other).element(boundBy: 0).children(matching: .other).element.tap()
-        let targetText = app.navigationBars["About KoyaQuest"].staticTexts["About KoyaQuest"]
-        XCTAssertTrue(targetText.exists)
-    }
-
     func testNavigationToScoreSummary () throws {
         app.buttons["Get started"].tap()
         app.buttons["Score Summary"].tap()
@@ -100,6 +86,31 @@ class KoyaQuestUITests: XCTestCase {
         // swiftlint:disable:next line_length
         let targetText = app.staticTexts["Gameplay has been disabled.\n(Use toggle switch in top-right corner to resume.)"]
         XCTAssertTrue(targetText.exists)
+    }
+
+    func testNavigationToFAQVIew()  throws {
+        let app = XCUIApplication()
+        app.buttons["Get started"].tap()
+        app.buttons["About"].tap()
+        app.tables.cells["FAQ, Find out more about Mt. Kōya..."].children(matching: .other).element(boundBy: 0).children(matching: .other).element.tap()
+        //app.navigationBars["FAQ"].staticTexts["FAQ"].tap()
+        let targetText = app.staticTexts["FAQ"]
+        XCTAssertTrue(targetText.exists)
+    }
+
+    func testNavigationToFAQItem() throws {
+
+        let app = XCUIApplication()
+        app.buttons["Get started"].tap()
+        app.buttons["About"].tap()
+        app.tables.cells["FAQ, Find out more about Mt. Kōya..."].children(matching: .other).element(boundBy: 0).children(matching: .other).element.tap()
+
+        let elementsQuery = app.scrollViews.otherElements
+        elementsQuery.buttons["What is Mt. Kōya?"].tap()
+//        elementsQuery.staticTexts["A Monastic Center for Shingon Buddhism"].tap()
+        let targetText = app.staticTexts["A Monastic Center for Shingon Buddhism"]
+        XCTAssertTrue(targetText.exists)
+
     }
 }
 /*

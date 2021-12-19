@@ -152,7 +152,6 @@ class SaigyoSummaryScene: SKScene {
         for touch in touches {
             let location = touch.location(in: self)
             if exitButton.contains(location) {
-                print("exit button tapped")
                 challengeCompleted = true
             }
         }

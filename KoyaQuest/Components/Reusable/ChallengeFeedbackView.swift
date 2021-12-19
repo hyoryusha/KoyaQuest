@@ -30,9 +30,6 @@ struct ChallengeFeedbackView: View {
                 locationManager.resumeRegionMonitoring()
                 appData.challengeState = .idle
                 challenge.completed = true
-                if challenge == kukaiChallenge {
-                    appData.isShowingResumeKukaiChallenge = false
-                }
             } label: {
 
                 if #available(iOS 15.0, *) {

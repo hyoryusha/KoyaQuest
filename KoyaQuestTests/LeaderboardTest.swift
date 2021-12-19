@@ -11,11 +11,12 @@ import XCTest
 
 class LeaderboardTest: BaseTestCase {
     var viewModel = PostScoreViewModel()
-    let username = "don johnson"
+    let invalidUsername = "homer simpson"
+    let validUsername = "lisa simpson"
 
     func testPostScoreToLeaderbpard() throws {
         let newRecord = FinalScoreRecord(
-            userName: "john doe",
+            userName: "Homer Simpson",
             date: Date(),
             score: 312)
 
@@ -31,7 +32,7 @@ class LeaderboardTest: BaseTestCase {
 
     func testCheckUserNameAvailable() throws {
         let newRecord = FinalScoreRecord(
-            userName: "john doe",
+            userName: "bart simpson",
             date: Date(),
             score: 312)
 
@@ -42,7 +43,7 @@ class LeaderboardTest: BaseTestCase {
             using: managedObjectContext)
 
         let secondRecord = FinalScoreRecord(
-            userName: "John Doe",
+            userName: "Homer Simpson",
             date: Date(),
             score: 200)
 
@@ -52,41 +53,17 @@ class LeaderboardTest: BaseTestCase {
             submitDate: secondRecord.date,
             using: managedObjectContext)
 
-        let request = NSFetchRequest<FinalScore>(
-            entityName: "FinalScore"
-        )
-        let finalScores = try managedObjectContext.fetch(request)
+        let fetchRequest: NSFetchRequest<FinalScore>
+        fetchRequest = FinalScore.fetchRequest()
 
-        var userNamesArray: [String] {
+        let finalScores = try managedObjectContext.fetch(fetchRequest)
+
+        var userNamesTestArray: [String] {
             finalScores.compactMap { $0.userName }
         }
 
-        var testFinalScore: [FinalScore]?
-
-        let testFoundFinalScore = finalScores.contains(where: {
-            $0.userName == username
-        })
-
-        if testFoundFinalScore {
-            testFinalScore = finalScores.filter {
-                $0.score == 312
-            }
-        }
-
-        XCTAssertFalse(testFinalScore?.isEmpty == true)
-
-        viewModel.checkUserNameAvailable(userNamesArray: userNamesArray)
-
-        let lowerCasedNames = userNamesArray.map {
-            $0.lowercased()
-        }
-
-        let filteredArray = lowerCasedNames.filter {
-            $0 == username
-        }
-    if filteredArray.isEmpty {
-        viewModel.userNameAvailable = true
-        }
+        viewModel.checkUserNameAvailable(userNamesArray: userNamesTestArray, userNameToTest: validUsername)
         XCTAssertTrue(viewModel.userNameAvailable)
     }
 }
+

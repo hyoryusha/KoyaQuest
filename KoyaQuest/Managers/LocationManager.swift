@@ -68,8 +68,8 @@ final class LocationManager: NSObject, ObservableObject {
     func startLocationServices() {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.activityType = .fitness
-        locationManager.pausesLocationUpdatesAutomatically = true // do I want this?
-        locationManager.distanceFilter = 10 // updating will only occur when the user moves 5 meters
+        locationManager.pausesLocationUpdatesAutomatically = true
+        locationManager.distanceFilter = 10
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.showsBackgroundLocationIndicator = true
         locationManager.startUpdatingLocation()
@@ -82,13 +82,12 @@ final class LocationManager: NSObject, ObservableObject {
                 target.region.notifyOnExit = true
             }
         } else {
-            print("Location monitoring not available")
+            alertItem = AlertContext.monitoringNotAvailable
         }
     }
 
     func stopLocationUpdates() {
         locationManager.stopUpdatingLocation()
-        print("stopping location updates")
     }
 
     func pauseRegionMonitoring() {
@@ -119,7 +118,7 @@ final class LocationManager: NSObject, ObservableObject {
 extension LocationManager: CLLocationManagerDelegate {
 
     // MARK: - handleActiveArea
-    fileprivate func handleActiveArea(_ region: CLRegion) {
+    func handleActiveArea(_ region: CLRegion) {
         activeArea = convertRegionToArea(region: region.identifier)
 
         if activeArea == torodoArea {
@@ -221,6 +220,13 @@ extension LocationManager: CLLocationManagerDelegate {
         default: print("Catch all errors.")
         }
     }
+}
+extension LocationManager: LocationManagerProtocol {
+
+        func isLocationServicesEnabled() -> Bool {
+            return CLLocationManager.locationServicesEnabled()
+        }
+
 }
 
 

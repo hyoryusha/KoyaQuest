@@ -16,7 +16,6 @@ enum FinalScoreFilter: String, Equatable, CaseIterable {
 struct LeaderboardView: View {
     @EnvironmentObject var appData: AppData
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
-    @ObservedObject var viewModel: LeaderboardViewModel
     @State var fetchFilter: FinalScoreFilter
     let fetchRequest = FinalScore.fetchByScoreAndDate()
     var allFinalScores: FetchedResults<FinalScore> {
@@ -48,7 +47,7 @@ struct LeaderboardView: View {
 
 struct LeaderboardView_Previews: PreviewProvider {
     static var previews: some View {
-        LeaderboardView(viewModel: LeaderboardViewModel(), fetchFilter: FinalScoreFilter.allTime)
+        LeaderboardView(fetchFilter: FinalScoreFilter.allTime)
             .environmentObject(AppData())
     }
 }

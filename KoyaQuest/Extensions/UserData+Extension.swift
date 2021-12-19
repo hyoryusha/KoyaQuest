@@ -41,11 +41,3 @@ extension UserData {
         )
     }
 }
-/*
- let publicDatabase = CKContainer.default().publicCloudDatabase
- publicDatabase.fetch(withRecordID: CKRecord.ID(recordName: userID)) { (record, error) in
- if let fetchedInfo = record {
- let email = fetchedInfo["email"] as? String
- let firstName = fetchedInfo["firstName"] as? String
- let lastName = fetchedInfo["lastName"] as? String
- */

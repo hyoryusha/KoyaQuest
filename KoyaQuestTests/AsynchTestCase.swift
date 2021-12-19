@@ -35,7 +35,7 @@ class AsynchTestCase: XCTestCase {
 
     func testReadingJsonInfoFile() {
         let url = URL(
-            string: "https://www.collins-sweet.com/kq/backend/json/Information.json"
+            string: "https://www.koyaquest.com/backend/json/Information.json"
         )!
 
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -58,7 +58,7 @@ class AsynchTestCase: XCTestCase {
     }
 
     func testReadingJsonLandmarkFile() {
-        let url = URL(string: "https://www.collins-sweet.com/kq/backend/json/Landmarks.json")!
+        let url = URL(string: "https://www.koyaquest.com/backend/json/Landmarks.json")!
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             defer { self.expectation.fulfill() }
@@ -82,7 +82,7 @@ class AsynchTestCase: XCTestCase {
 
     func testReadingJsonFAQFile() {
         let url = URL(
-            string: "https://www.collins-sweet.com/kq/backend/json/FAQ2.json"
+            string: "https://www.koyaquest.com/backend/json/FAQ.json"
         )!
 
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -108,8 +108,8 @@ class AsynchTestCase: XCTestCase {
 
     func test404() {
         let url = URL(
-            string: "https://www.collins-sweet.com/kq/backend/json/AFQ2.json"
-        )! // note the wrong URL here
+            string: "https://www.koyaquest.com/backend/json/AFQ2.json"
+        )! // note the WRONG URL here
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             defer { self.expectation.fulfill() }

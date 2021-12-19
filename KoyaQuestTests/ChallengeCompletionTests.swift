@@ -10,6 +10,7 @@ import XCTest
 @testable import KoyaQuest
 
 class ChallengeCompletionTests: BaseTestCase {
+
     var appData = AppData()
     let challenge = daimonChallenge
     let points = daimonChallenge.maxPoints
@@ -43,7 +44,7 @@ class ChallengeCompletionTests: BaseTestCase {
 
     }
 
-    func testCheckForBonus() { // this relies on UserData
+    func _testCheckForBonus() { // is there a bonus associated with the challenge?
         UserDefaults.standard.removeObject(forKey: completedKey)
         UserDefaults.standard.removeObject(forKey: completedBonusKey)
         appData.checkForBonus(challenge: challenge)
@@ -55,7 +56,7 @@ class ChallengeCompletionTests: BaseTestCase {
         XCTAssertEqual(appData.completedBonuses[0].id, bonus.id)
     }
 
-    func testAddCompletedBonus() { // this uses UserDefaults
+    func _testAddCompletedBonus() { // this uses UserDefaults
         UserDefaults.standard.removeObject(forKey: completedKey)
         UserDefaults.standard.removeObject(forKey: completedBonusKey)
         let completedBonus = CompletedBonus(id: bonus.id, points: bonusPoints)

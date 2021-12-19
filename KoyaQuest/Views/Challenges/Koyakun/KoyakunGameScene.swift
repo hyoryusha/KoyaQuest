@@ -76,7 +76,6 @@ class KoyakunGameScene: SKScene {
     } // end of didMove to view
 
     func timerSetup() {
-        print("Koyakun timer started")
         let wait = SKAction.wait(forDuration: 1)
         let action = SKAction.run {
             self.remainingTime -= 1
@@ -182,8 +181,7 @@ class KoyakunGameScene: SKScene {
         let touchedNodes = self.nodes(at: positionInScene)
         if let name = touchedNodes.last?.name {
             if name == "exitButton" {
-                // Remove?
-                print("exit button tapped")
+                // Remove
             }
         }
     }

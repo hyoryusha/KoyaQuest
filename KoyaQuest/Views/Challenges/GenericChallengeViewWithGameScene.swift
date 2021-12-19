@@ -14,7 +14,7 @@ struct GenericChallengeWithGameSceneView: View {
     @EnvironmentObject var locationManager: LocationManager
     @State private var pointsEarned: Int = 0
     @State private var challengeCompleted: Bool = false
-    var challenge: Challenge // passed in as param from portal
+    var challenge: Challenge
 
     var gameScene: SKScene {
         let scene = chooseScene(for: challenge)

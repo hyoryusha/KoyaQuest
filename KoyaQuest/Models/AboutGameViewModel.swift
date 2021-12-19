@@ -20,19 +20,6 @@ final class AboutGameViewModel: ObservableObject {
                 case .success(let information): self.information = information
                 case .failure(let error):
                     print(error.localizedDescription)
-                    // not using error messages because local json is used when network fails
-//                    switch error {
-//                    case .invalidData:
-//                        alertItem = AlertContext.invalidData
-//                    case .invalidURL:
-//                        alertItem = AlertContext.invalidURL
-//                    case .invalidResponse:
-//                        alertItem = AlertContext.invalidResponse
-//                    case .unableToComplete:
-//                        alertItem = AlertContext.unableToComplete
-//                    case .invalidSomething:
-//                        alertItem = AlertContext.invalidSomething
-//                    }
                     // if the network call fails, use local info
                     self.information = Information.allInfo
                 }

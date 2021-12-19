@@ -227,7 +227,6 @@ class SaigyoGameScene: SKScene {
                 keepTrying()
             }
         } else {
-            // print("empty")
         }
     }
 

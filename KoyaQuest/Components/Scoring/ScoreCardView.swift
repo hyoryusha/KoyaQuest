@@ -27,14 +27,6 @@ struct ScoreCardView: View {
                     .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                 .foregroundColor(.gray)
             HStack {
-                if appData.kukaiChallengeState == .paused || UserDefaults.standard.bool(forKey: "KukaiSaved") == true {
-                    HStack {
-                        Image(systemName: "paperclip")
-                        Text("Kukai Challenge Paused")
-                    }
-                    .font(.caption2)
-                    .foregroundColor(.koyaOrange)
-                }
                     Spacer()
 
                 Button(action: {

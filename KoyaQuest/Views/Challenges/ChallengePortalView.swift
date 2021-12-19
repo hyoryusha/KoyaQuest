@@ -81,7 +81,7 @@ struct ChallengePortalView: View {
                     })
                     Spacer()
                         .frame(height: 24)
-                } // end vstack
+                } // vstack root
             }
             .navigationBarTitle(Text(""))
             .navigationBarHidden(true)

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct KukaiChallengeView: View {
+    @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var appData: AppData
     @EnvironmentObject var locationManager: LocationManager
@@ -17,6 +18,7 @@ struct KukaiChallengeView: View {
         ZStack {
             BackgroundView()
                 .ignoresSafeArea(.all)
+            
             VStack {
                 XDismissButtonRight()
                     .padding(.top, 0)
@@ -59,11 +61,36 @@ struct KukaiChallengeView: View {
                     .font(.title3)
                     .foregroundColor(viewModel.statusTextColor)
                     .padding()
+                if viewModel.success {
+                    Button {
+                        viewModel.challengeComplete = true
+                    } label: {
+                        Text("Got it!")
+                            .font(FontSwap.caption2ForTitle3(for: sizeCategory))
+                            .bold()
+                            .frame(
+                                minWidth: 210,
+                                idealWidth: 220,
+                                maxWidth: 230,
+                                minHeight: 50,
+                                idealHeight: 60,
+                                maxHeight: 70,
+                                alignment: .center
+                            )
+                            .padding([.top, .bottom], 2 )
+                            .padding([.leading, .trailing], 12 )
+                            .background(Color.koyaGreen )
+                            .foregroundColor(.white)
+                            .cornerRadius(6)
+                    }
+                    .buttonStyle(ScaleButtonStyle())
+                }
             } // End VStack
-            .overlay(viewModel.success ? MountainOverlayView() : nil)
+
+            .overlay(viewModel.challengeComplete ? MountainOverlayView() : nil)
             .navigationBarTitle(Text(""))
             .navigationBarHidden(true)
-            if viewModel.success {
+            if viewModel.challengeComplete {
                 ChallengeFeedbackView(
                     appData: appData,
                     locationManager: locationManager,
@@ -71,32 +98,9 @@ struct KukaiChallengeView: View {
                     points: kukaiChallenge.maxPoints,
                     success: viewModel.success)
             }
+        } // ZStack root
 
-        } // End ZStack?
-        .onAppear {
-            if viewModel.success {
-                viewModel.stopTimer()
-            } else {
-                viewModel.startTimer()
-            }
-        }
         .statusBar(hidden: true)
-        .alert(isPresented: $viewModel.showingAlert) {
-            Alert(
-                title: Text("Taking a long time?"),
-                message: Text("You can pause this challenge and resume later (when you find the target)."),
-                primaryButton: .default(Text("Save for Later")) {
-                    UserDefaults.standard.set(true, forKey: "KukaiSaved") // Bool
-                    appData.kukaiChallengeState = .paused
-                    appData.isPlayingGame = false
-                    locationManager.resumeRegionMonitoring()
-                },
-                secondaryButton: .cancel(Text("I'll keep looking")) {
-                    viewModel.secondsLeft = 10
-                    viewModel.startTimer()
-                }
-            )
-        }
     }
 }
 

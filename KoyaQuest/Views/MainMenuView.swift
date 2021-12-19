@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct MainMenuView: View {
+    @EnvironmentObject var dataController: DataController
     @EnvironmentObject var appData: AppData
     @EnvironmentObject var locationManager: LocationManager
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
-    @StateObject var viewModel = MainMenuViewModel()
     @State var landmark: Landmark
     @State var selection: Int?
     @State private var isShowingInfo = false
@@ -59,9 +59,6 @@ struct MainMenuView: View {
                             NearGobyoWarningView()
                             Spacer()
                         }
-                    }
-                    if (appData.kukaiChallengeState == .paused || UserDefaults.standard.bool(forKey: "KukaiSaved") == true ) && appData.isPlayingGame {
-                        ResumeKukaiChallenge(isShowingResumeKukaiChallenge: $appData.isShowingResumeKukaiChallenge)
                     }
                     MainMenuScrollView(selection: $landmark)
                     // MARK: - LINK TO LIST
@@ -126,16 +123,12 @@ struct MainMenuView: View {
                                      enteredZone: locationManager.activeTargetZone!)
                     .animation(.easeInOut(duration: 0.8), value: true)
             }
-            if appData.isShowingResumeKukaiChallenge {
-                KukaiResumeDisplayView(isPlayingGame: $appData.isPlayingGame)
-                    .animation(.easeInOut(duration: 0.8), value: true)
-            }
             if showBonus() {
                 BonusDisplayView(isPlayingGame: $appData.isPlayingGame, isShowingBonusList: $isShowingBonusList)
                     .animation(.easeInOut(duration: 0.8), value: true)
             }
-        } // end zstack
-    } // end body view
+        } // zstack root
+    } // body root
 
     // MARK: - LOGIC
     func showChallenge() -> Bool {

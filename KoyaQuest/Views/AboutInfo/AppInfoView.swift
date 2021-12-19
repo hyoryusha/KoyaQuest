@@ -22,7 +22,7 @@ struct AppInfoView: View {
                     })
                 NavigationLink(
                     destination: LeaderboardView(
-                        viewModel: LeaderboardViewModel(),
+                        // viewModel: LeaderboardViewModel(),
                         // swiftlint:disable:next line_length
                                                  fetchFilter: FinalScoreFilter.allTime).navigationBarTitle("Leaderboard"),
                     label: {

@@ -42,7 +42,7 @@ struct Landmark: Hashable, Codable, Identifiable {
     var imageName: String
     var section: KoyaSection
     var area: String
-    var isSection: Bool // this can be removed
+    var isSection: Bool
     var details: Detail
     var image: Image {
         Image(imageName)

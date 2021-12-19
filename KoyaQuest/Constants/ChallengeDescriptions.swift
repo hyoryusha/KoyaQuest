@@ -100,24 +100,24 @@ let kukaiChallengeDescription = ChallengeDescription(header: kukaiChallengeHeade
 // MARK: - NYONINDO CHALLENGE
     let nyonindoChallengeHeader: String = "Nyonindō Challenge"
     let nyonindoChallengeTeaser = "Defend the Sacred Precincts!"
-    let nyonidoChallengeSynopsis = "The entrances to Mt. Kōya have traditionally been guarded by fierce, warrior-like figures known as Kongō Rikishi (a.k.a. Niō 仁王). These supernatural beings protect the sacred precints from the enemies of Buddhism.\nThis challenge harnesses your video game skills as you try to prevent evil goblin-like demons from entering the gate. \nBut be careful! Women, who were once prohibited from entering Mt. Kōya, are now welcome here. So make sure you don't impede the progress of any woman on her holy pilgrimage."
+    let nyonidoChallengeSynopsis = "The entrances to Mt. Kōya have traditionally been guarded by fierce, warrior-like figures known as Kongō Rikishi (a.k.a. Niō 仁王). These supernatural beings protect the sacred precincts from the enemies of Buddhism.\nThis challenge harnesses your video game skills as you try to prevent evil goblin-like demons from entering the gate. \nBut be careful! Women, who were once prohibited from entering Mt. Kōya, are now welcome here. So make sure you don't impede the progress of any woman on her holy pilgrimage."
     let nyonindoChallengeInstructions: String = "For most of its history, Mt. Kōya was off limits to women, who could only come as far as one of its seven gates, which -- as we have seen -- are often protected by guardian deities known as Kongō Rikishi. \nIn this challenge, you will play an arcade-type game in which you control the left-right movements of one of these guardians as he tries to ward off an attack of evil \"oni,\" or devils. You will score points for every devil you block, but you will lose points when they slip by and make it inside the gate.\nTo make things a little more complicated, female pilgrims will make their way slowly along the path. Since women are now allowed inside Mt. Kōya, you MUST NOT block one of these pious pilgrims! If you block a pilgrim, the round will end."
     let nyonindoChallengeExtra: String = "You can control the Rikishi by tilting your device in the direction you want him to move. He can only go left or right. You can play as many as three 40-second rounds. Your highest score will count."
 let nyonindoChallengeDescription = ChallengeDescription(header: nyonindoChallengeHeader, teaser: nyonindoChallengeTeaser, synopsis: nyonidoChallengeSynopsis, instructions: nyonindoChallengeInstructions, extra: nyonindoChallengeExtra, image: ChallengePix.nyonindo)
 
-// MARK: - SUGATAMI CHALLENGE
-let sugatamiChallengeHeader: String = "The Mystery of the Well"
-let sugatamiChallengeTeaser: String = "Can you face your destiny in the waters of a mysterious well?"
-let nyonindoChallengeSynopsis: String = "Still under constuction!"
-let sugatamiChallengeInstructions: String = "instructions go here"
-let sugatamiChallengeExtra = ""
-let sugatamiChallengeDescription = ChallengeDescription(header: sugatamiChallengeHeader, teaser: sugatamiChallengeTeaser, synopsis: nyonindoChallengeSynopsis, instructions: sugatamiChallengeInstructions, extra: sugatamiChallengeExtra, image: ChallengePix.sugatami)
+//// MARK: - SUGATAMI CHALLENGE
+//let sugatamiChallengeHeader: String = "The Mystery of the Well"
+//let sugatamiChallengeTeaser: String = "Can you face your destiny in the waters of a mysterious well?"
+//let nyonindoChallengeSynopsis: String = "Still under construction!"
+//let sugatamiChallengeInstructions: String = "instructions go here"
+//let sugatamiChallengeExtra = ""
+//let sugatamiChallengeDescription = ChallengeDescription(header: sugatamiChallengeHeader, teaser: sugatamiChallengeTeaser, synopsis: nyonindoChallengeSynopsis, instructions: sugatamiChallengeInstructions, extra: sugatamiChallengeExtra, image: ChallengePix.sugatami)
 
 // MARK: - Numbers CHALLENGE
 let numbersChallengeHeader: String = "Mt. Kōya by the Numbers"
 let numbersChallengeTeaser: String = "Test your memory with facts about Mt. Kōya."
 let numbersChallengeSynopsis: String = "Based on the memory game \"Concentration\", this challenge tests your memory and knoweldge of some facts about Mt. Kōya. Tap on tiles to turn them over in pairs. If the information on the pair is a match, you will earn points. And there are bonus points for completing all matches before the timer runs out."
-let numbersChallengeInstructions: String = "This game requires some knowlege about Mt. Kōya and some good short-memory skills as you will try to match pairs of tiles. (Think of the card game \"Concentration\".)"
+let numbersChallengeInstructions: String = "This game requires some knowledge about Mt. Kōya and some good short-memory skills as you will try to match pairs of tiles. (Think of the card game \"Concentration\".)"
 let numbersChallengeExtra = "You will see 12 tiles representing six pairs. Tap on pairs to reveal the information on the other side. If the pair matches, you earn two points. If you match all the pairs before 60 seconds, you will earn 20 points."
 let numbersChallengeDescription = ChallengeDescription(header: numbersChallengeHeader, teaser: numbersChallengeTeaser, synopsis: numbersChallengeSynopsis, instructions: numbersChallengeInstructions, extra: numbersChallengeExtra, image: ChallengePix.numbers)
 

@@ -48,8 +48,7 @@ struct PostScoreView: View {
                     .italic()
                 Divider()
                     .padding(.bottom, 6)
-                LeaderboardView(viewModel: LeaderboardViewModel(),
-                                fetchFilter: FinalScoreFilter.allTime
+                LeaderboardView(fetchFilter: FinalScoreFilter.allTime
                 )
             } else {
                 VStack {
@@ -70,14 +69,14 @@ struct PostScoreView: View {
                             .padding(.leading, 12)
                             .disableAutocorrection(true)
                         Button {
-                            viewModel.checkUserNameAvailable(userNamesArray: userNamesArray)
+                            viewModel.checkUserNameAvailable(userNamesArray: userNamesArray, userNameToTest: viewModel.userName)
                             viewModel.saveChanges()
                         } label: {
                             Text("Post Your Score of \(appData.totalScore) Points")
                         }
                         .alert(isPresented: $viewModel.showingEmptyFormAlert) {
-                            Alert(title: Text("Missing information"),
-                                  message: Text("Please enter a username"),
+                            Alert(title: Text("Name field issue"),
+                                  message: Text("Please enter a valid username (12 characters of fewer). "),
                                   dismissButton: .default(Text("Okay")))
                         }
                     }

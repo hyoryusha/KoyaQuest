@@ -18,10 +18,11 @@ enum APError: Error {
 final class NetworkManager {
     static let shared = NetworkManager()
     private let cache = NSCache<NSString, UIImage>()
-    static let baseURL = "https://www.collins-sweet.com/kq/backend/json/"
+//    static let baseURL = "https://www.collins-sweet.com/kq/backend/json/"
+    static let baseURL = "https://www.koyaquest.com/backend/json/"
     private let infoURL = baseURL + "Information.json"
     private let landmarksURL = baseURL + "Landmarks.json"
-    private let FAQURL = baseURL + "FAQ2.json"
+    private let FAQURL = baseURL + "FAQ.json"
     private init() {
     }
     // problem: how to pass params (Result<[???]> , and url string required for each

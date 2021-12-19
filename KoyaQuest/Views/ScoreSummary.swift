@@ -52,7 +52,7 @@ struct ScoreSummary: View {
                                                    complete: didCompleteChallenge(challenge: item),
                                                    points: getScoreForCompletedChallenge(challenge: item)
                                     )
-                                } // end for each
+                                }
                             }
                             .padding()
                         }
@@ -64,7 +64,7 @@ struct ScoreSummary: View {
                                                    complete: didCompleteChallenge(challenge: item),
                                                    points: getScoreForCompletedChallenge(challenge: item)
                                     )
-                                } // end for each
+                                } 
                             }
                         }
                         .padding()

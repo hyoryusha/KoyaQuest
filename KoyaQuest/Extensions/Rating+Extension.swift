@@ -17,7 +17,7 @@ extension Rating {
         landmark ?? ""
     }
 
-    static var example: Rating {// for use with previews?
+    static var example: Rating {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext
 

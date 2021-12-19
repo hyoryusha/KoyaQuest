@@ -42,7 +42,7 @@ struct MapView: View {
                     .padding(.bottom, 28)
               }
 
-        } // end zstack
+        } // zstack root
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)
         .statusBar(hidden: true)

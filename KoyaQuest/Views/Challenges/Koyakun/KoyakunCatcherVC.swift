@@ -63,7 +63,6 @@ extension KoyakunCatcherVC: ARSKViewDelegate {
     }
 
     func session(_ session: ARSession, didFailWithError error: Error) {
-        // print("did fail with error: \(error.localizedDescription)")
         fatalError("Fatal error: \(error.localizedDescription)")
     }
 

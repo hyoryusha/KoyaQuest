@@ -30,7 +30,6 @@ struct NearGobyoWarningView: View {
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                 }
-
             }
         }
     }

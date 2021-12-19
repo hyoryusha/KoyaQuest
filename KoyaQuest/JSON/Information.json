@@ -18,10 +18,10 @@
             "headerOne" :   "Score Points",
             "bodyOne"   :   "With your permission, this app will monitor your location as you move around Mt. Kōya. When you enter a specified \"Target Zone,\" you will be given the opportunity to accept the associated challenge.\nPoints available for each challenge vary. In some cases, they are awarded on an all-or-nothing basis or according to your performance.\nThe goal is to accumulate as many total points as possible.",
             "headerTwo" :   "Winning?",
-            "bodyTwo"   :   "The pupose of the game is to have fun while learning about Mt. Kōya. It is not a competition, per se, though you may enjoy comparing your score with others. For that pupose you can choose to post your results to the shared Community Leaderboard. Or not."
+            "bodyTwo"   :   "The purpose of the game is to have fun while learning about Mt. Kōya. It is not a competition, per se, though you may enjoy comparing your score with others. For that purpose you can choose to post your results to the shared Community Leaderboard. Or not."
         }
     },
-    
+
     {
     "id"    :   1003,
     "title" :   "How to Play",
@@ -33,7 +33,7 @@
             "bodyTwo"   :   "You will know you are in Gameplay Mode when a \"Scorecard\" appears in the center of the Main Menu screen.\nWhen Gameplay is disabled, the scorecard is not displayed; instead your current total score will appear in the upper-left corner of the Main Menu Screen."
         }
     },
-    
+
     {
     "id"    :   1004,
     "title" :   "What are the Challenges?",
@@ -53,7 +53,7 @@
             "headerOne" :   "Permissions & Settings",
             "bodyOne"   :   "Both the Challenges and Navigation features of this app make use of your location and require your permission. Certain challenges also ask that you allow the use of your device's camera.\nAlso, while this app supports large fonts for accessibility, it is recommended that normal font sizes be used to prevent truncating of some text. (You can modify this in your device's settings.\nWhile efforts have been taken to minimize the use of your device's power, this app does use GPS, which can drain resources while in use. Use of a battery that is sufficiently charged is recommended.",
             "headerTwo" :   "Physcial Presence",
-            "bodyTwo"   :   "While the written descriptions of the various points of interest at Mt. Kōya can be accessed no matter where the user is, (until a simulation version is completed) most of the other features of this app are only available to users who are physcially present on the mountain.\nIn other words, the app is really only designed for visitors to Mt. Kōya.\nThe game features of the app have been created in a way that respects the religious practices of Mt. Kōya. At no time will you need to use your iPhone for gameplay in an area where the use of electronic devices is not permitted."
+            "bodyTwo"   :   "While the written descriptions of the various points of interest at Mt. Kōya can be accessed no matter where the user is, (until a simulation version is completed) most of the other features of this app are only available to users who are physically present on the mountain.\nIn other words, the app is really only designed for visitors to Mt. Kōya.\nThe game features of the app have been created in a way that respects the religious practices of Mt. Kōya. At no time will you need to use your iPhone for gameplay in an area where the use of electronic devices is not permitted."
         }
     } ,
     {
@@ -74,9 +74,10 @@
     "body"  :
         {
             "headerOne" :   "Photo Credits",
-            "bodyOne"   :   "Special thanks go to Edmundo Gonzalez, Jr., veteran Japan photographer, for persmission to use several of his photographs of Mt. Kōya. \nAppreciation is also given to the Kongōbuji Shūmu Sōchō Kōshitsu 金剛峯寺宗務総長公室 for permission to use the Koyakun© mascot as well as a photo of the inside of the Tōrōdō Latern Hall.",
+            "bodyOne"   :   "Special thanks go to Edmundo Gonzalez, Jr., veteran Japan photographer, for permission to use several of his photographs of Mt. Kōya. \nAppreciation is also given to the Kongōbuji Shūmu Sōchō Kōshitsu 金剛峯寺宗務総長公室 for permission to use the Koyakun© mascot as well as a photo of the inside of the Tōrōdō Latern Hall.",
             "headerTwo" :   "Others",
             "bodyTwo"   :   "Finally, a shout out to Professor Kaizu Ichirō of Wakayama University for the use of his replica of a samurai warrior's armor and helmet for the filming of the ghost of Uesugi Kenshin."
         }
     }
 ]
+

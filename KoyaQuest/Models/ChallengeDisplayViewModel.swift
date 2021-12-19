@@ -8,6 +8,6 @@
 import Combine
 import SwiftUI
 
-final class ChallengeDisplayViewModel: ObservableObject {
-    @Published var isShowingChallenge = true
-}
+//final class ChallengeDisplayViewModel: ObservableObject {
+//   // @Published var isShowingChallenge = true
+//}

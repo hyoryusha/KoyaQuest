@@ -28,7 +28,7 @@ struct ChoishiHintView: View {
     }
 }
 
-struct HintView_Previews: PreviewProvider {
+struct ChoishiHintView_Previews: PreviewProvider {
     static var previews: some View {
         ChoishiHintView(isShowingHint: .constant(true))
     }

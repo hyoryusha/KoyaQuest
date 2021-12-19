@@ -24,7 +24,7 @@
 
     },
 
-    
+
     {
         "id"    :   1001,
     "name"      :   "Middle Gate",
@@ -48,8 +48,8 @@
         }
 
     },
-    
-    
+
+
     {
         "id"    :   1002,
     "name"      :   "Myōjin Shrine",
@@ -118,7 +118,7 @@
         }
 
     },
-    
+
     {
         "id"    :   1005,
     "name"      :   "Western Pagoda",
@@ -142,7 +142,7 @@
         }
 
     },
-    
+
     {
         "id"    :   1006,
     "name"      :   "Hall of the Blessed Image",
@@ -287,7 +287,7 @@
 
     },
 
-    
+
     {
         "id"    :   1012,
     "name"      :   "Golden Hall",
@@ -311,7 +311,7 @@
         }
 
     },
-    
+
     {
         "id"    :   1013,
     "name"      :   "Fudō Hall",
@@ -335,7 +335,7 @@
             }
 
     },
-    
+
     {
         "id"    :   1014,
     "name"      :   "Lotus Pond",
@@ -359,7 +359,7 @@
         }
 
     },
-    
+
 
     {
             "id"    :   1015,
@@ -479,7 +479,7 @@
             "bodyTwo"   :   "In addition to exploring the decorative rooms and historic points of interest, visitors to Kongōbuji are invited to enjoy tea and refreshments while listening to a sermon in the the large Shin-Betsuden (New Annex). Visitors can also participate in the Shingon practice of ajikan meditation."
         }
     },
-    
+
     {
         "id"    :   1021,
     "name"      :   "Six O'Clock Bell",
@@ -502,7 +502,7 @@
             "bodyTwo"   :   "Interestingly, Fukushima Masanori, the patron responsible for the Six O’Clock Bell, was one of Toyotomi Hideyoshi’s loyal generals who was dispatched to Mt Kōya with orders that Hideyoshi’s nephew, Hidetsugu (b. 1568) be put to death for an alleged plot to overthrow his uncle. Hidetsugu along with three young companions committed ritual suicide in July of 1595 in the Yanagi-no-ma or Willow Room inside Kongō-buji Temple"
         }
     },
-    
+
     {
         "id"    :   1022,
     "name"      :   "Garden of the Guardian Dragons",
@@ -526,7 +526,7 @@
         }
 
     },
-    
+
     {
         "id"    :   1030,
     "name"      :   "Women's Hall",
@@ -544,7 +544,7 @@
     "details"    :
         {
             "headerOne" :    "The Women's Hall",
-            "bodyOne"   :    "Nyonindō is a reminder of the times in the past when women were prohibited from entering the sacred precints of Mt. Kōya, where their presence was thought to have distracted the priests from their prayers and meditations. \nKūkai, the founder of the monastic complex here, famously forbade even his own mother from visiting. Other women who tried to enter or communicate with male relatives living on the mountain were rebuffed with the harsh reminder that their loved ones were \"dead to them.\"\nIn 1873, the Japanese government officially prohibited temples from banning women. However, here at Mt. Kōya, the practice continued until 1916.",
+            "bodyOne"   :    "Nyonindō is a reminder of the times in the past when women were prohibited from entering the sacred precincts of Mt. Kōya, where their presence was thought to have distracted the priests from their prayers and meditations. \nKūkai, the founder of the monastic complex here, famously forbade even his own mother from visiting. Other women who tried to enter or communicate with male relatives living on the mountain were rebuffed with the harsh reminder that their loved ones were \"dead to them.\"\nIn 1873, the Japanese government officially prohibited temples from banning women. However, here at Mt. Kōya, the practice continued until 1916.",
             "headerTwo" :    "Undaunted Faith",
             "bodyTwo"   :    "The prohibition (known as \"nyonin-kinzei\") did not stop women of faith from trying to get as close as possible to the resting place of Kōbō-daishi and the temple complex he had established. Despite the difficulties of the journey, many women made their way to the one of the seven entrances to Mt. Kōya in the hope of getting a glimpse of the rooftops of the holy shrines within. \nOvernight lodging for these women was provided by seven \"nyonindō,\" or \"women's halls,\" located at each of the gates to the monastery. The small temple that stands here today dates from the year 1871 and is the only remaining women's hall."
         }
@@ -574,8 +574,8 @@
         }
 
     },
-    
-    
+
+
     {
         "id"    :   1032,
     "name"      :   "Kongō Sammai-in Temple",
@@ -598,7 +598,7 @@
             "bodyTwo"   :   "The pagoda is a tahōtō (pagoda of myriad treasures) and, as Japan’s second oldest surviving building of this type, an excellent example of Kamakura-Era architecture. It is listed as a National treasure by the Japanese government.\nThe fifteen-meter-tall tower enshrines statues of the Five Wisdom Tathāgatas (Gochi Nyorai). If the traditional attribution of these statues to Unkei is correct, they would be among the last works of this master sculptor."
         }
     },
-    
+
     {
         "id"    :   1033,
     "name"      :   "Karukayadō",
@@ -621,7 +621,7 @@
             "bodyTwo"   :   "The full story, which has been retold in various forms including kabuki plays and manga comic books, is presented in illustrated panels along an inner gallery of the present-day Karukayadō, Also on display are three statues called the Oyako Jizō (Parents with Child Jizō). These three figures are (all too conveniently) said to have been carved by Ishidōmaru and his father."
         }
     },
-    
+
     {
         "id"    :   1040,
     "name"      :   "Pathway to the Inner Sanctuary",
@@ -904,7 +904,7 @@
             "headerOne" :   "Bridge to the Most Sacred Space",
             "bodyOne"   :   "The third bridge of Oku-no-in is the Gobyō-bashi, or the Bridge of the Mausoleum. It marks the entrance to the most sacred of spiritual places at Mt. Kōya. Here, visitors are expected to bow reverently before proceeding towards the place where Kōbō-daishi is enshrined. Beyond this point, men must remove their hats (if possible), and photography is forbidden.",
             "headerTwo" :   "Spiritual Reflections",
-            "bodyTwo"   :   "The bridge, though concrete, consists of thirty-six planks, one for each of the Buddhas and Bodhisattvas who surround Dainichi Nyorai in the Diamon Realm Mandala. The Sanskrit letter associated with each of these beings is carved inversely on the underside of each plank. They cannot be seen from above, but, when conditions are right, they appear reflected on the surface of the river below."
+            "bodyTwo"   :   "The bridge, though concrete, consists of thirty-six planks, one for each of the Buddhas and Bodhisattvas who surround Dainichi Nyorai in the Diamond Realm Mandala. The Sanskrit letter associated with each of these beings is carved inversely on the underside of each plank. They cannot be seen from above, but, when conditions are right, they appear reflected on the surface of the river below."
         }
 
     },
@@ -975,7 +975,30 @@
             "headerOne" :   "Lantern Hall",
             "bodyOne"   :   "Standing before Kōbō-daishi’s mausoleum, at a spot where his earliest disciples held services after his passing, is a large building called the Tōrōdō, or \"Lantern Hall.\" While it replaces earlier structures dating from the 11th century, the present building is from 1964. Inside, thousands of golden votive lanterns hang from the ceiling.  Additional lanterns of various sizes are arrayed in the building's basement as well as a nearby annex.\nWhile the sections to the left and right of the Tōrōdō have altars before two of the five Wisdom Kings  (Aizen Myō'ō and Fudō Myō'ō, respectively), the altars of the central section are placed before a window that faces the mausoleum. \nVisitors who wish to get closer, must exit the Lantern Hall on the left and walk around to the back of the building.",
             "headerTwo" :   "Remaining Lit for a Thousand Years",
-            "bodyTwo"   :   "While most of the hall's 25,000 lanterns are illuminated by electricity, several of the more prominent ones are oil burning lamps. \nThe flames of three famous lanterns are beleived to have remained lit for nearly a thousand years. They are  displayed along the back wall at the center of the Tōrōdō. \nThe Kishin-tō was purportedly first lit in the year 1016 by the holy man Jōyō (958-1047) for the salvation of his mother. Also known as Kishin Shōnin, Jōyō is credited with having helped rebuild Mt. Kōya after a series of catastophic fires. A second lamp was donated by retired emperor Shirakawa (1053-1129) in the year 1103. \nAccording to a popular legend, the third lamp was the gift of a poor maiden who sold her hair to a wig maker in order to make the donation on behalf of her adoptive parents. The filial young woman's name was Oteru (which means \"to shine\") and her lamp is called the Hinnyo-no-ittō, or \"The Poor Woman's Solitary Lamp.\" \nThe legend tells us that when her modest donation received the mockery and contempt of a rich man who had made a more extravagant gift, a strong gust of wind immediately arose from the direction of the Inner Sanctuary. It blew out all of the wealthy man's lamps leaving Oteru's untouched."
+            "bodyTwo"   :   "While most of the hall's 25,000 lanterns are illuminated by electricity, several of the more prominent ones are oil burning lamps. \nThe flames of three famous lanterns are beleived to have remained lit for nearly a thousand years. They are  displayed along the back wall at the center of the Tōrōdō. \nThe Kishin-tō was purportedly first lit in the year 1016 by the holy man Jōyō (958-1047) for the salvation of his mother. Also known as Kishin Shōnin, Jōyō is credited with having helped rebuild Mt. Kōya after a series of catastrophic fires. A second lamp was donated by retired emperor Shirakawa (1053-1129) in the year 1103. \nAccording to a popular legend, the third lamp was the gift of a poor maiden who sold her hair to a wig maker in order to make the donation on behalf of her adoptive parents. The filial young woman's name was Oteru (which means \"to shine\") and her lamp is called the Hinnyo-no-ittō, or \"The Poor Woman's Solitary Lamp.\" \nThe legend tells us that when her modest donation received the mockery and contempt of a rich man who had made a more extravagant gift, a strong gust of wind immediately arose from the direction of the Inner Sanctuary. It blew out all of the wealthy man's lamps leaving Oteru's untouched."
         }
+    },
+    {
+
+    "id"    :   1075,
+"name"      :   "Termite Memorial",
+"jname"     :   "しろあり供養塔",
+"romaji"    :   "Shiroari kuyōtō",
+"imageName" :   "shiroari_kuyoto",
+"section"   :   "Oku-no-in Area",
+"area"      :   "Naka-no-hashi Parking",
+"isSection" :   false,
+"location"  :
+    {
+        "latitude"  :   34.21725653589763,
+        "longitude"  :   135.60432586441766
+    },
+"details"    :
+    {
+        "headerOne" :   "Termite Memorial",
+        "bodyOne"   :   "Another curious yet revealing object at Oku-no-in is a stone monument located on the western side of the path that runs through the modern section. Most visitors will find it on the right-hand side (across from the rocket) just before they exit into the Naka-no-hashi Parking area.\nThis monument is the \"Shiroari kuyōtō,\" or Termite Memorial. Its presence and function say a lot about both Mt. Kōya and the Japanese attitude toward nature and death.\n Beneath four large hiragana that spell out the word for termite (\"shiroari\") is the phrase \"yasuraka ni nemure,\" or \"rest in peace.\"\nWhat makes this requiem to the souls of departed termites even more remarkable is that it was erected by the Japan Termite Control Association, in other words, by the dedicated professionals who make their living by killing these wood-eating pests.\nAccording to their website, the association established this monument in 1968 as an expression of pity for the creatures whose incompatibility with human existence resulted in the regrettable need to exterminate them.",
+        "headerTwo" :   "A Combined Memorial",
+        "bodyTwo"   :   "Since 1972, the monument has also served as a combined memorial to people who have rendered meritorious service to the Termite Control Association. More than 120 names have been dedicated along with their insect victims.\nElsewhere at Oku-no-in, we find examples of enemies in life who now rest peacefully before the mausoleum of Kōbō-daishi. These include rival armies in recent wars as well as ancient samurai foes. The combined memorial to termites and their exterminators is consistent with this prevailing approach to life and death as witnessed here at Mt. Kōya."
     }
+}
 ]

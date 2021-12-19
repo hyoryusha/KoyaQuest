@@ -98,6 +98,11 @@ struct AlertContext { // cf SA
                                        message: Text("The app's location services is having trouble determining your location."),
                                        dismissButton: .default(Text("OK")))
 
+    static let monitoringNotAvailable = AlertItem(title: Text("Location Monitoring Unavailable"),
+                                       // swiftlint:disable:next line_length
+                                       message: Text("The app's location services is having trouble monitoring target zones. Please be patient as the device waits for restored signals."),
+                                       dismissButton: .default(Text("OK")))
+
     // MARK: - AUDIO ALERTS
     static let noAudioFile = AlertItem(title: Text("Missing Audio"),
                                        message: Text("The app cannot locate the requested audio file."),

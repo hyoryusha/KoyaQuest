@@ -47,20 +47,24 @@ class PostScoreViewModel: ObservableObject {
     var isValidForm: Bool {
         guard !userName.isEmpty else {
             self.showingEmptyFormAlert = true
-            print("should show empty form alert")
+            return false
+        }
+        guard userName.count < 13 else {
+            self.showingEmptyFormAlert = true
             return false
         }
         return true
     }
 
-    func checkUserNameAvailable(userNamesArray: [String]) {
+    func checkUserNameAvailable(userNamesArray: [String], userNameToTest: String) {
+// convert everything to lowercase (array and name to test)
         let lowerCasedNames = userNamesArray.map {
             $0.lowercased()
         }
-        // let filteredArray = userNamesArray.filter { $0.localizedCaseInsensitiveContains(userName)}
         let filteredArray = lowerCasedNames.filter {
-            $0 == userName
+            $0 == userNameToTest.lowercased()
         }
+// filter 
         if filteredArray.isEmpty {
             userNameAvailable = true
         } else {
