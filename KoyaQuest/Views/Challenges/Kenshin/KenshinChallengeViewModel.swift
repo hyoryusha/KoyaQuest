@@ -40,7 +40,7 @@ final class KenshinChallengeViewModel: ObservableObject {
     }
 
     var statusText: String {
-        didFindGhost ? "You found the Ghost" : "Keep searching..."
+        didFindGhost ? "You found the Ghost! (Move closer for better viewing.)" : "Keep searching..."
     }
 
     var statusTextColor: Color {

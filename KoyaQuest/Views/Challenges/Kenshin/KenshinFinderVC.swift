@@ -148,7 +148,7 @@ class KenshinFinderVC: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         }
     }
     private func makeGhostVideo(size: CGSize) -> SCNNode? {
-        guard let videoURL = Bundle.main.url(forResource: "uesugi_ghost",
+        guard let videoURL = Bundle.main.url(forResource: "kenshin_video",
                                              withExtension: "mp4") else {
             return nil
         }

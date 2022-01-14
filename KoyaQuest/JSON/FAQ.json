@@ -10,6 +10,19 @@
             "bodyOne"   :   "Situated on a small plateau 800 meters above the Kinokawa River, Mt. Kōya (高野山 Kōyasan, in Japanese) is home to an active monastic center founded more than 12 centuries ago for the study and practice of Esoteric Buddhism. As the headquarters of the Kōyasan sect of Shingon Buddhism and the resting place of its founder, known posthumously as Kōbō-daishi, it is one of the most sacred sites in Japan."
         }
     } ,
+
+    {
+    "id"    :   1004,
+    "filter": "hiking trail, choishi michi, choishimichi, " ,
+    "category": "Places",
+    "title" :   "What is the Chōishi-michi 町石道?",
+    "body"  :
+        {
+            "headerOne" :   "Ancient Footpath to Mt. Kōya",
+            "bodyOne"   :   "Historically, there have been seven approaches to Mt. Kōya, which are collectively known today as the Kōya nana-guchi 高野七口. These include various routes used by Kūkai himself and the thousands of pilgrims who made the journey to the sacred mountain. While some of these trails remain, many others have fallen into desuetude.\nBy the far the most famous and popular of these routes is the chōishi-michi, a 21-kilometer trail from the Jisonin Temple 慈尊院 near the Kinokawa River to the center of the Danjō-garan. This path is said to be the one established by Kūkai himself following the wooden slats that he set as markers. Since the middle of the 13th century, 180 stone columns stand where the original wooden ones were placed.\nThe trail (michi) takes its name from the reputed distance – one chō – between each stone (ishi). Although the monuments reputedly measure out the distance in approximately 109-meter increments, a hiker soon finds that this is not reliably accurate. In fact, the number of monuments comes not from the true distance divided by any fixed unit of measurement but from the number of Buddhas and Bodhisattvas depicted on the Taizōkai Mandala.(Another 36 columns mark the route from the Danjō-garan to the mausoleum of Kōbō-daishi, with 36 being the number of sacred figures depicted on the Kongōkai Mandala.)\nWhile there are some flat portions, the chōishi-michi takes hikers from only a few meters above sea level to an altitude of approximately 800 meters. Those who intend to complete the entire trail should prepare for a trek of between seven and ten hours. "
+        }
+    } ,
+
     {
     "id"    :   1007,
     "filter": "Oku-no-in Seven wonders Okunoin cemetery",
@@ -246,6 +259,17 @@
         {
             "headerOne" :   "It's complicated",
             "bodyOne"   :   "The necropolis at Mt. Kōya's Oku-no-in is identified as a cemetery and its stone monuments are often called \"tombs\" or \"gravestones.\" So one would naturally assume that the people whose names are written on these stones are actually buried here. But that is not necessarily the case; in fact, it rarely is.\nFor one reason, throughout the centuries, cremation has been the preferred means by which dead bodies in Japan are disposed.  If a tomb at Oku-no-in contains any real remains of the deceased, they are most certainly in the form of ashes and bone.\nJapan also observes a double-grave practice known as \"ryōbosei\" 両墓制, in which separate graves (or \"haka\") are created – one to keep the physical remains and one where the spirit may be enshrined. At times a single grave may serve both purposes, but among the tombs found at Oku-no-in, the vast majority are of the latter type. These are typically referred to a \"kuyōtō\" 供養塔, or memorial monuments. The Japanese treat these with no less importance than the location where a deceased person's physical remains are interred and will visit them regularly with offerings for the soul of the departed."
+        }
+    } ,
+    {
+    "id"    :   1608,
+    "filter": "kechien kanjo, rites, ritual, mandala, kanjo",
+    "category": "Customs & Practices",
+    "title" :   "What is the Kechien Kanjō 結縁灌頂?",
+    "body"  :
+        {
+            "headerOne" :   "Bond-Forming Ritual",
+            "bodyOne"   :   "The kechien kanjō 結縁灌頂 is an important ritual conducted during two three-day periods at Mt. Kōya's Kondō 金堂, or Golden Hall.\nIn this ritual, participants establish a spiritual connection with a Buddha or Bodhisattva from whom wisdom and guidance will be received.\nAfter a brief lecture and the recitation of prayers, participants are led inside the dimly lit Kondō where one of the two central mandala has been spread out before them. They are given a flower, called a shikimi, to hold between their two index fingers extended from hands locked in prayer. Each participant is then blindfolded and guided to a position above a mandala where he or she releases the blossom, allowing it to fall freely onto the mandala. In this way, a connection is formed between the participant and the sacred entity upon whom the flower lands. In addition to learning the Buddha or Bodhisattva with whom a sacred connection has been made, participants are also taught the associated mantra and mudra.\nThe kechien kanjō is offered to all members of the general public and should not be confused with the rite of initiation administered to those entering into the Buddhist priesthood. Known more simply as the kanjō, this rite is modeled on the accession ceremony for ancient Indian kings and involves the sprinkling of water on the new initiate’s forehead by his master. The water is symbolic of the Five Wisdoms that arise in a mind that has been purified of distractions.\nThose interested in receiving the kechien kanjō initiation can reserve a place in advance (¥5,000) or on the day of the ceremony (¥7,000). Tickets are usually made available a few months prior and can be purchased online or at various locations around Mt. Kōya. The rite is conducted twice a year, in early May and early October, each uses a different mandala: the Taizōkai and Kongōkai mandala, respectively."
         }
     }
 

@@ -17,6 +17,7 @@
 		03377FAB26985980008F3DBF /* FinalScore+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03377FAA26985980008F3DBF /* FinalScore+Extension.swift */; };
 		0A14874A27472C5400852F82 /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14874927472C5400852F82 /* LocationManagerTests.swift */; };
 		0A14874E2748C7CD00852F82 /* FontSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14874D2748C7CD00852F82 /* FontSwap.swift */; };
+		0A161FBE2791124200D11E2C /* kenshin_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0A161FBD2791124200D11E2C /* kenshin_video.mp4 */; };
 		0A1AFC3C274B37720069CBAB /* KoyasanLocations.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 0A1AFC3B274B37720069CBAB /* KoyasanLocations.gpx */; };
 		0A21654826E2131E007C4034 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A21654A26E2131E007C4034 /* Localizable.strings */; };
 		0A27E5EE270872DB00641E30 /* AsynchTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A27E5ED270872DB00641E30 /* AsynchTestCase.swift */; };
@@ -149,7 +150,6 @@
 		0A5ECFF9275827C9000A8A1B /* LocationManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5ECFF727582776000A8A1B /* LocationManagerProtocol.swift */; };
 		0A61A724268C7EF900A5F5F5 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61A723268C7EF900A5F5F5 /* AudioModel.swift */; };
 		0A61A726268C7F3200A5F5F5 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A61A725268C7F3200A5F5F5 /* AudioPlayerView.swift */; };
-		0A61A728268C7F5D00A5F5F5 /* landmark_1000.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0A61A727268C7F5D00A5F5F5 /* landmark_1000.mp3 */; };
 		0A676652269E3E8200B3D429 /* PostScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A676651269E3E8200B3D429 /* PostScoreView.swift */; };
 		0A676654269E523D00B3D429 /* GameOverSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A676653269E523D00B3D429 /* GameOverSummary.swift */; };
 		0A676656269EE93F00B3D429 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A676655269EE93F00B3D429 /* LeaderboardView.swift */; };
@@ -221,7 +221,6 @@
 		0AB3F445268168D1006C4E70 /* NyonindoGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F443268168D1006C4E70 /* NyonindoGameScene.swift */; };
 		0AB3F446268168D1006C4E70 /* NyonindoSummaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F444268168D1006C4E70 /* NyonindoSummaryScene.swift */; };
 		0AB6AD55268938AF006F9690 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6AD54268938AF006F9690 /* GameOverView.swift */; };
-		0ACAE8AE26F01EB8007276B2 /* uesugi_ghost.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0ACAE8AD26F01EB8007276B2 /* uesugi_ghost.mp4 */; };
 		0ACAE8B126F2E6AD007276B2 /* FAQHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAE8AF26F2E6AC007276B2 /* FAQHeaderView.swift */; };
 		0ACAE8B226F2E6AD007276B2 /* FAQFilteredScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAE8B026F2E6AD007276B2 /* FAQFilteredScrollView.swift */; };
 		0ACAE8B426F2E6F1007276B2 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACAE8B326F2E6F1007276B2 /* SearchBarView.swift */; };
@@ -268,6 +267,7 @@
 		03377FAA26985980008F3DBF /* FinalScore+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinalScore+Extension.swift"; sourceTree = "<group>"; };
 		0A14874927472C5400852F82 /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
 		0A14874D2748C7CD00852F82 /* FontSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSwap.swift; sourceTree = "<group>"; };
+		0A161FBD2791124200D11E2C /* kenshin_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = kenshin_video.mp4; sourceTree = "<group>"; };
 		0A1AFC3B274B37720069CBAB /* KoyasanLocations.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = KoyasanLocations.gpx; sourceTree = "<group>"; };
 		0A21654926E2131E007C4034 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0A27E5ED270872DB00641E30 /* AsynchTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchTestCase.swift; sourceTree = "<group>"; };
@@ -404,7 +404,6 @@
 		0A5ECFF727582776000A8A1B /* LocationManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerProtocol.swift; sourceTree = "<group>"; };
 		0A61A723268C7EF900A5F5F5 /* AudioModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
 		0A61A725268C7F3200A5F5F5 /* AudioPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
-		0A61A727268C7F5D00A5F5F5 /* landmark_1000.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = landmark_1000.mp3; sourceTree = "<group>"; };
 		0A676651269E3E8200B3D429 /* PostScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScoreView.swift; sourceTree = "<group>"; };
 		0A676653269E523D00B3D429 /* GameOverSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverSummary.swift; sourceTree = "<group>"; };
 		0A676655269EE93F00B3D429 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
@@ -478,7 +477,6 @@
 		0AB3F443268168D1006C4E70 /* NyonindoGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NyonindoGameScene.swift; sourceTree = "<group>"; };
 		0AB3F444268168D1006C4E70 /* NyonindoSummaryScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NyonindoSummaryScene.swift; sourceTree = "<group>"; };
 		0AB6AD54268938AF006F9690 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
-		0ACAE8AD26F01EB8007276B2 /* uesugi_ghost.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = uesugi_ghost.mp4; sourceTree = "<group>"; };
 		0ACAE8AF26F2E6AC007276B2 /* FAQHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQHeaderView.swift; sourceTree = "<group>"; };
 		0ACAE8B026F2E6AD007276B2 /* FAQFilteredScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAQFilteredScrollView.swift; sourceTree = "<group>"; };
 		0ACAE8B326F2E6F1007276B2 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
@@ -529,8 +527,8 @@
 			isa = PBXGroup;
 			children = (
 				0AA76A75273478DF000BFC2E /* NyonindoGameSounds */,
-				0ACAE8AD26F01EB8007276B2 /* uesugi_ghost.mp4 */,
 				0A92057026AE2BF1007E7BAF /* 1000.mp3 */,
+				0A161FBD2791124200D11E2C /* kenshin_video.mp4 */,
 				0A92056726AE2BE9007E7BAF /* 1001.mp3 */,
 				0A92056A26AE2BEC007E7BAF /* 1002.mp3 */,
 				0A92056126AE2BE5007E7BAF /* 1003.mp3 */,
@@ -572,7 +570,6 @@
 				0A92057326AE2BF3007E7BAF /* 1073.mp3 */,
 				0A92058126AE2BFE007E7BAF /* 1074.mp3 */,
 				0AF58672276832B400F79AE0 /* 1075.mp3 */,
-				0A61A727268C7F5D00A5F5F5 /* landmark_1000.mp3 */,
 				0A3D242E2674AA1400D9CA2F /* pop.wav */,
 				0A3D242B2674A99400D9CA2F /* zapped.wav */,
 				0A3D2403267441A200D9CA2F /* flip_sound.mp3 */,
@@ -1154,7 +1151,6 @@
 				0A92059F26AE2C00007E7BAF /* 1041.mp3 in Resources */,
 				0A92059C26AE2C00007E7BAF /* 1073.mp3 in Resources */,
 				0A9205A726AE2C00007E7BAF /* 1008.mp3 in Resources */,
-				0A61A728268C7F5D00A5F5F5 /* landmark_1000.mp3 in Resources */,
 				0A92059A26AE2C00007E7BAF /* 1022.mp3 in Resources */,
 				0A92059D26AE2C00007E7BAF /* 1004.mp3 in Resources */,
 				0A92058526AE2C00007E7BAF /* 1060.mp3 in Resources */,
@@ -1166,6 +1162,7 @@
 				0A92058926AE2C00007E7BAF /* 1013.mp3 in Resources */,
 				0A5E83AB2663827A000076A9 /* Assets.xcassets in Resources */,
 				0A3D242F2674AA1400D9CA2F /* pop.wav in Resources */,
+				0A161FBE2791124200D11E2C /* kenshin_video.mp4 in Resources */,
 				0A92058B26AE2C00007E7BAF /* 1018.mp3 in Resources */,
 				0AA76A7B27347936000BFC2E /* pilgrim_enters_gate.wav in Resources */,
 				0A9205A426AE2C00007E7BAF /* 1061.mp3 in Resources */,
@@ -1189,7 +1186,6 @@
 				0A92059126AE2C00007E7BAF /* 1010.mp3 in Resources */,
 				0A92058A26AE2C00007E7BAF /* 1003.mp3 in Resources */,
 				0AA76A7F27347942000BFC2E /* oni_collision.wav in Resources */,
-				0ACAE8AE26F01EB8007276B2 /* uesugi_ghost.mp4 in Resources */,
 				0A92058626AE2C00007E7BAF /* 1051.mp3 in Resources */,
 				0A92058F26AE2C00007E7BAF /* 1033.mp3 in Resources */,
 				0A9205AC26AE2C00007E7BAF /* 1016.mp3 in Resources */,
@@ -1570,7 +1566,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.wadaienglish.KoyaQuest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1595,7 +1591,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.wadaienglish.KoyaQuest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
