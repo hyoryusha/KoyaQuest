@@ -11,6 +11,7 @@ struct BonusDisplayView: View {
     @EnvironmentObject var appData: AppData
     @Binding var isPlayingGame: Bool
     @Binding var isShowingBonusList: Bool
+    @StateObject var hapticEngine = HapticEngine()
     var body: some View {
         NavigationView {
             ZStack {
@@ -45,6 +46,16 @@ struct BonusDisplayView: View {
                 .background(Color.black)
                 .cornerRadius(12)
                 .shadow(radius: 60)
+            }
+            .navigationBarTitle(Text(""))
+            .navigationBarHidden(true)
+            .statusBar(hidden: true)
+            .offset(x: 0.0, y: -40.0)
+            .onAppear() {
+                hapticEngine.vibrationAlert()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    hapticEngine.vibrationAlert()
+                }
             }
         }
     }

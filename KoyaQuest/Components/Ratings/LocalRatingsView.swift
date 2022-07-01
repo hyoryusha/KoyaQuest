@@ -23,8 +23,8 @@ struct LocalRatingsView: View {
                         .kerning(0.2)
                         .foregroundColor(Color.koyaOrange)
                 }
-                ForEach(1..<RatingsConstants.maxRating + 1 ) { number in
-                    if number > getLocalRating() {
+                ForEach(1..<RatingsConstants.maxRating + 1 , id: \.self ) { number in
+                    if number > getLocalRating()  {
                     } else {
                         Image(systemName: RatingsConstants.onImage)
                     }

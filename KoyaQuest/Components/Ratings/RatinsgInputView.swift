@@ -31,7 +31,7 @@ struct RatingsInputView: View {
                             .kerning(0.2)
                             .foregroundColor(Color.koyaOrange)
                     }
-                    ForEach(1..<RatingsConstants.maxRating + 1 ) { number in
+                    ForEach(1..<RatingsConstants.maxRating + 1 , id: \.self) { number in
                         self.image(for: number)
                             .foregroundColor(Color.koyaOrange)
                             .onTapGesture {

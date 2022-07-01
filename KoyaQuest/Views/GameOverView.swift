@@ -32,6 +32,9 @@ struct GameOverView: View {
                     .italic()
                     .multilineTextAlignment(.center)
             }
+            .onAppear {
+                AppReviewRequest.requestReviewIfNeeded()
+            }
 
             GameOverSummary(isShowingForm: $isShowingForm,
                             hidePostScoreButton: $hidePostScoreButton,
@@ -77,8 +80,6 @@ struct GameOverView: View {
                               hidePostScoreButton: $hidePostScoreButton).environmentObject(appData) .environment(\.managedObjectContext, viewContext)
             case .second:
                 ScoreSummaryView(scoreSummaryIsVisible: $scoreSummaryIsVisible)
-            case .third:
-                EmptyView()
             case .none:
                 EmptyView()
             }

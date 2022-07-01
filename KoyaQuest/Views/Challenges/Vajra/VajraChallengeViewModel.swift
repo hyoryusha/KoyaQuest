@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 final class VajraChallengeViewModel: ObservableObject {
     @Published var found: Bool = false
@@ -37,4 +38,12 @@ final class VajraChallengeViewModel: ObservableObject {
             return Color.red
         }
     }
+    
+    var rotation: Double {
+        let degrees = (self.heading - self.bearing) * -1
+        return degrees
+    }
+
+    var bearing: CLLocationDirection = 0.0
+    var heading: Double = 0.0
 }

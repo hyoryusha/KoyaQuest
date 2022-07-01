@@ -36,7 +36,7 @@ class DataController: ObservableObject {
         if inMemory { // write to a dead zone
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
-        // container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.automaticallyMergesChangesFromParent = true
         // container.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         container.loadPersistentStores { _, error in
             if let error = error {

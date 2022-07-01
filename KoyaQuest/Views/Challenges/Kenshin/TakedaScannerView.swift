@@ -18,7 +18,8 @@ struct TakedaScannerView: UIViewControllerRepresentable {
         ScannerVC(scannerDelegate: context.coordinator)
     }
 
-    func updateUIViewController(_ uiViewController: ScannerVC, context: Context) {}
+    func updateUIViewController(_ uiViewController: ScannerVC, context: Context) {
+    }
 
     func makeCoordinator() -> Coordinator {
         Coordinator(scannerView: self)
@@ -32,7 +33,7 @@ struct TakedaScannerView: UIViewControllerRepresentable {
         }
 
         func didFind(barcode: String) {
-            scannerView.scannedCode = barcode
+            //scannerView.scannedCode = barcode
         }
 
         func didSurface(error: CameraError) {

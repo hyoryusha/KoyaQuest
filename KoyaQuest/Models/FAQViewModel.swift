@@ -16,7 +16,7 @@ final class FAQViewModel: ObservableObject {
         isLoading = true
         NetworkManager.shared.getFAQ { [self] result in
             DispatchQueue.main.async {
-                isLoading = false
+                self.isLoading = false
                 switch result {
                 case .success(let faq): self.faq = faq
                 case .failure(let error):
@@ -24,15 +24,15 @@ final class FAQViewModel: ObservableObject {
                     // not using error messages because local json is used when network fails
                     switch error {
                     case .invalidData:
-                        alertItem = AlertContext.invalidData
+                        self.alertItem = AlertContext.invalidData
                     case .invalidURL:
-                        alertItem = AlertContext.invalidURL
+                        self.alertItem = AlertContext.invalidURL
                     case .invalidResponse:
-                        alertItem = AlertContext.invalidResponse
+                        self.alertItem = AlertContext.invalidResponse
                     case .unableToComplete:
-                        alertItem = AlertContext.unableToComplete
+                        self.alertItem = AlertContext.unableToComplete
                     case .invalidSomething:
-                        alertItem = AlertContext.invalidSomething
+                        self.alertItem = AlertContext.invalidSomething
                     }
                     // if the network call fails, use local info
                     self.faq = FAQ.allFAQ

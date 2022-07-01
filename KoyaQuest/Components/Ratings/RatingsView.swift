@@ -15,7 +15,7 @@ struct RatingsView: View {
     var body: some View {
 
         HStack(spacing: 0.4) {
-            ForEach(1..<RatingsConstants.maxRating + 1 ) { number in
+            ForEach(1..<RatingsConstants.maxRating + 1 , id: \.self) { number in
                 if number > stars {
                     // Image(systemName:RatingsConstants.offImage)
                 } else {

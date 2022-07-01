@@ -10,7 +10,9 @@ import SwiftUI
 struct ScoreCardView: View {
     @EnvironmentObject var appData: AppData
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
-    @Binding var scoreSummaryIsVisible: Bool
+    @Environment(\.presentationMode) var presentationMode
+    //@Binding var scoreSummaryIsVisible: Bool
+    @Binding var activeSheet: ActiveSheet?
     var text: String
     var body: some View {
 
@@ -30,7 +32,9 @@ struct ScoreCardView: View {
                     Spacer()
 
                 Button(action: {
-                    scoreSummaryIsVisible = true
+                    //scoreSummaryIsVisible = true
+                    activeSheet = .first
+                    
                 },
                     label: {
                         HStack {
@@ -55,8 +59,7 @@ struct ScoreCardView: View {
 
 struct ScoreCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreCardView(scoreSummaryIsVisible: .constant(false),
-                      text: "Total")
+        ScoreCardView(activeSheet: .constant(.first), text: "Total")
             .environmentObject(AppData())
     }
 }

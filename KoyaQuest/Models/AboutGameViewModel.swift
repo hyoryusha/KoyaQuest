@@ -15,7 +15,7 @@ final class AboutGameViewModel: ObservableObject {
         isLoading = true
         NetworkManager.shared.getInfo { [self] result in
             DispatchQueue.main.async {
-                isLoading = false
+                self.isLoading = false
                 switch result {
                 case .success(let information): self.information = information
                 case .failure(let error):

@@ -90,13 +90,14 @@ struct GameOverSummary: View {
                                 activeSheet = .first
                             } label: {
                                 HStack {
+                                    Image(systemName: "icloud.and.arrow.up" )
+                                        .font(.title3)
                                     Text("Post Score".uppercased())
                                         .font(.title3)
                                         .bold()
                                         .padding(10)
                                     Spacer()
-                                    Image(systemName: "icloud.and.arrow.up" )
-                                        .font(.title3)
+
                                 }
                                 .padding()
                                 .frame(width: wideElement(sizeCategory: sizeCategory) ? 330 : 220,
@@ -108,12 +109,13 @@ struct GameOverSummary: View {
                                 .buttonStyle(ScaleButtonStyle())
                             }
                         } // end group
-                        .padding(.bottom, 10)
+                        .padding(.bottom, 14)
                     }
                 }
             } // end VStack frame
             .frame(width: 360, alignment: .center)
             .background(Color.koyaSky.opacity(0.6))
+            .cornerRadius(15)
         } // end ZStack
     }
 }

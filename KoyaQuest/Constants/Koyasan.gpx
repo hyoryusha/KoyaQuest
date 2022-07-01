@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+    <!--     -->
+        <wpt lat="34.21300" lon="135.5500">
+            <name>Entry Point</name>
+        <time>2020-08-30T00:00:00Z</time>
+        </wpt>
+
+        <wpt lat="34.213114" lon="135.57261">
+            <name>Daimon</name>
+            <time>2020-08-30T00:00:08Z</time>
+        </wpt>
+
+        <wpt lat="34.213114" lon="135.57261">
+            <name>Daimon</name>
+            <time>2020-08-30T00:01:00Z</time>
+        </wpt>
+
+        <wpt lat="34.2133118" lon="135.5733837">
+            <name>Choishi No. 3</name>
+            <time>2020-08-30T00:01:08Z</time>
+        </wpt>
+
+        <wpt lat="334.21267332508619" lon="135.57702911629448">
+            <name>Corner Cafe</name>
+            <time>2020-08-30T00:01:18Z</time>
+        </wpt>
+
+        <wpt lat="34.2123538" lon="135.5792138">
+            <name>Chumon</name>
+            <time>2020-08-30T00:01:22Z</time>
+        </wpt>
+
+        <wpt lat="34.212699" lon="135.5788566">
+            <name>Rokkaku Kyozo</name>
+            <time>2020-08-30T00:01:30Z</time>
+        </wpt>
+
+        <wpt lat="34.213694" lon="135.578619">
+            <name>Saito</name>
+            <time>2020-08-30T00:01:35Z</time>
+        </wpt>
+
+        <wpt lat="34.213344" lon="135.579316">
+            <name>Sanko</name>
+            <time>2020-08-30T00:01:42Z</time>
+        </wpt>
+
+        <wpt lat="34.213344" lon="135.579316">
+            <name>Sanko</name>
+            <time>2020-08-30T00:01:46Z</time>
+        </wpt>
+
+        <wpt lat="34.213067" lon="135.579548">
+            <name>Kondo</name>
+            <time>2020-08-30T00:01:50Z</time>
+        </wpt>
+
+        <wpt lat="34.213097" lon="135.580456">
+            <name>Fudodo </name>
+            <time>2020-08-30T00:01:54Z</time>
+        </wpt>
+
+        <wpt lat="34.21330324584929" lon="135.58095386125564">
+            <name>Saigyo Cherry</name>
+            <time>2020-08-30T00:02:00Z</time>
+        </wpt>
+
+        <wpt lat="34.2131064785963" lon="135.58316990745774">
+            <name>6 O'Clock Bell</name>
+            <time>2020-08-30T00:02:10Z</time>
+        </wpt>
+
+        <wpt lat="34.21412606524347" lon="135.584203528666">
+            <name>Kongobuji Temple</name>
+            <time>2020-08-30T00:02:14Z</time>
+        </wpt>
+
+        <wpt lat="34.213724" lon="135.583084">
+            <name>Rock Garden</name>
+            <time>2020-08-30T00:02:18Z</time>
+        </wpt>
+
+        <wpt lat="34.21738288146782" lon="135.58311965014107">
+            <name>Tokugawa Mausoleum</name>
+            <time>2020-08-30T00:02:23Z</time>
+        </wpt>
+
+        <wpt lat="34.21701697334374" lon="135.58236903943072">
+            <name>Tokugawa Mausoleum 2</name>
+            <time>2020-08-30T00:02:40Z</time>
+        </wpt>
+
+        <wpt lat="34.2197239" lon="135.5809451">
+            <name>Nyonindo</name>
+            <time>2020-08-30T00:02:50Z</time>
+        </wpt>
+
+        <wpt lat="34.22014568888712" lon="135.5806889392046">
+            <name>Nyonindo 2</name>
+            <time>2020-08-30T00:05:20Z</time>
+        </wpt>
+
+        <wpt lat="34.21701697334374" lon="135.58236903943072">
+            <name>Tokugawa Mausoleum 3</name>
+            <time>2020-08-30T00:05:22Z</time>
+        </wpt>
+
+        <wpt lat="34.21324093705013" lon="135.58635426303795">
+            <name>Tourist Office</name>
+            <time>2020-08-30T00:05:26Z</time>
+        </wpt>
+
+        <wpt lat="34.21283838342336" lon="135.58958918800167">
+            <name>Choishi 10</name>
+            <time>2020-08-30T00:05:30Z</time>
+        </wpt>
+
+        <wpt lat="34.21270529655399" lon="135.58978231645597">
+            <name>Choishi 10 2</name>
+            <time>2020-08-30T00:06:10Z</time>
+        </wpt>
+
+        <wpt lat="34.212660369" lon="135.5931298">
+            <name>Karukayado</name>
+            <time>2020-08-30T00:06:13Z</time>
+        </wpt>
+
+        <wpt lat="34.213950" lon="135.595692">
+            <name>Oku-no-in Ichi no Hashi</name>
+            <time>2020-08-30T00:06:20Z</time>
+        </wpt>
+
+        <wpt lat="34.21398089" lon="135.5958476">
+            <name>Oku-no-in Ichi no Hashi 2</name>
+            <time>2020-08-30T00:06:30Z</time>
+        </wpt>
+
+        <wpt lat="34.214300" lon="135.596300">
+            <name>Sanhei Mizuko Jizo</name>
+            <time>2020-08-30T00:06:45Z</time>
+        </wpt>
+
+
+        <wpt lat="34.21611176" lon="135.59825046">
+            <name>Kazutori Jizo</name>
+            <time>2020-08-30T00:06:55Z</time>
+        </wpt>
+
+        <wpt lat="34.21636498" lon="135.598236">
+            <name>Koshikake Ishi</name>
+            <time>2020-08-30T00:07:00Z</time>
+        </wpt>
+
+        <wpt lat="34.2167752" lon="135.59822">
+            <name>Uesugi Kenshin's Mausoleum</name>
+            <time>2020-08-30T00:07:10Z</time>
+        </wpt>
+
+        <wpt lat="34.21795458937127" lon="135.59820076202416">
+            <name>Uesugi Kenshin's Mausoleum 2</name>
+            <time>2020-08-30T00:09:00Z</time>
+        </wpt>
+
+        <wpt lat="34.21719977847554" lon="135.59920822408984">
+            <name>Approaching Nakanohashi</name>
+            <time>2020-08-30T00:09:10Z</time>
+        </wpt>
+
+        <wpt lat="34.2174457" lon="135.6020233">
+            <name>Asekaki Jizo</name>
+            <time>2020-08-30T00:09:14Z</time>
+        </wpt>
+
+        <wpt lat="34.2176" lon="135.60205">
+            <name>Asekaki Jizo 2</name>
+            <time>2020-08-30T00:10:00Z</time>
+        </wpt>
+
+        <wpt lat="34.2176" lon="135.60205">
+            <name>Asekaki Jizo 3</name>
+            <time>2020-08-30T00:10:10Z</time>
+        </wpt>
+
+        <wpt lat="34.2190438" lon="135.6046596">
+            <name>Kessho Jizo</name>
+            <time>2020-08-30T00:10:14Z</time>
+        </wpt>
+
+        <wpt lat="34.2217926" lon="135.6058639">
+            <name>Mizumuke Jizo</name>
+            <time>2020-08-30T00:10:18Z</time>
+        </wpt>
+
+        <wpt lat="34.2217926" lon="135.6058639">
+            <name>Mizumuke Jizo 2</name>
+            <time>2020-08-30T00:11:00Z</time>
+        </wpt>
+
+        <wpt lat="34.22191" lon="135.60592">
+            <name>Tamagawa River 1</name>
+            <time>2020-08-30T00:11:04Z</time>
+        </wpt>
+
+        <wpt lat="34.22191" lon="135.60592">
+            <name>Tamagawa River 2</name>
+            <time>2020-08-30T00:11:08Z</time>
+        </wpt>
+
+        <wpt lat="34.22312" lon="135.60576973055655">
+            <name>Torodo</name>
+            <time>2020-08-30T00:11:12Z</time>
+        </wpt>
+
+        <wpt lat="34.2217926" lon="135.6058639">
+            <name>Mizumuke Jizo 3</name>
+            <time>2020-08-30T00:11:18Z</time>
+        </wpt>
+
+        <wpt lat="34.21862152521161" lon="135.60548537304655">
+            <name>UCC</name>
+            <time>2020-08-30T00:11:23Z</time>
+        </wpt>
+
+        <wpt lat="34.21605616024564" lon="135.60445876968933">
+            <name>Nakanohashi Parking</name>
+            <time>2020-08-30T00:11:30Z</time>
+        </wpt>
+
+        <wpt lat="34.217000" lon="135.605000">
+            <name>Nakanohashi Parking 2</name>
+            <time>2020-08-30T00:12:40Z</time>
+        </wpt>
+
+        <wpt lat="34.21270529655399" lon="135.58978231645597">
+            <name>Choishi 10 2</name>
+            <time>2020-08-30T00:12:50Z</time>
+        </wpt>
+
+        <wpt lat="34.20970989236701" lon="135.5872414883954">
+            <name>Sammaiin</name>
+            <time>2020-08-30T00:13:10Z</time>
+        </wpt>
+
+</gpx>

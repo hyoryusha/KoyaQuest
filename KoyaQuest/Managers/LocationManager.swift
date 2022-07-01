@@ -93,6 +93,7 @@ final class LocationManager: NSObject, ObservableObject {
     func pauseRegionMonitoring() {
         for target in areas {
             locationManager.stopMonitoring(for: target.region)
+
         }
     }
 

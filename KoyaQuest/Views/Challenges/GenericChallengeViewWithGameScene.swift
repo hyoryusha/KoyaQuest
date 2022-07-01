@@ -56,6 +56,7 @@ struct GenericChallengeWithGameSceneView: View {
                     points: pointsEarned,
                     success: determineSuccess(pointsEarned: pointsEarned)
                 )
+                .offset(x: 0.0, y: -40.0)
             }
         }
     } // end body
@@ -92,6 +93,6 @@ struct GenericChallengeWithGameSceneView: View {
 
 struct GenericChallengeWithGameSceneView_Previews: PreviewProvider {
     static var previews: some View {
-        GenericChallengeWithGameSceneView(challenge: numbersChallenge)
+        GenericChallengeWithGameSceneView(challenge: shogunsChallenge)
     }
 }

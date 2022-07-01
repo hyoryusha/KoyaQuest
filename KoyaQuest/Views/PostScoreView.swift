@@ -57,31 +57,33 @@ struct PostScoreView: View {
                         .bold()
                         .padding(10)
                         .foregroundColor(Color.koyaDarkText)
-                    Text("Share your accomplishment with the world!*")
+                    Text("Share your accomplishment with the world!")
                         .font(.body)
                         .bold()
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color.koyaDarkText)
                 }
                 Form {
-                    Section(header: Text("How do you want your name to appear?")) {
-                        TextField("...enter your username here...", text: $viewModel.userName)
-                            .padding(.leading, 12)
+                    Section(header: Text("Name to appear on leaderboard").font(.caption)) {
+                        TextField("Enter a username here.", text: $viewModel.userName)
+                            .font(.callout)
+                            .padding(.leading, 10)
                             .disableAutocorrection(true)
                         Button {
                             viewModel.checkUserNameAvailable(userNamesArray: userNamesArray, userNameToTest: viewModel.userName)
                             viewModel.saveChanges()
                         } label: {
-                            Text("Post Your Score of \(appData.totalScore) Points")
+                            Text("Tap to Post Your Score of \(appData.totalScore) Points")
+
                         }
                         .alert(isPresented: $viewModel.showingEmptyFormAlert) {
                             Alert(title: Text("Name field issue"),
-                                  message: Text("Please enter a valid username (12 characters of fewer). "),
+                                  message: Text("Please enter a valid username (12 characters or fewer)."),
                                   dismissButton: .default(Text("Okay")))
                         }
                     }
                 } // end form
-                .frame(height: 162, alignment: .center)
+                .frame(height: 180, alignment: .center)
                 .background(Color.koyaSky)
                 .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
 
@@ -134,10 +136,19 @@ struct UserInputView_Previews: PreviewProvider {
 
 struct PostScoreBlurbView: View {
     var body: some View {
-        Text("(Well, those who use this app, at least.)")
+        VStack {
+            Text("This app does not collect or store any personal data.")
+                .font(.callout)
+                .bold()
+                .foregroundColor(.koyaOrange)
+                .multilineTextAlignment(.center)
+                //.padding()
+            Text("The name you create (fictitious or otherwise) will appear on the leaderboard along with your score and today's date.\nThe leaderboard is published within this app and on the companion website.")
             .font(.footnote)
             .foregroundColor(.koyaDarkText)
             .italic()
-            .padding()
+            .padding(.top)
+        }
+        .padding()
     }
 }

@@ -17,6 +17,7 @@ struct KoyaQuestApp: App {
     }
 
     var body: some Scene {
+        
         WindowGroup {
             ContentView()
                 .environmentObject(AppData())
@@ -24,6 +25,8 @@ struct KoyaQuestApp: App {
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)
                 .statusBar(hidden: true)
+                .onAppear { UIApplication.shared.isIdleTimerDisabled = true }
+                .onDisappear { UIApplication.shared.isIdleTimerDisabled = false }
         }
     }
 }

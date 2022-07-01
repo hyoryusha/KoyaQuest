@@ -9,6 +9,8 @@
         <name>Daimon</name>
         <time>2020-08-30T14:00:00Z</time>
     </wpt>
+
+
     <wpt lat="34.2133118" lon="135.5733837">
         <name>Choishi No. 3</name>
         <time>2020-08-30T14:00:20Z</time>
@@ -46,30 +48,30 @@
     </wpt>
     <wpt lat="34.21412606524347" lon="135.584203528666">
         <name>Kongobuji Temple</name>
-        <time>2020-08-30T14:02:20Z</time>
+        <time>2020-08-30T14:02:30Z</time>
     </wpt>
     <wpt lat="34.213724" lon="135.583084">
         <name>Rock Garden</name>
-        <time>2020-08-30T14:02:40Z</time>
+        <time>2020-08-30T14:02:50Z</time>
     </wpt>
     <wpt lat="34.21738288146782" lon="135.58311965014107">
         <name>Tokugawa Mausoleum</name>
-        <time>2020-08-30T14:02:50Z</time>
+        <time>2020-08-30T14:02:55Z</time>
     </wpt>
 
     <wpt lat="34.21701697334374" lon="135.58236903943072">
         <name>Tokugawa Mausoleum 2</name>
-        <time>2020-08-30T14:03:10Z</time>
+        <time>2020-08-30T14:03:35Z</time>
     </wpt>
 
     <wpt lat="34.2197239" lon="135.5809451">
         <name>Nyonindo</name>
-        <time>2020-08-30T14:03:20Z</time>
+        <time>2020-08-30T14:03:40Z</time>
     </wpt>
 
     <wpt lat="34.22014568888712" lon="135.5806889392046">
         <name>Nyonindo 2</name>
-        <time>2020-08-30T14:05:40Z</time>
+        <time>2020-08-30T14:06:20Z</time>
     </wpt>
 
     <wpt lat="34.21283838342336" lon="135.58958918800167">
@@ -109,72 +111,100 @@
         <time>2020-08-30T14:08:35Z</time>
     </wpt>
 
-
     <wpt lat="34.21636498" lon="135.598236">
         <name>Koshikake Ishi</name>
         <time>2020-08-30T14:08:45Z</time>
     </wpt>
 
-
     <wpt lat="34.2167752" lon="135.59822">
         <name>Uesugi Kenshin's Mausoleum</name>
-        <time>2020-08-30T14:08:55Z</time>
+        <time>2020-08-30T14:09:55Z</time>
     </wpt>
 
-    <wpt lat="34.21795458937127" lon="135.59820076202416">
-        <name>Uesugi Kenshin's Mausoleum 2</name>
+    <wpt lat="34.216652197441" lon="135.5984094092817">
+        <name>Path toward Kenshin</name>
         <time>2020-08-30T14:10:20Z</time>
     </wpt>
+    
+    <wpt lat="34.21733656811812" lon="135.599393676496">
+        <name>Path beneath Uesugi Kenshin's Mausoleum</name>
+        <time>2020-08-30T14:10:30Z</time>
+    </wpt>
 
-    <wpt lat="34.2174457" lon="135.6020233">
+    <wpt lat="34.21702248" lon="135.5984245">
+        <name>Uesugi Kenshin's Mausoleum</name>
+        <time>2020-08-30T14:10:40Z</time>
+    </wpt>
+
+
+    <wpt lat="34.216652197441" lon="135.5984094092817">
+        <name>Path toward Kenshin</name>
+        <time>2020-08-30T14:11:55Z</time>
+    </wpt>
+    
+    <wpt lat="34.216591239488174" lon="135.59841369892416">
+        <name>Path toward Takeda Shingen 2</name>
+        <time>2020-08-30T14:12:05Z</time>
+    </wpt>
+    
+    <wpt lat="34.21638156175315" lon="135.5983689">
+        <name>Takeda Shingen 1</name>
+        <time>2020-08-30T14:12:15Z</time>
+    </wpt>
+
+    <wpt lat="34.21657203" lon="135.5983387">
+        <name>Takeda Shingen 2</name>
+        <time>2020-08-30T14:12:25Z</time>
+    </wpt>
+
+<wpt lat="34.2174457" lon="135.6020233">
         <name>Asekaki Jizo</name>
-        <time>2020-08-30T14:10:35Z</time>
+        <time>2020-08-30T14:12:45Z</time>
     </wpt>
 
     <wpt lat="34.2176" lon="135.60205">
         <name>Asekaki Jizo</name>
-        <time>2020-08-30T14:11:35Z</time>
+        <time>2020-08-30T14:12:55Z</time>
     </wpt>
 
     <wpt lat="34.218245425673395" lon="135.6020572196682">
         <name>Asekaki Jizo 2</name>
-        <time>2020-08-30T14:11:48Z</time>
+        <time>2020-08-30T14:13:00Z</time>
     </wpt>
 
     <wpt lat="34.2190438" lon="135.6046596">
         <name>Kessho Jizo</name>
-        <time>2020-08-30T14:11:55Z</time>
+        <time>2020-08-30T14:13:15Z</time>
     </wpt>
 
     <wpt lat="34.2217926" lon="135.6058639">
         <name>Tamagawa River</name>
-        <time>2020-08-30T14:12:00Z</time>
+        <time>2020-08-30T14:13:40Z</time>
     </wpt>
 
     <wpt lat="34.22191" lon="135.60592">
         <name>Tamagawa River 1</name>
-        <time>2020-08-30T14:12:15Z</time>
+        <time>2020-08-30T14:13:55Z</time>
     </wpt>
 
-    <wpt lat="34.22133507975566" lon="135.60677547761603">
+    <wpt lat="34.22196" lon="135.60582">
         <name>Tamagawa River 2</name>
-        <time>2020-08-30T14:12:55Z</time>
+        <time>2020-08-30T14:15:05Z</time>
     </wpt>
 
     <wpt lat="34.22312" lon="135.60576973055655">
         <name>Torodo</name>
-        <time>2020-08-30T14:13:20Z</time>
+        <time>2020-08-30T14:15:20Z</time>
     </wpt>
-
 
     <wpt lat="34.21605616024564" lon="135.60445876968933">
         <name>Nakanohashi Parking</name>
-        <time>2020-08-30T14:14:40Z</time>
+        <time>2020-08-30T14:15:50Z</time>
     </wpt>
 
     <wpt lat="34.217000" lon="135.605000">
         <name>Nakanohashi Parking</name>
-        <time>2020-08-30T14:15:10Z</time>
+        <time>2020-08-30T14:16:00Z</time>
     </wpt>
 
     <wpt lat="34.20970989236701" lon="135.5872414883954">
@@ -184,6 +214,6 @@
 
     <wpt lat="34.21270529655399" lon="135.58978231645597">
         <name>Choishi 10 2</name>
-        <time>2020-08-30T14:17:45Z</time>
+        <time>2020-08-30T14:16:45Z</time>
     </wpt>
 </gpx>

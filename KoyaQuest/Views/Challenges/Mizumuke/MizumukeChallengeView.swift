@@ -82,6 +82,7 @@ struct MizumukeChallengeView: View {
                     points: viewModel.points,
                     success: viewModel.solved
                 )
+                .offset(x: 0.0, y: -40.0)
             }
         } // end ZStack
     }

@@ -12,6 +12,19 @@
     } ,
 
     {
+        "id"    :   1001,
+        "filter": "Jisonin, Jison-in, Jison Temple, Tamayori, mother of Kukai",
+        "title" :   "Where is Jison-in?",
+        "category": "Places",
+        "body"  :
+            {
+                "headerOne" :   "The \"Women's Koya\" at the Foot of the Mountain",
+                "bodyOne"   :   "Located in the Village of Kudoyama along the left bank of the Kinokawa River, Jison-in Temple began as an administrative outpost 政所 (mandokoro) for the monastery of Mt. Kōya. Today, as in the past, it marks the traditional gateway to the holy mountain. It is here that the Chōishi-michi begins.\nLate in her life, Kūkai's mother, a woman known as Lady Tamayori, made the journey to this area from her home in Shikoku in order to \"see just once\" the temple her famous son had established. According to legend, Kūkai personally intervened to prevent her from violating the strict prohibition against women entering the sacred mountain. To stop his own mother, he spread his priestly robe on the path before her, erroneously assuming that she would not dare tread on this most sacred article of clothing. When Tamayori tried to continue on her way, an earthquake struck, sending a large boulder down the mountain in her direction. Kūkai saved his mother's life by miraculously stopping the enormous rock with his bare hands. Today, that rock, which is called the oshiage-ishi (or hand-raised rock), is one of several roadside attractions along the Chōishi-michi. (A sign informs passersby that an imprint of Kūkai's hands can still be seen on its face.)\nThwarted by the gods of the mountain, Tamayori is said to have never tried again to climb the mountain but to remain at Jison-in where she dedicated herself to Maitreya (Miroku in Japanese), the Buddha of the Future. Her son, for his part, is said to have made the trip down the mountain to visit his mother nine times (九度 kudo) a month. (Though it should not be taken literally, the measure of this frequency is the origin of the name of the surrounding village of Kudoyama.)\nAfter the death of Lady Tamayori in 835, Kūkai memorialized his beloved mother with a mausoleum and wooden image of Maitreya carved with his own hands. The mausoleum became the main hall of Jison-in, which derives its name from Jishi 慈氏,an alternative sobriquet for Maitreya.\nOver the years, and in large part due to the legacy of Lady Tamayori, Jison-in became known as \"The Women’s Kōya\". Its role in providing a spiritual space for women of faith can be seen today in the various amulets and services conducted for the safe conception and delivery of children as well as their healthy upbringing. The temple is noted for its unique wooden tablets, or ema, which feature breast-shaped cloth appendages.\nJison-in is enrolled in UNESCO’s World Heritage list of \"Sacred Sites and Pilgrimage Routes in the Kii Mountain Range.\" The temple is a 25-minute walk from Kudoyama Station on the Nankai Kōya Line."
+
+            }
+        } ,
+
+    {
     "id"    :   1004,
     "filter": "hiking trail, choishi michi, choishimichi, " ,
     "category": "Places",

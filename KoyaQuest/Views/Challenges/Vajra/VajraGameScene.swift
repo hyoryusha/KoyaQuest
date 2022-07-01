@@ -16,7 +16,27 @@ class VajraGameScene: SKScene, CLLocationManagerDelegate {
     var distanceTracker: Double?
     let sight = SKSpriteNode(imageNamed: "sight")
     var isSetUp = false
+    // added 5-14-22:
+    private func getBearing(fromLocation: CLLocation, toLocation: CLLocation) {
 
+        var bearing: CLLocationDirection
+        let fromLat = D2R2D.degreesToRadians(fromLocation.coordinate.latitude)
+        let fromLon = D2R2D.degreesToRadians(fromLocation.coordinate.longitude)
+        let toLat = D2R2D.degreesToRadians(toLocation.coordinate.latitude)
+        let toLon = D2R2D.degreesToRadians(toLocation.coordinate.longitude)
+
+            let y = sin(toLon - fromLon) * cos(toLat)
+            let x = cos(fromLat) * sin(toLat) - sin(fromLat) * cos(toLat) * cos(toLon - fromLon)
+        bearing = D2R2D.radiansToDegrees( atan2(y, x) ) as CLLocationDirection
+
+            bearing = (bearing + 360.0)
+        viewModel?.bearing = bearing
+        }
+    
+    private func getHeading(){
+        locationManager.startUpdatingHeading()
+    }
+    
     var sceneView: ARSKView {
         // swiftlint:disable force_cast
         return view as! ARSKView
@@ -62,11 +82,21 @@ class VajraGameScene: SKScene, CLLocationManagerDelegate {
         let roundedDistance = Double(round(1000*distance)/1000)
         viewModel?.distance = roundedDistance
 
+        //added 5-14-22
+        if CLLocationManager.headingAvailable() {
+            getHeading()
+        }
+        getBearing(fromLocation: location, toLocation: targetSanko)
+        
         if distance < desiredRange {
             self.display = "true"
             viewModel?.distance = 0
             viewModel?.found = true
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        viewModel?.heading = newHeading.trueHeading
     }
 
     // MARK: - SPRITE NODES

@@ -15,6 +15,13 @@
 		03377FA1269684FA008F3DBF /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03377FA0269684FA008F3DBF /* NavigationConfigurator.swift */; };
 		03377FA926985720008F3DBF /* UserData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03377FA826985720008F3DBF /* UserData+Extension.swift */; };
 		03377FAB26985980008F3DBF /* FinalScore+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03377FAA26985980008F3DBF /* FinalScore+Extension.swift */; };
+		0353A80A2835B657000675E4 /* BarcodeOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0353A8092835B657000675E4 /* BarcodeOverlayView.swift */; };
+		036B1591282B70A900DF61F7 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B1590282B70A900DF61F7 /* Share.swift */; };
+		036B1593282B710400DF61F7 /* SharingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B1592282B710400DF61F7 /* SharingViewModel.swift */; };
+		036B1595282B72D900DF61F7 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B1594282B72D900DF61F7 /* View+Extensions.swift */; };
+		036B1599282F271600DF61F7 /* DirectionDistanceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B1598282F271600DF61F7 /* DirectionDistanceIndicator.swift */; };
+		036B15B9283082F500DF61F7 /* ShareScoreSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036B15B8283082F500DF61F7 /* ShareScoreSummary.swift */; };
+		03DA84E62833A772001B7B00 /* KenshinSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DA84E52833A772001B7B00 /* KenshinSummaryView.swift */; };
 		0A14874A27472C5400852F82 /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14874927472C5400852F82 /* LocationManagerTests.swift */; };
 		0A14874E2748C7CD00852F82 /* FontSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14874D2748C7CD00852F82 /* FontSwap.swift */; };
 		0A161FBE2791124200D11E2C /* kenshin_video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0A161FBD2791124200D11E2C /* kenshin_video.mp4 */; };
@@ -113,7 +120,6 @@
 		0A4E1194266F15FD005F5FA8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E1193266F15FD005F5FA8 /* Card.swift */; };
 		0A4E69B227195AF700F26D66 /* FeedbackOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E69B127195AF700F26D66 /* FeedbackOverlayView.swift */; };
 		0A4E69B4271A6B1600F26D66 /* BonusOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4E69B3271A6B1600F26D66 /* BonusOverlayView.swift */; };
-		0A5A982A2664629600074902 /* ChallengeDisplayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A98292664629600074902 /* ChallengeDisplayViewModel.swift */; };
 		0A5A982D2664631200074902 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A982C2664631200074902 /* MainMenuView.swift */; };
 		0A5A9833266465F300074902 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A9832266465F300074902 /* WelcomeView.swift */; };
 		0A5A983C2664673C00074902 /* InfoTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A983B2664673C00074902 /* InfoTopView.swift */; };
@@ -156,6 +162,8 @@
 		0A67665826A039DB00B3D429 /* PostScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67665726A039DB00B3D429 /* PostScoreViewModel.swift */; };
 		0A67665A26A050CB00B3D429 /* AllUserNamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67665926A050CB00B3D429 /* AllUserNamesView.swift */; };
 		0A67665C26A11A5300B3D429 /* UserDefaults+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67665B26A11A5300B3D429 /* UserDefaults+extension.swift */; };
+		0A7C7DA52867D48000DB5806 /* AppReviewRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7C7DA42867D48000DB5806 /* AppReviewRequest.swift */; };
+		0A8C68EF28382EDF00E02D12 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8C68EE28382EDF00E02D12 /* Haptics.swift */; };
 		0A92055226ABE7BC007E7BAF /* FAQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A92055126ABE7BC007E7BAF /* FAQViewModel.swift */; };
 		0A92055426ABE826007E7BAF /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A92055326ABE826007E7BAF /* FAQ.swift */; };
 		0A92055726ABECF5007E7BAF /* FAQDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A92055626ABECF5007E7BAF /* FAQDetailView.swift */; };
@@ -265,6 +273,13 @@
 		03377FA0269684FA008F3DBF /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		03377FA826985720008F3DBF /* UserData+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserData+Extension.swift"; sourceTree = "<group>"; };
 		03377FAA26985980008F3DBF /* FinalScore+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FinalScore+Extension.swift"; sourceTree = "<group>"; };
+		0353A8092835B657000675E4 /* BarcodeOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeOverlayView.swift; sourceTree = "<group>"; };
+		036B1590282B70A900DF61F7 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
+		036B1592282B710400DF61F7 /* SharingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingViewModel.swift; sourceTree = "<group>"; };
+		036B1594282B72D900DF61F7 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		036B1598282F271600DF61F7 /* DirectionDistanceIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionDistanceIndicator.swift; sourceTree = "<group>"; };
+		036B15B8283082F500DF61F7 /* ShareScoreSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareScoreSummary.swift; sourceTree = "<group>"; };
+		03DA84E52833A772001B7B00 /* KenshinSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KenshinSummaryView.swift; sourceTree = "<group>"; };
 		0A14874927472C5400852F82 /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
 		0A14874D2748C7CD00852F82 /* FontSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSwap.swift; sourceTree = "<group>"; };
 		0A161FBD2791124200D11E2C /* kenshin_video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = kenshin_video.mp4; sourceTree = "<group>"; };
@@ -364,7 +379,6 @@
 		0A4E1193266F15FD005F5FA8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0A4E69B127195AF700F26D66 /* FeedbackOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackOverlayView.swift; sourceTree = "<group>"; };
 		0A4E69B3271A6B1600F26D66 /* BonusOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusOverlayView.swift; sourceTree = "<group>"; };
-		0A5A98292664629600074902 /* ChallengeDisplayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDisplayViewModel.swift; sourceTree = "<group>"; };
 		0A5A982C2664631200074902 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		0A5A9832266465F300074902 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		0A5A983B2664673C00074902 /* InfoTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTopView.swift; sourceTree = "<group>"; };
@@ -410,6 +424,8 @@
 		0A67665726A039DB00B3D429 /* PostScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostScoreViewModel.swift; sourceTree = "<group>"; };
 		0A67665926A050CB00B3D429 /* AllUserNamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserNamesView.swift; sourceTree = "<group>"; };
 		0A67665B26A11A5300B3D429 /* UserDefaults+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+extension.swift"; sourceTree = "<group>"; };
+		0A7C7DA42867D48000DB5806 /* AppReviewRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewRequest.swift; sourceTree = "<group>"; };
+		0A8C68EE28382EDF00E02D12 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		0A92055126ABE7BC007E7BAF /* FAQViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewModel.swift; sourceTree = "<group>"; };
 		0A92055326ABE826007E7BAF /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
 		0A92055526ABE8FB007E7BAF /* FAQ.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FAQ.json; sourceTree = "<group>"; };
@@ -605,6 +621,7 @@
 		0A4E10952669C375005F5FA8 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				036B1598282F271600DF61F7 /* DirectionDistanceIndicator.swift */,
 				0AEA569F26D72F7200389337 /* NearGobyoWarningView.swift */,
 				0A95DE69273FAC510080EA48 /* MountainOverlayView.swift */,
 				0A4E116A266B8AC9005F5FA8 /* ChallengeFeedbackView.swift */,
@@ -749,12 +766,14 @@
 			isa = PBXGroup;
 			children = (
 				0A4E110C266A0CCA005F5FA8 /* KenshinChallengeView.swift */,
+				03DA84E52833A772001B7B00 /* KenshinSummaryView.swift */,
 				0A3D24322674ABAB00D9CA2F /* KenshinChallengeViewModel.swift */,
 				0A3D24372674ABAD00D9CA2F /* KenshinFinderVC.swift */,
 				0A3D24342674ABAC00D9CA2F /* KenshinFinderView.swift */,
 				0A3D24332674ABAB00D9CA2F /* KenshinMissionView.swift */,
 				0A3D24362674ABAD00D9CA2F /* KenshinScannerAlert.swift */,
 				0A3D24392674ABAE00D9CA2F /* TakedaChallengeView.swift */,
+				0353A8092835B657000675E4 /* BarcodeOverlayView.swift */,
 				0A3D24312674ABAB00D9CA2F /* TakedaScannerVC.swift */,
 				0A3D24352674ABAC00D9CA2F /* TakedaScannerView.swift */,
 			);
@@ -879,6 +898,7 @@
 				0A5E83DB2663A2C7000076A9 /* Constants.swift */,
 				0A5E83FF2663AA99000076A9 /* PhysicsCategory.swift */,
 				0A14874D2748C7CD00852F82 /* FontSwap.swift */,
+				0A7C7DA42867D48000DB5806 /* AppReviewRequest.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -894,8 +914,8 @@
 				0A3D2449267ADE6000D9CA2F /* Bonus.swift */,
 				0A3D2448267ADE5F00D9CA2F /* CompletedBonus.swift */,
 				0A5E83EC2663A897000076A9 /* PlaceAnnotations.swift */,
-				0A5A98292664629600074902 /* ChallengeDisplayViewModel.swift */,
 				0AD224D32668C37000D5D935 /* ChallengeDetail.swift */,
+				036B1592282B710400DF61F7 /* SharingViewModel.swift */,
 				0A4E108C2669967F005F5FA8 /* CompletedChallenge.swift */,
 				0A4E108F266996B0005F5FA8 /* LocalRating.swift */,
 				0A67665726A039DB00B3D429 /* PostScoreViewModel.swift */,
@@ -927,6 +947,7 @@
 				0A4E105826697654005F5FA8 /* GamePlayToggleView.swift */,
 				0A4E106726697F20005F5FA8 /* MainMenuScrollView.swift */,
 				0A4E1187266EC978005F5FA8 /* DisabledMessageView.swift */,
+				0A8C68EE28382EDF00E02D12 /* Haptics.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -943,6 +964,7 @@
 				0A5E842526643F0F000076A9 /* Text+Extensions.swift */,
 				0A4E1119266A1B28005F5FA8 /* ToggleStyle+Extension.swift */,
 				0A67665B26A11A5300B3D429 /* UserDefaults+extension.swift */,
+				036B1594282B72D900DF61F7 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -962,6 +984,8 @@
 				0A5E841526643A4E000076A9 /* MapViewUI.swift */,
 				0A4E108326698965005F5FA8 /* ScoreSummaryView.swift */,
 				0ACAE8BB26FF0B7E007276B2 /* ScoreSummary.swift */,
+				036B15B8283082F500DF61F7 /* ShareScoreSummary.swift */,
+				036B1590282B70A900DF61F7 /* Share.swift */,
 				0A4E10E12669CE55005F5FA8 /* ChallengeDisplayView.swift */,
 				0A3D2445267AD85A00D9CA2F /* BonusDisplayView.swift */,
 				0AB6AD54268938AF006F9690 /* GameOverView.swift */,
@@ -1223,6 +1247,7 @@
 				0ACAE8B626F2E75C007276B2 /* Binding+Extensions.swift in Sources */,
 				0A95DE6A273FAC510080EA48 /* MountainOverlayView.swift in Sources */,
 				03377FAB26985980008F3DBF /* FinalScore+Extension.swift in Sources */,
+				036B1599282F271600DF61F7 /* DirectionDistanceIndicator.swift in Sources */,
 				0A5E83F52663A971000076A9 /* NetworkManager.swift in Sources */,
 				0A4E105926697654005F5FA8 /* GamePlayToggleView.swift in Sources */,
 				03318BCF26832D8C00602022 /* AdaptingStack.swift in Sources */,
@@ -1247,8 +1272,11 @@
 				0A4E10C42669CBDE005F5FA8 /* BackgroundView.swift in Sources */,
 				0AB3F446268168D1006C4E70 /* NyonindoSummaryScene.swift in Sources */,
 				0A4E10BD2669CBDE005F5FA8 /* TextOverlayView.swift in Sources */,
+				0A8C68EF28382EDF00E02D12 /* Haptics.swift in Sources */,
 				0A4E10DD2669CC4D005F5FA8 /* ChallengeListView.swift in Sources */,
 				0A4E106E2669818C005F5FA8 /* AppInfoTopView.swift in Sources */,
+				03DA84E62833A772001B7B00 /* KenshinSummaryView.swift in Sources */,
+				036B1595282B72D900DF61F7 /* View+Extensions.swift in Sources */,
 				0A4E10AF2669CBA2005F5FA8 /* LocalRatingsView.swift in Sources */,
 				0A3D2480267C4B5A00D9CA2F /* BonusQuestionView.swift in Sources */,
 				0AB3F445268168D1006C4E70 /* NyonindoGameScene.swift in Sources */,
@@ -1274,6 +1302,7 @@
 				0A92055726ABECF5007E7BAF /* FAQDetailView.swift in Sources */,
 				0A676654269E523D00B3D429 /* GameOverSummary.swift in Sources */,
 				0A4E10AE2669CBA2005F5FA8 /* RatinsgInputView.swift in Sources */,
+				036B15B9283082F500DF61F7 /* ShareScoreSummary.swift in Sources */,
 				0A5A9833266465F300074902 /* WelcomeView.swift in Sources */,
 				0A4E1123266AF3A9005F5FA8 /* DaimonGameViewModel.swift in Sources */,
 				0A4E10C32669CBDE005F5FA8 /* TitleImageView.swift in Sources */,
@@ -1283,7 +1312,6 @@
 				0A67665C26A11A5300B3D429 /* UserDefaults+extension.swift in Sources */,
 				0A5E84002663AA99000076A9 /* PhysicsCategory.swift in Sources */,
 				0A676656269EE93F00B3D429 /* LeaderboardView.swift in Sources */,
-				0A5A982A2664629600074902 /* ChallengeDisplayViewModel.swift in Sources */,
 				0A4E10A22669C983005F5FA8 /* ScoreSummaryRow.swift in Sources */,
 				0A4E108D2669967F005F5FA8 /* CompletedChallenge.swift in Sources */,
 				0A5E841226643A00000076A9 /* MapView.swift in Sources */,
@@ -1291,6 +1319,7 @@
 				0A61A724268C7EF900A5F5F5 /* AudioModel.swift in Sources */,
 				0A3D2486267C531200D9CA2F /* BonusFeedbackView.swift in Sources */,
 				0A5E83A726638278000076A9 /* KoyaQuestApp.swift in Sources */,
+				036B1593282B710400DF61F7 /* SharingViewModel.swift in Sources */,
 				0A4E10C22669CBDE005F5FA8 /* LoadingView.swift in Sources */,
 				0A5E83ED2663A897000076A9 /* Challenges.swift in Sources */,
 				0A5E83DC2663A2C7000076A9 /* Constants.swift in Sources */,
@@ -1306,6 +1335,7 @@
 				0A3D240D2674727700D9CA2F /* GorintoGameScene.swift in Sources */,
 				0A4E10E82669D095005F5FA8 /* ChallengePortalView.swift in Sources */,
 				0A4E10DE2669CC4D005F5FA8 /* ChallengeDetailView.swift in Sources */,
+				036B1591282B70A900DF61F7 /* Share.swift in Sources */,
 				0A5E842626643F0F000076A9 /* Text+Extensions.swift in Sources */,
 				0A4E1139266B6D73005F5FA8 /* DaimonLearnMoreView.swift in Sources */,
 				0A5E83B82663831B000076A9 /* KoyaQuest.xcdatamodeld in Sources */,
@@ -1337,6 +1367,7 @@
 				0A5E83C5266390CC000076A9 /* Bundle-Decodable.swift in Sources */,
 				0A5E83FD2663AA43000076A9 /* Information.swift in Sources */,
 				0A3D2483267C4B9800D9CA2F /* BonusQuestionViewModel.swift in Sources */,
+				0353A80A2835B657000675E4 /* BarcodeOverlayView.swift in Sources */,
 				0A4E10FB266A0C81005F5FA8 /* VajraChallengeView.swift in Sources */,
 				0A5E83E52663A7CE000076A9 /* SpriteKitConstants.swift in Sources */,
 				0A4E10DB2669CC4D005F5FA8 /* LandmarkDetailView.swift in Sources */,
@@ -1370,6 +1401,7 @@
 				0A5E840D2663ACAE000076A9 /* Color+Extension.swift in Sources */,
 				0A3D24C3267DB9AD00D9CA2F /* ChoishiHintView.swift in Sources */,
 				0A4E10A62669C9AE005F5FA8 /* ScoreCardView.swift in Sources */,
+				0A7C7DA52867D48000DB5806 /* AppReviewRequest.swift in Sources */,
 				0A3D244A267ADE6000D9CA2F /* CompletedBonus.swift in Sources */,
 				0A4E10C02669CBDE005F5FA8 /* TitleView.swift in Sources */,
 				0A4E110D266A0CCA005F5FA8 /* KenshinChallengeView.swift in Sources */,
@@ -1566,7 +1598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.wadaienglish.KoyaQuest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1591,7 +1623,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = net.wadaienglish.KoyaQuest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

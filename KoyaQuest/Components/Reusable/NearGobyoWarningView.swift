@@ -14,18 +14,18 @@ struct NearGobyoWarningView: View {
             Rectangle()
                 .frame(
                     maxWidth: .infinity,
-                    maxHeight: wideElement(sizeCategory: sizeCategory) ? 80 : 36,
+                    maxHeight: wideElement(sizeCategory: sizeCategory) ? 80 : 60,
                     alignment: .center
                 )
                 .foregroundColor(.koyaRed)
             HStack {
                 Image(systemName: "exclamationmark.triangle.fill")
-                    .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .caption)
+                    .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .title2)
                     .foregroundColor(.white)
                     .padding(.leading, 10)
                 VStack {
                     // swiftlint:disable:next line_length
-                    Text("You are near the Mausoleum of Kōbō Daishi.\nUse of electronic devices is prohibited in this area.")
+                    Text("You are near the Mausoleum of Kōbō Daishi.\nPlease observe the prohibition of electronic devices beyond the Gobyō Bridge")
                         .font(FontSwap.caption2ForCaption(for: sizeCategory))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)

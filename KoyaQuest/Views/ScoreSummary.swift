@@ -10,8 +10,9 @@ import SwiftUI
 struct ScoreSummary: View {
     @EnvironmentObject var appData: AppData
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
-    @Binding var scoreSummaryIsVisible: Bool
-    @State private var showingAlert = false
+    @State var shareScreen: Bool = false
+    // @Binding var scoreSummaryIsVisible: Bool
+   // @State private var showingAlert = false
 
     let wideScreenColumns = [
         GridItem(.flexible()),
@@ -28,7 +29,7 @@ struct ScoreSummary: View {
             BackgroundView()
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack {
-                ScoreSummaryTopView(scoreSummaryIsVisible: $scoreSummaryIsVisible)
+                ScoreSummaryTopView()
                 Text("Score Summary")
                     .font(.title)
                     .bold()
@@ -40,8 +41,7 @@ struct ScoreSummary: View {
                 Text("\(appData.progressString) for \(appData.challengeScore) points")
                     .font(wideElement(sizeCategory: sizeCategory) ? .caption : .footnote)
                     .foregroundColor(.gray)
-                Divider()
-                    .padding()
+                
 
                 GeometryReader { geo in
                     if isNarrowScreen(geo: geo) {
@@ -111,9 +111,10 @@ struct ScoreSummary: View {
     }
 }
 
+
 struct ScoreSummary_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreSummary(scoreSummaryIsVisible: .constant(true))
+        ScoreSummary()
             .environmentObject(AppData())
     }
 }

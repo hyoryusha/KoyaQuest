@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TakedaChallengeView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel = KenshinChallengeViewModel()
+    @ObservedObject var viewModel: KenshinChallengeViewModel
     @Binding var success: Bool
     var body: some View {
         ZStack {
@@ -17,38 +17,57 @@ struct TakedaChallengeView: View {
                 .ignoresSafeArea(.all)
             VStack {
                 XDismissButtonRight()
-                HStack {
-                    Image(systemName: "barcode.viewfinder")
+                //Image(systemName: "barcode.viewfinder")
+                if !viewModel.foundTakeda {
                     Text("Find the Tiger of Kai")
-                }
-                .font(.title)
-                .foregroundColor(.orange)
-                .padding(.bottom, 6)
-
-                Text("Look for the nearby tomb...")
-                    .font(.subheadline)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
-
-                TakedaScannerView(
-                    scannedCode: $viewModel.scannedCode,
-                    alertItem: $viewModel.alertItem,
-                    foundLocation: $viewModel.foundLocation,
-                    success: $viewModel.success,
-                    foundTakeda: $viewModel.foundTakeda)
-                // Rectangle()
-                    .frame(height: 380)
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.koyaOrange)
                     .padding(.bottom, 6)
 
-                if viewModel.foundTakeda {
-                    Text("Congratulations! You found:")
-                        .font(.body)
+                    Text("Look for the nearby tomb...")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+
+                    TakedaScannerView(
+                        scannedCode: $viewModel.scannedCode,
+                        alertItem: $viewModel.alertItem,
+                        foundLocation: $viewModel.foundLocation,
+                        success: $viewModel.success,
+                        foundTakeda: $viewModel.foundTakeda)
+                        .frame(height: 380)
+                        .padding(.bottom, 6)
+                        .overlay(viewModel.displayOverlay ? BarcodeOverlayView() : nil)
+                    Text("Scan the QR Code on the sign to confirm.")
+                        .font(.callout)
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.white)
+                        .padding()
+                       // .transition(.slide)
+                    DirectionDistanceIndicator(
+                        distance: viewModel.distanceToTarget,
+                        rotation: viewModel.rotation,
+                        color: viewModel.distanceIndicatorColor)
+                } else {
+                    Text("Congratulations!")
+                        .font(.title)
+                        .bold()
+                        .foregroundColor(.koyaOrange)
+                        .padding(.bottom, 6)
+                    Text("You found the Grave of Takeda Shingen")
+                        .font(.callout)
                         .foregroundColor(viewModel.scannerStatusTextColor)
-                    Text(viewModel.foundLocation)
-                        .font(.headline)
-                        .foregroundColor(viewModel.scannerStatusTextColor)
+                    Image("takeda shingen haka")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 300)
+                        .padding(.bottom, 6)
+                    KenshinSummaryView()
+                        .padding(.bottom, 20)
                     Button {
                         success = true
+                        viewModel.stopTakedaLocator()
                         self.presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Got it!")
@@ -66,16 +85,6 @@ struct TakedaChallengeView: View {
                             .background(Color.koyaGreen)
                             .foregroundColor(.white)
                     }
-                } else {
-                    Text("When you think you have found it, scan the QR Code on the nearby sign to confirm.")
-                        .font(.callout)
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(.white)
-                        .padding()
-                    Text(viewModel.foundLocation)
-                        .font(.body)
-                        .foregroundColor(Color.koyaOrange)
-                        .transition(.slide)
                 }
                 Spacer()
             }
@@ -93,6 +102,7 @@ struct TakedaChallengeView: View {
 
 struct TakedaChallengeView_Previews: PreviewProvider {
     static var previews: some View {
-        TakedaChallengeView( success: .constant(false))
+        TakedaChallengeView( viewModel: KenshinChallengeViewModel(), success: .constant(false))
     }
 }
+

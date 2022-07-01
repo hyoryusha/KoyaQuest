@@ -75,7 +75,6 @@ struct ChallengeFeedbackView: View {
             .padding()
             Spacer()
         }
-
         .background(Color.black)
         .frame(width: 320, height: 320)
         .cornerRadius(12)

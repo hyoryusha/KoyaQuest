@@ -87,6 +87,7 @@ struct ChoishiChallengeView: View {
                     points: viewModel.points,
                     success: viewModel.success ? true : false
                 )
+                .offset(x: 0.0, y: -40.0)
             }
         } // end zStack
         .navigationBarTitle(Text(""))

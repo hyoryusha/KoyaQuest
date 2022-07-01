@@ -309,9 +309,9 @@ class NumbersChallengeGameScene: SKScene {
         finalScoreLabel.position = CGPoint(x: frame.midX, y: scoreLabel.position.y + 38.0)
         finalScoreLabel.zPosition = 100
         addChild(finalScoreLabel)
-
+        self.pointsEarned = self.points
         self.complete = true
-        pointsEarned = self.points
+       
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             self.challengeCompleted = true
@@ -331,7 +331,9 @@ class NumbersChallengeGameScene: SKScene {
         }
         if matchesMade == 6 {
             stopCounter()
-            points = 20
+            self.points = 20
+            self.pointsEarned = 20
+            self.scoreLabel.text = "20"
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 if !self.roundOver {
                     self.gameOver()

@@ -81,6 +81,7 @@ struct BonusFeedbackView: View {
             .shadow(color: .koyaPurple.opacity(0.35), radius: 0.5, x: 12, y: 12 )
 
         }
+        .offset(x: 0.0, y: -45.0)
         .navigationBarTitle(Text(""))
         .navigationBarHidden(true)
         .statusBar(hidden: true)

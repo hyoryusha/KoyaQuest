@@ -13,7 +13,7 @@ struct ScoreSummaryView: View {
     @Binding var scoreSummaryIsVisible: Bool
     var body: some View {
             VStack {
-                ScoreSummaryTopView(scoreSummaryIsVisible: $scoreSummaryIsVisible)
+                ScoreSummaryTopView()
                 Text("Score Summary")
                     .font(.title)
                     .bold()

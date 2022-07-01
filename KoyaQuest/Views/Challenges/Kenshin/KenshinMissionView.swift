@@ -56,6 +56,7 @@ struct KenshinMissionView: View {
             Button {
                 playable = false
                 self.presentationMode.wrappedValue.dismiss()
+                
             } label: {
                 Text("Exit")
                     .font(.headline)

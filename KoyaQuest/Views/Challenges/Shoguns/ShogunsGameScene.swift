@@ -175,7 +175,7 @@ class ShogunsGameScene: SKScene {
             colorize(for: matches)
             self.solved = true
             pointsEarned = self.points
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) { // go to summary scene
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { // go to summary scene
                 self.showSummaryScene(withTransition: .crossFade(withDuration: 0.75))
             }
         }

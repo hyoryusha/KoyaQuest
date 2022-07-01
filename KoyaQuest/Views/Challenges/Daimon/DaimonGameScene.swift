@@ -32,7 +32,7 @@ class DaimonGameScene: SKScene {
 
     let daimon = SKSpriteNode(imageNamed: "daimon_whats_wrong")
     let solution = SKSpriteNode(imageNamed: "daimon_solution")
-    let box = SKSpriteNode(color: SKColor.clear, size: CGSize(width: 580, height: 190))
+    let box = SKSpriteNode(color: SKColor.clear, size: CGSize(width: 780, height: 190))
     let successLabel = SuccessLabel(text: "You got it!")
     let failLabel = FailLabel(text: "No, that was incorrect")
 

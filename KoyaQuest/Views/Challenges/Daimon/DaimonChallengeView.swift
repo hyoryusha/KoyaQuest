@@ -84,6 +84,7 @@ struct DaimonChallengeView: View {
                         text: success ? "Nice Job!" : "Too bad",
                         points: success ? daimonChallenge.maxPoints : 0 ,
                         success: success ? true : false)
+                    .offset(x: 0.0, y: -40.0)
                 }
             } // end Zstack
             .navigationBarTitle(Text(""))

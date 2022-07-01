@@ -16,7 +16,7 @@ struct TextOverlayView: View {
                 VStack(alignment: .leading) {
                     Spacer()
                     HStack {
-                        Text(landmark.name)
+                        Text(landmark.romaji)
                             .font(wideElement(sizeCategory: sizeCategory) ? .caption2: .title2)
                             .bold()
                             .padding(.leading, 40)

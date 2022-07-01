@@ -16,26 +16,34 @@ struct LandmarkRowView: View {
             if !wideElement(sizeCategory: sizeCategory) {
                 Image(landmark.imageName)
                     .resizable()
-                    .frame(width: 70, height: 50)
+                    .frame(width: 77, height: 55)
             }
             VStack(alignment: .leading) {
-                Text(landmark.jname)
-                    .font(FontSwap.caption2ForTitle3(for: sizeCategory))
-                    .foregroundColor(.koyaDarkText)
+                HStack {
+                    Text(landmark.jname)
+                        .font(FontSwap.caption2ForSubheadline(for: sizeCategory))
+                        .foregroundColor(.koyaDarkText)
+                    Spacer()
+                    RatingsView(filter: landmark.name)
+                }
+
+                Text(landmark.romaji)
+                    //.font(FontSwap.caption2ForSubheadline(for: sizeCategory))
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+
                 Text(landmark.name)
                     .font(FontSwap.caption2ForSubheadline(for: sizeCategory))
+                    .foregroundColor(.koyaDarkText)
                     .italic()
-                    .foregroundColor(.secondary)
             }
-            Spacer()
-            RatingsView(filter: landmark.name)
         }
     }
 }
 
 struct LandmarkRowView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkRowView(landmark: Landmark.allLandmarks[0])
+        LandmarkRowView(landmark: Landmark.allLandmarks[10])
             .preferredColorScheme(.dark)
     }
 }

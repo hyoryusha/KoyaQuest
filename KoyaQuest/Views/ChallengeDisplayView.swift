@@ -10,7 +10,7 @@ import CoreHaptics
 
 struct ChallengeDisplayView: View {
     @EnvironmentObject var appData: AppData
-    @State private var engine: CHHapticEngine?
+    @StateObject var hapticEngine = HapticEngine()
     @Binding var isPlayingGame: Bool
 
     var enteredZone: Area
@@ -26,7 +26,10 @@ struct ChallengeDisplayView: View {
                 .padding()
         }
         .onAppear {
-            vibrationAlert()
+            hapticEngine.vibrationAlert()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                hapticEngine.vibrationAlert()
+            }
         }
         .frame(width: 300, height: 472)
         .background(Color.koyaSky)
@@ -44,73 +47,6 @@ struct ChallengeDisplayView: View {
             }
 
         }, alignment: .topLeading)
-    }
-
-    // MARK: - HAPTICS
-    func prepareHaptics() {
-        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
-        do {
-            self.engine = try CHHapticEngine()
-            try engine?.start()
-        } catch {
-            print("There was an error creating the engine: \(error.localizedDescription)")
-        }
-    }
-
-    func vibrationAlert() {
-        prepareHaptics()
-        var events = [CHHapticEvent]()
-        for amt in stride(from: 0, to: 1, by: 0.1) {
-            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(amt))
-            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(amt))
-            let event = CHHapticEvent(
-                eventType: .hapticTransient,
-                parameters: [intensity, sharpness],
-                relativeTime: amt
-            )
-            events.append(event)
-        }
-
-        for amt in stride(from: 0, to: 1, by: 0.1) {
-            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(1 - amt))
-            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(1 - amt))
-            let event = CHHapticEvent(
-                eventType: .hapticTransient,
-                parameters: [intensity, sharpness],
-                relativeTime: 1 + amt
-            )
-            events.append(event)
-        }
-
-        for amt in stride(from: 0, to: 1, by: 0.1) {
-            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(amt))
-            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(amt))
-            let event = CHHapticEvent(
-                eventType: .hapticTransient,
-                parameters: [intensity, sharpness],
-                relativeTime: amt
-            )
-            events.append(event)
-        }
-
-        for amt in stride(from: 0, to: 1, by: 0.1) {
-            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(1 - amt))
-            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(1 - amt))
-            let event = CHHapticEvent(
-                eventType: .hapticTransient,
-                parameters: [intensity, sharpness],
-                relativeTime: 1 + amt
-            )
-            events.append(event)
-        }
-
-        do {
-            let pattern = try CHHapticPattern(events: events, parameters: [])
-            let player = try engine?.makePlayer(with: pattern)
-            try player?.start(atTime: 0)
-        } catch {
-            print("Failed to play pattern: \(error.localizedDescription).")
-        }
     }
 }
 

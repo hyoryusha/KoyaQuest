@@ -114,7 +114,7 @@ let tokugawaArea = Area(
     identifier: "Tokugawa Family Mausoleum Area",
     challenge: shogunsChallenge,
     isTargetZone: true,
-    radius: 80
+    radius: 90
 )
 
 let nyonindoArea = Area(
@@ -163,12 +163,14 @@ let ichinohashiArea = Area(
 )
 
 let kenshinArea = Area(
-    latitude: 34.21638,
-    longitude: 135.59833,
+//    latitude: 34.217022502342516,
+//    longitude: 135.5983387334238,
+    latitude: 34.21702248,
+    longitude: 135.598298,
     identifier: "Uesugi Kenshin Mausoleum Area",
     challenge: kenshinChallenge,
     isTargetZone: true,
-    radius: 100
+    radius: 70
 )
 
 let nakanohashiArea = Area(
@@ -184,9 +186,9 @@ let bashoArea = Area(
     latitude: 34.21988395573015,
     longitude: 135.60467022732885,
     identifier: "Bashō-Kessho Jizō Area",
-    challenge: koyakunChallenge, // Maybe add challenge here?
+    challenge: shogunsChallenge,
     isTargetZone: true,
-    radius: 100
+    radius: 90
 )
 
 let tamagawaArea = Area(
@@ -204,7 +206,7 @@ let torodoArea = Area(
     identifier: "Tōrōdō Area",
     challenge: nil,
     isTargetZone: false,
-    radius: 120
+    radius: 105
 )
 
 let nakanohashiParkingArea = Area(

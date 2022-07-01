@@ -22,19 +22,32 @@ struct KenshinChallengeView: View {
             VStack {
                 XExitButtonRight(didExitChallenge: $viewModel.didExitChallenge)
                     .padding(.trailing, 16)
-                HStack {
-                    Image(systemName: "camera.viewfinder")
-                    Text(viewModel.didFindGhost ? "You Found the Ghost" : "Look for the Ghost")
-                }
-                .font(.title)
-                .foregroundColor(.koyaOrange)
-                .padding([.bottom, .top], 6)
 
-                Text(viewModel.didFindGhost ? "" : "The spirit of Uesugi Kenshin has a message for you!")
-                    .font(.callout)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
-                    .padding()
+                if !viewModel.didConcludeVideo {
+                    Text(viewModel.didFindGhost ? "You Found the Ghost" : "Look for the Ghost")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.koyaOrange)
+                    .padding([.bottom, .top], 6)
+
+                    Text(viewModel.didFindGhost ? "The spirit of Uesugi Kenshin has a message for you!" : "Use the indicator below to guide you.")
+                        .font(.callout)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                        .padding()
+                } else {
+                    Text("Next Step")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.koyaOrange)
+                    .padding([.bottom, .top], 6)
+
+                    Text("Review your mission or proceed directly to the next step.")
+                        .font(.callout)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                        .padding()
+                }
 
                 if viewModel.didConcludeVideo {
                     Image(viewModel.success ? "uesugi_summary": "takeda shingen haka")
@@ -57,11 +70,23 @@ struct KenshinChallengeView: View {
                         .transition(.move(edge: .leading))
                         .padding(.bottom, 6)
 // swiftlint:disable:next line_length
-                    Text(viewModel.didFindGhost ? "Listen for your instructions.\nMove closer for better viewing." : viewModel.instructions)
-                        .multilineTextAlignment(.center)
-                        .font(.caption)
-                        .foregroundColor(.white)
-                        .padding()
+                    if !viewModel.didFindGhost {
+                        DirectionDistanceIndicator(
+                            distance: viewModel.distanceToTarget,
+                            rotation: viewModel.rotation,
+                            color: viewModel.distanceIndicatorColor)
+                    } else {
+                        VStack {
+                            Text("Listen for your instructions.\nMove closer for better viewing.")
+                            .multilineTextAlignment(.center)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            Text("You will be able to review your mission later.")
+                                .font(.subheadline)
+                                .foregroundColor(.koyaOrange)
+                        }
+                    }
                 }
 
                 if viewModel.didConcludeVideo && viewModel.success == false { // found Uesugi & watched video
@@ -121,7 +146,6 @@ struct KenshinChallengeView: View {
                             .foregroundColor(.white)
                             .padding()
                     }
-
                 } else {
                     EmptyView()
                         .frame(
@@ -145,15 +169,19 @@ struct KenshinChallengeView: View {
                     points: kenshinChallenge.maxPoints,
                     success: viewModel.success ? true : false
                 )
+                .offset(x: 0.0, y: -40.0)
             }
+        }
+        .onAppear {
+            viewModel.verifyGPSAuthorization()
         }
         .fullScreenCover(item: $activeSheet) { item in
             switch item {
-            case .first, .third, .none:
+            case .first, .none:
                 KenshinMissionView()
                     .transition(.move(edge: .bottom))
             case .second:
-                TakedaChallengeView(success: $viewModel.success)
+                TakedaChallengeView(viewModel: viewModel, success: $viewModel.success)
                     .transition(.move(edge: .trailing))
             }
         }

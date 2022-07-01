@@ -97,6 +97,7 @@ struct KukaiChallengeView: View {
                     challenge: kukaiChallenge, text: "Well Done",
                     points: kukaiChallenge.maxPoints,
                     success: viewModel.success)
+                .offset(x: 0.0, y: -40.0)
             }
         } // ZStack root
 

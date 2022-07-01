@@ -10,12 +10,12 @@ import SwiftUI
 struct ScoreSummaryTopView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.sizeCategory) var sizeCategory: ContentSizeCategory
-    @Binding var scoreSummaryIsVisible: Bool
+    //@Binding var scoreSummaryIsVisible: Bool
     var body: some View {
         HStack {
             Spacer()
             Button {
-                scoreSummaryIsVisible = false
+                // scoreSummaryIsVisible = false
                 self.presentationMode.wrappedValue.dismiss()
             } label: {
                 Image(systemName: "xmark")
@@ -37,6 +37,6 @@ struct ScoreSummaryTopView: View {
 
 struct ScoreSummaryTopView_Previews: PreviewProvider {
     static var previews: some View {
-        ScoreSummaryTopView(scoreSummaryIsVisible: .constant(true))
+        ScoreSummaryTopView()
     }
 }

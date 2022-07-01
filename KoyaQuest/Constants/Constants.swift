@@ -107,7 +107,7 @@ enum RatingsConstants {
 }
 
 enum ActiveSheet: Identifiable {
-    case first, second, third, none
+    case first, second, none
     var id: Int {
         hashValue
     }
@@ -162,6 +162,20 @@ struct FeedbackConstants {
             }
         }
     }
+    
 }
 
+struct D2R2D {
+    static  func degreesToRadians(_ number: Double) -> Double {
+        return number * .pi / 180
+    }
 
+    static func radiansToDegrees(_ number: Double) -> Double {
+        return number * 180 / .pi
+    }
+}
+struct KenshinStage {
+    enum Stage {
+        case first, second
+    }
+}

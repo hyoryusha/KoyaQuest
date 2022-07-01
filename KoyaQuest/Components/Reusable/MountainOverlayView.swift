@@ -16,10 +16,12 @@ struct MountainOverlayView: View {
 
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                TitleView(fullCaption: true)
-                    .padding(.top, 100)
+
+                TitleView(fullCaption: false)
+                    .padding(.top, 40)
                 Spacer()
             }
+
         }
     }
 }

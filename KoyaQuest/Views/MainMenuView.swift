@@ -15,7 +15,8 @@ struct MainMenuView: View {
     @State var landmark: Landmark
     @State var selection: Int?
     @State private var isShowingInfo = false
-    @State private var scoreSummaryIsVisible = false
+    //@State private var scoreSummaryIsVisible = false
+    @State var activeSheet: ActiveSheet?
     @State private var isShowingBonusList = false
 
     var body: some View {
@@ -97,15 +98,23 @@ struct MainMenuView: View {
                 .navigationBarHidden(true)
                 .background(Image("mtns"))
                 .statusBar(hidden: true)
-                .fullScreenCover(isPresented: $scoreSummaryIsVisible, onDismiss: {}, content: {
-                    ScoreSummary(scoreSummaryIsVisible: $scoreSummaryIsVisible)
-                })
+
                 .alert(isPresented: $locationManager.showGobyoAlert) {
                     Alert(title: Text("Important message"),
                           // swiftlint:disable:next line_length
                           message: Text("You are near the Gobyō, the most sacred area of Mt. Kōya. Use of devices is not permitted beyond the bridge."),
                           dismissButton: .default(Text("Got it!"))
                     )
+                }
+                .fullScreenCover(item: $activeSheet) { item in
+                    switch item {
+                    case .first, .none:
+                        ScoreSummary()
+                            .transition(.move(edge: .bottom))
+                    case .second:
+                        ShareScoreSummary()
+                            .transition(.move(edge: .trailing))
+                    }
                 }
             }
 
@@ -174,7 +183,8 @@ struct MainMenuView: View {
         VStack {
             HStack {
                 Button(action: {
-                    scoreSummaryIsVisible = true
+                    //scoreSummaryIsVisible = true
+                    activeSheet = .second
               // swiftlint:disable:next multiple_closures_with_trailing_closure
                 }) {
                     ZStack {
@@ -194,7 +204,8 @@ struct MainMenuView: View {
 
                 Spacer()
                 Button(action: {
-                    scoreSummaryIsVisible = true
+                    //scoreSummaryIsVisible = true
+                    activeSheet = .first
                     // swiftlint:disable:next multiple_closures_with_trailing_closure
                 }) {
                     ZStack {
@@ -236,8 +247,7 @@ struct MainMenuView: View {
     var scoreBox: some View {
         Group {
             if appData.isPlayingGame {
-                ScoreCardView(scoreSummaryIsVisible: $scoreSummaryIsVisible,
-                              text: "Total").padding(.top, 20)
+                ScoreCardView(activeSheet: $activeSheet, text: "Total").padding(.top, 20)
             }
             Spacer()
         }

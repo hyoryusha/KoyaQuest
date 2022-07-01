@@ -21,6 +21,7 @@ final class AppData: ObservableObject {
     @Published var localRatings: [LocalRating] = loadLocalRatings()
     @Published var kukaiChallengeState: ChallengeState = .idle
     @Published var isShowingResumeKukaiChallenge: Bool = false
+    @Published var imageToShare = UIImage(named: "sharing")
     @Published var userName: String {
         didSet {
             UserDefaults.standard.set(userName, forKey: "userName")
