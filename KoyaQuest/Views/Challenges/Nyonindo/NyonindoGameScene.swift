@@ -41,6 +41,7 @@ class NyonindoGameScene: SKScene {
     var counterTimer = Timer()
     var counterStartValue = 40 // seconds
     var roundIsOver = false
+    var gameInPlay = false
     let directionsLabel = SKLabelNode(text: "")
     let scoreLabel = SKLabelNode(text: "0")
     let pilgrimLabel = SKLabelNode(text: "(because you hit a pilgrim)")
@@ -136,7 +137,7 @@ class NyonindoGameScene: SKScene {
         startButtonLabel.name = "startButtonLabel"
         startButton.position = CGPoint(
             x: self.frame.midX,
-            y: self.frame.minY + gate.size.height * 0.7)
+            y: self.frame.midY) // change to midY? OLD: y: self.frame.minY + gate.size.height * 0.7
         startButton.zPosition = 3
         var text = ""
         if self.viewModel.attempts == 0 {
@@ -175,18 +176,17 @@ class NyonindoGameScene: SKScene {
     }
 
     func startGameAction() {
-        startButton.removeFromParent()
-        startButtonLabel.removeFromParent()
+        clearElements()
         roundIsOver = false
+        gameInPlay = true // added july 2022
         counter = counterStartValue
-        roundIsOver = false
         motionManager.startAccelerometerUpdates()
         addRikishi()
         startOniAttack()
         startPilgrim()
         beginMusic()
         startCounter()
-        self.scoreToBeatText = "Try to beat \(viewModel.highestScore)"
+        //self.scoreToBeatText = "Try to beat \(viewModel.highestScore)"
         self.scoreToBeatText = "Try to beat \(pointsEarned)"
         self.roundCounterText = "Round \(viewModel.attempts + 1) of 3"
         addRoundCounter()
@@ -356,14 +356,21 @@ class NyonindoGameScene: SKScene {
         pointsEarnedLabel.removeFromParent()
         roundOverLabel.removeFromParent()
         pilgrimLabel.removeFromParent()
+        rikishi.removeFromParent()
+        startButton.removeFromParent()
+        startButtonLabel.removeFromParent()
+        roundCounterLabel.removeFromParent()
+        scoreToBeatLabel.removeFromParent()
     }
 
     // MARK: - TOUCHES
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
-            let location = touch.location(in: self)
-            if startButton.contains(location) {
-                startGameAction()
+            if !gameInPlay { // added july 2022
+                let location = touch.location(in: self)
+                if startButton.contains(location) {
+                    startGameAction()
+                }
             }
         }
     }
@@ -484,7 +491,7 @@ class NyonindoGameScene: SKScene {
         scoreLabel.run(scoreLabelAnimation)
         addChild(roundOverLabel)
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.clearElements()
             if self.gameOver {
                 self.showSummaryScene(withTransition: .flipVertical(withDuration: 0.5))

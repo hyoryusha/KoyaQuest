@@ -49,7 +49,7 @@ final class LocationManager: NSObject, ObservableObject {
 
     var onEntry: Bool = true
     var location: CLLocation?
-    lazy var geocoder = CLGeocoder()
+    // lazy var geocoder = CLGeocoder()
 
     override init() {
         super.init()

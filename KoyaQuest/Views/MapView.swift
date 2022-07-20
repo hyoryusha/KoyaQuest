@@ -10,7 +10,7 @@ import MapKit
 
 struct MapView: View {
     @State private var region: MKCoordinateRegion
-    @State private var mapType: MKMapType = . standard
+    @State private var mapType: MKMapType = .standard
 
     var target: Landmark
     var places: [PlaceAnnotation] = allPlaces

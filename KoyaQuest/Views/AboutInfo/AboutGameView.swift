@@ -26,7 +26,7 @@ struct AboutGameView: View {
                                     .font(.title2)
                                     .foregroundColor(.koyaOrange)
                                 Text(info.title)
-                                    .font(.title2)
+                                    .font(.headline)
                                     .bold()
                                     .foregroundColor(.koyaDarkText)
                             }

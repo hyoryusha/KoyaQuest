@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <gpx version="1.1" creator="Xcode">
-<!-- -->
+<!--
     <wpt lat="34.21300" lon="135.5500">
         <name>Entry</name>
     <time>2020-08-30T13:59:52Z</time>
@@ -36,7 +36,7 @@
         <name>Kondo</name>
         <time>2020-08-30T14:01:00Z</time>
     </wpt>
-
+-->
     <wpt lat="34.213097" lon="135.580456">
         <name>Fudodo </name>
         <time>2020-08-30T14:01:10Z</time>
@@ -54,9 +54,10 @@
         <name>Rock Garden</name>
         <time>2020-08-30T14:02:50Z</time>
     </wpt>
+
     <wpt lat="34.21738288146782" lon="135.58311965014107">
         <name>Tokugawa Mausoleum</name>
-        <time>2020-08-30T14:02:55Z</time>
+        <time>2020-08-30T14:03:25Z</time>
     </wpt>
 
     <wpt lat="34.21701697334374" lon="135.58236903943072">

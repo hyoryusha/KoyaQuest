@@ -277,7 +277,7 @@ class SaigyoGameScene: SKScene {
             case 3:
                 keepTryingLabel.text = "One more chance (But no points)."
             default:
-                keepTryingLabel.text = ""
+                keepTryingLabel.text = "Still not there!"
             }
             addChild(keepTryingLabel)
             keepTryingLabelDisplayed = true

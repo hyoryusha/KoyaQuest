@@ -93,6 +93,6 @@ struct GenericChallengeWithGameSceneView: View {
 
 struct GenericChallengeWithGameSceneView_Previews: PreviewProvider {
     static var previews: some View {
-        GenericChallengeWithGameSceneView(challenge: shogunsChallenge)
+        GenericChallengeWithGameSceneView(challenge: nyonindoChallenge)
     }
 }

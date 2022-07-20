@@ -170,9 +170,13 @@ struct MainMenuView: View {
             if appData.isPlayingGame == false {
                 Text("Current Score: \(appData.totalScore)")
                     .font(wideElement(sizeCategory: sizeCategory) ? .caption2 : .subheadline)
-                // .bold()
-                    .foregroundColor(.koyaGreen)
-                    .padding(.leading, 10)
+                    .frame(width: 160, height: 32, alignment: .center)
+                    .foregroundColor(.white)
+                    .background(Color.koyaGreen)
+                    .clipShape(Capsule())
+                    .padding(.leading, 12)
+//                    .foregroundColor(.koyaGreen)
+//                    .padding(.leading, 10)
             }
             Spacer()
             GamePlayToggleView(isPlayingGame: $appData.isPlayingGame)
